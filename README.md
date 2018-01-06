@@ -1,2 +1,12 @@
 # FAM-OER
-An open educational resource for a university course titled Food and Agricultural Marketing
+An open educational resource for a university course on food and agricultural marketing. 
+
+This repository contains the files that comprise *An Interactive Text for Food and Agricultural Marketing*, which is intended to be the primary text for a University of Arkansas course on this subject.  These materials assume an understanding of college algebra and microeconomic principles that would be covered in a typical college-level introductory economic principles course.
+
+*An Interactive Text for Food and Agricultural Marketing* differs from a traditional text in that it contains a number of interactive demonstrations that are designed to reinforce concepts presented in the course.  Some demonstrations are more involved than others, but students should spend enough time with each to understand what is happening in the demonstration and why.  Each chapter also has a number of problem sets that students can use to self-assess their understanding of the content.  Upon finishing a chapter, students should complete all of the multiple-choice questions.  With the exception of Chapter 5, there are also one or more short-answer problem applications.  Each application presents a number of examples of the same problem. Check figures are provided within the applications.  Students are not expected to work through every example in each application, just enough of them to be confident in their ability to reach the right solution.  
+
+*An Interactive Text for Food and Agricultural Marketing* was developed in [R](https://cran.r-project.org/) with [RStudio](https://www.rstudio.com/). It is written in [R Markdown](http://rmarkdown.rstudio.com/).  The interactive demonstrations and problem sets are [R Shiny](https://shiny.rstudio.com/) applications, the code for which is embedded within the markdown files (.Rmd files). The most straightforward way to access these materials is to install [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/).  Afterwards, add the "rmarkdown" and "shiny" packages to the R installation.  These materials can also be deployed on a web server using the [Shiny Server](https://www.rstudio.com/products/shiny/shiny-server/) software.  
+
+While the primary aim is to meet the needs of a specific University of Arkansas Course, others may be able to adopt these materials for use in similar courses elsewhere and improve upon them. In the hope that this may be the case, *An Interactive Text for Food and Agricultural Marketing* is licensed under a [Creative Commons Attribution ShareAlike License](https://creativecommons.org/licenses/by-sa/4.0/).
+
+
