@@ -1,0 +1,1124 @@
+---
+title: "Chapter 3: Elasticities of Demand and Supply"
+date: "`r as.Date(file.info('index.Rmd')$mtime)`"
+output: html_document
+theme: journal
+runtime: shiny
+---
+
+***
+
+![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
+
+__*An Interactive Text for Food and Agricultural Marketing*__ by [Michael R. Thomsen](https://agribusiness.uark.edu/directory/index/uid/mthomsen/name/Michael+R.+Thomsen/) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).  Source files are available on [GitHub](https://github.com/thomsen-m/FAM-OER).
+
+***
+
+#<span style="color:SaddleBrown">Overview and Objectives</span>
+
+Imagine yourself in an internship this summer. It is your first day on the job and your supervisor asks you to develop answers for the following questions:
+
+1. How does the demand for beef respond to changes in the price of beef?
+
+2. How does the demand for beef respond to changes in the prices of related goods such as pork, poultry, lamb, or fish?
+
+3. How does the demand for beef respond to a change in consumer income levels?
+
+4. How does the demand for beef respond to changes in advertising expenditures by the National Cattlemen's Beef Association (NCBA)?
+
+Having just completed a course on food and agricultural marketing, you notice immediately that each of these questions pertains to a variable that can influence market demand. Question 1 deals with the own-price relationship, question 2 with cross-price relationships, question 3 with an income relationship, and question 4 with the potential for advertising expenditures to exert a favorable influence on consumer preferences.  
+
+You are pleased to have been given such a straightforward assignment and begin to draft a memo that provides sensible answers to each question. In response to question 1, you explain that as the price of beef increases, quantity demanded will fall.  After all, there is this little idea called "the law of demand" that your professor kept blabbering about.  Question 2 is also easy. You simply argue that pork, poultry, lamb, or fish are usually presented as alternative protein choices to beef.  Because of this, each can be classified as a substitute to beef.  You conclude that as the price of one or more of these products increases, beef demand would increase as well. You find the income question to be a little harder.  Nevertheless, being a resourceful person, you log into the University Libraries and locate a study showing that as incomes rise, consumers increase visits to higher-end restaurants.  Since these restaurants are more likely to serve expensive table cuts from the loin and rib, you reason that this study provides the evidence you need to make a case that beef is a normal good.  As such, you argue that beef demand will increase as consumer incomes rise.  Finally, on question 4, you state: "If the NCBA launches a new advertising campaign, it is reasonable to expect beef demand to increase.  Especially if the campaign is successful in convincing consumers that beef is a nutritious and convenient menu choice."  You proofread your memo and send it off to your supervisor in an email.  She acknowledges receipt with a short reply: "Wow. That was fast. I'll look at this tonight."  
+
+The next morning you arrive at work and see a hard copy of the memo on your desk.  On it is a hand-written note that says: "Tell me something I don't already know." Ouch! So much for making a good first impression.  
+
+The answers you developed were correct. The problem is that answers this simple are usually not specific enough to support policy or marketing decisions.  Your supervisor already had a good idea of the direction of the demand changes.  What she really wanted was a better idea about the magnitude of these changes. This is where elasticities can be useful.  The aim of this chapter is to help you understand how to compute and use demand and supply elasticities.  You will use elasticities to address some basic decision problems in the problem sets of this chapter but will put this knowledge to work in earnest in the next chapter.
+
+The learning objectives for this chapter are as follows:
+
+* Interpret elasticity numbers and compute elasticities using both the point and arc formulas.
+
+* Use demand elasticities to identify normal necessities, normal luxuries, inferior goods, substitutes, and complements in consumption.
+
+* Describe factors that impact the magnitude of own-price demand elasticities.
+
+* Show how the revenue implications of a price change depend on the own-price elasticity of demand.
+
+* Use supply elasticities to identify competing products and joint products in production.
+
+***
+
+#<span style="color:SaddleBrown">Demand Elasticities</span>
+
+Elasticities will be important for much of what follows in this course.  More importantly, an understanding of elasticities will help you think through decision problems you will encounter in your career.  You were introduced to elasticities in your introductory microeconomics course, but let us take a moment to review them now.  
+
+The term "elastic" implies flexibility.  An elastic material responds readily to force. An inelastic material is less responsive.  For example, a rubber band is quite elastic.  You can exert force by pulling on the rubber band and it responds easily and stretches according the force you apply.  For this reason, the term "elastic band" is sometimes used in lieu of the term "rubber band." In demand, the interest is in the responsiveness of a product's quantity to forces that affect demand.  The forces of interest were introduced in Chapter 1 and include the product's own-price, prices of related products, income, and other demand shift variables. 
+
+Simply stated, an elasticity is the percentage change in one variable resulting from the percentage change in another.  In this course, the symbol $\epsilon$ (the Greek letter epsilon) will be used to refer to demand elasticities. Subscripts will indicate the product and demand variable in question.  The first subscript will always refer to the quantity of the product in question.  The second subscript will refer to a price or other variable that affects demand.  For example, $\epsilon_{ij}$ refers to the elasticity of demand for good i with respect to a change in the price of good j.  Similarly, $\epsilon_{iX}$ refers to the elasticity of good i with respect to some non-price demand shift variable $X$. 
+
+There are several types of demand elasticities.  __*Own-price elasticities*__ measure the relationship between the quantity of a particular good, say good 1, and its own-price.  The own-price elasticity of demand for good 1 is defined as 
+
+$$\epsilon_{11}=\frac{\%\Delta Q_1}{\%\Delta P_1}, $$
+
+
+where $\Delta$ is the change operator.  The formula for the own-price elasticity of another good, say good 2, would be
+
+$$\epsilon_{22}=\frac{\%\Delta Q_2}{\%\Delta P_2}. $$
+
+*__Cross-price elasticities__* measure the relationship between the quantity of one good and the price of a related good.  The cross-price elasticity of demand for good $i$ with respect to the price of good $j$ would be
+
+
+$$\epsilon_{ij}=\frac{\%\Delta Q_i}{\%\Delta P_j},\ for\ i\ne j. $$
+
+As you learned in Chapter 1, variables other than prices also affect demand.  One of these variables is income.  An *__income elasticity__* for good 1 would be calculated as
+
+$$\epsilon_{1M}=\frac{\%\Delta Q_1}{\%\Delta M}, $$
+where $M$ represents income.
+
+###Interpretation of Elasticity Numbers
+
+Because elasticities are the ratio of two percentage changes, they are easy to interpret. If $\epsilon_{iX}=0.5$, then you can say that quantity demanded increases (decreases) by half a percent as $X$ increases (decreases) by one percent.  You can algebraically rearrange the terms in the elasticity definitions above to use an elasticity to predict the change in quantity that would result from a change in a demand variable of interest.  Specifically, the definition of an elasticity suggests the following:
+
+$$\epsilon_{iX}=\frac{\%\Delta Q_i}{\%\Delta X} \implies \%\Delta Q = \epsilon_{iX}\times\%\Delta X.  $$
+
+One nice thing about the fact that elasticities are expressed as a ratio of percentages is that they are independent of units of measurement. It does not matter whether prices or income are reflected in US dollars, Euros, Pesos, or Yen.  Similarly, it does not matter whether quantities are measured in bushels, pounds, kilograms, or tons.  The interpretation of the elasticity number will be unaffected. That said, one could use an elasticity to predict what would happen to physical units demanded when a demand variable changes.  Suppose you knew that $\epsilon_{11} = -2.5$. If you were interested in the effect of a three percent price increase, this elasticity can be used to tell you that  
+
+$$\%\Delta Q_1=-2.5\times3 = -7.5\%.$$  
+
+Now, suppose that you know that before the price increase demand is 1,000 units. You could easily predict what demand would be after the 3% price increase.  The new quantity demanded would be 
+
+$$1000\ units\ \times (1 - 0.075) = 925\ units.$$
+This elasticity could be used in a similar fashion to predict the quantity response given any magnitude of a price change, but there are some practical reasons why predictions will tend to be less accurate when using elasticities to predict large percentage price changes.  These limitations will become clear below as you learn more about elasticities.  
+
+###Ranges for Demand Elasticities
+
+Because elasticities measure responsiveness, their magnitudes are of importance.  Table 1 presents some magnitude-based classifications of demand elasticities that will be important for you in this course.  Notice from the table that own-price elasticities are non-positive.  This is because of the law of demand.  It is common in introductory microeconomics textbooks and even in some more advanced MBA-level textbooks to take the absolute value of an own-price elasticity and report it as a positive number.  This will not be done here.  Elasticities will be used to predict quantity changes and to model market responses to demand or supply shocks.  It will be important to preserve the direction of the negative own-price effect on quantity demanded.  Another reason for not taking the absolute value of own-price demand elasticities is that such practice is uncommon in the empirical literature.
+
+***
+
+####Table 1. Classifications based on magnitude of demand elasticities.
+Type         | Range                      | Implication
+-------------|----------------------------|---------------
+Own-price    | $\epsilon_{ii} < -1$       | Demand for good $i$ is elastic
+Own-price    | $\epsilon_{ii}= -1$        | Demand for good $i$ is unitary elastic
+Own-price    | $-1<\epsilon_{ii} \le 0$   | Demand for good $i$ is inelastic
+Cross-price  | $\epsilon_{ij}> 0,\ i\ne j$| Good $j$ is a substitute for $i$
+Cross-price  | $\epsilon_{ij}< 0, i\ne j$ | Good $j$ is a complement to $i$
+Income       | $\epsilon_{iM} < 0$        | Good $i$ is an inferior good
+Income       | $0 \le \epsilon_{iM} \le 1$| Good $i$ is a normal necessity
+Income       | $\epsilon_{iM} > 1$        | Good $i$ is a normal luxury
+
+***
+
+As shown in Table 1, own-price elasticities are divided into three ranges.  First, when demand is elastic, the numerator of the elasticity is large in absolute value relative to the denominator.  This means that demand is responsive in the sense that a change in price induces a more-than-proportional change in quantity.  With elastic demand, the quantity change will be large in comparison to the price change.  When demand is unitary elastic, the numerator of the elasticity is the negative of the denominator.  Unitary elastic demand means that the change in quantity is exactly proportional to the change in price.  Finally, when demand is inelastic, there is a less than proportional change in quantity in response to a change in price.  With inelastic demand, a large change in price may not change quantity very much.  
+
+To give you some intuition about own-price elasticity, consider Demonstration 1. In this demonstration, the price is fixed at \$50 and the quantity at 100 units.  The only thing you can change is the slope of the inverse demand curve.  When the demonstration first loads, this slope will be -0.5 and the elasticity of demand will be -1 or unitary elastic.  If you see something different, set it to -1 or reload the page in your browser.  Make the slope steeper by sliding the control of the demonstration to the left.  As you do, you will see that demand becomes inelastic.  As the slope becomes steeper, price changes quite a bit, but quantity does not change very much.  This is what is meant by inelastic demand.  Now slowly slide the control of the demonstration to the right to flatten the slope of inverse demand.  You will see that demand switches from inelastic, to unitary elastic, to elastic as you do.  When the slope of inverse demand is 0, the elasticity of demand is negative infinity.  This means that any amount can be sold at the given price of \$50, but that no amount can be sold at a slightly higher price (e.g., \$50.01).  The term "perfectly elastic" is sometimes used in situations like this and means the same thing as infinitely elastic.
+
+It is not likely that a market demand schedule will ever be infinitely elastic, but there are situations where the demand schedule facing an individual firm is infinitely elastic.  In fact, the price-taking firms you learned about in Chapter 2 face infinitely elastic demand.  If you remember, price taking firms can sell all they want at the going price. This is equivalent to saying that price taking firms face an infinite elasticity.  As the course progresses, it will be useful to pay attention to whether an elasticity refers to the market demand or the demand facing the firm.  The market demands for agricultural commodities are commonly inelastic but the demands facing the individual farms supplying these commodities may be infinitely elastic.     
+
+****
+
+####Demonstration 1.  Own-price elasticities show the responsiveness of quantity to changes to price.
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      sliderInput("beta","Slope of inverse demand",min = -1.5,max = 0,step=0.1,value = -0.5,ticks = T)
+    ),
+    mainPanel(plotOutput("demandPlot"))
+    ),
+  server = function(input,output) {
+    xint<-reactive(round(-(50-input$beta*100)/input$beta,3))
+    yint<-reactive(round(50-input$beta*100,3))
+    elast<-reactive(round((-1/-input$beta)*(50/100),3))
+    range<-reactive(ifelse(round(elast(),4)==-1,"unitary elastic.",ifelse(elast()<(-1),"elastic.","inelastic.")))
+    DynTextE<-reactive(eval(substitute(expression(epsilon[11]*"="*ee),
+                                       list(ee=elast(),bb=input$beta)
+    )))
+    output$demandPlot<- renderPlot({
+      par(bg="beige")
+      plot(60:140,yint()+input$beta*(60:140),type="l",col="blue", lwd=3,
+         xlim=c(50,140),ylim=c(0,100),
+         xlab=expression("Own-Quantity (Q"[1]*")"),
+         ylab=expression("Own-Price (P"[1]*")"),xaxs="i",yaxs="i",bty="n",
+         xaxt='n',yaxt='n',
+         main=expression("Elasticity of Demand at Q"[1]*"= 100 and P"[1]*" = 50")
+      )
+     lines(c(50,100),c(50,50),col="green",lty=1)
+     lines(c(100,100),c(0,50),col="green",lty=1)     
+     points(100,50,pch=21,col="red",bg="red")
+     axis(1, at=c(50,100,150), labels=c("",expression("Q"[1]*" = 100"),""),lwd.ticks=1)
+     axis(2, at=c(0,50,100), labels=c("",expression("P"[1]*" = 50"),""),lwd.ticks=1)
+     text(50,35,DynTextE(),pos=4,cex=1.5)
+     text(50,15,paste("Demand is",range()),pos=4,cex=1.5)
+     })
+    }
+  )
+```
+
+****
+
+As indicated above in Table 1, cross-price elasticities of demand are used to determine whether related products are substitutes or complements.  Consistent with the relationships presented in Chapter 1, positive (negative) cross-price elasticities imply substitutes (complements).  The magnitude of the cross-price elasticities can be used to determine which products are strong substitutes or complements to the product in question.  For instance, Brand A yogurt might be a very close substitute for Brand B yogurt.  There might also be some substitutability between Brand A yogurt and cottage cheese. Nevertheless, cottage cheese is a much weaker substitute for Brand A yogurt than is Brand B yogurt.  In this case, one would see a large positive cross-price elasticity of demand for the Brand A yogurt with respect to the price of Brand B yogurt.  There would be a positive, albeit considerably smaller, cross-price elasticity of demand for Brand A yogurt with respect to the price of cottage cheese.    
+
+Finally, income elasticities can be used to classify goods as normal or inferior based on a positive or negative sign, respectively.  As indicated in Table 1, normal goods can be further classified as a normal necessity or normal luxury goods.  A normal necessity has an income elasticity that is between zero and one.  For normal necessity goods, the change in quantity is less than proportionate to the change in income.  Many, if not most, food items have income elasticities in the range of normal necessities.  With a normal luxury, the change in quantity is more than proportionate to the change in income.  
+
+###Revenue Implications of Own-Price Elasticities
+If you know the range of the own-price elasticity -- whether demand is elastic, unitary elastic, or inelastic -- you can predict what will happen to revenue if there is a change the product's own-price.  Higher prices are not always good for revenue.  When there is a price increase, two things happen: First, fewer units of the good or service are sold. This is a quantity effect. Second, a higher price is received for each of the remaining units that continue to be sold. This is a price effect.  If the price effect is larger than the quantity effect, revenue will increase as price increases.  If, on the other hand, the quantity effect is larger than the price effect, revenue will decrease as price increases.  Fortunately, you can easily tell from the own price elasticity of demand which of these effects is largest.
+
+__In the elastic range, an increase (decrease) in price causes a decrease (increase) in revenue.__ Because demand is elastic, the quantity effect dominates the price effect.  The revenue lost from selling fewer units more than offsets the revenue gained from selling the remaining units at a higher price.  Thus, raising price causes revenue to fall.  On the other hand, when demand is elastic and price is lowered, the revenue gain from selling additional units more than offsets the revenue lost from selling each unit at a lower price. Lowering price when demand is elastic will cause revenue to rise.
+
+__In the inelastic range, an increase (decrease) in price causes an increase (decrease) in revenue.__ When demand is inelastic, the price effect dominates the quantity effect.  The decline in quantity is proportionately smaller than the increase in price.  In this case, the revenue gained from the higher price more than offsets the revenue lost from selling fewer units.  Conversely, if price is lowered when demand is inelastic, the revenue gained from selling more units is not sufficient to offset the revenue lost from selling each unit at a lower price.  
+
+__When demand is unitary elastic, revenue is maximized.__ When demand is unitary elastic, total revenue is maximized.  This is because the price effect and quantity effect are of the same magnitude.  The revenue gained (lost) from a price increase (decrease) is exactly offset by the revenue lost (gained) from the sale of fewer (more) units.
+
+Use Demonstration 2 below to get some intuition about the revenue implications of price changes.  As you work through the demonstration, pay attention to the size of the red and blue rectangles that appear when you change the price.  The blue rectangle represents revenue gained from the price change.  The red rectangle represents revenue lost.  Note that whenever you change the price, there is always a blue and red rectangle.  This is because the quantity effect and price effect of the change are always in opposite directions (because of the law of demand).  Calculate the areas of the red and blue rectangles and notice that when you subtract the area of the red rectangle from the area of the blue rectangle you obtain the net revenue reported in the demonstration.  Use the demonstration to verify that the revenue implications of price changes under different elasticity conditions match those outlined above.
+
+***
+
+####Demonstration 2.  The relationship between price changes, own-price elasticity, and revenue.
+```{r, echo=FALSE}
+require(shiny)
+
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      radioButtons("direct", label = "Direction of price change:",
+                   choices = list("Increase" = 3, "No change" = 2, "Decrease" = 1),
+                   selected = 2,inline=F),
+      radioButtons("elast", label = "Type of demand:",
+                   choices = list("Inelastic" = 2, "Unitary Elastic" = 1, "Elastic" = 3),
+                   selected = 1,inline=F)
+    ),
+    mainPanel(plotOutput("logPlot"))
+    ),
+  server = function(input,output) {
+    A<-reactive(c(5000,1880.3,35355.3)[as.integer(input$elast)])
+    b<-reactive(c(1,0.75,1.5)[as.integer(input$elast)])
+    pp<-reactive(c(40,50,62.5)[as.integer(input$direct)])
+    qtab<-reactive(rbind(c(125,118.2,139.8), c(100,100,100),c(80,84.6,71.5)))
+    qq<-reactive(qtab()[as.integer(input$direct),as.integer(input$elast)])
+    net<-reactive(pp()*qq()-5000)
+    arc=reactive(((qq()-100)/(pp()-50))*((pp()+50)/(qq()+100)))
+    output$logPlot<- renderPlot({
+      par(bg="beige")
+      plot(A()*(10:90)^(-b()),10:90,type="l",col="purple", lwd=3,
+           xlim=c(0,160),ylim=c(0,100),
+           xlab=expression("Own-Quantity (Q"[1]*")"),
+           ylab=expression("Own-Price (P"[1]*")"),xaxs="i",yaxs="i",bty="n",
+           xaxt='n',yaxt='n'
+           )
+      rect(100,0,qq(),min(pp(),50), border=NA, col=rgb(input$direct==3, 0, input$direct==1,0.5))
+      rect(0,50,min(100,qq()),pp(), border=NA, col=rgb(input$direct==1, 0, input$direct==3,0.5))
+      lines(c(0,100),c(50,50),col="black",lty=2)
+      lines(c(100,100),c(0,50),col="black",lty=2)     
+      points(100,50,pch=21,col="black",bg="black")
+      lines(c(0,qq()),c(pp(),pp()),col="black",lty=2)
+      lines(c(qq(),qq()),c(0,pp()),col="black",lty=2)     
+      points(qq(),pp(),pch=21,col="black",bg="black")
+      axis(1, at=c(0,100,qq(),160), labels=c("",100,qq(),""),lwd.ticks=1)
+      axis(2, at=c(0,50,pp(),100), labels=c("",50,pp(),""),lwd.ticks=1)
+      text(0,30,paste("Revenue before change =",5000),pos=4)
+      text(0,20,paste("Revenue after change =",ifelse(input$direct==2,NA,pp()*qq())),pos=4)
+      text(0,10,paste("Net change in revenue =",net()),pos=4,cex=1)
+      text(100,50,expression("(Q"[1]^0*",P"[1]^0*")"),pos=4)
+      text(qq(),pp(),ifelse(input$direct==2,"",expression("(Q"[1]^1*",P"[1]^1*")")),pos=4)
+      legend(100,80,c("Revenue lost","Revenue gained"),pch=c(15,15), col=c(rgb(1,0,0,.5),rgb(0,0,1,.5))) 
+    })
+    }
+  )
+```
+
+***
+
+One word of caution is in order.  The normal assumption is that firms maximize profit (not revenue).  That said, the revenue implications of demand elasticities are important because revenue is a key part of the profit calculation you learned about in Chapter 2.  Moreover, firms probably have a good idea about their production cost and so information about what happens to revenue in response to a price change may be all that is needed to make the right pricing decisions to increase profit. 
+
+Based on what you have learned up to this point in the course, you should be able to prove that a firm that controls its price (this is not a price-taking firm) will never set its price so that demand is in the inelastic or unitary elastic ranges.  How could you prove this?  The most straightforward way would be to show that it cannot possibly be true that a firm has maximized its profits if its demand is not in the elastic range.  Start by asking the question: Could a firm have maximized its profit if its demand is inelastic or unitary elastic?  The answer is no.  To see why, suppose this firm raised its price by a small amount.  Two things would happen:
+
+1. First, the firm's revenue would go up if demand is inelastic or its revenue would stay the same if demand is unitary elastic.  Spend some more time in Demonstration 2 and review the content above if this is not clear to you.  
+
+2. Because the firm raised its price, it would sell less (because of law of demand) and its cost would go down as a result.  Remember from Chapter 2 that total cost is an increasing function of quantity.  Thus, a lower quantity sold means lower cost to the firm.
+
+In sum, a small price increase in this situation either increases or does not affect revenue but unambiguously decreases cost.  This means that profit must unambiguously increase with a price increase. Thus, a firm facing demand in the inelastic or unitary elastic range cannot have possibly maximized its profit because it can raise its profit simply by raising its price.
+
+
+#<span style="color:SaddleBrown">Computing Demand Elasticities</span>
+
+There are occasions in this course where you will need to compute elasticities.  There are two formulas used to do this. One is the point formula.  The point formula will be most important for this course and is also most commonly in published studies on food demand.  The other formula is called the arc or average formula.  Let us spend some time on each.
+
+###The Point Formula for Demand Elasticities
+
+The general formula for an elasticity can be rearranged algebraically to arrive at the point formula. To illustrate, rewrite the own-price elasticity formula shown above as follows:
+
+$$\epsilon_{11}=\frac{\%\Delta Q_1}{\%\Delta P_1} =\frac{(\Delta Q_1/Q_1)\times100}{(\Delta P_1/P_1)\times100}=\frac{\Delta Q_1}{\Delta P_1} \times \frac{P_1}{Q_1}. $$
+Point formulas for different kinds of demand elasticities are reported in Table 2. Note the similarity in the formula for each kind of elasticity. As a practical matter, you need three terms (numbers) to compute an elasticity using the point formula.  
+
+1. Depending on the type of elasticity, the first number you need is $\frac{\Delta Q_i}{\Delta P_i}$,$\frac{\Delta Q_i}{\Delta P_j}$, $\frac{\Delta Q_i}{\Delta M}$, or $\frac{\Delta Q_i}{\Delta X}$. These numbers are slope terms from a direct demand relationship.  You might remember from algebra class that the slope is the rise over the run.  In this case the rise is $\Delta Q_i$ and the run is $\Delta P_i$, $\Delta P_j$, $\Delta M$, or $\Delta X$. 
+
+2. The second number you need is the value of the demand variable in question $P_i$, $P_j$, $M$, or $X$.  
+
+3. The third and final number you need is the value of $Q_i$.
+
+***
+
+####Table 2.  Point formulas for demand elasticities.
+
+Type                   | Formula 
+-----------------------|-----------------------------
+Own-price elasticity   | $\epsilon_{ii}=\frac{\Delta Q_i}{\Delta P_i} \times \frac{P_i}{Q_i}$
+Cross-price elasticity | $\epsilon_{ij}=\frac{\Delta Q_i}{\Delta P_j} \times \frac{P_j}{Q_i},\ i\ne j$
+Income elasticity      | $\epsilon_{iM}=\frac{\Delta Q_i}{\Delta M} \times \frac{M}{Q_i}$
+Elasticity for other demand shift variable $X$ | $\epsilon_{iX}=\frac{\Delta Q_i}{\Delta X} \times \frac{X}{Q_i}$
+
+***
+
+To illustrate the implementation of the point formula, consider the following direct demand equation for good 1:
+
+$$Q_1 = 1.5 A + 0.01M +2P_2 - 4P_1$$
+
+In this equation, $Q_1$ is the quantity of good 1 in thousands of units, $A$ is advertising, $M$ is disposable income in dollars, $P_2$ is the price of good 2 in dollars, and $P_1$ is the price of good 1 in dollars.  Let us first compute the quantity demanded for the following data point: ($A^0=40$, $M^0=30000$, $P_2^0=20$, and $P_1^0=60$). Entering these values into the demand equation provides a quantity demanded of 
+$$Q_1^0 = 1.5\times 40 + 0.01\times30000 +2\times20 - 4\times 60 = 160\ thousand\ units.$$
+You can now use the point formula to obtain elasticity measures.  These elasticities are reported in Table 3 under the heading "Data Point 0". Take some time to look at the elasticity computations.  Make sure you see where each value used in the elasticity computation originates.  
+
+Now, repeat the elasticity calculation at another, slightly different data point: ($A^1=40$, $M^1=30000$ ,$P_2^1=20$, and $P_1^1=50$).  At this new data point, let us call it "Data Point 1", we get a new quantity demanded of 
+$$Q_1^1 = 1.5\times 40 + 0.01\times30000 +2\times20 - 4\times 50 = 200\ thousand\ units.$$
+Elasticities for this new data point are also reported in Table 3.  Notice that all the point elasticities are different even though the data points themselves differ only in the value of $P_1$.  The takeaway here is that the point formula gives an elasticity number at a specific data point and elasticities can depend on point of location along the demand equation.  This is one of the reason why caution should be used when using an elasticity to forecast the effects of a large change in one of the demand variables.  The elasticity values could be very different at the new point and the old.  
+
+***
+
+####Table 3. Computing elasticities with the point formula.
+Type                   | Data Point 0 | Data Point 1
+--------------------|-----------------------------------------------|--------
+Own-price elasticity   | $\epsilon_{11}=-4\times\frac{60}{160}=-1.5$ |$\epsilon_{11}=-4\times\frac{50}{200}=-1.0$
+Cross-price elasticity | $\epsilon_{12}=2\times\frac{20}{160}=0.25$ |$\epsilon_{12}=2\times\frac{20}{200}=0.20$
+Income elasticity | $\epsilon_{1M}=0.01\times\frac{30000}{160}=1.875$ |$\epsilon_{1M}=0.01\times\frac{30000}{200}=1.5$
+Advertising elasticity | $\epsilon_{1A}=1.5\times\frac{40}{160}=0.375$|$\epsilon_{1A}=1.5\times\frac{40}{200}=0.30$
+
+***
+
+In this course, you will primarily be using linear demand specifications, such as the one we used to get the elasticity numbers in Table 3. With linear demands, the elasticity will depend on the point of location along the demand schedule.  This is illustrated below in Panel A of Demonstration 3.  Panel A shows that demand is elastic at high prices and inelastic at low prices.  
+
+The idea of demand being more elastic at higher prices makes intuitive sense and is probably true for most real-world cases.  For instance, consumers will be more responsive when the gasoline price increases from \$4.00 per gallon to \$4.40 per gallon than when the gasoline price increases from \$2.00 to \$2.20 per gallon.  In each case, there is a 10 percent increase in price, but the increase causes more pain at \$4.00 than at \$2.00.  Nevertheless, the fact that elasticities vary along a linear demand schedule, such as that presented in Panel A of Demonstration 3, is a consequence of using a linear specification for demand.  
+
+Panel B of Demonstration 3, shows an alternative demand specification that provides a constant elasticity.  This is a log-log demand specification.  The term "log-log"" is used because this type of demand schedule is linear if we take its logarithmic transformation (it is linear in logarithms).  With the linear demand curve, the slope does not change.  In other words, $\frac{\Delta Q_1}{\Delta P_1}$ is always the same regardless of location on the demand schedule.  However, as shown in Panel A of Demonstration 3, the own-price elasticity is not constant and will vary between being elastic, unitary elastic, and inelastic as we move from high to low prices.  With log-log demand, the slope of the demand schedule changes as we move from high to low prices, but the elasticity is always constant.
+
+***
+
+####Demonstration 3.  Own-price elasticity will vary along a linear demand curve
+
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      sliderInput("price","Own Price",min = 25,max = 80,step=5,value = 50,ticks = F)
+    ),
+    mainPanel(plotOutput("linearPlot"),plotOutput("logPlot"))
+    ),
+  server = function(input,output) {
+    QA<-reactive(50-0.5*input$price)
+    QB<-reactive(round(2000*(input$price^-1.25),3))
+    elastA<-reactive(round(-0.5*(input$price/QA()),3))
+    range<-reactive(ifelse(round(elastA(),4)==-1,"unitary elastic.",ifelse(elastA()<(-1),"elastic.","inelastic.")))
+    slopeB<-reactive(round(-2500*input$price^(-2.25),3))
+    DynTextEA<-reactive(eval(substitute(expression(epsilon[AA]*" = "*-0.5%*%frac(pp,qq)*" = "*ee),
+                                       list(ee=elastA(),pp=input$price,qq=QA())
+    )))
+    DynTextSB<-reactive(eval(substitute(expression(frac(Delta*Q[B],Delta*P[B])*" = "*ssb),
+                                        list(ssb=slopeB())
+    )))
+    DynTextEB<-reactive(eval(substitute(expression(epsilon[BB]*" = "*ssb%*%frac(pp,qq)*" = -1.25"),
+                                       list(pp=input$price,qq=QB(),ssb=slopeB())
+    )))
+    DynTickYA<-reactive(eval(substitute(expression("P"[A]*" = "*pp),
+                                       list(pp=input$price)
+    )))
+    DynTickYB<-reactive(eval(substitute(expression("P"[B]*" = "*pp),
+                                       list(pp=input$price)
+    )))
+    DynTickXA<-reactive(eval(substitute(expression("Q"[A]*" = "*qq),
+                                       list(qq=QA())
+    )))
+    DynTickXB<-reactive(eval(substitute(expression("Q"[B]*" = "*qq),
+                                       list(qq=QB())
+    )))
+    output$linearPlot<- renderPlot({
+      par(bg="beige")
+      plot(50-0.5*(20:90),20:90,type="l",col="blue", lwd=3,
+         xlim=c(0,50),ylim=c(0,100),
+         xlab=expression("Own-Quantity (Q"[A]*")"),
+         ylab=expression("Own-Price (P"[A]*")"),xaxs="i",yaxs="i",bty="n",
+         xaxt='n',yaxt='n',
+         main=expression("Panel A. Linear Demand: Q"[A]*" = 50 -0.5P"[A])
+      )
+     lines(c(0,25),c(50,50),col="gray",lty=1)
+     lines(c(25,25),c(0,50),col="gray",lty=1)     
+     points(25,50,pch=21,col="gray",bg="gray")
+     lines(c(0,QA()),c(input$price,input$price),col="green",lty=1)
+     lines(c(QA(),QA()),c(0,input$price),col="green",lty=1)     
+     points(QA(),input$price,pch=21,col="red",bg="red")
+     axis(1, at=c(0,QA(),50), labels=c("",DynTickXA(),""),lwd.ticks=1)
+     axis(2, at=c(0,input$price,100), labels=c("",DynTickYA(),""),lwd.ticks=1)
+     text(25,80,expression(frac(Delta*Q[A],Delta*P[A])*"= 0.5"),pos=4,cex=1.5)
+     text(25,60,DynTextEA(),pos=4,cex=1.5)
+     text(0,15,paste("Range:",range()),pos=4,cex=1.5)
+     })
+    output$logPlot<- renderPlot({
+      par(bg="antiquewhite")
+      plot(2000*(20:90)^(-1.25),20:90,type="l",col="blue", lwd=3,
+           xlim=c(0,50),ylim=c(0,100),
+           xlab=expression("Own-Quantity (Q"[B]*")"),
+           ylab=expression("Own-Price (P"[B]*")"),xaxs="i",yaxs="i",bty="n",
+           xaxt='n',yaxt='n',
+           main=expression("Panel B. Log-Log Demand: Q"[B]*" = "*frac(2000,P[B]^1.25))
+      )
+      lines(c(0,QB()),c(input$price,input$price),col="green",lty=1)
+      lines(c(QB(),QB()),c(0,input$price),col="green",lty=1)     
+      points(QB(),input$price,pch=21,col="red",bg="red")
+      axis(1, at=c(0,QB(),50), labels=c("",DynTickXB(),""),lwd.ticks=1)
+      axis(2, at=c(0,input$price,100), labels=c("",DynTickYB(),""),lwd.ticks=1)
+      text(15,80,DynTextSB(),pos=4,cex=1.5)
+      text(15,60,DynTextEB(),pos=4,cex=1.5)
+      text(0,15,"Range: elastic.",pos=4,cex=1.5)
+    })
+  },
+  options = list(height = 825)
+  )
+```
+
+***
+
+###The Arc Formula for Elasticities
+An alternative formula to compute elasticities is the the arc formula.  The arc formula returns the elasticity at the average of two points on the demand equation. Table 4 provides arc elasticity formulas for different demand elasticities.
+
+***
+
+####Table 4.  Arc formulas for demand elasticities.
+
+Type                   | Formula 
+-----------------------------|-----------------------------
+Own-price elasticity   | $\epsilon_{ii}=\frac{Q_i^1-Q_i^0}{P_i^1-P_i^0} \times \frac{P_i^1+P_i^0}{Q_i^1+Q_i^0}$
+Cross-price elasticity | $\epsilon_{ij}=\frac{Q_i^1-Q_i^0}{P_j^1-P_j^0} \times \frac{P_j^1+P_j^0}{Q_i^1+Q_i^0},\ i\ne j$
+Income elasticity      | $\epsilon_{iM}=\frac{Q_i^1-Q_i^0}{M^1-M^0} \times \frac{M^1+M^0}{Q_i^1+Q_i^0}$
+Elasticity for other demand shift variable $X$ | $\epsilon_{iX}=\frac{Q_i^1-Q_i^0}{X^1-X^0} \times \frac{X^1+X^0}{Q_i^1+Q_i^0}$
+
+***
+
+Let us compute the own-price arc elasticity over the two data points we have already considered from the demand equation above.  For the own price elasticity, the two price quantity pairs are (60,160) and (50,200), respectively.  Using these, the arc elasticity formula provides an elasticity at the average of these two points on the demand schedule  
+
+$$\epsilon_{11}=\frac{200-160}{50-60} \times \frac{50+60}{200+160} = -1.22.$$
+Notice that it does not matter which point is designated with a superscript 1 or superscript 0, but one must keep the points straight in the first term of the arc formula.  Reverse the ordering of the points so that (60,160) is assigned the superscript 0 and (50,200) is assigned the superscript 1, you get
+
+$$\epsilon_{11}=\frac{160-200}{60-50} \times \frac{60+50}{160+200} = -1.22.$$
+
+Using the point formula, you found the own-price elasticity at ($P_1 = 60$, $Q_1 = 160$) to be $\epsilon_{11}=-1.5$. At ($P_1 = 50$, $Q_1 = 200$), it was $\epsilon_{11}=-1$.  The average of these two points is ($P_1 = 55$, $Q_1 = 180$).  Using the point formula to measure elasticity at this average point provides $\epsilon_{11} = -1.22$, which is what was obtained from the arc formula.  This should help you get some intuition about the arc formula.  The arc formula provides an elasticity at the average of the two points used in its computation.  
+
+A compelling feature of the arc formula is that you only need to know two points to compute an elasticity. However, it is important to emphasize the "all else held constant" provision.  In the example above, this provision was met because income, the price of good 2, and advertising were held constant.  The only difference in the two data points was the price of good 1.  Application of the arc formula requires you to assume that the entire change from $Q_1^0$ to $Q_1^1$ is attributable only to an observed change in $P_1$. In the real world, it may be hard to defend this assumption. 
+
+As an exercise, use the arc formula to replicate the elasticity ranges reported above in Demonstration 2 after you increase or decrease the price. In this case you know that all else has remained constant because you are comparing two points on the same demand schedule.  There may be a small bit of rounding error in the demonstration, but the arc formula should give you something very close to the same number when you compute it from a price increase or decrease.
+
+#<span style="color:SaddleBrown">Factors that Affect the Magnitude of Own Price Elasticities</span>
+Several factors affect the magnitude of the own price elasticity.  Knowing these factors can help you make a determination about the likely range of an elasticity in cases where you lack the data needed to estimate it precisely.  
+
+###Share of Income Devoted to the Product
+As a general rule, demand will be more elastic the larger the share of the consumer's budget required to purchase the item.  The rationale here is that the consumer will be more likely to shop around, wait for discounts, or delay making making large purchases until necessary.  Demand tends to be more elastic because the consumer stands to capture a large dollar value of additional surplus if he or she can find a better price.  
+
+###Availability of Substitutes
+When substitute products are readily available, demand will be more elastic.  Remember from Chapter 1 that two phenomena underpin the law of demand.  First, when the price increases, consumers who continue to purchase the product will purchase less.  This is a result of the law of diminishing marginal utility.  Second, some consumers drop out of the market altogether because participation in this market will no longer provide them with an opportunity for positive consumer surplus at the higher price.  When substitute products are readily available, the defection of consumers to lower priced alternatives becomes the driving factor and makes demand very responsive to price changes.  
+
+
+###Length of Run
+Demand will be more elastic in the long run.  The rationale here is that as time passes, consumers have more opportunities to adjust their consumption behavior. One way to model demand over time is to specify quantity demanded in the current time period (period t) as a function of quantity demanded the period before (period t-1).  In this case, demand in the short run can be expressed as
+
+$$Q_1^t = \alpha + \beta P_1 + \gamma Q_1^{t-1},$$
+where $\alpha > 0$, $\beta < 0$, and $0 \le \gamma \lt 1$.  In this equation, $\gamma$, the Greek letter gamma, is a habit parameter. As $\gamma$ approaches one, habit formation is very strong and consumption in prior periods has a large impact on consumption today.  Moreover, when $\gamma$ is close to one, it will take many periods to converge to the new long-run demand.  Demonstration 4 is designed to help you see this.  In the demonstration, you can vary the habit parameter to see the time it takes to adjust from one long-run quantity to another.  When the habit parameter is small, adjustment takes place rapidly.  When it is large, complete adjustment takes much longer.
+
+***
+
+####Demonstration 4.  The habit parameter affects the time to converge to a new point on the long-run demand schedule.
+```{r, echo=FALSE}
+require(shiny)
+
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      sliderInput("g","Habit parameter (gamma):",min = 0.1,max = 0.9,value = 0.7,step=0.1,ticks = F),
+      radioButtons("newP", label = "Direction of long-run price change:",
+                   choices = list("Increase" = 3.25, "Decrease" = 2.25),
+                   selected = 3.25,inline=F)
+    ),
+    mainPanel(plotOutput("convergePlot"))
+  ),
+  server = function(input,output) {
+    oldQ<-reactive(1000/(1-input$g)-(200/(1-input$g))*2.75)
+    newQ<-reactive(1000/(1-input$g)-(200/(1-input$g))*as.numeric(input$newP))
+    Q <-function(t,g,a,b,p,q0) {(1-g^t)/(1-g)*(a+b*p)+(g^t)*q0}
+    DynMain<-reactive(eval(substitute(expression("Convergence pattern over time when "*gamma*" = "*gg),
+                                        list(gg=input$g)
+    )))
+    output$convergePlot<- renderPlot({
+      par(bg="beige")
+      plot(0:30,Q(0:30,input$g,1000,-200,as.numeric(input$newP),oldQ()),
+           pch=21,col="purple",bg="purple",
+           xlim=c(0,30),
+           ylim=c(min(oldQ(),newQ()),max(oldQ(),newQ())),
+           xlab=expression("time (t)"),
+           ylab=expression("Long-run quantity (Q"[LR]*")") ,xaxs="i",yaxs="i",bty="n",yaxt='n',
+           main=DynMain()
+      )
+      lines(c(0,30),c(oldQ(),oldQ()),col="red",lty=2,lwd=3)
+      lines(c(0,30),c(newQ(),newQ()),col="blue",lty=2,lwd=3)
+      axis(2, at=c(oldQ(),newQ()), labels=c(expression("Q"[LR]^OLD),expression("Q"[LR]^NEW)),lwd.ticks=2)
+    })
+  }
+)
+```
+
+***
+
+In the long-run, demand at time $t$ will converge to demand at time ($t-1$).  With this in mind, one can set $Q_1^{LR} = Q_1^t = Q_1^{t-1}$ in the short run demand equation and solve for $Q_1^{LR}$ to get long-run demand as
+
+$$Q_1^{LR} = \frac{\alpha}{1-\gamma} + \frac{\beta}{1-\gamma} P_1.$$
+Demonstration 5, shows the convergence process as time passes.  Note that as time goes on, the effect of $Q_1^{t=0}$ becomes less and less until it disappears completely.  This is an asymptotic process so you do not see complete convergence in the 20 periods represented below. Nevertheless, after 20 periods, there is very little difference between the short-run and long-run demands.  You should also be able to verify from Demonstration 5 that demand is more elastic in the long run than in the short run.
+
+***
+
+####Demonstration 5.  Convergence to long-run demand over time.
+
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      sliderInput("t","Length of run (t)",min = 1,max = 20,value = 1,step=1,ticks = F),
+      radioButtons("newP", label = "Direction of long-run price change:",
+                   choices = list("Increase" = 3.25, "Decrease" = 2.25),
+                   selected = 3.25,inline=F)
+    ),
+    mainPanel(plotOutput("convergePlot"))
+  ),
+  server = function(input,output) {
+    g<-0.7
+    aLR<-round(1000/(1-g),1)
+    bLR<-round((-200)/(1-g),2)
+    oldQ<-round(aLR+bLR*2.75,1)
+    bSR<-reactive(round((1-g^input$t)/(1-g)*(-200),2))
+    aSR<-reactive(round((1-g^input$t)/(1-g)*(1000)+(g^input$t)*oldQ,1))
+    newQ<-reactive(round(aLR+bLR*as.numeric(input$newP),1))
+    gt<-reactive(round(g^input$t,3))
+    Q <-function(t,g,a,b,p,q0) {(1-g^t)/(1-g)*(a+b*p)+(g^t)*q0}
+    DynTextSR<-reactive(eval(substitute(expression("Q"[1]^("t="*tt)*" = "*aa*bb*"P"[1]*"+"*gg*"Q"[1]^("t=0")),
+                                        list(tt=input$t,aa=aSR(),bb=bSR(),gg=gt())
+    )))
+    output$convergePlot<- renderPlot({
+      par(bg="beige")
+      plot(600:2000,-aSR()/bSR()+(1/bSR())*(600:2000),type="l",lty=1,lwd=3,col="red",
+           xlim=c(600,2000),
+           ylim=c(1.5,5),
+           xlab=expression("Q"[1]),
+           ylab=expression("P"[1]) ,xaxs="i",yaxs="i",bty="n",yaxt='n',xaxt='n'
+      )
+      lines(600:2000,-aLR/bLR+(1/bLR)*(600:2000),col="blue",lwd=3)
+      lines(c(600,oldQ),c(2.75,2.75),col="black",lty=2,lwd=1)
+      lines(c(oldQ,oldQ),c(0,2.75),col="black",lty=2,lwd=1)
+      lines(c(600,oldQ),c(2.75,2.75),col="black",lty=2,lwd=1)
+      lines(c(newQ(),newQ()),c(0,input$newP),col="blue",lty=2,lwd=1)
+      lines(c(600,newQ()),c(input$newP,input$newP),col="blue",lty=2,lwd=1)
+      lines(c(Q(input$t,g,1000,-200,as.numeric(input$newP),oldQ),
+              Q(input$t,g,1000,-200,as.numeric(input$newP),oldQ)),
+            c(0,as.numeric(input$newP)),col="red",lty=2,lwd=1)
+      lines(c(600,Q(input$t,g,1000,-200,as.numeric(input$newP),oldQ)),c(input$newP,input$newP),col="red",lty=2,lwd=1)
+      axis(1, at=c(600,oldQ,newQ(),2000), labels=c("",oldQ,round(newQ(),2),""),lwd.ticks=2)
+      axis(2, at=c(1.5,2.75,input$newP,5), labels=c(1.5,2.75,input$newP,5),lwd.ticks=2)
+      text(850,4,DynTextSR(),cex=1.5,pos=4,col="red")
+      text(850,4.5,eval(substitute(expression("Q"[1]^"LR"*"="*aa*bb*"P"[1]),list(aa=aLR,bb=bLR))),cex=1.5,pos=4,col="blue")
+      text(600,2,paste("t =",input$t),cex=1.5,pos=4)
+      text(800,2.25,expression("Q"[1]^0*"="*1500),cex=1.5,pos=4)
+      text(800,1.75,expression("P"[1]^0*"="*2.75),cex=1.5,pos=4)
+    })
+  }
+)
+```
+
+***
+
+
+###Demand at Different Stages of the Market
+Many retail food products require fixed proportions of farm products.  For example, a pint of blueberries at the retail level requires a pint of blueberries from the farm.  A few pints will be damaged in transit from the farm to retail and so offering a certain quantity of blueberries on the retail market may be some fixed proportion $\tau$ of the number of pints from the farm, and $\tau$ may not be equal to one.  Nevertheless, there is a clear relationship between the quantity of the farm and retail product. If the assumption of fixed proportions applies, one can express the farm and retail product on the same quantity axis as is done below in Figure 1.  
+
+Figure 1 shows demand at the farm level and the retail level.  The vertical difference between these two demand schedules represents the cost of getting the product from farm to retail.  In the case of blueberries, these costs would include things like shipping and stocking.  If these costs are independent of the quantity of the farm product being offered for sale at retail, the farm-to-retail markup will be constant.  This means that the farm demand will be parallel to the retail demand.  This is also shown below in Figure 1.  
+
+What does any of this have to do with elasticity?  Well, it can be shown that under certain conditions, the farm demand will be less elastic than the retail demand.  Note that the farm and retail demand schedules have the same slope.  Let $\beta < 0$ represent this slope. Also note that $Q_1^{Farm}=\tau Q_1^{Retail}$.  Using the point formula one can see that
+
+$$0 > \beta \times \frac{P_1^{Farm}}{Q_1^{Farm}} > \beta \times \frac{P_1^{Retail}}{\tau Q_1^{Retail}}.$$
+In other words, $0 > \epsilon_{11}^{Farm} > \epsilon_{11}^{Retail}$: farm demand is less elastic than retail demand.
+
+***
+
+```{r, echo=FALSE}
+par(bg="beige")
+plot(1:200, 100-.5*(1:200),type="l",col="blue", lwd=3,
+     xlim=c(0,200),ylim=c(0,130),
+     xlab=expression("Own-Quantity (Q"[1]*")"),
+     ylab=expression("Own-Price (P"[1]*")"),xaxs="i",yaxs="i",bty="n", xaxt='n',yaxt='n')
+lines(c(0,100),c(50,50),col="green")
+lines(c(0,100),c(90,90),col="green")
+lines(c(100,100),c(0,90),col="green")
+lines(1:200, 140-.5*(1:200),type="l",col="red", lwd=3)
+axis(1, at=c(0,100,200), labels=c("",expression("Q"[1]^Farm*" = "*tau*"Q"[1]^Retail),""),lwd.ticks=1)
+axis(2, at=c(0,50,90,130), labels=c("",expression("P"[1]^Farm),expression("P"[1]^Retail),""),lwd.ticks=1)
+legend(80,130,c("Farm demand","Retail demand"),lty=c(1,1), lwd=3, col=c(rgb(0,0,1),rgb(1,0,0,))) 
+```
+
+####Figure 1.  Elasticity at different points in the supply chain.
+
+***
+
+#<span style="color:SaddleBrown">Elasticities of Supply</span>
+Once you have learned about elasticities on the demand side of the market, it is easy to translate the same concepts over to the supply side.  In this course the convention will be to use the symbol $\phi$ (the Greek letter phi) to refer to supply elasticities. Again, subscripts will be used in exactly the same fashion as above for demand elasticities.  Moreover, the interpretation of supply elasticities is no different than demand elasticities.  For example, the own-price elasticity of supply is defined as 
+
+$$\phi_{ii}=\frac{\%\Delta Q_i}{\%\Delta P_i}. $$
+The difference is that $Q_i$ is the quantity supplied, making this a supply elasticity as opposed to a demand elasticity.  
+
+
+###Ranges for Supply Elasticities
+
+Table 5 presents some magnitude-based classifications for supply elasticities.  Fortunately, there is less to remember about ranges for supply elasticities.  The own-price elasticity of supply is always non-negative.  This reflects the law of supply.  Again, the magnitude of the elasticity shows the responsiveness of quantity supplied to changes in the own-price, and it sometimes makes sense to talk about supply being elastic, unitary elastic, or inelastic.  However, the non-negative own-price effect means that revenue to the producing industry always increases as price increases along the supply schedule, regardless of whether supply is responsive (elastic) or unresponsive (inelastic).  The sign of the cross-price elasticities will depend on whether the related product in question is a competing product or whether it is a joint product.  Finally, economic theory dictates that input price elasticities will be non-positive.  If the price of an input used in production increases, the marginal cost of production increases.  As explained in Chapter 2, this causes the market supply curve to shift inwards.  
+
+***
+
+####Table 5. Classifications based on magnitude of elasticity of supply
+Type | Range | Implication
+-------------|-------------|---------------
+Own-price    | $\phi_{ii} > 1$| Supply for good $i$ is elastic
+Own-price    | $\phi_{ii}= 1$| Supply for good $i$ is unitary elastic
+Own-price    | $0 \le \phi_{ii} \lt 1$| Supply for good $i$ is inelastic
+Cross-price  | $\phi_{ij}> 0,\ i\ne j$| Good $j$ is a joint product for good $i$
+Cross-price  | $\phi_{ij}< 0, i\ne j$| Good $j$ is a competing product for good $i$
+Input price  | $\phi_{iW} \le 0$| Input price elasticities are non-positive
+
+***
+
+###Calculating Supply Elasticities
+
+The point and arc formulas presented in Table 6 are nearly identical to those learned for above for the case of demand.  The only difference is that quantities supplied are being used in the computations instead of quantities demanded. Again, it is important to emphasize the "all else held constant" provision when using an arc formula.  For example, if you are computing an own-price elasticity of supply using the arc formula, you must be confident that the values of any other variables that could shift supply have not changed.  
+
+***
+
+####Table 6.  Point and arc formulas for supply elasticities
+
+Type                      | Point Formula      | Arc Formula
+--------------------------|--------------------|--------------
+Own-price elasticity   | $\phi_{ii}=\frac{\Delta Q_i}{\Delta P_i} \times \frac{P_i}{Q_i}$| $\phi_{ii}=\frac{Q_i^1-Q_i^0}{P_i^1-P_i^0} \times \frac{P_i^1+P_i^0}{Q_i^1+Q_i^0}$
+Cross-price elasticity | $\phi_{ij}=\frac{\Delta Q_i}{\Delta P_j} \times \frac{P_j}{Q_i},\ i\ne j$| $\phi_{ij}=\frac{Q_i^1-Q_i^0}{P_j^1-P_j^0} \times \frac{P_j^1+P_j^0}{Q_i^1+Q_i^0},\ i\ne j$
+Input-price elasticity      | $\phi_{iW}=\frac{\Delta Q_i}{\Delta W} \times \frac{W}{Q_i}$| $\phi_{iW}=\frac{Q_i^1-Q_i^0}{W^1-W^0} \times \frac{W^1+W^0}{Q_i^1+Q_i^0}$
+Elasticity for other supply shift variable $Z$ | $\phi_{iZ}=\frac{\Delta Q_i}{\Delta Z} \times \frac{Z}{Q_i}$| $\epsilon_{iZ}=\frac{Q_i^1-Q_i^0}{Z^1-Z^0} \times \frac{Z^1+Z^0}{Q_i^1+Q_i^0}$
+
+***
+
+###Special cases for supply elasticities
+It will sometimes be useful to assume that supply is perfectly elastic or that supply is perfectly inelastic.  An inverse supply curve with a slope of zero (a horizontal line) corresponds to perfectly elastic supply.  What this means is that any quantity can be purchased at the prevailing market price.  At first look, this makes absolutely no sense.  However, this assumption is appropriate in certain contexts, usually in the case of a buyer who faces a perfectly elastic supply for a product or service.  For example, trucking is an important service provided to blackberry marketers.  The popularity of blackberries has grown in recent years, so more blackberries are being grown and shipped.  The assumption that the blackberry industry faces a perfectly elastic supply for trucking is probably reasonable.  Although blackberries shipments have grown, blackberries account for a tiny portion of trucking volume.  The fact that more blackberries now need to be shipped has probably not materially affected freight rates.  In other words, blackberry marketers can ship all they want at the going rates.  As a matter of fact, this assumptions was reflected earlier in Figure 1.  By drawing the farm and retail demand schedules parallel to each other, the implicit assumption was that firms in this industry faced a perfectly elastic supply of marketing inputs, the inputs needed to get products from the farm to the consumer.  
+
+An inverse supply curve with an infinite slope (a vertical line) corresponds to perfectly inelastic supply.  This means that regardless of the price, the quantity supplied is fixed.  This assumption may be reasonable in some short to intermediate run contexts in agriculture, especially when we are dealing with fresh and non-storable commodities coupled with production lags.  However, it is very important to be careful with this assumption.  Just because there is a fixed stock of a certain product does not mean that the supply for that product is perfectly inelastic.  Consider, for example, the supply of van Gogh paintings.  Van Gogh died in 1890.  Consequently, there will never be another van Gogh painting, unless some heretofore unknown paintings turn up in a vault somewhere.  Nevertheless, that does not mean the supply of van Gogh paintings is perfectly inelastic.  As the prices of van Gogh paintings rise, art collectors and museums are more likely to offer the van Gogh paintings in their collections up for sale and we would expect more Van Gogh paintings to be placed on the market at higher prices and less at lower. 
+
+***
+
+#<span style="color:SaddleBrown">Concluding Comments</span>
+
+To this point in the course, you have learned important concepts related to the demand and supply side of the market.  The elasticities covered in this chapter reinforce these concepts.  Moreover, they allow questions such as those posed in the introductory section to the chapter to be answered with much more precision.  Problem sets 2 and 3 represent plausible business decisions that can be answered with elasticities.  In problem set 2, you are asked whether you should increase price by a given amount.  In problem set 3, you will need to use an advertising elasticity to determine whether to increase advertising expenditures.  Later, you will learn that provided you have a precise estimates of demand elasticities, you can answer these types of question much more accurately.  In fact, if you have a good estimate of the elasticity of demand facing the firm, you can calculate the actual price that maximizes profits.  This will be addressed further in Chapter 7.  
+
+In the next chapter, you will put elasticities to work in earnest.  Elasticities will be used in models of equilibrium to understand and estimate how markets respond to shocks to demand or supply.  You know about demand and you know about supply.  It is time to put them together to understand markets.  This is the topic of Chapter 4.
+
+***
+
+#<span style="color:SaddleBrown">Problem Sets</span>
+
+####Problem Set 1: Use the Point Formula for Demand Elasticities.
+```{r, echo=FALSE}
+library(shiny)
+shinyApp(
+  ui = fluidPage(
+    includeCSS("test.css"),
+    sidebarPanel(
+      selectInput(
+        "prob",
+        label = "Problem Number",
+        choices = as.character(c(1:10)),
+        selected = "5", 
+        selectize=F),
+      checkboxInput("show", label = "Show Answer?", F),
+      p("Answers:"),
+      uiOutput("Answer1"),
+      uiOutput("Answer2"),
+      uiOutput("Answer3"),
+      uiOutput("Answer4"),
+      uiOutput("Answer5"),
+      uiOutput("Answer6"),
+      width=4
+    ),
+    mainPanel(p("Given the following:"),
+              uiOutput("DemandEq"),
+              uiOutput("p1"),
+              uiOutput("p2"),
+              uiOutput("M"),
+              p(" "),
+              p(withMathJax("$$\\text{Calculate }\\varepsilon_{11},\\varepsilon_{12},\\varepsilon_{1M}$$")),
+              p("Is demand for Good 1 inelastic, unitary elastic, or elastic?"),
+              p("Is Good 2 a substitute or complement to good 1?"),
+              p("Is Good 1 inferior, a normal necessity, or a normal luxury?")
+              )
+    ),
+  server = function(input,output) {
+    #Enter matices for demand coefficients and datapoints
+    probDat<- data.frame(
+      A=c(150,75,150,100,90,170,100,200,200,60),
+      b1=c(-2,-2.5,-3,-2,-2.5,-2.5,-3,-2,-2.5,-3),
+      b2=c(-1.5,-0.5,0.5,1.5,-0.5,-1.5,-0.5,0.5,1.5,1),
+      bm=c(0.1,0.5,-0.1,-0.2,0.5,0.1,0.5,-0.1,-0.5,0.1),
+      p1=c(20,30,40,50,30,40,40,20,10,20),
+      p2=c(30,40,50,40,40,30,20,10,20,30),
+      M=c(100,200,300,200,200,100,300,200,100,300),
+      Q=c(75,80,25,20,95,35,120,145,155,60),
+      e11=c(-0.53,-0.94,-4.80,-5.00,-0.79,-2.86,-1.00,-0.28,-0.16,-1.00),
+      e12=c(-0.60,-0.25,1.00,3.00,-0.21,-1.29,-0.08,0.03,0.19,0.50),
+      e1m=c(0.13,1.25,-1.20,-2.00,1.05,0.29,1.25,-0.14,-0.32,0.50)
+    )
+    AnsOwn<-c("Inelastic","Inelastic","Elastic","Elastic","Inelastic",
+              "Elastic","Unitary elastic","Inelastic","Inelastic","Unitary elastic")
+    AnsCross<-c("Complement","Complement","Substitute","Substitute","Complement",
+              "Complement","Complement","Substitute","Substitute","Substitute")
+    AnsIncome<-c("Normal necessity","Normal luxury","Inferior","Inferior","Normal luxury",
+                "Normal necessity","Normal luxury","Inferior","Inferior","Normal necessity")
+    #Reactive terms to be used for the dynamic plot
+    pprob<-reactive({as.numeric(input$prob)}) #problem number from UI
+    output$DemandEq<-renderUI({
+      withMathJax(paste("$$\\text{The demand equation is: Q}_{1}=",
+                        probDat[input$prob,"A"],
+                        probDat[input$prob,"b1"],"P_{1}",
+                        ifelse(probDat[input$prob,"b2"]>0,"+",""),probDat[input$prob,"b2"],"P_{2}",
+                        ifelse(probDat[input$prob,"bm"]>0,"+",""),probDat[input$prob,"bm"],"M",
+                        "$$"))
+    })
+    output$p1<-renderUI({withMathJax(paste("$$P_{1}=",probDat[input$prob,"p1"],"$$"))})
+    output$p2<-renderUI({withMathJax(paste("$$P_{2}=",probDat[input$prob,"p2"],"$$"))})
+    output$M<-renderUI({withMathJax(paste("$$M=",probDat[input$prob,"M"],"$$"))})
+    output$Answer1<-renderUI({
+      if(!input$show) return()
+      withMathJax(paste("$$\\varepsilon_{11}=",probDat[input$prob,"e11"],"$$"))
+      })
+    output$Answer2<-renderUI({
+      if(!input$show) return()
+      withMathJax(paste("$$\\varepsilon_{12}=",probDat[input$prob,"e12"],"$$"))
+      })
+    output$Answer3<-renderUI({
+      if(!input$show) return()
+      withMathJax(paste("$$\\varepsilon_{1M}=",probDat[input$prob,"e1m"],"$$"))
+    })
+    output$Answer4<-renderUI({
+      if(!input$show) return()
+      AnsOwn[pprob()]
+    })
+    output$Answer5<-renderUI({
+    if(!input$show) return()
+    AnsCross[pprob()]
+    })
+  output$Answer6<-renderUI({
+    if(!input$show) return()
+    AnsIncome[pprob()]
+    })
+  }
+)
+```
+
+***
+
+####Problem Set 2: Use Elasticities to Determine Whether to Increase Price.
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      selectInput(
+        "prob",
+        label = "Problem Number",
+        choices = as.character(c(1:10)),
+        selected = "5", 
+        selectize=F),
+      checkboxInput("show", label = "Show Answer?", F),
+      p("Answers:"),
+      uiOutput("Answer0"),
+      uiOutput("Answer1"),
+      uiOutput("Answer2"),
+      uiOutput("Answer3"),
+      width=4
+    ),
+    mainPanel(p("Given the following:"),
+              uiOutput("Q0"),
+              uiOutput("P0"),
+              uiOutput("AVC"),
+              uiOutput("E"),
+              p(" "),
+              uiOutput("Quest")
+              )
+    ),
+  server = function(input,output) {
+    #Enter matices for demand coefficients and datapoints
+    probDat<- data.frame(
+      Q0=c(1000,1100,1120,1200,1300,1200,1120,1200,1050,1000),
+      E=c(-3,-4,-5,-4,-1.5,-0.75,-1,-5,-5.5,-4.5),
+      P0=c(25,40,50,20,50,20,50,25,50,25),
+      AVC=c(15,36,40,16,40,16,46,21,40,21),
+      DP=c(2,1,2,1,1,2,1,1,2,1),
+      PctDP=c(0.08,0.025,0.04,0.05,0.02,0.1,0.02,0.04,0.04,0.04),
+      OldProf=c(10000,4400,11200,4800,13000,4800,4480,4800,10500,4000),
+      NewQ=c(760,990,896,960,1261,1110,1097.6,960,819,820),
+      NewProf=c(9120,4950,10752,4800,13871,6660,5488,4800,9828,4100),
+      Direct=c("down","up","down","down","up","up","up","down","down","up")
+    )
+    pprob<-reactive({as.numeric(input$prob)}) #problem number from UI
+    output$Q0<-renderUI({paste("Your current quantity is",probDat[input$prob,"Q0"],"units.")})
+    output$P0<-renderUI({paste("Your current price is",probDat[input$prob,"P0"],"dollars.")})
+    output$AVC<-renderUI({paste("Your average variable cost is",probDat[input$prob,"AVC"],"dollars per unit.")})
+    output$E<-renderUI({paste("You face an own-price demand elasticity of ",probDat[input$prob,"E"],".",sep="")})
+    output$Quest<-renderUI({paste("What will happen to profit above AVC if you raise your price by ",probDat[input$prob,"DP"],"dollars?")})
+    
+    output$Answer0<-renderUI({
+      if(!input$show) return()
+      paste("Your current profit is",probDat[input$prob,"OldProf"],"dollars.")
+    })
+    output$Answer1<-renderUI({
+      if(!input$show) return()
+      paste("Your price will change by",probDat[input$prob,"PctDP"]*100,"percent.")
+      })
+    output$Answer2<-renderUI({
+      if(!input$show) return()
+      paste("Your new quantity is",probDat[input$prob,"NewQ"],"units.")
+    })
+    output$Answer3<-renderUI({
+      if(!input$show) return()
+      paste("Profit over AVC will go",probDat[input$prob,"Direct"],"to",probDat[input$prob,"NewProf"],"dollars.")
+    })
+  }
+)
+```
+
+***
+
+####Problem Set 3: Use Elasticities to Determine Whether to Increase Advertising.
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      selectInput(
+        "prob",
+        label = "Problem Number",
+        choices = as.character(c(1:10)),
+        selected = "5", 
+        selectize=F),
+      checkboxInput("show", label = "Show Answer?", F),
+      p("Answers:"),
+      uiOutput("Answer0"),
+      uiOutput("Answer1"),
+      uiOutput("Answer2"),
+      uiOutput("Answer3"),
+      width=4
+    ),
+    mainPanel(p("Given the following:"),
+              uiOutput("Q0"),
+              uiOutput("P0"),
+              uiOutput("ATC"),
+              uiOutput("E"),
+              p("Your current advertising expenditure is $5,000 and is your only fixed cost."),
+              uiOutput("Quest")
+              )
+    ),
+  server = function(input,output) {
+    #Enter matices for demand coefficients and datapoints
+    probDat<- data.frame(
+      Q0=c(1000,2000,1500,1200,1300,2000,1500,1200,2000,1000),
+      E=c(0.4,0.5,0.6,0.5,1,1.5,0.4,0.5,2,1.5),
+      P0=c(25,40,50,20,50,20,50,25,50,25),
+      ATC=c(15,36,40,16,40,16,46,21,40,21),
+      DA=c(200,300,400,250,200,300,400,250,200,300),
+      PctDA=c(0.04,0.06,0.08,0.05,0.04,0.06,0.08,0.05,0.04,0.06),
+      OldProf=c(5000,3000,10000,-200,8000,3000,1000,-200,15000,-1000),
+      NewQ=c(1016,2060,1572,1230,1352,2180,1548,1230,2160,1090),
+      NewProf=c(4960,2940,10320,-330,8320,3420,792,-330,16400,-940),
+      Direct=c('down','down','up','down','up','up','down','down','up','up')
+      )
+    pprob<-reactive({as.numeric(input$prob)}) #problem number from UI
+    output$Q0<-renderUI({paste("Your current quantity is",probDat[input$prob,"Q0"],"units.")})
+    output$P0<-renderUI({paste("Your price is",probDat[input$prob,"P0"],"dollars.")})
+    output$ATC<-renderUI({paste("Your average variable cost (AVC) is",probDat[input$prob,"ATC"],"dollars per unit.")})
+    output$E<-renderUI({paste("Your elasticity of demand with respect to advertising is ",probDat[input$prob,"E"],".",sep="")})
+    output$Quest<-renderUI({paste("What will happen to profit if you increase advertising by ",probDat[input$prob,"DA"],"dollars?")})
+    
+    output$Answer0<-renderUI({
+      if(!input$show) return()
+      paste("Your current profit is",probDat[input$prob,"OldProf"],"dollars.")
+    })
+    output$Answer1<-renderUI({
+      if(!input$show) return()
+      paste("Your advertising will change by",probDat[input$prob,"PctDA"]*100,"percent.")
+      })
+    output$Answer2<-renderUI({
+      if(!input$show) return()
+      paste("Your new quantity is",probDat[input$prob,"NewQ"],"units.")
+    })
+    output$Answer3<-renderUI({
+      if(!input$show) return()
+      paste("Profit will go",probDat[input$prob,"Direct"],"to",probDat[input$prob,"NewProf"],"dollars (after subtracting the increse in advertising).")
+    })
+  }
+)
+```
+
+####Problem Set 4: Short-Run and Long-Run Elasticities.
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    includeCSS("test.css"),
+    sidebarPanel(
+      selectInput(
+        "prob",
+        label = "Problem Number",
+        choices = as.character(c(1:10)),
+        selected = "5", 
+        selectize=F),
+      checkboxInput("show", label = "Show Answer?", F),
+      p("Answers:"),
+      uiOutput("Answer1"),
+      uiOutput("Answer2"),
+      uiOutput("Answer3"),
+      uiOutput("Answer4"),
+      uiOutput("Answer5"),
+      width=4
+    ),
+    mainPanel(p("Given the following:"),
+              uiOutput("DemandEq"),
+              uiOutput("p1"),
+              uiOutput("q0"),
+              p(" "),
+              p("What is the habit parameter?"),
+              p("What is the long-run demand equation?"),
+              p("What is the short-run own-price elasticity of demand?"),
+              p("What is the long-run own-price elasticity of demand?"),
+              p("When is demand more elastic, in the short- or long-run?")
+              )
+    ),
+  server = function(input,output) {
+    #Enter matices for demand coefficients and datapoints
+    probDat<- data.frame(
+      Qt=c(60,100,280,450,100,300,260,50,60,40),
+      alpha=c(100,100,150,250,120,150,200,80,120,100),
+      beta=c(-2,-3,-4,-4,-2,-3,-3,-2,-3,-2),
+      gamma=c(0.5,0.6,0.75,0.8,0.6,0.8,0.75,0.6,0.5,0.5),
+      P=c(35,20,20,40,40,30,45,30,30,40),
+      Q0=c(60,100,280,450,100,300,260,50,60,40),
+      SRE=c(-1.17,-0.60,-0.29,-0.36,-0.80,-0.30,-0.52,-1.20,-1.50,-2.00),
+      LRE=c(-2.33,-1.50,-1.14,-1.78,-2.00,-1.50,-2.08,-3.00,-3.00,-4.00)
+    )
+    #Reactive terms to be used for the dynamic plot
+    pprob<-reactive({as.numeric(input$prob)}) #problem number from UI
+    output$DemandEq<-renderUI({
+      withMathJax(paste("$$\\text{The short run demand equation is: }Q_{1}^{(t)}=",
+                        probDat[input$prob,"alpha"],
+                        probDat[input$prob,"beta"],"P_{1} + ",
+                        probDat[input$prob,"gamma"],"Q_{1}^{(t-1)}",
+                        "$$"))
+    })
+    output$p1<-renderUI({withMathJax(paste("$$P_{1}=",probDat[input$prob,"P"],"$$"))})
+    output$q0<-renderUI({withMathJax(paste("$$Q_{1}^{(t-1)}=",probDat[input$prob,"Q0"],"$$"))})
+    output$Answer1<-renderUI({
+      if(!input$show) return()
+      withMathJax(paste("$$\\text{Habit parameter: }\\gamma =",probDat[input$prob,"gamma"],"$$"))
+    })
+    output$Answer2<-renderUI({
+      if(!input$show) return()
+      withMathJax(paste("$$Q_{1}^{LR} =",
+                        probDat[input$prob,"alpha"]/(1-probDat[input$prob,"gamma"]),
+                        probDat[input$prob,"beta"]/(1-probDat[input$prob,"gamma"]),
+                        "P_{1}$$"))
+    })
+    output$Answer3<-renderUI({
+      if(!input$show) return()
+      withMathJax(paste("$$\\varepsilon_{11}^{SR}=",probDat[input$prob,"SRE"],"$$"))
+      })
+    output$Answer4<-renderUI({
+      if(!input$show) return()
+      withMathJax(paste("$$\\varepsilon_{11}^{LR}=",probDat[input$prob,"LRE"],"$$"))
+      })
+    output$Answer5<-renderUI({
+      if(!input$show) return()
+      withMathJax("$$\\text{In the long-run.}$$")
+    })
+  }
+)
+```
+
+
+####Problem Set 5: Multiple Choice.
+```{r, echo=FALSE}
+###############################################################################
+# ResponseMC(correct,nchoices=4)
+# A shinyApp function to accept and check a multiple choice response.  The only
+# argument to the function is the letter of the correct response.  
+#
+# Example:
+# ResponseMC("a",5) is used if "a" is the correct choice and a-e options.
+###############################################################################
+
+ResponseMC<- function(correct,nchoices=4){
+  shinyApp(
+    ui = fluidPage(
+      fluidRow(
+        column(2,
+               selectInput(
+                 "answer",
+                 label = NULL,
+                 choices = c("No selection",letters[1:nchoices]),
+                 selected = "No selection", 
+                 selectize=F)),
+        column(4,htmlOutput("resp"))
+        )
+      ),
+    server= function(input,output) {
+      output$resp<-renderText(
+        ifelse(input$answer=="No selection",
+               "Choose a letter from the menu.",
+               ifelse(input$answer==correct, 
+                      paste("You are correct! The answer is ", correct,".",sep=""),
+                      paste("Sorry. The correct answer is ", correct,".",sep=""))
+               )
+        )
+      },
+    options = list(height = 50)
+  )
+  }
+```
+
+
+1.	__When is demand unitary elastic?__
+a.	When the income elasticity is 1.
+b.	When the own-price elasticity of demand is -1.
+c.	When demand is totally unresponsive (inverse demand is a vertical line).
+d.	All of the above.
+
+```{r, echo=FALSE}
+ResponseMC("b")
+```
+
+2.	__If price goes up by 4 percent and quantity demanded falls by 2 percent then__
+a.	This is a substitute good.
+b.	This good has an elastic demand.
+c.	This good is an inferior good.
+d.	This good has an inelastic demand.
+
+```{r, echo=FALSE}
+ResponseMC("d")
+```
+
+3.	__Suppose that the own-price elasticity of demand is -1. Which statement is true?__
+a.	Profits are maximized.
+b.	Revenue is maximized.
+c.	Consumer surplus is maximized.
+d.	All of the above.
+
+```{r, echo=FALSE}
+ResponseMC("b")
+```
+
+4.	__Suppose the own-price elasticity of demand is -0.75.  Which statement is true?__
+a.	An increase in price will decrease revenue.
+b.	An increase in price will increase revenue.
+c.	The good in question is a substitute in consumption.
+d.	The good in question is an inferior good.
+
+```{r, echo=FALSE}
+ResponseMC("b")
+```
+
+5.	__Which of the following elasticity numbers is consistent with a normal good?__
+a.	An income elasticity of demand that is -0.5.
+b.	An income elasticity of demand that is 0.5.
+c.	An own-price elasticity of 0.28.
+d.	Both a and c.
+
+```{r, echo=FALSE}
+ResponseMC("b")
+```
+
+6.	__If an increase in income causes an increase in demand, then we know that__
+a.	The good in question is a normal luxury good.
+b.	The good in question is a normal necessity good.
+c.	The good in question is a normal good but we can’t tell whether it is classified as a necessity or a luxury without further information.
+d.	The good in question violates the law of demand.
+
+```{r, echo=FALSE}
+ResponseMC("c")
+```
+
+7.	__Which demand elasticity number tells you that two products are substitutes in consumption?__
+a.	A cross-price elasticity of -0.5.
+b.	A cross-price elasticity of 0.5.
+c.	An income elasticity of 1.5.
+d.	An own-price elasticity of -0.75.
+
+```{r, echo=FALSE}
+ResponseMC("b")
+```
+
+8.	__One problem with using the arc elasticity formula to compute an own-price elasticity is:__
+a.	It is very hard to compute because you need lots of data points.
+b.	Actually, there are no problems with using the arc formula to compute elasticities.
+c.	One must assume that all other factors that affect demand, other than own price, remain the same.  
+d.	If demand has not shifted, the arc formula will often return a positive value for the own-price elasticity.
+
+```{r, echo=FALSE}
+ResponseMC("c")
+```
+
+9.	__Given that a firm has some control over the price it charges (it is not a price taker) and it faces a positive marginal cost, which case would be consistent with profit maximization?__
+a.	It sets its price to make demand inelastic.
+b.	It sets its price to make demand elastic.
+c.	It sets its price to make demand unitary elastic.
+d.	It sets its price so that both demand and supply are in the inelastic range.
+
+```{r, echo=FALSE}
+ResponseMC("b")
+```
+
+10.	__As described in class, the supply schedule for van Gogh paintings:__
+a.	Is perfectly inelastic.
+b.	Is downward sloping.
+c.	Maybe quite inelastic but is probably not perfectly inelastic.
+d.	Is a horizontal line.
+e.	Choices a and d only.
+
+```{r, echo=FALSE}
+ResponseMC("c",5)
+```
+
+11.	__Other things equal, in the long run__
+a.	Demand is less elastic than in the short run.
+b.	Supply is less elastic than in the short run.
+c.	Demand is more elastic than in the short run.
+d.	Both demand and supply are less elastic than in the short run.
+
+```{r, echo=FALSE}
+ResponseMC("c")
+```
+
+12.	__Which best describes the concept of elasticity?__
+a.	The responsiveness of demand or supply to own-price or some other shift variable.
+b.	The idea that demand schedules always slope downwards.
+c.	The idea that consumer surplus is the area under the demand schedule.
+d.	The idea that supply schedules always have non-negative slopes.
+
+```{r, echo=FALSE}
+ResponseMC("a")
+```
+
+***
+
+![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
+
+__*An Interactive Text for Food and Agricultural Marketing*__ by [Michael R. Thomsen](https://agribusiness.uark.edu/directory/index/uid/mthomsen/name/Michael+R.+Thomsen/) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).  Source files are available on [GitHub](https://github.com/thomsen-m/FAM-OER).
+
+***

@@ -1,0 +1,861 @@
+---
+title: "Chapter 1: Market Demand"
+date: "`r as.Date(file.info('index.Rmd')$mtime)`"
+output: html_document
+theme: journal
+runtime: shiny
+---
+
+***
+
+![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
+
+__*An Interactive Text for Food and Agricultural Marketing*__ by [Michael R. Thomsen](https://agribusiness.uark.edu/directory/index/uid/mthomsen/name/Michael+R.+Thomsen/) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).  Source files are available on [GitHub](https://github.com/thomsen-m/FAM-OER).
+
+***
+
+#<span style="color:SaddleBrown">Overview and Objectives</span>
+This chapter addresses the demand side of the market. This is also the buyer or customer side of the market.  The overall aim of the chapter is to provide the background you need to use demand constructs to understand marketing strategies and models of market equilibrium that you will encounter later in the course.   The chapter is organized into three sections.  The first covers the states of effective, latent, and negative demand.  Most of the course will deal with marketing problems for products or services in a state of effective demand.  However, latent and negative demand states are important in product development and many social marketing contexts.  The second section introduces the basic mechanics of demand for a product or service under an effective demand state with a particular focus on the law of demand, the demand schedule, and variables that shift the demand schedule.  Some of this will be a review of material you encountered in your introductory microeconomics course, but some will likely be new and/or will be presented in a way you have not yet encountered.  The third section of the chapter introduces the idea of consumer surplus.  Consumer surplus is presented in a way that should deepen your understanding of the law of demand.  The concept will come up later in the course as a measure of economic welfare and will be used to understand pricing strategies used by sellers, many of which can characterized as attempts to convert consumer surplus into profits.  
+
+Th learning objectives for this chapter are as follows.
+
+* Distinguish between different states of demand and explain contexts wherein each state may be relevant.
+
+* Describe the demand relationship and explain the law of demand.
+
+* Identify and describe variables that shift demand. You should be able to say something about the direction of the demand shift.
+
+* Explain the difference between substitutes and complements.  Provide examples of each.
+
+* Explain the difference between normal and inferior goods.
+
+* Graph the inverse demand schedule given a demand equation and values of shift variables.
+
+* Describe the concept of consumer surplus.  Compute consumer surplus.
+
+***
+
+#<span style="color:SaddleBrown">Demand States</span>
+It is useful to think about different demand conditions or states.  Specifically, there are three:  effective demand, latent demand, and negative demand.  Much of the class will emphasize effective demand because markets exist for products in a state of effective demand.  For products in an effective demand state, you can see equilibrium prices and quantities.  It is also possible estimate demand and understand how demand responds to changes in prices, consumer income, or other factors that affect the desirability of the product.  In the other two demand states, markets do not yet exist, but there could or would be a market provided technological barriers can be addressed or consumer preferences can be changed.  For example, many product development efforts are aimed at overcoming some hurdle or limitation that prevents a product or service market from being feasible.
+
+
+###Effective Demand
+
+Normally, the word "demand" refers to a product in a state of effective demand.   Effective demand refers to the demand for products that are commercially feasible.  These products satisfy consumer wants and needs, and  consumers (or some segments thereof) are willing to buy them at prices that justify their production.  Automobiles, apples, vacation trips, restaurant meals, or any other good or service readily available in the economy is in a state of effective demand. Since market transactions are observed for products in a state of effective demand, it is possible to measure variables that influence demand.  These measurements can be used to estimate and forecast demand to gain insight into business or policy decisions.
+
+
+###Latent Demand
+
+A state of latent demand is said to exist in cases where a need or want exists but a product does not.  For example, if there was a drug that completely cured cancer, there would be a demand for it.  Because of this latent demand, biotechnology companies spend large amounts of money on research and development efforts to create new drugs to more effectively combat cancer.  A latent demand state exists when the following conditions are present:
+
+1. the product in question is not technically feasible given the current state of science and engineering (as in the case of a complete cure to cancer) or has yet to be conceived by an inventor or entrepreneur, or
+
+2. the product is technically feasible but not commercially feasible given current technology, existing infrastructure, or the existing regulatory environment.   
+
+With latent demand, one does not actually see market transactions.  For this reason, estimating the potential value of products in a latent demand state is often more difficult.  
+
+A change in technology, such as the introduction of the microwave oven, can unleash a number of new products that address latent demands and thereby bring them into a state of effective demand.  The first link below points to an early television commercial for the microwave.  This commercial speaks directly to how the microwave meets the latent demands of those who prepare meals over the eons of human history.  Today, much of what is in the frozen section of a supermarket is tailored to the microwave oven. The challenge, of course, is coming up with the right new product.  The second link points to an early concept for microwave popcorn.  How did this concept miss the mark?
+
+* Early microwave oven commercial showing how the microwave addresses latent demand [(visit  youtube.com)](https://www.youtube.com/watch?v=IKQzieCJqBA).
+
+* Early concept for microwave popcorn [(visit youtube.com)](https://www.youtube.com/watch?v=VffEa74oDuE).
+
+###Negative Demand
+
+Negative demand refers to cases where there is a potential product that could meet a consumer want or need, but consumers are reluctant to purchase the product for one reason or another.  For example, many insect species are edible and could be produced at a cost that compares favorably to other food sources.  However, insects are not commonly being sold in attractive displays at the local supermarket.  The reason for this is that cultural norms in the USA frown upon consumption of insects.  This example is a bit “creepy,” and I hope it does not “bug” you too much, but the same general idea can apply to many actual or potential products that are viewed skeptically by consumers.  When confronted with negative demand, it may be possible to change the image of the product so that consumers view it as desirable.
+
+* National Geographic segment on edible insects [(visit youtube.com)](https://www.youtube.com/watch?v=oQBVW9APQik).
+
+* Fact sheet on entomophagy from the UN Food and Agriculture Organization [(visit fao.org)](http://www.fao.org/docrep/018/i3264e/i3264e00.pdf).
+
+
+###Food Irradiation:  A Case Example
+
+Food irradiation is a process that could potentially address latent demands.  In the late 1990's, irradiation was approved for use on raw meat and poultry.  There were some predictions that this would become a standard process, akin to pasteurization.  This turned out not to be the case.  One reason is that irradiated foods also face a negative demand problem.  Consumers have been hesitant to embrace irradiated foods.  Review the fact sheet and short video clip from the links below.
+
+* Fact sheet from the University of Wisconsin on food irradiation [(visit wisc.edu)](https://uw-food-irradiation.engr.wisc.edu/Facts.html).  
+
+* A Stossel in the Classroom segment on food irradiation, its uses, and its acceptance [(visit youtube.com)](https://www.youtube.com/watch?v=087JTrlRUfk).  
+
+Now consider the following questions:
+
+1. What fundamental problem (or problems) can food irradiation address?
+
+2. Is food irradiation safe?  What entities support its use?
+
+3. Are there labeling requirements that would allow you tell if a food item in a retail store was irradiated?  
+
+4. Is food irradiation used widely today?  Why not?  
+
+5. Why is microwaveable food so widely accepted but irradiated food not?
+
+***
+
+#<span style="color:SaddleBrown">The Demand Schedule</span>
+
+The demand schedule is the relationship between own-quantity demanded and corresponding own-price levels.  Several variables could affect the demand for a product, including the prices or quantities of related goods.  The adjective "own-quantity" is used to mean the quantity of the product being analyzed. For example, the own-quantity of beef could be represented as $Q_{BEEF}$ and the own-price of beef as $P_{BEEF}$.  The price of pork, $P_{PORK}$, could conceivably affect demand for beef, but this is not the own-price of beef.  The point to be made is that the demand schedule is the relationship between the product's own-quantity and its own-price holding all other variables that could affect demand constant at some fixed value.  The normal convention in this course will be to use subscripts to denote the product in question.  For example, $Q_1$ refers to the demand for good 1, $P_2$ refers to the price of good 2, etc.  
+
+The demand schedule can be expressed mathematically as $Q_1 = f(P_1)$ or $P_1 = f^{-1}(Q_1)$. The term "direct demand" is used when $Q_1$ is on the left-hand side of the equation and the term "inverse demand" when $P_1$ is on the left-hand side.  When showing a demand relationship as an equation, the normal practice is to express the relationship in terms of direct demand.  However, it will generally be graphed in inverse form with the price of the product on the vertical axis and the quantity on the horizontal axis.  This convention is consistent with most microeconomics text books and can be useful when you want to simultaneously show production (supply side) relationships on the same plot.  Many textbooks, however, do not distinguish between direct and inverse demand.  The distinction is being made here because you learned back in middle-school algebra that if $y = f(x)$, then $y$ goes on the vertical axis and $x$ goes on the horizontal. The term "inverse demand," permits adherance to both algebraic and economic conventions.  
+
+***
+####Demonstration 1: An inverse market demand schedule.
+```{r, echo=FALSE}
+shinyApp(
+ui = fluidPage(sidebarPanel(sliderInput("pprice",
+                                        "Own-price of good 1",
+                                        min = 0,
+                                        max = 100,
+                                        value = 50,
+                                        ticks = F)
+                            ),
+               mainPanel(plotOutput("demandPlot"))
+  ),
+server = function(input,output) {
+  #Reactive terms to be used for the dynamic plot
+  yinter<-reactive({100})
+  xinter<-reactive({200})
+  qquant<-reactive(xinter()-2*input$pprice)
+  DynTickY<-reactive(eval(substitute(expression("P"[1]*" = "*pp),
+                                     list(pp=input$pprice)
+                                     )))
+  DynTickX<-reactive(eval(substitute(expression("Q"[1]*" = "*qq),
+                                     list(qq=max(qquant(),0))
+                                     )))
+  #Start the plot
+  output$demandPlot <- renderPlot({
+    par(bg="beige")
+    plot(seq(0:200),100-0.5*(seq(0:200)),col="gray",
+         type="l",
+         xlab=expression("Own-quantity (Q"[1]*")"),
+         ylab=expression("Own-price (P"[1]*")"),
+         xaxs="i",yaxs="i",bty="n",
+         xlim = c(0, 220), ylim = c(0, 110),
+         xaxt='n',yaxt='n',
+         main=expression(
+           "Inverse Demand: P"[1]*" = 100 - 0.5Q"[1]*" (Direct Demand: Q"[1]*" = 200 - 2P"[1]*")"
+           )
+         )
+    lines(c(0,100),c(50,50),col="gray")
+    lines(c(100,100),c(0,50),col="gray")
+    points(100,50,pch=21,col="gray",bg="gray")
+    
+    #Dynamic plot elements driven by the UI of the shiny app
+    axis(1, at=c(0,100,max(qquant(),0),xinter(),220),labels=c("","",DynTickX(),"",""),lwd.ticks=1)
+    axis(2, at=c(0,50,input$pprice,yinter(),100,110),labels=c("","",DynTickY(),"","",""),lwd.ticks=1)
+    lines(seq(0:xinter()),yinter()-0.5*seq(0,xinter()),col="blue")
+    lines(c(0,xinter()-2*input$pprice),c(input$pprice,input$pprice),col="green")
+    lines(c(xinter()-2*input$pprice,xinter()-2*input$pprice),c(0,input$pprice),col="green")
+    points(max(xinter()-2*input$pprice,0),input$pprice,pch=21,col="red",bg="red")
+  })
+},
+options = list(height = 425)
+)
+```
+
+
+***
+
+###The Law of Demand
+
+The law of demand states that quantity and price are negatively related.  In other words, if the price of the product increases, then the quantity demanded will decrease and *vice versa*.  The law of demand reflects two phenomena.  First, consumer preferences generally exhibit diminishing marginal utility. Diminishing marginal utility is a technical way of saying that consumers receive lower amounts of additional satisfaction from each additional unit of a product they consume. Because of diminishing marginal utility, the price will need to fall to induce consumers to buy more units of products that they already consume.  This contributes to the negative relationship between quantity demanded and price.  Second, in most cases, different consumers place different valuations on the same product.  For example, suppose that Jane and John Doe would both enjoy tickets to a St. Louis Cardinals baseball game.  Jane loves baseball and is a huge Cardinals fan.  John mildly enjoys baseball and prefers the Minnesota Twins.  It would stand to reason that Jane would probably place a higher value on the tickets than John would.   The point here is that it is often the case that some consumers are very enthusiastic about a product and are willing to participate in the market even when the price is high.  Other, less enthusiastic consumers stay out of the market at high prices but are willing to participate once the price comes down a bit.  For this reason, the number of consumers willing to participate in the market increases as the price falls and decreases as the price rises.  This also contributes to the negative relationship between quantity demanded and price.  
+
+Because of diminishing marginal utility and differences in valuation across consumers, an increase (decrease) in price has two potential effects, each of which contributes to the negative relationship between quantity and price.
+
+1. Each consumer buys less (more) of the product due to diminishing marginal utility.
+
+2. The total number of consumers decreases (increases) as consumers with valuations close to the prevailing price exit (enter) the marketplace.
+
+### Demand Shifters
+
+The demand schedule characterizes the relationship between quantity demanded and that product's own-price.  For instance, the demand schedule for beef would show the relationship between quantity of beef demanded and the price of beef holding everything else constant.  What happens if something else changes?  There are other prices that could affect the demand for beef.  For many consumers, pork or poultry serve as reasonable substitutes for beef.  Consequently, if pork or poultry prices decline (rise) relative to beef prices, one would expect reduced (increased) quantities of beef to be demanded.  This suggests that other factors, aside from a product's own-price, need to be considered.  These other factors are called demand-shift variables.  If the value of a shift variable changes, you will need to plot a new demand schedule that reflects the updated relationship between quantity demanded and the product's own-price.  The following are some common demand shift variables.
+
+####Prices of related goods (substitutes or complements)
+
+Related goods in demand are classified as substitutes in consumption or complements in consumption. A substitute in consumption is a good that the consumer can use instead of the good in question to meet his or her underlying want or need.  For example, if you are analyzing the demand schedule for beef, then chicken, pork, or fish are all reasonable substitute products.  After all, one could order a chicken, pork, or seafood entree from the menu in lieu of beef; or the supermarket shopper may decide to cook chicken breasts, pork chops, or fish fillets for dinner instead of beef.  Formally, product 2 is considered to be a substitute for product 1 if an increase (decrease) in the price of product 2 causes an increase (decrease) in the demand schedule for product 1.  In other words, there is a positive relationship between the price of product 2 and the quantity of product 1 that consumers demand.  
+
+A complement in consumption is a good that the consumer uses along with the good in question.  For example, if you are analyzing the demand for sport utility vehicles (SUVs), then gasoline is reasonable complementary product.  After all, an SUV is a large automobile and uses a lot of gas.  In recent years, gasoline prices appear to have had an effect on the demand schedule for SUVs.  During periods of high gasoline prices, sales of SUVs suffer.  Formally, product 2 is considered to be a complement for product 1 if an increase (decrease) in the price of product 2 causes a decrease (increase) in the demand schedule for product 1.  In other words, there is a negative relationship between the price of product 2 and the quantity of product 1 that consumers demand.
+
+####Consumer income
+
+Consumer incomes can also shift the demand schedule, but the direction and magnitude of the shift depend on the characteristics of the good in question.  Some goods are classified as normal goods.  Consumption of a normal good increases as income increases.  Formally, good 1 is said to be a normal good if an increase (decrease) in income causes an increase (decrease) in the demand schedule for good 1.  In other words, there is a positive relationship between consumption of good 1 and the amount of income available to consumers.  Other goods are classified as inferior goods.  Consumption of an inferior good decreases as income increases.  Formally, good 1 is said to be an inferior good if an increase (decrease) in income causes an decrease (increase) in the demand schedule for good 1.  In other words, there is a negative relationship between consumption of good 1 and the amount of income available to consumers. It is important to emphasize that the adjective "inferior" only refers to the income relationship and does not imply that the consumer dislikes the good in question.
+
+####Tastes and preferences
+
+Demand is subject to trends, fashions, health concerns, and a variety of other considerations.  For example, in 2012, media coverage of lean finely textured beef (LFTB), also known as "pink slime", had an impact on demand for ground beef.  This would classify as information that led to an unfavorable change in preferences (meaning the product in question is less favored by consumers than before).  Conversely, a growing number of studies linking blueberries to improved health has impacted demand for blueberries in a positive way.  This would classify as a favorable change in preferences.   
+
+* Link to a 2012 magazine article on the LFTB controversy by economists J. Ross Pruitt and David P. Anderson [(visit choicesmagazine.org)](http://www.choicesmagazine.org/UserFiles/file/cmsarticle_268.pdf).
+
+* Link to the 2012 ABC News Segment on LFTB mentioned in the magazine article [(visit youtube.com)](https://www.youtube.com/watch?v=87uBMXdIyjo).
+
+* Link to LSU AgCenter publication *Blueberries and Your Health*  [(visit lsuagcenter.com)](http://www.lsuagcenter.com/~/media/system/b/d/9/1/bd91d79e86236b7d4b9253a28d832d41/pub3267blueberriesandyourhealth.pdf).
+
+
+####Population
+
+Market demand reflects the sum of all consumers in the marketplace.  All else equal, as the number of consumers increases (decreases), the demand schedule will increase (decrease).    
+
+***
+
+####Demonstration 2: Demand shift variables change the demand schedule.
+```{r, echo=FALSE}
+shinyApp(
+ui = fluidPage(
+  sidebarPanel(
+    sliderInput("pprice","Own-price of good 1",min = 0,max = 100,value = 50,ticks = F),
+    radioButtons("type", label = "Type of good:",
+                 choices = list("Normal" = 1, "Inferior" = -1),
+                 selected = 1,inline=T),
+    radioButtons("m", label = "Consumer income:",
+                 choices = list("Initial" = 0, "Falls" = -6, "Rises" = 6),
+                 selected = 0,inline=T),
+    radioButtons("p2", label = "Price of a substitute (good 2):",
+                 choices = list("Initial" = 0, "Falls" = -10, "Rises" = 10),
+                 selected = 0,inline=T),
+    radioButtons("p3", label = "Price of a complement (good 3):",
+                 choices = list("Initial" = 0, "Falls" = 8, "Rises" = -8),
+                 selected = 0,inline=T)
+  ),
+  mainPanel(plotOutput("demandPlot"))
+  ),
+server = function(input,output) {
+  #Reactive terms to be used for the dynamic plot
+  yinter<-reactive({100+as.numeric(input$m)*as.numeric(input$type)+as.numeric(input$p2)+as.numeric(input$p3)})
+  xinter<-reactive({200+2*as.numeric(input$m)*as.numeric(input$type)+2*as.numeric(input$p2)+2*as.numeric(input$p3)})
+  qquant<-reactive(xinter()-2*input$pprice)
+  DynTickY<-reactive(eval(substitute(expression("P"[1]*" = "*pp),list(pp=input$pprice))))
+  DynTickX<-reactive(eval(substitute(expression("Q"[1]*" = "*qq),list(qq=max(qquant(),0)))))
+  DynMain<-reactive(eval(substitute(expression("Inverse Demand: P"[1]*" = "*yyint*" - 0.5Q"[1]),list(yyint=yinter()))))
+  
+  #Start the plot, plot title DynMain() is driven by the UI of the app
+  output$demandPlot <- renderPlot({
+    par(bg="beige")
+    plot(seq(0:200),100-0.5*(seq(0:200)),col="gray",
+         type="l",
+         xlab="Own-quantity",
+         ylab="Own-price",xaxs="i",yaxs="i",bty="n",
+         xlim = c(0, 260), ylim = c(0, 120),xaxt='n',yaxt='n',
+         main=DynMain())
+    lines(c(0,100),c(50,50),col="gray")
+    lines(c(100,100),c(0,50),col="gray")
+    points(100,50,pch=21,col="gray",bg="gray")
+    #Other dynamic plot elements driven by the UI of the shiny app
+    axis(1, at=c(0,max(qquant(),0),100,200,xinter()), labels=c("",DynTickX(),"","",""),lwd.ticks=1)
+    axis(2, at=c(0,input$pprice,50,yinter(),100,120), labels=c("",DynTickY(),"","","",""),lwd.ticks=1)
+    lines(seq(0:xinter()),yinter()-0.5*seq(0,xinter()),col="blue")
+    lines(c(0,xinter()-2*input$pprice),c(input$pprice,input$pprice),col="green")
+    lines(c(xinter()-2*input$pprice,xinter()-2*input$pprice),c(0,input$pprice),col="green")
+    points(max(xinter()-2*input$pprice,0),input$pprice,pch=21,col="red",bg="red")
+  })
+},
+options = list(height = 475)
+)
+```
+
+***
+
+###Demand Schedules from a Linear Demand Relationship
+
+A general demand relationship would need to include all the demand shifters that could affect demand in addition to own-price.  With this in mind, consider the following demand equation for good A:
+$$Q_A = 20Pop + 0.01M +2P_B - 4P_A$$
+
+In this equation, $Q_A$ is the quantity of good A in thousands of units, $Pop$ is population in millions of persons, $M$ is disposable income in dollars, $P_B$ is the price of good B in dollars, and $P_A$ is the price of good A in dollars.  Given this equation, you are able to answer some general questions about the demand for good A.
+
+* *__Is good A a normal good or an inferior good?  How can you tell?__* Good A is a normal good.  You can tell because the coefficient associated with the income variable (0.01) is a positive number.  If this were a negative number, you would have an inferior good.
+
+* *__Is good B a substitute or a complement to good A?  How can you tell?__*  Good B is a substitute for good A.  You can tell because the coefficient associated with the price of good B is a positive number.  If this were a  negative number, you would instead conclude that good B is a complement to good A.  
+
+* *__Does the demand for good A conform to the law of demand?  How can you tell?__* Yes.  The coefficient associated with the price of good A is a negative number showing an inverse relationship between the quantity of good A and the price of good A.
+
+*  *__What variables shift the demand schedule?__* In this case, there are three variables:  population ($Pop$), income ($M$), and the price of the substitute good ($P_B$). Remember that the demand schedule is the relationship between own-price and own-quantity.  In the equation above, $P_A$ represents the own-price and $Q_A$ represents the own-quantity.  Thus, every right-hand-side variable other than $P_A$ is a demand shifter.
+
+The demand schedule shows the relationship between own-price and own-quantity demanded holding all else constant.  In this case, "all else" consists of the three demand shifters.  Thus, to get an equation for the demand schedule you need to fix these shift variables at some value.  Let us use a value of 3 million for $Pop$, \$30,000 for $M$, and \$20 for $P_2$.  Using these values, you get the direct demand schedule:
+$$Q_A = 20(3) + 0.01(30000) +2(20) - 4P_A $$
+or 
+$$Q_A = 400 - 4P_A.$$
+Remember that this is the direct demand schedule because $Q_A=f(P_A)$.  It is simple enough to get the inverse demand schedule.  Simply solve to get $P_A$ on the left side of the equation.  The inverse demand schedule is
+$$P_A = 100 - \frac{1}{4} Q_A$$
+
+***
+
+#<span style="color:SaddleBrown">Consumer Surplus</span>
+Consumer surplus is a measure of consumer welfare.  The concept is remarkably simple and can be conceptualized as the value that the consumers receive above the price paid for the product.  Consumer surplus is an important part of the value created by market transactions but is often overlooked as it does not formally get recorded on the seller's financial statements nor is it quantified on customer receipts. The notion of consumer surplus will be used at different points later in the course.  It is useful to introduce it now because it can be used to explain the law of demand in terms of consumers seeking to obtain surplus through market transactions.  
+
+###Explaining Consumer Surplus
+To motivate the idea of consumer surplus, imagine that you have a difficult exam in your 1:30 PM class.  Because you are so worried about the exam you decide to forego lunch and use the time to study instead.  At 2:30, after having written the exam, you realize how very hungry you are.  You head to your favorite sandwich shop for lunch.  You are willing to pay up to \$12 for a sandwich and are pleased to see that sandwiches are priced at \$8 on the menu.  Does the purchase of a sandwich make you better off?  Absolutely. By paying \$8 you receive a good that provides you with satisfaction worth \$12.  Your consumer surplus is \$4 and can be computed as the value you place on the product (\$12) less the purchase price (\$8).  
+
+Figure 1 shows that value from a market transaction such as this one is divided among the consumer (in the form of consumer surplus) and the firm (in the form of profits).   Suppose the sandwich shop can produce the sandwich for \$5 per unit.  The shop receives a profit margin of \$8 - \$5 = \$3.  The total value created by the transaction is \$7 (the \$12 value you place on the sandwich less the production cost of \$5) and is also equal to the \$3 profit margin going to the shop plus the \$4 consumer surplus going to you.  Thus, there is a simple identity for the value created from a transaction such as this:  
+$$Value\ Created \equiv Consumer\ Valuation - Production\ Cost \equiv Consumer\ Surplus + Profit$$
+
+****
+
+```{r, echo=FALSE}
+cstab<-as.table(cbind(c(0,0,0),c(5,3,4),c(0,0,0)))
+colnames(cstab)<-c(" ", "  ","   ")
+par(bg="beige")
+barplot(cstab,
+        cex.lab=0.75,
+        cex.sub=0.75,
+        sub="Value created is $7 and is the seller's profit plus the consumer's surplus",
+        ylab="$ per unit",
+        col=c("red","darkgreen","lightgreen"),
+        space=c(0,0,0),
+        legend=c("Cost = $5",
+                 "Profit = Price - Cost = $3",
+                 "Cons. Surplus = Cons. Value - Price = $4"),
+        axes = F,
+        args.legend=list(x=3, y=10, cex=0.65),
+        bty = "n"
+        )
+axis(2, at=c(0,5,8,12), 
+     labels=c("0","Cost = $5","Price = $8","Cons. Value = $12"),
+     cex.axis=0.70)
+lines(c(0,2),c(5,5),col="red")
+lines(c(0,2),c(8,8),col="darkgreen")
+lines(c(0,2),c(12,12),col="lightgreen")
+```
+
+####Figure 1. Value from a market transaction is comprised of consumer surplus and profits.
+
+***
+
+Firms create value by producing goods and services that consumers value more highly than the costs of production.  Typically, as in our sandwich example, some of this value will be captured as a profit margin.  The rest of the value gets passed on to consumers in the form of surplus.  Thus, even though consumer surplus is not entered into a company's books or onto customer receipts, it is important to profitability.  Firms that create superior value can be said to have a competitive advantage in that they can gain market share by providing consumers with more-attractive surplus propositions and or can command higher profit margins while still offering consumers surplus on par with their competitors (Besanko et al. 2010).    
+
+###Consumer Surplus in the Context of Diminishing Marginal Utility
+Recall from above that the law of demand reflects diminishing marginal utility from successive units of a product.  To see this, let us continue our sandwich example.  A very hungry person receives a great deal of satisfaction from the first sandwich, probably enjoys the second, might nibble a bit on a third, but is not much interested in the fourth.  What is happening here is that as the person eats more and more, he or she starts to become satiated.  The first sandwich was wonderful but the fourth sandwich creates indigestion.  This translates into the monetary value the consumer places on sandwiches.  The hungry consumer is willing to pay a relatively high price for the first sandwich, a moderate price for the second, and much less, if anything, for the third or fourth sandwich.  This leads to the negative relationship between price and quantity as stipulated by the law of demand.
+
+Let us continue this example with Demonstration 3 below.  Suppose that your marginal valuation, the value you place on additional sandwiches, is as presented in Demonstration 3.  If sandwiches are priced at \$8, you buy one and receive consumer surplus of $4.  You are quite hungry and would enjoy another, but the first sandwich has taken the edge off your hunger and you only value the second sandwich at \$7 which is less than the $8 purchase price.  For this reason, you will only buy one sandwich if they are priced at \$8.  Notice from Demonstration 3 that as prices fall, you purchase additional sandwiches (again giving rise to a downward sloping demand schedule).  In addition to buying more sandwiches at lower prices, you obtain more surplus from each sandwich you purchase. 
+
+With this in mind, let us consider a slightly different situation: suppose that when you showed up at the sandwich shop, you were pleasantly surprised to see that the shop owner was running a special and had sandwiches priced at \$6 instead of \$8.  Move the price down to $6 in Demonstration 3 to verify that in this case, you would gladly buy two sandwiches at \$6 apiece.  Now you would get a total \$8 in consumer surplus (\$7 from the first sandwich and \$1 from the second).  
+
+Now let us think about this from the perspective of the shop owner.  It costs her \$5 to produce each sandwich, so she makes only \$2 in profit by selling you the two sandwiches at \$6 apiece.  If she would have kept her sandwiches priced at \$8 as normal, she would have only sold you one sandwich but would have made \$3 in profit from the transaction with you.  She faces a  dilemma.  She can profitably sell you a second sandwich since you value the second sandwich at $7 and it only costs her $5 to produce it.  However, if she sets price low enough to induce you to buy two sandwiches, she gives up the high margin she could have commanded on the first sandwich.  Moreover, there are probably less hungry customers that would have bought one sandwich at \$8 but would not want a second sandwich even at the low price of \$6.  By pricing at \$6, the shop owner sacrifices the higher margin on sandwiches sold to all these less-hungry customers as well. 
+
+Is there a way the shop owner could resolve this dilemma?  One way would be to price sandwiches so that they are \$8 for one sandwich or \$14 for two sandwiches.  Now, a hungry customer like you would go for the two for \$14 option and the shop owner will make a profit of \$4 on the transactions with you and other similarly hungry customers.  Better yet, she will still get a profit of \$3 on transactions with the less-hungry customers who buy only one sandwich.  There are some potential problems here though.  What if lots of couples come to the sandwich shop?  Couples would qualify for the \$14 deal.  The shop owner could have made a profit of \$6 per couple by selling each couple two sandwiches at \$8 apiece as opposed to a profit of \$4 per couple under the two for \$14 deal.  Another way the plan could backfire would be if enterprising customers bought sandwiches on the two for \$14 deal and then resold them to less hungry customers outside the shop for something like \$7.50, which is lower than the \$8 asking price of the shop owner. 
+
+An important point here is that consumers are only in the market when they can get positive surplus.  As you progress through the course, you will learn that many marketing strategies can be characterized as efforts to capture surplus and resolve dilemmas similar to that faced by the shop owner in this example.  In other words, many strategies are aimed at taking what would or could be consumer surplus and turning it into higher profits.  For now, however, the main goal is to use the idea of consumer surplus to strengthen your understanding of the law of demand, and the main takeaway from Demonstration 3 is that each customer will be inclined to purchase more units at lower prices and fewer units at higher prices.
+
+***
+
+####Demonstration 3: Surplus with diminishing marginal utility.
+```{r, echo=FALSE}
+shinyApp(ui =fluidPage(
+  sidebarPanel(
+    sliderInput("pprice","Asking Price",min = 0,max = 14,value = 8,ticks = F),
+    tableOutput("mvTable")
+    ),
+  mainPanel(plotOutput("mvPlot"))
+)
+,
+server = function(input,output) {
+  TabDat<-data.frame(as.character(1:4),c(12,7,3,1))
+  colnames(TabDat)<-c("Units","Value")
+  Surplus<-reactive({sapply(TabDat$Value-input$pprice,function(x) {max(x,0)})})
+  Buy<-reactive(ifelse(Surplus()>0,"Yes","No"))
+  OutTab<-reactive({
+    d<-data.frame(TabDat,Surplus(),Buy())
+    colnames(d)<-c("Units","Value","Surplus","Buy")
+    d
+    })
+  output$mvTable<-renderTable(OutTab(),digits=0,spacing="xs")
+  output$mvPlot <- renderPlot({
+    par(bg="beige")
+    plot(1:4,c(12,7,3,1),
+         xlab="Number of Units",
+         ylab="Marginal Valuation/Price ($)",
+         ylim=c(0,14),
+         xlim=c(1,4),
+         axes=F)
+    #Dynamic chart elements driven by the UI
+    axis(1, at=0:4, labels=c(" ","1","2","3","4"),lwd.ticks=1)
+    axis(2, at=c(1,3,7,12,14), labels=c("1","3","7","12","14"),lwd.ticks=1)
+    lines(c(0,6),c(input$pprice,input$pprice),col="red")
+    lines(c(1,1),c(min(input$pprice,12),12),col="green")
+    lines(c(2,2),c(min(input$pprice,7),7),col="green")
+    lines(c(3,3),c(min(input$pprice,3),3),col="green")
+    lines(c(4,4),c(min(input$pprice,1),1),col="green")
+  },height=350)
+},
+options = list(height = 400))
+```
+
+***
+
+###Consumer Surplus in the Context of Different Valuations Across Consumers
+Another reason for the law of demand is that different consumers place different valuations on the same product. This means more consumers will participate in the market at lower prices and fewer consumers will participate at higher prices. Suppose that potential consumers of the latest electronic gadget can be divided into five segments, as shown by the points in Demonstration 4 below.  Consumers in segment 1 are very enthusiastic about the gadget and value it at \$800.  Consumers in segment 5 are least enthusiastic and value it at \$200.  Segments 2, 3, and 4 fall somewhere in-between in terms of their willingness to pay for the new gadget.  If the price of the device is set at \$550 dollars, then only segments 1 and 2 are willing to participate in the market.  These are the only two segments that could derive positive consumer surplus from buying the device.  Positive surplus is denoted in the table of the demonstration as well as by the height of the green bars in the chart.  If the price was lowered to below $500, consumers in segment 3 would enter the market and there would be more demanded. If the price increased to above $700, consumers in segment 2 would exit the market and fewer units would be demanded.  Notice that consumers in all five segments value the gadget, but only those who can derive positive surplus participate in the market.  Adjust the price-control slider in Demonstration 4.  Make sure you understand the surplus calculation for consumers in each segment and are predict the price points at which different segments enter or exit the market.
+
+***
+
+####Demonstration 4: Valuations by consumer segment.
+```{r, echo=FALSE}
+shinyApp(ui =fluidPage(
+  sidebarPanel(
+    sliderInput("pprice","Asking Price",min = 100,max = 850,value = 550,ticks = F,step=50),
+    tableOutput("segmentTable")
+    ),
+  mainPanel(plotOutput("segmentPlot"))
+)
+,
+server = function(input,output) {
+  TabDat<-data.frame(as.character(1:5),c(800,700,500,300,200))
+  colnames(TabDat)<-c("Seg.","Value")
+  Surplus<-reactive({sapply(TabDat$Value-input$pprice,function(x) {max(x,0)})})
+  Buy<-reactive(ifelse(Surplus()>0,"Yes","No"))
+  OutTab<-reactive({
+    d<-data.frame(TabDat,Surplus(),Buy())
+    colnames(d)<-c("Seg.","Value","Surplus","Buy")
+    d
+    })
+  output$segmentTable<-renderTable(OutTab(),digits=0,spacing="xs")
+  output$segmentPlot <- renderPlot({
+    par(bg="beige")
+    plot(1:5,c(800,700,500,300,200),
+         xlab="Consumer segment",
+         ylab="Valuation/Price ($)",
+         ylim=c(0,900),
+         xlim=c(1,5))
+    #Dynamic chart elements driven by the UI
+    lines(c(0,6),c(input$pprice,input$pprice),col="red")
+    lines(c(1,1),c(min(input$pprice,800),800),col="green")
+    lines(c(2,2),c(min(input$pprice,700),700),col="green")
+    lines(c(3,3),c(min(input$pprice,500),500),col="green")
+    lines(c(4,4),c(min(input$pprice,300),300),col="green")
+    lines(c(5,5),c(min(input$pprice,200),200),col="green")
+  },height=350)
+},
+options = list(height = 400))
+```
+
+***
+
+###Calculating Total Consumer Surplus Using the Demand Schedule
+It should be clear from Demonstrations 3 and 4 that there is a link between consumer surplus and the demand schedule.  Graphically, the consumer surplus in a market can be computed as the area below the demand schedule but above the prevailing price.  In Figure 2, the consumer surplus is the triangular area that is shaded in blue.  If the demand schedule is linear (as in the demand schedule presented in Figure 2), you can use the formula for the area of a triangle to compute consumer surplus.  You may recall that the area of a triangle is given by $\frac{1}{2}\times\frac{base}{height}$. With this in mind, when given a value of $P$, say $\bar{P}$, you can compute consumer surplus from a linear demand schedule:
+
+$$CS = \frac{1}{2}\times Q(\bar{P})\times(Intercept\ of \ Inverse\ Demand\ Schedule - \bar{P})$$
+In Figure 2, $\bar{P_1} = 40$.  Let us use the information in the figure to compute consumer surplus.  
+
+1. Evaluate the direct demand schedule at $\bar{P_1} = 40$ to get $Q_1(\bar{P_1}) = 200 - 2(40) = 120$.  This is the base of the consumer surplus triangle.
+
+2. Look at the equation for the inverse demand schedule provided in the figure and notice that it has an intercept of 100.  Compute the height of the consumer surplus triangle as the difference between this intercept and $\bar{P_1}$, which is $100 - 40 = 60$.
+
+3. Use the formula for the area of a triangle to get consumer surplus as $\frac{1}{2} \times 120 \times (60)  = \$3,600$.
+
+Provided the demand schedule is linear, you can use the formula for an area of triangle to get consumer surplus.  Pedagogically, linear demand schedules will be fine for most of what you will encounter in this course; however, in many empirical applications you may not want to assume that demand schedules are linear.  In general, if the demand schedule is not linear you can compute consumer surplus using the integral as $\int_{0}^{Q^*}P(Q)dQ - P(Q)Q^*$, where $P(Q)$ is the inverse demand curve and $Q^*\geq0$ is an arbitrary quantity value.   
+
+***
+
+```{r, echo=FALSE}
+par(bg="beige")
+    plot(seq(0:200),100-0.5*(seq(0:200)),col="blue",
+         type="l",
+         xlab=expression("Own-quantity (Q"[1]*")"),
+         ylab=expression("Own-price (P"[1]*")"),
+         xaxs="i",yaxs="i",bty="n",
+         xlim = c(0, 220), ylim = c(0, 110),
+         xaxt='n',yaxt='n',
+         main=bquote(atop("Inverse Demand: P"[1]*" = 100 - 0.5Q"[1]*" (Direct Demand: Q"[1]*" = 200 - 2P"[1]*")",
+                     "Consumer Surplus = "*frac(1,2)%*%120%*%(100-40)*" = $3,600")),
+         cex.lab=0.75,
+         cex.main=0.75,
+         cex.axis=0.75
+         )
+    polygon(c(0, 0, 120), c(100,40,40), border=NA, col="lightblue")
+    lines(c(0,120),c(40,40),col="green")
+    lines(c(120,120),c(0,40),col="green")
+    points(120,40,pch=21,col="gray",bg="red")
+    axis(1, at=c(0,120,200,220),labels=c("0","120","200",""),lwd.ticks=1)
+    axis(2, at=c(0,40,100,110),labels=c("0","40","100",""),lwd.ticks=1)
+    
+```
+
+####Figure 2: Calculating consumer surplus (shaded in light blue) from a demand schedule.
+
+***
+
+#<span style="color:SaddleBrown">Concluding Comments</span>
+
+To recap, this chapter has introduced concepts essential to understanding the demand side of the market.  First, you learned about different demand states.  As you move forward through the course, the focus will be primarily on products in an effective demand state.  You will, however, examine models appropriate for understanding products in other demand states in chapter 5.  In chapter 3, you will revisit the demand shift variables as you learn elasticities.  These shift variables will play a central role in chapter 4, as you model market equilibrium.  Consumer surplus will central to measuring welfare in chapters 7 and 8 and will help motivate the ideas behind pricing schemes commonly used be sellers to extract consumer surplus and turn it into higher profit margins.  
+
+A question central to this course relates to how markets address the economic allocation problem.  Any economic system needs to answer questions such as the following (see Kohls and Uhl 1998).  
+
+1.	What to produce? 
+
+2.	How much to produce? 
+
+3.	How to produce? 
+
+4.	How to distribute production?  
+
+In many cases, market-determined prices provide the information needed for the economy to efficiently respond to these questions.  The content of this chapter relates directly to the fourth question.  A consumer with a dollar to spend will use it in the market that provides him or her with the most surplus, and you have already seen that surplus depends on the price.  Provided consumers know their valuation of a product, a set of market prices provides the information necessary for consumers to self-sort into markets where they obtain the most surplus.  This helps to ensure that products and services are allocated to those consumers who value them most and as you will see in the coming chapters, value them sufficiently to justify the production costs.  
+
+***
+
+#<span style="color:SaddleBrown">References</span>
+Besanko, D., D. Dranove, M. Shanley, and M. Schafer. 2010. *Economics of Strategy, 5th ed.* John Wiley & Sons. 
+
+Kohls, R. L. and J. N. Uhl. 1998. *Marketing of Agricultural Products, 8th Ed.* Pearson.
+
+
+***
+
+#<span style="color:SaddleBrown">Problem Sets</span>
+####Problem Set 1: Short Answer.
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      selectInput(
+        "prob",
+        label = "Problem Number",
+        choices = as.character(c(1:10)),
+        selected = "5", 
+        selectize=F),
+      radioButtons("show", label = "Show Answer?",
+                  choices = list("Yes" = T, "No" = F),
+                  selected = F,inline=T),
+      p("Answers:"),
+      textOutput("AnswerCross"),
+      textOutput("AnswerIncome"),
+      textOutput("AnswerDirDem"),
+      textOutput("AnswerInvDem"),
+      textOutput("AnswerConSurp"),
+      textOutput("AnswerRest"),
+      width=4
+      ),
+      mainPanel(plotOutput("demandPlot"),
+                p("Given the following:"),
+                textOutput("ProbEquation"),
+                textOutput("ProbData"),
+                p("--------"),
+                p("Is good 2 a substitute or complement to good 1?"),
+                p("Is good 1 a normal or inferior good?"),
+                p("Write equations for the direct and inverse demand schedules."),
+                p("Plot the inverse demand schedule. Label the vertical and
+                   horizontal intercepts along with the own-price and quantity."),
+                p("Calculate consumer surplus at this data point. Shade the
+                   area that represents consumer surplus.")
+                )
+    ),
+  server = function(input,output) {
+    #Enter matices for demand coefficients and datapoints
+    coef<-rbind(c(125,3,-6,-0.1),
+                c(230,5,-5,-0.2),
+                c(104,2,-6,0.1),
+                c(382,-2,-4,-0.3),
+                c(137,-3,-3,0.4),
+                c(102,6,-4,0.3),
+                c(400,-4,-3,-0.4),
+                c(200,4,-5,0.2),
+                c(260,-6,-2,-0.5),
+                c(132,-5,-2,0.5)
+    )
+    dpoints<-rbind(c(25,20,500),
+                   c(10,30,400),
+                   c(30,20,1000),
+                   c(30,40,300),
+                   c(25,50,400),
+                   c(5,40,600),
+                   c(20,50,200),
+                   c(20,30,800),
+                   c(5,60,100),
+                   c(10,60,300)
+    )
+    #Define intermediate terms to facilitate reactive terms below
+    xints<-coef[,1]+coef[,2]*dpoints[,1]+coef[,4]*dpoints[,3] #direct demand schedule intercepts
+    yints<- -xints/coef[,3] #inverse demand schedule intercepts
+    aa<-coef[,1]            #original intercepts
+    bb2<-coef[,2]           #cross-price slope terms
+    bbm<-coef[,4]           #income slope terms
+    bb1<-coef[,3]           #own-price slope terms
+    pp2<-dpoints[,1]        #cross-price values
+    pp1<-dpoints[,2]        #own-price values
+    mm<-dpoints[,3]         #income values
+    
+    #Reactive terms to be used for the dynamic plot
+    pprob<-reactive({as.numeric(input$prob)}) #problem number from UI
+    yinter<-reactive({yints[pprob()]})
+    xinter<-reactive({xints[pprob()]})
+    qquant<-reactive(xinter()+bb1[pprob()]*pp1[pprob()])
+    colbl1<-reactive(ifelse(input$show,"blue","beige"))
+    colbl2<-reactive(ifelse(input$show,"lightblue","beige"))
+    output$ProbEquation<-renderText(paste("Q1 = ",
+                                          aa[pprob()],
+                                          ifelse(bb2[pprob()]>0,"+",""),bb2[pprob()],"P2",
+                                          ifelse(bbm[pprob()]>0,"+",""),bbm[pprob()],"M",
+                                          bb1[pprob()],"P1"))
+    output$ProbData<-renderText(paste("P2 = ",pp2[pprob()],"; M = ",mm[pprob()],"; P1 = ",pp1[pprob()],sep=""))
+    output$AnswerCross<-renderText(ifelse(input$show,
+                                          paste("Good 2 is a ",ifelse(coef[pprob(),2]>0,"substitute.","complement.")),
+                                          " ")
+                                   )
+    output$AnswerIncome<-renderText(ifelse(input$show,
+                                           paste("Good 1 is  ",ifelse(coef[pprob(),4]>0,"normal.","inferior.")),
+                                           " ")
+                                    )
+    output$AnswerDirDem<-renderText(ifelse(input$show,
+                                           paste("Direct: Q1 =",xinter(),bb1[pprob()],"P1"),
+                                           " ")
+                                    )
+    output$AnswerInvDem<-renderText(ifelse(input$show,
+                                           paste("Inverse: P1 =",yinter(),round(1/bb1[pprob()],2),"Q1"),
+                                           " ")
+                                    )
+    output$AnswerConSurp<-renderText(ifelse(input$show,
+                                            paste("Consumer Surplus = $",0.5*qquant()*(yinter()-pp1[pprob()])),
+                                            " ")
+                                     )
+    
+    #Start the plot
+    output$demandPlot <- renderPlot({
+      par(bg="beige")
+      plot(seq(0:xinter()),yinter()+(1/coef[pprob(),3])*(seq(0:xinter())),col=colbl1(),
+           type="l",
+           xlab=ifelse(input$show,expression("Own-quantity (Q"[1]*")")," "),
+           ylab=ifelse(input$show,expression("Own-price (P"[1]*")")," "),
+           xaxs="i",yaxs="i",bty="n",
+           xlim = c(0, xinter()), ylim = c(0, yinter()),
+           xaxt='n',yaxt='n',
+           main="Inverse Demand Schedule"
+           #main=expression("Inverse Demand: P"[1]*" = 100 - 0.5Q"[1]*" (Direct Demand: Q"[1]*" = 200 - 2P"[1]*")")
+      )
+      polygon(c(0, 0, qquant()), c(yinter(),pp1[pprob()],pp1[pprob()]), border=colbl1(), col=colbl2())
+      lines(c(0,qquant()),c(dpoints[pprob(),2],dpoints[pprob(),2]),col=colbl1())
+      lines(c(qquant(),qquant()),c(0,dpoints[pprob(),2]),col=colbl1())
+      points(qquant(),dpoints[pprob(),2],pch=21,col=colbl1(),bg=colbl1())
+      ifelse(input$show,axis(1, at=c(0,qquant(),xinter()),lwd.ticks=1),"")
+      ifelse(input$show,axis(2, at=c(0,pp1[pprob()],yinter()),lwd.ticks=1),"")
+    })
+  },
+  options = list(height=700)
+)
+```
+
+####Problem Set 2: Multiple Choice.
+```{r, echo=FALSE}
+###############################################################################
+# ResponseMC(correct)
+# A shinyApp function to accept and check a multiple choice response.  The only
+# arguments to the function is the letter of the correct response and number of
+# resonses.  
+#
+# Example:
+# ResponseMC("a",4) is used if "a" is the correct choice from 4 choices (a-d).
+###############################################################################
+
+ResponseMC<- function(correct,nchoices){
+  shinyApp(
+    ui = fluidPage(
+      fluidRow(
+        column(2,
+               selectInput(
+                 "answer",
+                 label = NULL,
+                 choices = c("No selection",letters[1:nchoices]),
+                 selected = "No selection", 
+                 selectize=F)),
+        column(4,htmlOutput("resp"))
+        )
+      ),
+    server= function(input,output) {
+      output$resp<-renderText(
+        ifelse(input$answer=="No selection",
+               "Choose a letter from the menu.",
+               ifelse(input$answer==correct, 
+                      paste("You are correct! The answer is ", correct,".",sep=""),
+                      paste("Sorry. The correct answer is ", correct,".",sep=""))
+               )
+        )
+      },
+    options = list(height = 50)
+  )
+  }
+```
+
+
+1.	__Which best describes consumer surplus?__
+a.	Large surplus that result when consumers perceive the product in question to be undesirable (e.g., negative demand).
+b.	Value that the consumer receives from a transaction above the price he or she is required to pay.
+c.	Situations where the consumer only wants one unit of the product.  Additional units are considered to be surplus.
+d.	Goods that consumers store for use at a later date. 
+
+```{r, echo=FALSE}
+ResponseMC("b",4)
+```
+
+2.	__Which of the following is most likely to shift the demand schedule out (to the right or northeast)?__
+a.	An increase in population.
+b.	An increase the own-price.
+c.	A decrease in the price of a substitute product.
+d.	All of the above.
+
+```{r, echo=FALSE}
+ResponseMC("a",4)
+```
+
+3.	__Suppose that a prestigious journal reports that the regular consumption of walnuts reduces risk of heart disease.  As a consequence, the demand for walnuts increases (walnut demand shifts to the right).__
+a.	Walnuts would switch from becoming inferior goods to normal goods.
+b.	This would be described as a change in the price of a substitute product because heart disease is something no one wants.
+c.	This change in demand would best be characterized as a change in preferences.
+d.	All of the above
+
+```{r, echo=FALSE}
+ResponseMC("c",4)
+```
+
+4.	__Which best describes a direct demand schedule?__
+a.	Price is a function of quantity.
+b.	Quantity is a function of price.
+c.	Price is a function of income.
+d.	Both a and c.
+
+```{r, echo=FALSE}
+ResponseMC("b",4)
+```
+
+5.	__Which condition is the best example of a product in a state of latent demand?__
+a.	High-protein muffins filled with roasted caterpillars.
+b.	Fresh salads in cold Midwestern and Northeastern cities during the winter months of the mid to late 1800s. 
+c.	Demand for products that are outdated (e.g., unused tickets to last week’s ball game).
+d.	Demand for apples.
+
+```{r, echo=FALSE}
+ResponseMC("b",4)
+```
+
+6.	__Suppose the economy goes into recession, many people lose their jobs, and nearly everyone has a lower income.  Which products will likely experience an increase in market demand?__
+a.	Products classified as normal goods.
+b.	Products that are classified as inferior goods.
+c.	Products classified as necessities.
+d.	Products classified as complements.
+e.	Products classified as substitutes.
+
+```{r, echo=FALSE}
+ResponseMC("b",5)
+```
+
+7.	__Which best describes complements as described in class?__
+a.	Goods that are consumed together, for example, gasoline and automobiles. 
+b.	Luxury items purchased in the hope of eliciting complements from friends or acquaintances.
+c.	Goods that can be used in lieu of one another, for example, beef and poultry.
+d.	Goods for which demand increases given an increase in income.
+
+```{r, echo=FALSE}
+ResponseMC("a",4)
+```
+
+8.	__In demand, if the price of good A decreases and the demand for good B also decreases then which must be true?__
+a.	Good A is a substitute for good B.
+b.	Good A is a complement for good B.
+c.	Good A is a normal good.
+d.	Good B is an inferior good.
+
+```{r, echo=FALSE}
+ResponseMC("a",4)
+```
+
+9.	__When you write an equation for the inverse demand curve,__
+a.	Price will be a function of quantity (price is on the left-hand side of the equation).
+b.	Quantity will be a function of price (quantity is on the left-hand side of the equation).
+c.	The demand schedule will slope upwards.
+d.	Both b and c.
+
+```{r, echo=FALSE}
+ResponseMC("a",4)
+```
+
+10.	__The law of demand__
+a.	States that as price increases, quantity decreases and *vice versa*.
+b.	Reflects the fact that marginal utility usually declines as the number of units consumed increases. 
+c.	Reflects the fact that different consumers will generally place different valuations on the product.  In other words, as price declines more consumers will find it attractive to participate in the market.
+d.	All of the above.
+
+```{r, echo=FALSE}
+ResponseMC("d",4)
+```
+
+11.	__If consumer incomes increase,__
+a.	demand will shift out (to the right).
+b.	demand will shift in (to the left).
+c.	demand will not shift but there will be a new quantity demanded from the same demand schedule.
+d.	the shift in demand cannot be determined without additional information.
+
+```{r, echo=FALSE}
+ResponseMC("d",4)
+```
+
+12.	__Consumer surplus refers to__
+a.	The triangular area below the linear inverse demand curve and above the horizontal axis.
+b.	The sum of the value that consumers receive above the price they are required to pay.
+c.	Situations where consumers do not like a product and so the result is an excess or surplus.
+d.	A case where producers put too much on the market.
+e.	Both a and b.
+
+```{r, echo=FALSE}
+ResponseMC("b",5)
+```
+
+13.	__Prepared breakfast cereal is best described as being in a state of:__
+a.	Latent demand.
+b.	Negative demand.
+c.	Effective demand.
+d.	Latent supply.
+
+```{r, echo=FALSE}
+ResponseMC("c",4)
+```
+
+14.	__By definition, an inferior good is:__
+a.	A good that is in a state of negative demand.
+b.	A good for which demand increases (shifts out) when consumer incomes decline.
+c.	A good for which demand decreases (shifts in) when consumer incomes decline.
+d.	A good that would be unappetizing to most consumers.
+
+```{r, echo=FALSE}
+ResponseMC("b",4)
+```
+
+15.	__The law of demand indicates:__
+a.	Cross-price elasticities will be negative for substitute products.
+b.	The demand schedule will be downward sloping.
+c.	Income elasticities will be positive.
+d.	Demand shifts when tastes and preferences change.
+
+```{r, echo=FALSE}
+ResponseMC("b",4)
+```
+
+16.	__Vacations to Mars are best described as being in a state of:__
+a.	Latent demand.
+b.	Negative demand.
+c.	Effective demand.
+d.	No demand state since consumers cannot buy these products.
+
+```{r, echo=FALSE}
+ResponseMC("a",4)
+```
+
+17.	__By definition a normal good is:__
+a.	A good that is in a state of negative demand.
+b.	A good for which demand increases (shifts out) when consumer incomes decline.
+c.	A good for which demand decreases (shifts in) when consumer incomes decline.
+d.	A good that consumers consider to be “normal” in the sense that there is nothing extraordinary about it.  Food insects, for example, would be abnormal goods for many US consumers.
+
+```{r, echo=FALSE}
+ResponseMC("c",4)
+```
+
+18.	__All else equal, if income increases and the demand schedule shifts out (to the right) then you can conclude that:__
+a.	The demand schedule is for a normal good.
+b.	The demand schedule is for an inferior good.
+c.	The demand schedule is for a substitute product.
+d.	The demand schedule is for a complementary product.
+
+```{r, echo=FALSE}
+ResponseMC("a",4)
+```
+
+***
+
+![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
+
+__*An Interactive Text for Food and Agricultural Marketing*__ by [Michael R. Thomsen](https://agribusiness.uark.edu/directory/index/uid/mthomsen/name/Michael+R.+Thomsen/) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).  Source files are available on [GitHub](https://github.com/thomsen-m/FAM-OER).
+
+***

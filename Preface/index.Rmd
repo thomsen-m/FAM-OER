@@ -1,0 +1,31 @@
+---
+title: "An Interactive Text for Food and Agricultural Marketing"
+author: Michael R. Thomsen, University of Arkansas
+date: "`r as.Date(file.info('index.Rmd')$mtime)`"
+output: html_document
+theme: journal
+runtime: shiny
+---
+
+***
+#<span style="color:SaddleBrown">Preface</span>
+
+*An Interactive Text for Food and Agricultural Marketing* is intended to be the primary textbook for a University of Arkansas course on this subject.  The course it taught at a junior level but is foundational in that it is a required course for all majors in Agricultural Business at the University.  Many other students in the [Dale Bumpers College of Agricultural, Food and Life Sciences](https://bumperscollege.uark.edu/) take the course and it is open to students across campus.  The course assumes an understanding of college algebra and microeconomic principles that would be covered in a typical college-level introductory economic principles course.
+
+Upon successful completion of the course, students should have a broad understanding of the economics of food and agricultural markets.  Students who complete the course should also be able to apply this understanding to problems in production agriculture, agribusiness, and food policy.  To meet these broad learning outcomes, each chapter begins with student learning objectives.  Students are encouraged to pay attention to these objectives as they work through the content of the chapters.  
+
+*An Interactive Text for Food and Agricultural Marketing* differs from a traditional text in that it contains a number of demonstrations that are designed to reinforce concepts presented in the course.  Some demonstrations are more involved than others, but students should spend enough time with each to understand what is happening in the demonstration and why.  Each chapter also has a number of problem sets that students can use to self-assess their understanding of the content.  Upon finishing a chapter, students should complete all of the multiple-choice questions.  With the exception of Chapter 5, there are also one or more short-answer problem applications.  Each application presents a number of examples. Check figures are provided within the applications.  Students are not expected to work through every example in each application, just enough of them to be confident in their ability to reach the right solution.  
+
+I am grateful to the University of Arkansas Libraries’ Open Educational Resources Program, which has been helpful in developing *An Interactive Text for Food and Agricultural Marketing*.  While the primary aim of the present work is to meet the needs of a specific University of Arkansas Course, it is my hope that others will be able to adopt it for use in similar courses elsewhere and/or improve upon it.  For this reason, *An Interactive Text for Food and Agricultural Marketing* is released with the [copyleft](https://www.copyleft.org/) compatible [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/) license.  
+
+*An Interactive Text for Food and Agricultural Marketing* is written in [R Markdown](http://rmarkdown.rstudio.com/) and was developed in [R](https://cran.r-project.org/) with [RStudio](https://www.rstudio.com/).   The demonstrations and problem sets are [R Shiny](https://shiny.rstudio.com/) applications, the code for which is embedded within the markdown files.  I am grateful to RStudio for providing a teaching license to their [Shiny Server](https://www.rstudio.com/products/shiny/shiny-server/) software to use with my University of Arkansas class.
+
+
+***
+
+![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
+
+__*An Interactive Text for Food and Agricultural Marketing*__ by [Michael R. Thomsen](https://agribusiness.uark.edu/directory/index/uid/mthomsen/name/Michael+R.+Thomsen/) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).  Source files are available on [GitHub](https://github.com/thomsen-m/FAM-OER).
+
+***
+
