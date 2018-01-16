@@ -1,0 +1,29 @@
+---
+title: "An Interactive Text for Food and Agricultural Marketing"
+author: Michael R. Thomsen, University of Arkansas
+date: "`r as.Date(file.info('index.Rmd')$mtime)`"
+output: html_document
+theme: journal
+runtime: shiny
+---
+
+***
+
+```{r, echo=FALSE}
+# This file can be modified with your URLs to serve as a hosting page for lecture slides 
+# deployed on the web with Shiny Server.
+```
+
+
+#<span style="color:SaddleBrown">Lecture Slides</span>
+
+[Slides for Chapter 1: Market Demand](http://shiny.uark.edu:3838/AGEC3303/SlidesChap1/)
+
+
+***
+
+![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
+
+__*An Interactive Text for Food and Agricultural Marketing*__ by [Michael R. Thomsen](https://agribusiness.uark.edu/directory/index/uid/mthomsen/name/Michael+R.+Thomsen/) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).  Source files are available on [GitHub](https://github.com/thomsen-m/FAM-OER).
+
+***

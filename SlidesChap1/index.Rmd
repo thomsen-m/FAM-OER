@@ -1,0 +1,356 @@
+---
+title: "Slides for Chapter 1: Market Demand"
+author: "Based on *An Interactive Text for Food and Agricultural Marketing* by [Michael R. Thomsen](https://agribusiness.uark.edu/directory/index/uid/mthomsen/name/Michael+R.+Thomsen/) which is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/). ![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)  Source files are available on [GitHub](https://github.com/thomsen-m/FAM-OER)."
+
+date: "Today's date is `r format(Sys.time(), '%d %B %Y')`"
+output:
+  slidy_presentation: default
+  beamer_presentation: default
+runtime: shiny
+---
+  
+## <span style="color:SaddleBrown">Objectives</span>
+* Distinguish between different states of demand and explain contexts wherein each state may be relevant.
+
+* Describe the demand relationship and explain the law of demand.
+
+* Identify and describe variables that shift demand. You should be able to say something about the direction of the demand shift.
+
+* Explain the difference between substitutes and complements.  Provide examples of each.
+
+* Explain the difference between normal and inferior goods.
+
+* Graph the inverse demand schedule given a demand equation and values of shift variables.
+
+* Describe the concept of consumer surplus.  Compute consumer surplus.
+
+
+## <span style="color:SaddleBrown">Demand States</span>
+* Effective Demand - Products available on the market
+
+* Latent Demand - Products that are not feasible but that would be marketable if they were
+
+* Negative Demand - Products that are feasible but are not on the market because consumers deem them to be undesirable
+
+## <span style="color:SaddleBrown">The Demand Schedule</span>
+* The demand schedule is the relationship between the product's own-quantity and its own-price holding all other variables that could affect demand constant at some fixed value.
+    + The adjective "own-quantity" means the quantity of the product being analyzed. 
+    + For example, the own-quantity of beef could be expressed with $Q_{BEEF}$ and the own-price of beef as $P_{BEEF}$.  
+    + In general, we will use subscripts to denote the product in question.  For example, $Q_1$ refers to the demand for good 1, $P_2$ refers to the price of good 2, etc.  
+* The demand schedule can be expressed mathematically as $Q_1 = f(P_1)$ or $P_1 = f^{-1}(Q_1)$. 
+    + The term "direct demand" will be used when $Q_1$ is on the left-hand side of the equation. 
+    + The term "inverse demand" will  be used when $P_1$ is on the left-hand side of the equation.
+
+## <span style="color:SaddleBrown">The Law of Demand</span>
+* The law of demand states that own quantity and own price are negatively related.
+* There are two reasons for the law of demand.
+1. Each consumer buys less (more) of the product due to diminishing marginal utility.
+2. The total number of consumers decreases (increases) as consumers with valuations close to the prevailing price exit (enter) the marketplace.
+
+## <span style="color:SaddleBrown">An Inverse Demand Schedule (Demonstation 1 from *An Interactive Text*)</span>
+```{r, echo=FALSE}
+shinyApp(
+ui = fluidPage(sidebarPanel(sliderInput("pprice",
+                                        "Own price of good 1",
+                                        min = 0,
+                                        max = 100,
+                                        value = 50,
+                                        ticks = F)
+                            ),
+               mainPanel(plotOutput("demandPlot"))
+  ),
+server = function(input,output) {
+  #Reactive terms to be used for the dynamic plot
+  yinter<-reactive({100})
+  xinter<-reactive({200})
+  qquant<-reactive(xinter()-2*input$pprice)
+  DynTickY<-reactive(eval(substitute(expression("P"[1]*" = "*pp),
+                                     list(pp=input$pprice)
+                                     )))
+  DynTickX<-reactive(eval(substitute(expression("Q"[1]*" = "*qq),
+                                     list(qq=max(qquant(),0))
+                                     )))
+  #Start the plot
+  output$demandPlot <- renderPlot({
+    par(bg="beige")
+    plot(seq(0:200),100-0.5*(seq(0:200)),col="gray",
+         type="l",
+         xlab=expression("Own quantity (Q"[1]*")"),
+         ylab=expression("Own price (P"[1]*")"),
+         xaxs="i",yaxs="i",bty="n",
+         xlim = c(0, 220), ylim = c(0, 110),
+         xaxt='n',yaxt='n',
+         main=expression(
+           "Inverse Demand: P"[1]*" = 100 - 0.5Q"[1]*" (Direct Demand: Q"[1]*" = 200 - 2P"[1]*")"
+           )
+         )
+    lines(c(0,100),c(50,50),col="gray")
+    lines(c(100,100),c(0,50),col="gray")
+    points(100,50,pch=21,col="gray",bg="gray")
+    
+    #Dynamic plot elements driven by the UI of the shiny app
+    axis(1, at=c(0,100,max(qquant(),0),xinter(),220),labels=c("","",DynTickX(),"",""),lwd.ticks=1)
+    axis(2, at=c(0,50,input$pprice,yinter(),100,110),labels=c("","",DynTickY(),"","",""),lwd.ticks=1)
+    lines(seq(0:xinter()),yinter()-0.5*seq(0,xinter()),col="blue")
+    lines(c(0,xinter()-2*input$pprice),c(input$pprice,input$pprice),col="green")
+    lines(c(xinter()-2*input$pprice,xinter()-2*input$pprice),c(0,input$pprice),col="green")
+    points(max(xinter()-2*input$pprice,0),input$pprice,pch=21,col="red",bg="red")
+  })
+},
+options = list(height = 425, width=900)
+)
+```
+
+## <span style="color:SaddleBrown">Demand Shifters</span>
+
+* Prices of related goods (substitutes or complements)
+1. Substitutes in consumption (use instead of)
+2. Complements in consumption (use with)
+* Consumer income
+1. Normal goods
+2. Inferior goods
+* Tastes and preferences
+1. Favorable changes
+2. Unfavorable changes
+* Population
+
+## <span style="color:SaddleBrown">Shift Variables Change the Demand Schedule (Demonstration 2 from *An Interactive Text*)</span>
+```{r, echo=FALSE}
+shinyApp(
+ui = fluidPage(
+  sidebarPanel(
+    sliderInput("pprice","Own price of good 1",min = 0,max = 100,value = 50,ticks = F),
+    radioButtons("type", label = "Type of good:",
+                 choices = list("Normal" = 1, "Inferior" = -1),
+                 selected = 1,inline=T),
+    radioButtons("m", label = "Consumer income:",
+                 choices = list("Initial" = 0, "Falls" = -6, "Rises" = 6),
+                 selected = 0,inline=T),
+    radioButtons("p2", label = "Price of a substitute (good 2):",
+                 choices = list("Initial" = 0, "Falls" = -10, "Rises" = 10),
+                 selected = 0,inline=T),
+    radioButtons("p3", label = "Price of a complement (good 3):",
+                 choices = list("Initial" = 0, "Falls" = 8, "Rises" = -8),
+                 selected = 0,inline=T)
+  ),
+  mainPanel(plotOutput("demandPlot"))
+  ),
+server = function(input,output) {
+  #Reactive terms to be used for the dynamic plot
+  yinter<-reactive({100+as.numeric(input$m)*as.numeric(input$type)+as.numeric(input$p2)+as.numeric(input$p3)})
+  xinter<-reactive({200+2*as.numeric(input$m)*as.numeric(input$type)+2*as.numeric(input$p2)+2*as.numeric(input$p3)})
+  qquant<-reactive(xinter()-2*input$pprice)
+  DynTickY<-reactive(eval(substitute(expression("P"[1]*" = "*pp),list(pp=input$pprice))))
+  DynTickX<-reactive(eval(substitute(expression("Q"[1]*" = "*qq),list(qq=max(qquant(),0)))))
+  DynMain<-reactive(eval(substitute(expression("Inverse Demand: P"[1]*" = "*yyint*" - 0.5Q"[1]),list(yyint=yinter()))))
+  
+  #Start the plot, plot title DynMain() is driven by the UI of the app
+  output$demandPlot <- renderPlot({
+    par(bg="beige")
+    plot(seq(0:200),100-0.5*(seq(0:200)),col="gray",
+         type="l",
+         xlab="Own quantity",
+         ylab="Own price",xaxs="i",yaxs="i",bty="n",
+         xlim = c(0, 260), ylim = c(0, 120),xaxt='n',yaxt='n',
+         main=DynMain())
+    lines(c(0,100),c(50,50),col="gray")
+    lines(c(100,100),c(0,50),col="gray")
+    points(100,50,pch=21,col="gray",bg="gray")
+    #Other dynamic plot elements driven by the UI of the shiny app
+    axis(1, at=c(0,max(qquant(),0),100,200,xinter()), labels=c("",DynTickX(),"","",""),lwd.ticks=1)
+    axis(2, at=c(0,input$pprice,50,yinter(),100,120), labels=c("",DynTickY(),"","","",""),lwd.ticks=1)
+    lines(seq(0:xinter()),yinter()-0.5*seq(0,xinter()),col="blue")
+    lines(c(0,xinter()-2*input$pprice),c(input$pprice,input$pprice),col="green")
+    lines(c(xinter()-2*input$pprice,xinter()-2*input$pprice),c(0,input$pprice),col="green")
+    points(max(xinter()-2*input$pprice,0),input$pprice,pch=21,col="red",bg="red")
+  })
+},
+options = list(height = 475, width=900)
+)
+```
+
+## <span style="color:SaddleBrown">Demand Equation to Demand Schedule</span>
+* Consider the following demand equation for good A: 
+$$Q_A = 20Pop + 0.01M +2P_B - 4P_A$$
+
+    + $Q_A$ is the quantity of good A in thousands of units 
+    + $Pop$ is population in millions of persons  
+    + $M$ is disposable income in dollars 
+    + $P_B$ is the price of good B in dollars  
+    + $P_A$ is the price of good A in dollars.  
+
+* Given this equation, we are able to answer some general questions about the demand for good A.
+
+    + Is good A a normal good or an inferior good?  How can you tell?
+
+    + Is good B a substitute or a complement to good A?  How can you tell?
+
+    + Does the demand for good A conform to the law of demand?  How can you tell?
+
+    + What variables shift the demand schedule?
+
+## <span style="color:SaddleBrown">Demand Schedule from a Demand Equation</span>
+* Consider the following demand equation for good A: 
+$$Q_A = 20Pop + 0.01M +2P_B - 4P_A$$
+    + The demand schedule shows the relationship between own-price and own-quantity demanded holding all else constant.  
+    + To get an equation for the demand schedule we need to fix these shift variables at some value.  
+
+* Suppose you have values of 3 million for $Pop$, \$30,000 for $M$, and \$20 for $P_2$.  The direct demand schedule is:
+$$Q_A = 20(3) + 0.01(30000) +2(20) - 4P_A $$
+or 
+$$Q_A = 400 - 4P_A.$$
+Remember that this is the direct demand schedule because $Q_A=f(P_A)$.  
+
+* The inverse demand schedule is:  
+$$P_A = 100 - \frac{1}{4} Q_A$$
+
+## <span style="color:SaddleBrown">Consumer Surplus</span>
+* Consumer surplus is the value consumers receive beyond the purchase price of the product
+* Is measured in currency (e.g., dollars)
+* Is important to a firm's position in the market
+1. Ability to provide superior surplus can be used grow market share
+2. Ability to provide superior surplus can be used to capture higher profit margins
+* Is often overlooked as it usually does not appear on financial statements or customer receipts
+* Is an important part of the overall value created by a transaction
+$$Value\ Created \equiv Consumer\ Valuation - Production\ Cost \equiv Consumer\ Surplus + Profit$$
+
+## <span style="color:SaddleBrown">Consumer Surplus Illustration</span>
+```{r, echo=FALSE}
+cstab<-as.table(cbind(c(0,0,0),c(5,3,4),c(0,0,0)))
+colnames(cstab)<-c(" ", "  ","   ")
+par(bg="beige")
+barplot(cstab,
+        cex.lab=0.75,
+        cex.sub=0.75,
+        sub="Value created is $7 and is the seller's profit plus the consumer's surplus",
+        ylab="$ per unit",
+        col=c("red","darkgreen","lightgreen"),
+        space=c(0,0,0),
+        legend=c("Cost = $5",
+                 "Profit = Price - Cost = $3",
+                 "Cons. Surplus = Cons. Value - Price = $4"),
+        axes = F,
+        args.legend=list(x=3, y=10, cex=0.65),
+        bty = "n"
+        )
+axis(2, at=c(0,5,8,12), 
+     labels=c("0","Cost = $5","Price = $8","Cons. Value = $12"),
+     cex.axis=0.70)
+lines(c(0,2),c(5,5),col="red")
+lines(c(0,2),c(8,8),col="darkgreen")
+lines(c(0,2),c(12,12),col="lightgreen")
+```
+
+####Figure 1. Value from a market transaction is comprised of consumer surplus and profits.
+
+## <span style="color:SaddleBrown">Consumer Surplus and the Law of Demand: Diminishing Marginal Utility (Demonstration 2 from *An Interactive Text*)</span>
+```{r, echo=FALSE}
+shinyApp(ui =fluidPage(
+  sidebarPanel(
+    sliderInput("pprice","Asking Price",min = 0,max = 14,value = 8,ticks = F),
+    tableOutput("mvTable")
+    ),
+  mainPanel(plotOutput("mvPlot"))
+)
+,
+server = function(input,output) {
+  TabDat<-data.frame(as.character(1:4),c(12,7,3,1))
+  colnames(TabDat)<-c("Units","Value")
+  Surplus<-reactive({sapply(TabDat$Value-input$pprice,function(x) {max(x,0)})})
+  Buy<-reactive(ifelse(Surplus()>0,"Yes","No"))
+  OutTab<-reactive({
+    d<-data.frame(TabDat,Surplus(),Buy())
+    colnames(d)<-c("Units","Value","Surplus","Buy")
+    d
+    })
+  output$mvTable<-renderTable(OutTab(),digits=0,spacing="xs")
+  output$mvPlot <- renderPlot({
+    par(bg="beige")
+    plot(1:4,c(12,7,3,1),
+         xlab="Number of Units",
+         ylab="Marginal Valuation/Price ($)",
+         ylim=c(0,14),
+         xlim=c(1,4),
+         axes=F)
+    #Dynamic chart elements driven by the UI
+    axis(1, at=0:4, labels=c(" ","1","2","3","4"),lwd.ticks=1)
+    axis(2, at=c(1,3,7,12,14), labels=c("1","3","7","12","14"),lwd.ticks=1)
+    lines(c(0,6),c(input$pprice,input$pprice),col="red")
+    lines(c(1,1),c(min(input$pprice,12),12),col="green")
+    lines(c(2,2),c(min(input$pprice,7),7),col="green")
+    lines(c(3,3),c(min(input$pprice,3),3),col="green")
+    lines(c(4,4),c(min(input$pprice,1),1),col="green")
+  },height=350)
+},
+options = list(height = 400, width=900))
+```
+
+## <span style="color:SaddleBrown">Consumer Surplus and the law of Demand: Differences in Valuation over Consumers or Consumer Segments (Demonstration 4 from *An Interactive Text*)</span>
+```{r, echo=FALSE}
+shinyApp(ui =fluidPage(
+  sidebarPanel(
+    sliderInput("pprice","Asking Price",min = 100,max = 850,value = 550,ticks = F,step=50),
+    tableOutput("segmentTable")
+    ),
+  mainPanel(plotOutput("segmentPlot"))
+)
+,
+server = function(input,output) {
+  TabDat<-data.frame(as.character(1:5),c(800,700,500,300,200))
+  colnames(TabDat)<-c("Seg.","Value")
+  Surplus<-reactive({sapply(TabDat$Value-input$pprice,function(x) {max(x,0)})})
+  Buy<-reactive(ifelse(Surplus()>0,"Yes","No"))
+  OutTab<-reactive({
+    d<-data.frame(TabDat,Surplus(),Buy())
+    colnames(d)<-c("Seg.","Value","Surplus","Buy")
+    d
+    })
+  output$segmentTable<-renderTable(OutTab(),digits=0,spacing="xs")
+  output$segmentPlot <- renderPlot({
+    par(bg="beige")
+    plot(1:5,c(800,700,500,300,200),
+         xlab="Consumer segment",
+         ylab="Valuation/Price ($)",
+         ylim=c(0,900),
+         xlim=c(1,5))
+    #Dynamic chart elements driven by the UI
+    lines(c(0,6),c(input$pprice,input$pprice),col="red")
+    lines(c(1,1),c(min(input$pprice,800),800),col="green")
+    lines(c(2,2),c(min(input$pprice,700),700),col="green")
+    lines(c(3,3),c(min(input$pprice,500),500),col="green")
+    lines(c(4,4),c(min(input$pprice,300),300),col="green")
+    lines(c(5,5),c(min(input$pprice,200),200),col="green")
+  },height=350)
+},
+options = list(height = 400, width=900))
+```
+
+## <span style="color:SaddleBrown">Computing Consumer Surplus from a Linear Inverse Demand Curve</span>
+
+$$CS = \frac{1}{2}\times Q(\bar{P})\times(Intercept\ of \ Inverse\ Demand\ Schedule - \bar{P})$$
+
+```{r, echo=FALSE}
+par(bg="beige")
+    plot(seq(0:200),100-0.5*(seq(0:200)),col="blue",
+         type="l",
+         xlab=expression("Own quantity (Q"[1]*")"),
+         ylab=expression("Own price (P"[1]*")"),
+         xaxs="i",yaxs="i",bty="n",
+         xlim = c(0, 220), ylim = c(0, 110),
+         xaxt='n',yaxt='n',
+         main=bquote(atop("Inverse Demand: P"[1]*" = 100 - 0.5Q"[1]*" (Direct Demand: Q"[1]*" = 200 - 2P"[1]*")",
+                     "Consumer Surplus = "*frac(1,2)%*%120%*%(100-40)*" = $3,600")),
+         cex.lab=0.75,
+         cex.main=0.75,
+         cex.axis=0.75
+         )
+    polygon(c(0, 0, 120), c(100,40,40), border=NA, col="lightblue")
+    lines(c(0,120),c(40,40),col="green")
+    lines(c(120,120),c(0,40),col="green")
+    points(120,40,pch=21,col="gray",bg="red")
+    axis(1, at=c(0,120,200,220),labels=c("0","120","200",""),lwd.ticks=1)
+    axis(2, at=c(0,40,100,110),labels=c("0","40","100",""),lwd.ticks=1)
+    
+```
+
+####Figure 2: Calculating consumer surplus (shaded in light blue) from a demand schedule.

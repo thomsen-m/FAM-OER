@@ -50,6 +50,9 @@ Chapter 9: Economics of Market Information (coming soon)
 #
 #[Chapter 9: Economics of Market Information](http://shiny.uark.edu:3838/AGEC3303/Chap9/)
 ```
+***
+[Lecture Slides](http://shiny.uark.edu:3838/AGEC3303/Slides/)
+
 
 ***
 
