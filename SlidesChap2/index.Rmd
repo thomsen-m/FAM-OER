@@ -1,0 +1,607 @@
+---
+title: "Slides for Chapter 2: Market Supply"
+author: "Based on *An Interactive Text for Food and Agricultural Marketing* by [Michael R. Thomsen](https://agribusiness.uark.edu/directory/index/uid/mthomsen/name/Michael+R.+Thomsen/) which is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/). ![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)  Source files are available on [GitHub](https://github.com/thomsen-m/FAM-OER)."
+
+date: "Today's date is `r format(Sys.time(), '%d %B %Y')`"
+output:
+  slidy_presentation: default
+  beamer_presentation: default
+runtime: shiny
+---
+
+## <span style="color:SaddleBrown">Objectives</span>
+
+* Express the firm's profit maximization problem in terms of revenue and cost.  
+
+* Describe and explain the logic of the firm’s profit maximization condition (MR = MC).
+
+* Explain the idea of opportunity cost.
+
+* Identify variables that shift the supply schedule.  Be able to predict the direction of the shift.
+
+* Distinguish between competing products in production and joint products in production.  Provide examples of each.
+
+* Explain the derivation of input demands from profit maximizing input choices, and describe variables that shift demand schedules for inputs.
+
+* Explain producer surplus and compute producer surplus given a linear supply schedule.
+
+
+## <span style="color:SaddleBrown">Law of Supply</span>
+
+* The __*law of supply*__ states that as price increases, quantity supplied increases and *vice versa*.  Consequently, the supply schedule shows a positive relationship between the market price and amount supplied.  The law of supply is the result of two key features of the production environment: 
+
+1. The entry of new firms to the marketplace and the exit of existing firms is determined, in part, by price levels. 
+
+2. Production processes are generally characterized by the law of diminishing marginal productivity.  
+
+* The law of supply reflects profit maximizing behavior by producers.
+
+$$Profit = Total\ Revenue - Total\ Cost$$
+
+## <span style="color:SaddleBrown">The Supply Schedule has a Positive Slope Because of the Law of Supply</span>
+
+```{r, echo=FALSE}
+      par(bg="beige")
+      plot(seq(0:200),14+0.25*(seq(0:200)),col="blue",
+           type="l",
+           xlab="Own-quantity",
+           ylab="Own-price",xaxs="i",yaxs="i",bty="n",
+           xlim = c(0, 200), ylim = c(0, 55),xaxt='n',yaxt='n',
+           main=expression("Inverse Supply: P"[1]*" = 14 + 0.25Q"[1]))
+      lines(c(0,84),c(35,35),col="green")
+      lines(c(84,84),c(0,35),col="green")
+      points(84,35,pch=21,col="red",bg="red")
+      axis(1, at=c(0,84,200), labels=c("",expression("Q"[1]*" = 84"),""),lwd.ticks=1)
+      axis(2, at=c(0,14,35,55), labels=c("","",expression("P"[1]*" = 35"),""),lwd.ticks=1)
+```
+
+####Figure 1. The supply schedule shows the relationship between own-price and own-quantity supplied to the market.
+
+
+## <span style="color:SaddleBrown">Assumption of a Price-Taking Firm</span>
+* **The firm is small relative to the size of the market.**  
+1. The firm must be sufficiently small that its output decisions have a negligible impact on market price.  
+2. The industry is comprised of many firms.
+
+* **The firm's product or service is indistinguishable from that of other firms.**
+1. The firm's output cannot be unique in a manner that enables it to command a premium in the marketplace relative to the products of other firms. Under a price-taking assumption, brands are non-existent or are effectively non-existent.  
+2. Quality differences must be objective and readily identifiable so that products can be sorted into lots of uniform quality.  
+* **Why the price-taking assumption? **
+1. It applies to many commodity markets.
+2. It is a simplifying assumption that helps to motivate economic considerations that relate to the supply side of the market.
+* **We will relax this assumption later in the course. **
+
+
+## <span style="color:SaddleBrown">Revenue Concepts when Firms are Price Takers</span>
+
+* Total revenue
+
+$$R = q \times P.$$
+
+* Marginal revenue
+
+$$MR = \frac{\Delta R}{\Delta q} = P$$
+
+
+* Average revenue (revenue per unit)
+
+$$AR = \frac{R}{q} = P$$
+
+* Given the price-taking assumption,
+1. $MR = AR = P$.  
+2. All firms have the same $MR$ and $AR$ and this is the market price.
+
+
+## <span style="color:SaddleBrown">Some Facts about Cost The Cost Side of Profit</span>
+
+*  __Total cost is an increasing function of $q$.__ As the volume produced and sold increases, total cost will increase.   
+*  __Total cost is an increasing function in input prices.__ 
+* __Total cost reflects the prevailing production technology.__ 
+* __Our notion of costs is an "economic" as opposed to an "accounting" construct.__  
+
+## <span style="color:SaddleBrown">Cost Concepts</span>
+* Total cost
+$$Total\ cost = c(q).$$  
+* Marginal cost
+$$MC = \frac{\Delta c(q)}{\Delta q}=\frac{\Delta c(q+\Delta q)-c(q) }{\Delta q}>0.$$
+* Average total cost
+$$AC = \frac{C(q)}{q}.$$
+
+
+## <span style="color:SaddleBrown">Length of Run</span>
+
+* Total cost in the short run
+$$c(q) = f + v(q),$$  
+
+* Average total cost in the short run
+$$AC = \frac{f}{q}+\frac{v(q)}{{q}}=AFC+AVC.$$
+
+
+$$AFC = \frac{f}{q}$$
+$$AVC = \frac{v(q)}{q}$$
+
+## <span style="color:SaddleBrown">Economies of Scale</span>
+
+__Panel A: Total cost.__
+
+```{r, echo=FALSE}
+      par(bg="beige")
+      plot(5:15,100+(5:15)^2,col="blue",
+           type="l",lwd=3,
+           xlab="quantity produced (q)",
+           ylab="total cost",xaxs="i",yaxs="i",bty="n",
+           xlim = c(5, 15), ylim = c(125, 325),xaxt='n',yaxt='n',
+           main=expression("c = "*100 + q^2))
+      text(7,175,"Economies of scale")
+      text(12,175,"Diseconomies of scale")
+      lines(c(5,10),c(200,200),col="gray")
+      lines(c(10,10),c(0,325),col="gray")
+      points(10,200,pch=21,col="red",bg="red")
+      axis(1, at=c(5,10,15), labels=c("",expression("q = 10"),""),lwd.ticks=1)
+      axis(2, at=c(125,200,325), labels=c("",expression("c = 200"),""),lwd.ticks=1)
+```      
+
+__Panel B: Average cost.__
+
+```{r, echo=FALSE}
+      par(bg="beige")
+      plot(seq(5,15,.25),100/seq(5,15,.25)+seq(5,15,.25),col="blue",
+           type="l",lwd=3,
+           xlab="quantity produced (q)",
+           ylab="average total cost (AC)",xaxs="i",yaxs="i",bty="n",
+           xlim = c(5, 15), ylim = c(17, 25),xaxt='n',yaxt='n',
+           main=expression("AC = "*frac(100,q)+q))
+      text(7,19,"Economies of scale")
+      text(12,19,"Diseconomies of scale")
+      lines(c(5,10),c(20,20),col="gray")
+      lines(c(10,10),c(0,25),col="gray")
+      points(10,20,pch=21,col="red",bg="red")
+      axis(1, at=c(5,10,15), labels=c("",expression("q = 10"),""),lwd.ticks=1)
+      axis(2, at=c(17,20,25), labels=c("",expression("AC = 20"),""),lwd.ticks=1)
+```
+
+####Figure 2. Illustration of total cost and average cost with ranges of output showing economies and diseconomies of scale.
+
+
+## <span style="color:SaddleBrown">The Producer's Decision to Enter, Remain, or Exit the Market</span>
+
+* __The break-even price point is $P = AC$.__  When the market price exceeds the break-even point, we would expect the market to attract new entrants.  
+
+* __The shutdown price point is $P = AVC$.__ At prices below the shutdown point, firms will lose less by exiting the market.  Their short-run losses will be equal to their fixed costs.
+
+* Firms will remain in the market and continue to operate when the market price is between the break-even and shutdown points ($AVC \lt P \lt AC$).
+
+* The difference between the break-even and shutdown points results from differences in the length of run.  
+
+    + In the long run, all costs are variable and so $AC = AVC$.  There is no difference between the break-even and shutdown points.
+    + In the short run, however, some costs cannot be avoided and must be incurred regardless of whether the firm operates.  
+
+
+## <span style="color:SaddleBrown">Vineyard Economics: A Case Example</span>
+
+* Consider wine-grape production in the Finger Lakes region of New York [(White 2011)](http://ageconsearch.umn.edu/bitstream/121629/2/Cornell-Dyson-eb1103.pdf).  Production characteristics would be similar for wine grapes grown in the Ozark region.  
+
+1.	How has the author handled the issue of "economic" versus "accounting" costs?  
+
+2.	Why did the author classify some costs as fixed and others as variable costs?  
+
+3.	How did the author compute the break-even price?  
+
+4.	Given the values reported in Table 11 of the publication, would you expect to see new vineyards being established?  Why or why not?
+
+5.	Assuming that variable costs and yield targets reported in Table 11 are typical for vineyards that have already been established, do you expect existing vineyards to shut down in the short run?  Why or why not?
+
+6. What is the potential length of the short run in a vineyard operation?  
+
+
+## <span style="color:SaddleBrown">The Decision to Enter, Exit or Remain (Demonstration 1 from *An Interactive Text*)</span>
+
+```{r, echo=F}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      sliderInput("pp","Market Price",min = 581,max = 1800,value = 1300,ticks = F),
+      sliderInput("avc","Average Variable Cost",min = 581,max = 1081,value = 817,ticks = F),
+      tableOutput("decTab")),
+    mainPanel(plotOutput("firmPlot"))
+  ),
+  server = function(input,output) {
+    tfc<-round(3.4*719,0)
+    rnames<-c("Tons","Price","Rev.","TFC","TVC","Prof.")
+    dMat<-reactive({
+      d<-data.frame(
+        matrix(c(3.4,input$pp,round(3.4*input$pp,0),tfc,round(3.4*input$avc,0),round(3.4*(input$pp-input$avc)-tfc,0),
+               0,input$pp,0,tfc,0,-tfc),6,2),
+      row.names=rnames)
+      colnames(d)<-c("Remain","Exit")
+      d
+      })
+    bEven<-reactive(input$avc+719)
+    dynCol<-reactive(rgb(as.numeric(input$pp<=bEven()),
+                         0,
+                         as.numeric(input$pp>=input$avc)))
+    output$decTab<-renderTable(dMat(),spacing="xs",rownames=T)
+    output$firmPlot<-renderPlot({
+      par(bg="beige")
+      plot(581:1081,719+581:1081,type="l",col="blue",ylim=(c(570,2000)),
+           xlab="Average Variable Cost (AVC)",
+           ylab="Price Points",
+           xaxs="i",yaxs="i",bty="n",
+           xaxt='n',yaxt='n'
+      )
+      lines(581:1081,581:1081,type="l",col="red")
+      lines(c(0,input$avc),c(bEven(),bEven()),lty=2,col="blue")
+      lines(c(0,input$avc),c(input$avc,input$avc),lty=2,col="red")
+      lines(c(0,input$avc),c(input$pp,input$pp),lty=2,col=dynCol())
+      lines(c(input$avc,input$avc),c(0,max(bEven(),input$pp)),lty=2,col=dynCol())
+      points(input$avc,input$pp,pch=21,col=dynCol(),bg=dynCol())
+      axis(1, at=c(570,input$avc,1900), labels=c("",input$avc,""),lwd.ticks=1,cex=1.5)
+      axis(2, at=c(570,input$avc,input$pp,bEven(),2000), labels=c("",input$avc,input$pp,bEven(),""),lwd.ticks=1,cex=1.5)
+      legend(590,2000,c("Breakeven","Shutdown"),lty=c(1,1), lwd=c(2.5,2.5),col=c("blue","red")) 
+      text(875,1800,"New firms enter.",col="blue")
+      text(900,1200,"No entry. Existing firms 
+      remain in the short run.",col=rgb(1,0,1))
+      text(900,700,"Existing firms shut down.",col="red")
+    })
+  },
+  options = list(height = 475, width=900)
+  )
+```
+
+
+## <span style="color:SaddleBrown">Logic of Profit Maximization</span>
+
+
+* The profit maximizing condition for a price-taking firm is 
+$$P = MR = MC$$
+    
+
+* Suppose that $P > MC$ at some output level $q=\tilde{q}$.  
+    + In this situation, the firm could increase its output by $\Delta q$, a small amount.  
+    + Its revenue would go up by $P$, but its cost would only go up by $MC < P$.  
+    + For this reason, its profit will go up if it produces $\Delta q$ more units.  
+    + Hence, $q=\tilde{q}$ could not be a profit maximizing level of quantity.  
+
+* Suppose instead that $P < MC$ at some output level $q=\tilde{q}$.  
+    + In this situation, the firm could decrease its output by $\Delta q$, a small amount.  
+    + Its revenue would go down by $P$, but its cost would go down by $MC > P$.  
+    + Its cost savings from reducing its output by $\Delta q$ would more than offset its revenue loss.  Overall profit would go up.  
+    + Hence, $q=\tilde{q}$ could not be a profit maximizing level of quantity if $P<MC$. 
+
+* This logic suggests that the only way for $q=\tilde{q}$ to be a profit maximizing level of output is if marginal cost at $q=\tilde{q}$ is equal to the price. 
+
+* For a price-taking firm, the condition $P = MC$ defines the individual firms supply schedule.  
+
+## <span style="color:SaddleBrown">The Firm's Problem When $C(q)=100 + 2q^2$ (Demonstration 2 from *An Interactive Text*)</span>
+
+```{r, echo=F}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      sliderInput("qq","Quantity produced",min = 2,max = 23,value = 10,ticks = F),
+      radioButtons("pp", label = "Market Price (P)",
+                   choices = list("$20"=20,"$40" = 40, "$60" = 60),
+                   selected = 40,inline=T),
+      p("Profit is equal to the area of the shaded rectangle and is blue (red) if positive (negative)")
+    ),
+    mainPanel(plotOutput("firmPlot"),
+              textOutput("mes1"),
+              textOutput("mes2"),
+              textOutput("mes3"))
+    
+    ),
+  server = function(input,output) {
+    ac<-reactive(round(100/input$qq+2*input$qq,2))
+    mc<-reactive(4*input$qq)
+    prof<-reactive(round((as.numeric(input$pp)-ac())*input$qq,2))
+    output$mes1<-renderText(paste("Marginal Cost (MC) = $",format(mc(),nsmall=2),sep=""))
+    output$mes2<-renderText(paste("Average Total Cost (AC) = $",format(ac(),nsmall=2),sep=""))
+    output$mes3<-renderText(paste("Profit = (AR - AC)q =$",format(prof(),nsmall=2),sep=""))
+    output$firmPlot<- renderPlot({
+      par(bg="beige")
+      plot(1:25,100/(1:25)+2*(1:25),type="l",lwd=3,col="green",
+         xlim=c(0,25),ylim=c(0,100),
+         xlab="Quantity produced (q)",
+         ylab="Value ($)",xaxs="i",yaxs="i",bty="n",
+         xaxt='n',yaxt='n'
+      )
+     lines(0:25,4*(0:25),col="purple",lwd=3)
+     #lines(c(0,input$qq),c(mc(),mc()),col="purple",lty=2)
+     #lines(c(0,input$qq),c(ac(),ac()),col="green",lty=2)
+     lines(c(0,25),c(input$pp,input$pp),col="black",lty=2)
+     lines(c(input$qq,input$qq),c(0,max(ac(),mc())),lwd=2,col="gray")
+     points(input$qq,mc(),pch=21,col="purple",bg="purple")
+     rect(0,ac(),input$qq,input$pp, border=NA, col=rgb(ifelse(prof()>0,0,1), 0, ifelse(prof()>0,1,0),0.5))
+     axis(1, at=c(0,input$qq,25), labels=c("",input$qq,""),lwd.ticks=1)
+     axis(2, at=c(0,ac(),mc(),input$pp,100), labels=c("",ac(),mc(),input$pp,""),lwd.ticks=1)
+     legend(6,100,c(expression("AC = "*frac(100,q)+"2q"),"MC = 4q","P = AR = MR"),lty=c(1,1,2), lwd=c(2.5,2.5),col=c("green","purple","black")) 
+     })
+    },
+  options = list(height = 475, width = 900)
+  )
+```
+
+
+## <span style="color:SaddleBrown">Variables that Shift the Supply Schedule</span>
+
+* Anything that affects production costs will affect supply.
+
+1 __Input prices.__  
+
+2 __Available production technology.__ 
+
+* Anything that affects the opportunity costs of factors of production will affect supply.  These include:
+
+1. __Prices of competing products.__ 
+
+2. __Prices of joint products.__ 
+
+3. __Production risk.__ 
+
+* The supply schedule may shift due to shocks and random factors that disrupt or augment supply.  
+
+## <span style="color:SaddleBrown">Inverse Supply and Supply Shift Variables (Demonstration 3 from *An Interactive Text*)</span>
+
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      sliderInput("pprice","Own-price of good 1",min = 0,max = 50,value = 35,ticks = F),
+      radioButtons("risk", label = "Production or market risk:",
+                   choices = list("Initial"=0,"Falls" = 2, "Rises" = -2),
+                   selected = 0,inline=T),
+      radioButtons("w", label = "Input prices:",
+                   choices = list("Initial" = 0, "Fall" = 5, "Rise" = -5),
+                   selected = 0,inline=T),
+      radioButtons("p2", label = "Price of competing product:",
+                   choices = list("Initial" = 0, "Falls" = 4, "Rises" = -4),
+                   selected = 0,inline=T),
+      radioButtons("p3", label = "Price of joint product:",
+                   choices = list("Initial" = 0, "Falls" = -3, "Rises" = 3),
+                   selected = 0,inline=T)
+    ),
+    mainPanel(plotOutput("supplyPlot"))
+  ),
+  server = function(input,output) {
+    #Reactive terms to be used for the dynamic plot
+    yinter<-reactive({14-as.numeric(input$risk)-as.numeric(input$w)-as.numeric(input$p2)-as.numeric(input$p3)})
+    xinter<-reactive({-56+4*as.numeric(input$risk)+4*as.numeric(input$w)+4*as.numeric(input$p2)+4*as.numeric(input$p3)})
+    qquant<-reactive(xinter()+4*input$pprice)
+    DynTickY<-reactive(eval(substitute(expression("P"[1]*" = "*pp),list(pp=input$pprice))))
+    DynTickX<-reactive(eval(substitute(expression("Q"[1]*" = "*qq),list(qq=max(qquant(),0)))))
+    DynMain<-reactive(eval(substitute(expression("Inverse Supply: P"[1]*" = "*yyint*" + 0.25Q"[1]),list(yyint=yinter()))))
+    
+    #Start the plot, plot title DynMain() is driven by the UI of the app
+    output$supplyPlot <- renderPlot({
+      par(bg="beige")
+      plot(seq(0:200),14+0.25*(seq(0:200)),col="gray",
+           type="l",
+           xlab="Own-quantity",
+           ylab="Own-price",xaxs="i",yaxs="i",bty="n",
+           xlim = c(0, 200), ylim = c(0, 55),xaxt='n',yaxt='n',
+           main=DynMain())
+      lines(c(0,84),c(35,35),col="gray")
+      lines(c(84,84),c(0,35),col="gray")
+      points(84,35,pch=21,col="gray",bg="gray")
+      #Other dynamic plot elements driven by the UI of the shiny app
+      axis(1, at=c(0,max(qquant(),0),84,200,xinter()), labels=c("",DynTickX(),"","",""),lwd.ticks=1)
+      axis(2, at=c(0,input$pprice,35,55,yinter()), labels=c("",DynTickY(),"","",""),lwd.ticks=1)
+      lines(seq(0:200),yinter()+0.25*seq(0:200),col="blue")
+      lines(c(0,qquant()),c(input$pprice,input$pprice),col="green")
+      lines(c(xinter()+4*input$pprice,qquant()),c(0,input$pprice),col="green")
+      points(max(qquant(),0),input$pprice,pch=21,col="red",bg="red")
+    })
+  },
+  options = list(height = 475, width=900)
+)
+```
+
+
+## <span style="color:SaddleBrown">Demand for Inputs : Production Function in Three Dimensions</span>
+
+* Consider a production technology with two inputs, $x_1$ and $x_2$ that can be converted into an output, $q$.  $$q = f(x_1,x_2)$$
+    + Output increases as either of the inputs increases $\frac{\Delta q}{\Delta x_1} > 0$ and $\frac{\Delta q}{\Delta x_2} > 0$.  
+    + Because of the law of diminishing marginal productivity, it is common in economics to assume that production functions are concave.  
+
+
+![](ProductionFunction.png)
+
+####Figure 3. Three-dimensional rendering of a production function.  The production function is shown in yellow/orange tones.  The green, horizontal plane intersects the production function at a fixed level of output. The origin is at the bottom left of the diagram.
+
+
+## <span style="color:SaddleBrown">Demand for Inputs : Production Function in Two Dimensions</span>
+
+```{r, echo=FALSE}
+par(bg="beige")
+par(pty="s") #makes plot square
+plot(seq(1,60,1),(7.11^3)/seq(1,60,1), type="l", lwd=2, col="blue", ylim=c(0,60), xlim=c(0,70),
+           xlab=expression("x"[1]), ylab=expression("x"[2]), xaxs="i",yaxs="i",bty="n",xaxt='n',yaxt='n'
+           )
+lines(seq(1,60,1),(13^3)/seq(1,60,1), lwd=2, col="grey")
+lines(seq(1,60,1),(11^3)/seq(1,60,1), lwd=2, col="grey")
+lines(seq(1,60,1),(9^3)/seq(1,60,1), lwd=2, col="grey")
+#lines(seq(1,60,1),(7.11^3)/seq(1,60,1), lwd=2, col="blue")
+lines(seq(1,60,1),(5^3)/seq(1,60,1), lwd=2, col="grey")
+lines(seq(0,60,5),18.96*2-(10/10)*seq(0,60,5),lwd=3,col="red")
+lines(seq(0,60,5),18.96*3-(10/10)*seq(0,60,5),lwd=3,col="red")
+lines(c(0,18.96),c(18.96,18.96),col="purple",lty=2,lwd=3)
+lines(c(18.96,18.96),c(0,18.96),col="purple",lty=2,lwd=3)
+points(18.96,18.96,pch=21,col="purple",bg="purple")
+text(18.96,18.96,"B",pos=3)
+points(7.24,49.64,pch=21,col="black",bg="black")
+text(7.24,49.64,"A",pos=4)
+points(55,(9^3)/55,pch=21,col="black",bg="black")
+text(55,(9^3)/55,"E",pos=3)
+points(19.505,37.375,pch=21,col="black",bg="black")
+text(19.505,37.375,"D",pos=4)
+text(60,(5^3)/60,expression("q"^0),pos=4,cex=0.7)
+text(60,(7^3)/60,expression("q*>q"^0),pos=4,cex=0.7)
+text(60,(9^3)/60,expression("q"^1*">q*"),pos=4,cex=0.7)
+text(60,(11^3)/60,expression("q"^2*">q"^1),pos=4,cex=0.7)
+text(60,(13^3)/60,expression("q"^3*">q"^2),pos=4,cex=0.7)
+text(39,6,"c=c*",col="red",cex=1)
+text(55,10,expression("c="*tilde(c)*">c*"),col="red",cex=1)
+axis(1, at=c(0,18.96,70), labels=c("",expression("x*"[1]),""),lwd.ticks=1)
+axis(2, at=c(0,18.96,60), labels=c("",expression("x*"[2]),""),lwd.ticks=1)
+        legend(15,55,c("Isoquants","Profit max output level","Isocost lines"),lty=c(1,1,1), lwd=c(2.5,2.5,2.5),col=c("grey","blue","red"),cex=0.8) 
+```
+
+####Figure 4: Two dimensional rendering of the production function with the profit maximizing production plan depicted by point B. Superscripts are used to indicate different levels of output and are not exponents.
+
+* Production cost in terms of inputs is $$ c = W_1 x_1 + W_2 x_2. $$
+    + $W_1$ is the price of input 1
+    + $W_2$ is the price of input 2
+
+
+## <span style="color:SaddleBrown">The Demand for Input 1</span>
+
+* The demand equation for an input will depend on its own-price, the price of other inputs, and the price of the product being produced.  
+* Given the production technology involving one output and two inputs, the firm's demand for $x_1$ could be expressed generally as $$x_1 = f(W_1,W_2,P)$$
+* In the parlance of Chapter 1, 
+    + the firm's demand schedule for the first input would be the relationship between $x_1$ and $W_1$ holding all else constant.  
+    + This schedule would shift if the output price, $P$, or the price of the other input, $W_2$, were to change.  
+
+## <span style="color:SaddleBrown">Deriving the Inverse Demand Schedule for an Input from a Firm's Profit Maximizing Behavior (Demonstration 4 from *An Interactive Text*)</span>
+```{r, echo=FALSE}
+## Factor demands 
+## technology (x1^(1/3))*(x2^(1/3))
+## Isoquant x2=(ybar^3)/x1
+## 
+
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      radioButtons("p", label = "Output Price",
+                   choices = list("High" = 85, 
+                                  "Baseline" = 80, 
+                                  "Low" = 75),
+                   selected = 80,inline=F),
+      radioButtons("w1", label = "Price of Input 1 (W1)",
+                   choices = list("High" = 14,
+                                  "Moderately High" = 12,
+                                  "Baseline" = 10, 
+                                  "Moderately Low" = 8, 
+                                  "Low" = 6),
+                   selected = 10,inline=F),
+      radioButtons("w2", label = "Price of Input 2 (W2)",
+                   choices = list("Moderately High" = 12,
+                                  "Baseline" = 10, 
+                                  "Moderately Low" = 8),
+                   selected = 10,inline=F)
+    ),
+    mainPanel(plotOutput("isoquantPlot"),
+              plotOutput("demandPlot")
+              )
+  ),
+  server = function(input,output) {
+    #Reactive terms to be used for the dynamic plot
+    ww1<-reactive(as.numeric(input$w1))
+    ww2<-reactive(as.numeric(input$w2))
+    pp<-reactive(as.numeric(input$p))
+    xx1<-reactive((pp()^3)/(27*ww1()^2*ww2()))
+    xx2<-reactive((pp()^3)/(27*ww1()*ww2()^2))
+    qq<-reactive(xx1()^(1/3)*xx2()^(1/3))
+    int<-reactive(xx2()+(ww1()/ww2())*xx1())
+    output$isoquantPlot <- renderPlot({
+      par(bg="beige")
+      par(pty="s") #makes plot square
+      plot(seq(1,80,1),(7.11^3)/seq(1,80,1), type="l", lwd=2, col="grey", ylim=c(0,80), xlim=c(0,80),
+           xlab=expression("x"[1]), ylab=expression("x"[2]), xaxs="i",yaxs="i",bty="n",xaxt='n',yaxt='n',
+           main=expression("Isoquant map")
+           )
+      lines(seq(1,80,1),(13^3)/seq(1,80,1), lwd=2, col="grey")
+      lines(seq(1,80,1),(11^3)/seq(1,80,1), lwd=2, col="grey")
+      lines(seq(1,80,1),(9^3)/seq(1,80,1), lwd=2, col="grey")
+      lines(seq(1,80,1),(5^3)/seq(1,80,1), lwd=2, col="grey")
+      lines(seq(1,80,1),(qq()^3)/seq(1,80,1), lwd=2, col="blue")
+      lines(seq(0,80,5),18.96*2-seq(0,80,5),lwd=2,col="grey")
+      lines(seq(0,80,5),int()-(ww1()/ww2())*seq(0,80,5),lwd=3,col="red")
+      lines(c(0,xx1()),c(xx2(),xx2()),col="purple",lty=2,lwd=3)
+      lines(c(xx1(),xx1()),c(0,xx2()),col="purple",lty=2,lwd=3)
+      points(18.96,18.96,pch=21,col="gray",bg="gray")
+      points(xx1(),xx2(),pch=21,col="purple",bg="purple")
+      text(18.96,18.96,"B",pos=4)
+      axis(1, at=c(0,80), labels=c("",""),lwd.ticks=1)
+      axis(2, at=c(0,80), labels=c("",""),lwd.ticks=1)
+        legend(40,80,c("Profit max. quantity","Cost at profit max.","Profit max. prod. plan"),lty=c(1,1,NA), lwd=c(2.5,2.5,NA),pch=c(NA,NA,19),col=c("blue","red","purple"),cex=0.7) 
+      })
+    output$demandPlot <- renderPlot({
+      par(bg="beige")
+      par(pty="s") #makes plot square
+      plot((80^3)/(27*(seq(4,14,.1)^2)*10),seq(4,14,.1), type="l", lty=2, lwd=2, col="grey", ylim=c(0,16), xlim=c(0,80),
+           xlab=expression("x"[1]), ylab=expression("W"[1]), xaxs="i",yaxs="i",bty="n",xaxt='n',yaxt='n',
+           main=expression("Inverse Demand Schedule for x"[1])
+           )
+      points(18.96,10,pch=21,col="grey",bg="grey")
+      lines((pp()^3)/(27*(seq(4,14,.1)^2)*ww2()),seq(4,14,.1), lwd=3, col="purple")
+      lines(c(0,xx1()),c(ww1(),ww1()),col="purple",lty=2,lwd=3)
+      lines(c(xx1(),xx1()),c(0,16),col="purple",lty=2,lwd=3)
+      points(xx1(),ww1(),pch=21,col="purple",bg="purple")
+      axis(1, at=c(0,80), labels=c("",""),lwd.ticks=1)
+      axis(2, at=c(0,16), labels=c("",""),lwd.ticks=1)
+      })
+    },
+  options = list(height = 800, width=900)
+)
+```
+
+## <span style="color:SaddleBrown">Optimal Input Use Depends on Input Prices</span>
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Bhutan_-_Flickr_-_babasteve_%2863%29.jpg/256px-Bhutan_-_Flickr_-_babasteve_%2863%29.jpg) ![](NRCSCA02107_-_California_(911)(NRCS_Photo_Gallery).jpg)
+
+####Figure 5.  Labor and capital intensive methods of harvesting rice.  Photo on the left by Steve Evans from Citizen of the World (Bhutan) [CC BY 2.0](http://creativecommons.org/licenses/by/2.0), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File%3ABhutan_-_Flickr_-_babasteve_(63).jpg). Photo on the right by Gary Kramer courtesy of USDA Natural Resources Conservation Service., via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File%3ANRCSCA02107_-_California_(911)(NRCS_Photo_Gallery).tif).
+
+```{r, echo=FALSE}
+par(bg="beige")
+par(pty="s") #makes plot square
+plot(seq(1,60,1),(7.11^3)/seq(1,60,1), type="l", lwd=2, col="black", ylim=c(0,60), xlim=c(0,60),
+           xlab=expression("labor (L)"), ylab=expression("capital (K)"), xaxs="i",yaxs="i",bty="n",xaxt='n',yaxt='n'
+           )
+lines(seq(1,60,1),(13^3)/seq(1,60,1), lwd=2, col="black")
+lines(seq(1,60,1),(11^3)/seq(1,60,1), lwd=2, col="black")
+lines(seq(1,60,1),(9^3)/seq(1,60,1), lwd=2, col="black")
+lines(seq(1,60,1),(5^3)/seq(1,60,1), lwd=2, col="black")
+lines(seq(0,60,5),(7.24*6.857+49.64)-(6.857/1)*seq(0,60,5),lwd=2,col="red")
+lines(seq(0,60,5),(14.4)-(1/6.857)*seq(0,60,5),lwd=2,col="red")
+lines(c(7.24,7.24),c(0,49.64),col="purple",lty=2,lwd=2)
+lines(c(0,7.24),c(49.64,49.64),col="purple",lty=2,lwd=2)
+lines(c(0,49.64),c(7.24,7.24),col="purple",lty=2,lwd=2)
+lines(c(49.64,49.64),c(0,7.24),col="purple",lty=2,lwd=2)
+points(49.64,7.24,pch=21,col="purple",bg="purple")
+text(49.64,7.24,"B",pos=3)
+points(7.24,49.64,pch=21,col="purple",bg="purple")
+text(7.24,49.64,"A",pos=4)
+axis(1, at=c(0,7.24,49.64,70), labels=c("",expression("x"[L]^A),expression("x"[L]^B),""),lwd.ticks=1)
+axis(2, at=c(0,7.24,49.64,60), labels=c("",expression("x"[K]^B),expression("x"[K]^A),""),lwd.ticks=1)
+        legend(15,55,c("Isoquants","Isocost lines"),lty=c(1,1), lwd=c(2.5,2.5),col=c("black","red"),cex=0.8) 
+```
+
+####Figure 6. Capital and labor intensive production plans at points A and B, respectively.
+
+## <span style="color:SaddleBrown">Producer Surplus</span>
+
+$$PS = \frac{1}{2}\times Q(\bar{P})\times(\bar{P} - Intercept\ of \ Inverse\ Supply\ Schedule)$$
+
+```{r, echo=FALSE}
+par(bg="beige")
+plot(seq(0:200),14+0.25*(seq(0:200)),col="blue",
+           type="l",
+           xlab="Own-quantity",
+           ylab="Own-price",xaxs="i",yaxs="i",bty="n",
+           xlim = c(0, 200), ylim = c(0, 55),xaxt='n',yaxt='n',
+           main=bquote(atop("Inverse Supply: P"[1]*" = 14 + 0.25Q"[1]*" (Direct Supply: Q"[1]*" = -56 + 4P"[1]*")",
+                     "Producer Surplus = "*frac(1,2)%*%84%*%(35-14)*" = $882")),
+         cex.lab=0.75,
+         cex.main=0.75,
+         cex.axis=0.75
+         )
+polygon(c(0, 0, 84), c(14,35,35), border=NA, col="lightblue")
+lines(c(0,84),c(35,35),col="green")
+lines(c(84,84),c(0,35),col="green")
+points(84,35,pch=21,col="red",bg="red")
+axis(1, at=c(0,84,200), labels=c("",84,""),lwd.ticks=1)
+axis(2, at=c(0,14,35,55), labels=c("",14,35,""),lwd.ticks=1)
+
+```
+
+####Figure 7: Calculating producer surplus (shaded in light blue) from a supply schedule.
