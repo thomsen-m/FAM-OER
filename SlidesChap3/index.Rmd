@@ -1,0 +1,579 @@
+---
+title: "Slides for Chapter 3: Elasticities of Demand and Supply"
+author: "Based on *An Interactive Text for Food and Agricultural Marketing* by [Michael R. Thomsen](https://agribusiness.uark.edu/directory/index/uid/mthomsen/name/Michael+R.+Thomsen/) which is licensed und
+er a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/). ![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)  Source files are available on [GitHub](https://github.com/thomsen-m/FAM-OER)."
+
+date: "Today's date is `r format(Sys.time(), '%d %B %Y')`"
+output:
+  slidy_presentation: default
+  beamer_presentation: default
+runtime: shiny
+---
+
+## <span style="color:SaddleBrown">Objectives</span>
+
+* Interpret elasticity numbers and compute elasticities using both the point and arc formulas.
+
+* Use demand elasticities to identify normal necessities, normal luxuries, inferior goods, substitutes, and complements in consumption.
+
+* Describe factors that impact the magnitude of own-price demand elasticities.
+
+* Show how the revenue implications of a price change depend on the own-price elasticity of demand.
+
+* Use supply elasticities to identify competing products and joint products in production.
+
+
+##<span style="color:SaddleBrown">Some Questions</span>
+
+* Imagine yourself in an internship this summer. It is your first day on the job and your supervisor asks you to develop answers for the following questions:
+
+1. How does the demand for beef respond to changes in the price of beef?
+2. How does the demand for beef respond to changes in the prices of related goods such as pork, poultry, lamb, or fish?
+3. How does the demand for beef respond to a change in consumer income levels?
+4. How does the demand for beef respond to changes in advertising expenditures by the National Cattlemen's Beef Association (NCBA)?
+
+* Based on what you have learned to this point in the semester, you could develop some simple answers to these questions, but they may not be exact enough for what you need.
+
+##<span style="color:SaddleBrown">Demand Elasticities</span>
+
+* The term "elastic" implies flexibility.  
+
+* The interest is in how flexible is demand  to a product's own-price, prices of related products, and other demand or supply shift variables. 
+
+* Simply stated, an elasticity is the percentage change in one variable resulting from the percentage change in another.  
+
+* $\epsilon_{ij}$ notation refers to the elasticity of demand for good i with respect to a change in the price of good j.  
+
+* $\epsilon_{iX}$ refers to the elasticity of good i with respect to some non-price demand shift variable $X$. 
+
+##<span style="color:SaddleBrown">Types of Demand Elasticities</span>
+
+* Own-price elasticities (subscripts match)
+
+$$\epsilon_{11}=\frac{\%\Delta Q_1}{\%\Delta P_1}\ \ or\ \ \epsilon_{22}=\frac{\%\Delta Q_2}{\%\Delta P_2} $$
+
+* Cross-price elasticities (subscripts do not match)
+
+$$\epsilon_{12}=\frac{\%\Delta Q_1}{\%\Delta P_2}\ \ or\ \ \epsilon_{21}=\frac{\%\Delta Q_2}{\%\Delta P_1} $$
+
+* Income elasticity (M refers to income)
+
+$$\epsilon_{1M}=\frac{\%\Delta Q_1}{\%\Delta M}, $$
+
+* A demand elasticity with respect to some other demand shift variable, $X$
+
+$$\epsilon_{1M}=\frac{\%\Delta Q_X}{\%\Delta X}, $$
+
+* What do all of these formulas have in common?
+
+##<span style="color:SaddleBrown">Interpretation of Elasticity Numbers</span>
+
+* If $\epsilon_{iX}=0.5$, quantity demanded increases (decreases) by half a percent as $X$ increases (decreases) by one percent.  
+
+* We can use elasticities to predict changes in quantity
+
+$$\epsilon_{iX}=\frac{\%\Delta Q_i}{\%\Delta X} \implies \%\Delta Q = \epsilon_{iX}\times\%\Delta X  $$
+
+* Elasticities are independent of physical units of measurement. They are in percentage terms.
+
+
+##<span style="color:SaddleBrown">Predicting the Effect of a Price Change</span>
+
+* Question: Given that $\epsilon_{11} = -2.5$, what is the effect of a three percent price increase? 
+
+* Answer:
+
+$$\%\Delta Q_1=-2.5\times3 = -7.5\%$$  
+
+* Now, suppose demand is 1,000 units before the price increase. The new quantity demanded would be:
+
+$$1000\ units\ \times (1 - 0.075) = 925\ units.$$
+
+##<span style="color:SaddleBrown">Classifications Based on Magnitude of Demand Elasticities (See Table 1 of *An Interactive Text*)</span>
+
+Type                  | Range                           | Implication
+----------------------|---------------------------------|----------------------------------------
+Own-price             | $\epsilon_{ii} < -1$            | Demand for good $i$ is elastic
+Own-price             | $\epsilon_{ii}= -1$             | Demand for good $i$ is unitary elastic
+Own-price             | $-1<\epsilon_{ii} \le 0$        | Demand for good $i$ is inelastic
+----------------------|---------------------------------|----------------------------------------
+Cross-price           | $\epsilon_{ij}> 0,\ i\ne j$     | Good $j$ is a substitute for $i$
+Cross-price           | $\epsilon_{ij}< 0, i\ne j$      | Good $j$ is a complement to $i$
+----------------------|---------------------------------|----------------------------------------
+Income                | $\epsilon_{iM} < 0$             | Good $i$ is an inferior good
+Income                | $0 \le \epsilon_{iM} \le 1$     | Good $i$ is a normal necessity
+Income                | $\epsilon_{iM} > 1$             | Good $i$ is a normal luxury
+
+
+##<span style="color:SaddleBrown">Own-price Elasticities Show the Responsiveness of Quantity to Changes to Price (Demonstration 1 from *An Interactive Text*)</span>
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      sliderInput("beta","Slope of inverse demand",min = -1.5,max = 0,step=0.1,value = -0.5,ticks = T)
+    ),
+    mainPanel(plotOutput("demandPlot"))
+    ),
+  server = function(input,output) {
+    xint<-reactive(round(-(50-input$beta*100)/input$beta,3))
+    yint<-reactive(round(50-input$beta*100,3))
+    elast<-reactive(round((-1/-input$beta)*(50/100),3))
+    range<-reactive(ifelse(round(elast(),4)==-1,"unitary elastic.",ifelse(elast()<(-1),"elastic.","inelastic.")))
+    DynTextE<-reactive(eval(substitute(expression(epsilon[11]*"="*ee),
+                                       list(ee=elast(),bb=input$beta)
+    )))
+    output$demandPlot<- renderPlot({
+      par(bg="beige")
+      plot(60:140,yint()+input$beta*(60:140),type="l",col="blue", lwd=3,
+         xlim=c(50,140),ylim=c(0,100),
+         xlab=expression("Own-Quantity (Q"[1]*")"),
+         ylab=expression("Own-Price (P"[1]*")"),xaxs="i",yaxs="i",bty="n",
+         xaxt='n',yaxt='n',
+         main=expression("Elasticity of Demand at Q"[1]*"= 100 and P"[1]*" = 50")
+      )
+     lines(c(50,100),c(50,50),col="green",lty=1)
+     lines(c(100,100),c(0,50),col="green",lty=1)     
+     points(100,50,pch=21,col="red",bg="red")
+     axis(1, at=c(50,100,150), labels=c("",expression("Q"[1]*" = 100"),""),lwd.ticks=1)
+     axis(2, at=c(0,50,100), labels=c("",expression("P"[1]*" = 50"),""),lwd.ticks=1)
+     text(50,35,DynTextE(),pos=4,cex=1.5)
+     text(50,15,paste("Demand is",range()),pos=4,cex=1.5)
+     })
+    },
+  options = list(height = 475, width=900)
+  )
+```
+
+##<span style="color:SaddleBrown">Revenue Implications of Own-Price Elasticities</span>
+
+* In the elastic range, an increase (decrease) in price causes a decrease (increase) in revenue.
+
+
+* In the inelastic range, an increase (decrease) in price causes an increase (decrease) in revenue.
+
+* When demand is unitary elastic, revenue is maximized.
+
+* A firm that can control its price (not a price-taking firm), will set price so demand is elastic.  Can you explain why?
+
+##<span style="color:SaddleBrown">The Relationship Between Price Changes, Own-Price Elasticity, and Revenue (Demonstration 2 from *An Interactive Text*)</span>
+```{r, echo=FALSE}
+require(shiny)
+
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      radioButtons("direct", label = "Direction of price change:",
+                   choices = list("Increase" = 3, "No change" = 2, "Decrease" = 1),
+                   selected = 2,inline=F),
+      radioButtons("elast", label = "Type of demand:",
+                   choices = list("Inelastic" = 2, "Unitary Elastic" = 1, "Elastic" = 3),
+                   selected = 1,inline=F)
+    ),
+    mainPanel(plotOutput("logPlot"))
+    ),
+  server = function(input,output) {
+    A<-reactive(c(5000,1880.3,35355.3)[as.integer(input$elast)])
+    b<-reactive(c(1,0.75,1.5)[as.integer(input$elast)])
+    pp<-reactive(c(40,50,62.5)[as.integer(input$direct)])
+    qtab<-reactive(rbind(c(125,118.2,139.8), c(100,100,100),c(80,84.6,71.5)))
+    qq<-reactive(qtab()[as.integer(input$direct),as.integer(input$elast)])
+    net<-reactive(pp()*qq()-5000)
+    arc=reactive(((qq()-100)/(pp()-50))*((pp()+50)/(qq()+100)))
+    output$logPlot<- renderPlot({
+      par(bg="beige")
+      plot(A()*(10:90)^(-b()),10:90,type="l",col="purple", lwd=3,
+           xlim=c(0,160),ylim=c(0,100),
+           xlab=expression("Own-Quantity (Q"[1]*")"),
+           ylab=expression("Own-Price (P"[1]*")"),xaxs="i",yaxs="i",bty="n",
+           xaxt='n',yaxt='n'
+           )
+      rect(100,0,qq(),min(pp(),50), border=NA, col=rgb(input$direct==3, 0, input$direct==1,0.5))
+      rect(0,50,min(100,qq()),pp(), border=NA, col=rgb(input$direct==1, 0, input$direct==3,0.5))
+      lines(c(0,100),c(50,50),col="black",lty=2)
+      lines(c(100,100),c(0,50),col="black",lty=2)     
+      points(100,50,pch=21,col="black",bg="black")
+      lines(c(0,qq()),c(pp(),pp()),col="black",lty=2)
+      lines(c(qq(),qq()),c(0,pp()),col="black",lty=2)     
+      points(qq(),pp(),pch=21,col="black",bg="black")
+      axis(1, at=c(0,100,qq(),160), labels=c("",100,qq(),""),lwd.ticks=1)
+      axis(2, at=c(0,50,pp(),100), labels=c("",50,pp(),""),lwd.ticks=1)
+      text(0,30,paste("Revenue before change =",5000),pos=4)
+      text(0,20,paste("Revenue after change =",ifelse(input$direct==2,NA,pp()*qq())),pos=4)
+      text(0,10,paste("Net change in revenue =",net()),pos=4,cex=1)
+      text(100,50,expression("(Q"[1]^0*",P"[1]^0*")"),pos=4)
+      text(qq(),pp(),ifelse(input$direct==2,"",expression("(Q"[1]^1*",P"[1]^1*")")),pos=4)
+      legend(100,80,c("Revenue lost","Revenue gained"),pch=c(15,15), col=c(rgb(1,0,0,.5),rgb(0,0,1,.5))) 
+    })
+    },
+  options = list(height = 475, width=900)
+  )
+```
+
+
+##<span style="color:SaddleBrown">The Point Formula for Demand Elasticities</span>
+
+* Derivation of the point formula for own-price elasticity
+$$\epsilon_{11}=\frac{\%\Delta Q_1}{\%\Delta P_1} =\frac{(\Delta Q_1/Q_1)\times100}{(\Delta P_1/P_1)\times100}=\frac{\Delta Q_1}{\Delta P_1} \times \frac{P_1}{Q_1}. $$
+
+* As a practical matter, you need three terms (numbers) to compute an elasticity using the point formula.  
+
+1. The first number is $\frac{\Delta Q_i}{\Delta P_i}$. This number is the slope term from the direct demand relationship.  
+
+2. The second number you need is the value of the demand variable in question.  In this case, $P_1$.  
+
+3. The third and final number you need is the value of $Q_1$.
+
+
+##<span style="color:SaddleBrown">Point Formulas for Other Elasticities are Computed Similarly (Table 2 of *An Interactive Text*)</span>
+
+Type                               | Formula 
+-----------------------------------|-----------------------------
+Own-price elasticity   | $\epsilon_{ii}=\frac{\Delta Q_i}{\Delta P_i} \times \frac{P_i}{Q_i}$
+Cross-price elasticity | $\epsilon_{ij}=\frac{\Delta Q_i}{\Delta P_j} \times \frac{P_j}{Q_i},\ i\ne j$
+Income elasticity      | $\epsilon_{iM}=\frac{\Delta Q_i}{\Delta M} \times \frac{M}{Q_i}$
+Elasticity for other demand shift variable $X$ | $\epsilon_{iX}=\frac{\Delta Q_i}{\Delta X} \times \frac{X}{Q_i}$
+
+##<span style="color:SaddleBrown">Implementing the Point Formula
+
+* Consider the following direct demand equation for good 1:
+
+$$Q_1 = 1.5 A + 0.01M +2P_2 - 4P_1$$
+
+* Consider the following data point : ($A^0=40$, $M^0=30000$, $P_2^0=20$, and $P_1^0=60$). 
+
+* Entering these values into our demand equation provides a quantity demanded of 
+$$Q_1^0 = 1.5\times 40 + 0.01\times30000 +2\times20 - 4\times 60 = 160\ thousand\ units.$$
+
+* Now, let us repeat the elasticity calculation at another, slightly different data point: ($A^1=40$, $M^1=30000$ ,$P_2^1=20$, and $P_1^1=50$).  
+
+* At this new data point, we get a new quantity demanded of 
+$$Q_1^1 = 1.5\times 40 + 0.01\times30000 +2\times20 - 4\times 50 = 200\ thousand\ units.$$
+
+##<span style="color:SaddleBrown">Point Elasticities at These Two Data Points (Table 3 of *An Interactive Text*)</span>
+
+* Data Point 0:  ($A^0=40$, $M^0=30000$, $P_2^0=20$, $P_1^0=60$, and $Q_1^0=160$). 
+
+
+* Data Point 1:  ($A^1=40$, $M^1=30000$ ,$P_2^1=20$, $P_1^1=50$, and $Q_1^1=200$).  
+
+
+Type                   | Data Point 0 | Data Point 1
+-----------------------|-----------------------------------------------|--------
+Own-price elasticity   | $\epsilon_{11}=-4\times\frac{60}{160}=-1.5$ |$\epsilon_{11}=-4\times\frac{50}{200}=-1.0$
+Cross-price elasticity | $\epsilon_{12}=2\times\frac{20}{160}=0.25$ |$\epsilon_{12}=2\times\frac{20}{200}=0.20$
+Income elasticity | $\epsilon_{1M}=0.01\times\frac{30000}{160}=1.875$ |$\epsilon_{1M}=0.01\times\frac{30000}{200}=1.5$
+Advertising elasticity | $\epsilon_{1A}=1.5\times\frac{40}{160}=0.375$|$\epsilon_{1A}=1.5\times\frac{40}{200}=0.30$
+
+
+##<span style="color:SaddleBrown">Some Comments</span>
+
+* The above exercises makes it clear that elasticity can depend on the magnitude of the demand variables
+
+* If we have a linear demand equation:
+
+1. Demand will be more elastic at higher prices
+2. There is a point where demand will be unitary elastic
+3. Demand will be less elastic at lower prices
+
+* However this is not true for all demand equations.  Some specifications of demand provide constant elasticities. 
+
+##Demonstration 3.  Own-Price Elasticity Will Vary Along a Linear Demand Curve (Demonstration 3 of *An Interactive Text*)</span>
+
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      sliderInput("price","Own Price",min = 25,max = 80,step=5,value = 50,ticks = F)
+    ),
+    mainPanel(plotOutput("linearPlot"),plotOutput("logPlot"))
+    ),
+  server = function(input,output) {
+    QA<-reactive(50-0.5*input$price)
+    QB<-reactive(round(2000*(input$price^-1.25),3))
+    elastA<-reactive(round(-0.5*(input$price/QA()),3))
+    range<-reactive(ifelse(round(elastA(),4)==-1,"unitary elastic.",ifelse(elastA()<(-1),"elastic.","inelastic.")))
+    slopeB<-reactive(round(-2500*input$price^(-2.25),3))
+    DynTextEA<-reactive(eval(substitute(expression(epsilon[AA]*" = "*-0.5%*%frac(pp,qq)*" = "*ee),
+                                       list(ee=elastA(),pp=input$price,qq=QA())
+    )))
+    DynTextSB<-reactive(eval(substitute(expression(frac(Delta*Q[B],Delta*P[B])*" = "*ssb),
+                                        list(ssb=slopeB())
+    )))
+    DynTextEB<-reactive(eval(substitute(expression(epsilon[BB]*" = "*ssb%*%frac(pp,qq)*" = -1.25"),
+                                       list(pp=input$price,qq=QB(),ssb=slopeB())
+    )))
+    DynTickYA<-reactive(eval(substitute(expression("P"[A]*" = "*pp),
+                                       list(pp=input$price)
+    )))
+    DynTickYB<-reactive(eval(substitute(expression("P"[B]*" = "*pp),
+                                       list(pp=input$price)
+    )))
+    DynTickXA<-reactive(eval(substitute(expression("Q"[A]*" = "*qq),
+                                       list(qq=QA())
+    )))
+    DynTickXB<-reactive(eval(substitute(expression("Q"[B]*" = "*qq),
+                                       list(qq=QB())
+    )))
+    output$linearPlot<- renderPlot({
+      par(bg="beige")
+      plot(50-0.5*(20:90),20:90,type="l",col="blue", lwd=3,
+         xlim=c(0,50),ylim=c(0,100),
+         xlab=expression("Own-Quantity (Q"[A]*")"),
+         ylab=expression("Own-Price (P"[A]*")"),xaxs="i",yaxs="i",bty="n",
+         xaxt='n',yaxt='n',
+         main=expression("Panel A. Linear Demand: Q"[A]*" = 50 -0.5P"[A])
+      )
+     lines(c(0,25),c(50,50),col="gray",lty=1)
+     lines(c(25,25),c(0,50),col="gray",lty=1)     
+     points(25,50,pch=21,col="gray",bg="gray")
+     lines(c(0,QA()),c(input$price,input$price),col="green",lty=1)
+     lines(c(QA(),QA()),c(0,input$price),col="green",lty=1)     
+     points(QA(),input$price,pch=21,col="red",bg="red")
+     axis(1, at=c(0,QA(),50), labels=c("",DynTickXA(),""),lwd.ticks=1)
+     axis(2, at=c(0,input$price,100), labels=c("",DynTickYA(),""),lwd.ticks=1)
+     text(25,80,expression(frac(Delta*Q[A],Delta*P[A])*"= 0.5"),pos=4,cex=1.5)
+     text(25,60,DynTextEA(),pos=4,cex=1.5)
+     text(0,15,paste("Range:",range()),pos=4,cex=1.5)
+     })
+    output$logPlot<- renderPlot({
+      par(bg="antiquewhite")
+      plot(2000*(20:90)^(-1.25),20:90,type="l",col="blue", lwd=3,
+           xlim=c(0,50),ylim=c(0,100),
+           xlab=expression("Own-Quantity (Q"[B]*")"),
+           ylab=expression("Own-Price (P"[B]*")"),xaxs="i",yaxs="i",bty="n",
+           xaxt='n',yaxt='n',
+           main=expression("Panel B. Log-Log Demand: Q"[B]*" = "*frac(2000,P[B]^1.25))
+      )
+      lines(c(0,QB()),c(input$price,input$price),col="green",lty=1)
+      lines(c(QB(),QB()),c(0,input$price),col="green",lty=1)     
+      points(QB(),input$price,pch=21,col="red",bg="red")
+      axis(1, at=c(0,QB(),50), labels=c("",DynTickXB(),""),lwd.ticks=1)
+      axis(2, at=c(0,input$price,100), labels=c("",DynTickYB(),""),lwd.ticks=1)
+      text(15,80,DynTextSB(),pos=4,cex=1.5)
+      text(15,60,DynTextEB(),pos=4,cex=1.5)
+      text(0,15,"Range: elastic.",pos=4,cex=1.5)
+    })
+  },
+  options = list(height = 825, width=900)
+  )
+```
+
+##<span style="color:SaddleBrown">The Arc Formula for Elasticities (Table 4 of *An Interactive Text*)</span>
+
+
+Type                   | Formula 
+-----------------------------|-----------------------------
+Own-price elasticity   | $\epsilon_{ii}=\frac{Q_i^1-Q_i^0}{P_i^1-P_i^0} \times \frac{P_i^1+P_i^0}{Q_i^1+Q_i^0}$
+Cross-price elasticity | $\epsilon_{ij}=\frac{Q_i^1-Q_i^0}{P_j^1-P_j^0} \times \frac{P_j^1+P_j^0}{Q_i^1+Q_i^0},\ i\ne j$
+Income elasticity      | $\epsilon_{iM}=\frac{Q_i^1-Q_i^0}{M^1-M^0} \times \frac{M^1+M^0}{Q_i^1+Q_i^0}$
+Elasticity for other demand shift variable $X$ | $\epsilon_{iX}=\frac{Q_i^1-Q_i^0}{X^1-X^0} \times \frac{X^1+X^0}{Q_i^1+Q_i^0}$
+
+
+##<span style="color:SaddleBrown">Implementing the Arc Formula</span>
+
+*  The two own-price own-quantity pairs we used above are (60,160) and (50,200), respectively.  
+
+* Using these, we can apply the arc elasticity formula to obtain an elasticity at the average of these two points on the demand schedule  
+
+$$\epsilon_{11}=\frac{200-160}{50-60} \times \frac{50+60}{200+160} = -1.22.$$
+
+* It does not matter which point we designate with a superscript 1 or superscript 0.  Only that we keep the points straight in the first term of the arc formula.  For example:
+
+$$\epsilon_{11}=\frac{160-200}{60-50} \times \frac{60+50}{160+200} = -1.22.$$
+
+* The average of our two data points is ($P_1 = 55$, $Q_1 = 180$).  When use the point formula to measure elasticity at this average point we get $\epsilon_{11} = -1.22$, which is what we get from the arc formula.  
+
+##<span style="color:SaddleBrown">Limitations of the Arc Formula</span>
+
+* The implicit assumption with the arc formula is that only the demand variable for which you are computing the elasticity has changed and nothing else.
+
+* A compelling feature of the arc formula is that we only need to know two points to compute an elasticity. However, it is important to emphasize this "all else held constant" provision.  
+
+* Application of the arc formula requires you to assume that the entire change from $Q_1^0$ to $Q_1^1$ is attributable only to an observed change in $P_1$. In the real world, it may be hard to defend this assumption. 
+
+##<span style="color:SaddleBrown">What Affects Magnitude of Own-Price Elasticity?</span>
+
+* Share of Income Devoted to the Product
+
+* Availability of Substitutes
+
+* Length of Run
+
+* Stage of the Market
+
+##<span style="color:SaddleBrown">Modelling Demand in the Short and Long Run</span>
+
+* Short-run demand
+$$Q_1^t = \alpha + \beta P_1 + \gamma Q_1^{t-1},$$
+* $\alpha > 0$, $\beta < 0$, and $0 \le \gamma \lt 1$ is the habit parameter.  
+
+* As $\gamma$ approaches one, habit formation is very strong and consumption in prior periods has a large impact on consumption today.  
+
+* When $\gamma$ is close to one, it will take many periods to converge to the new long-run demand.  
+
+* Long-run demand
+
+$$Q_1^{LR} = \frac{\alpha}{1-\gamma} + \frac{\beta}{1-\gamma} P_1.$$
+
+
+##<span style="color:SaddleBrown">The Habit Parameter Affects the Time to Converge to a New Long-Run Demand Schedule (Demonstration 4 from *An Interactive Text*)</span>
+```{r, echo=FALSE}
+require(shiny)
+
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      sliderInput("g","Habit parameter (gamma):",min = 0.1,max = 0.9,value = 0.7,step=0.1,ticks = F),
+      radioButtons("newP", label = "Direction of long-run price change:",
+                   choices = list("Increase" = 3.25, "Decrease" = 2.25),
+                   selected = 3.25,inline=F)
+    ),
+    mainPanel(plotOutput("convergePlot"))
+  ),
+  server = function(input,output) {
+    oldQ<-reactive(1000/(1-input$g)-(200/(1-input$g))*2.75)
+    newQ<-reactive(1000/(1-input$g)-(200/(1-input$g))*as.numeric(input$newP))
+    Q <-function(t,g,a,b,p,q0) {(1-g^t)/(1-g)*(a+b*p)+(g^t)*q0}
+    DynMain<-reactive(eval(substitute(expression("Convergence pattern over time when "*gamma*" = "*gg),
+                                        list(gg=input$g)
+    )))
+    output$convergePlot<- renderPlot({
+      par(bg="beige")
+      plot(0:30,Q(0:30,input$g,1000,-200,as.numeric(input$newP),oldQ()),
+           pch=21,col="purple",bg="purple",
+           xlim=c(0,30),
+           ylim=c(min(oldQ(),newQ()),max(oldQ(),newQ())),
+           xlab=expression("time (t)"),
+           ylab=expression("Long-run quantity (Q"[LR]*")") ,xaxs="i",yaxs="i",bty="n",yaxt='n',
+           main=DynMain()
+      )
+      lines(c(0,30),c(oldQ(),oldQ()),col="red",lty=2,lwd=3)
+      lines(c(0,30),c(newQ(),newQ()),col="blue",lty=2,lwd=3)
+      axis(2, at=c(oldQ(),newQ()), labels=c(expression("Q"[LR]^OLD),expression("Q"[LR]^NEW)),lwd.ticks=2)
+    })
+  },
+  options=list(width=900)
+)
+```
+
+##<span style="color:SaddleBrown">Convergence to Long-Run Demand Over Time (Demonstration 5 from *An Interactive Text*)</span>
+
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      sliderInput("t","Length of run (t)",min = 1,max = 20,value = 1,step=1,ticks = F),
+      radioButtons("newP", label = "Direction of long-run price change:",
+                   choices = list("Increase" = 3.25, "Decrease" = 2.25),
+                   selected = 3.25,inline=F)
+    ),
+    mainPanel(plotOutput("convergePlot"))
+  ),
+  server = function(input,output) {
+    g<-0.7
+    aLR<-round(1000/(1-g),1)
+    bLR<-round((-200)/(1-g),2)
+    oldQ<-round(aLR+bLR*2.75,1)
+    bSR<-reactive(round((1-g^input$t)/(1-g)*(-200),2))
+    aSR<-reactive(round((1-g^input$t)/(1-g)*(1000)+(g^input$t)*oldQ,1))
+    newQ<-reactive(round(aLR+bLR*as.numeric(input$newP),1))
+    gt<-reactive(round(g^input$t,3))
+    Q <-function(t,g,a,b,p,q0) {(1-g^t)/(1-g)*(a+b*p)+(g^t)*q0}
+    DynTextSR<-reactive(eval(substitute(expression("Q"[1]^("t="*tt)*" = "*aa*bb*"P"[1]*"+"*gg*"Q"[1]^("t=0")),
+                                        list(tt=input$t,aa=aSR(),bb=bSR(),gg=gt())
+    )))
+    output$convergePlot<- renderPlot({
+      par(bg="beige")
+      plot(600:2000,-aSR()/bSR()+(1/bSR())*(600:2000),type="l",lty=1,lwd=3,col="red",
+           xlim=c(600,2000),
+           ylim=c(1.5,5),
+           xlab=expression("Q"[1]),
+           ylab=expression("P"[1]) ,xaxs="i",yaxs="i",bty="n",yaxt='n',xaxt='n'
+      )
+      lines(600:2000,-aLR/bLR+(1/bLR)*(600:2000),col="blue",lwd=3)
+      lines(c(600,oldQ),c(2.75,2.75),col="black",lty=2,lwd=1)
+      lines(c(oldQ,oldQ),c(0,2.75),col="black",lty=2,lwd=1)
+      lines(c(600,oldQ),c(2.75,2.75),col="black",lty=2,lwd=1)
+      lines(c(newQ(),newQ()),c(0,input$newP),col="blue",lty=2,lwd=1)
+      lines(c(600,newQ()),c(input$newP,input$newP),col="blue",lty=2,lwd=1)
+      lines(c(Q(input$t,g,1000,-200,as.numeric(input$newP),oldQ),
+              Q(input$t,g,1000,-200,as.numeric(input$newP),oldQ)),
+            c(0,as.numeric(input$newP)),col="red",lty=2,lwd=1)
+      lines(c(600,Q(input$t,g,1000,-200,as.numeric(input$newP),oldQ)),c(input$newP,input$newP),col="red",lty=2,lwd=1)
+      axis(1, at=c(600,oldQ,newQ(),2000), labels=c("",oldQ,round(newQ(),2),""),lwd.ticks=2)
+      axis(2, at=c(1.5,2.75,input$newP,5), labels=c(1.5,2.75,input$newP,5),lwd.ticks=2)
+      text(850,4,DynTextSR(),cex=1.5,pos=4,col="red")
+      text(850,4.5,eval(substitute(expression("Q"[1]^"LR"*"="*aa*bb*"P"[1]),list(aa=aLR,bb=bLR))),cex=1.5,pos=4,col="blue")
+      text(600,2,paste("t =",input$t),cex=1.5,pos=4)
+      text(800,2.25,expression("Q"[1]^0*"="*1500),cex=1.5,pos=4)
+      text(800,1.75,expression("P"[1]^0*"="*2.75),cex=1.5,pos=4)
+    })
+  },
+  options = list(width=900)
+)
+```
+
+##<span style="color:SaddleBrown">Demand at Different Stages of the Market (Figure 1 of *An Interactive Text*)</span>
+
+* Assumption 1: Fixed Proportions $(Q_{1}^{Farm}=\tau Q_{1}^{Retail})$.
+
+* Assumption 2: Cost of marketing inputs is independent of industry output.
+
+* Farm demand will be less elastic than retail demand.
+
+```{r, echo=FALSE}
+par(bg="beige")
+plot(1:200, 100-.5*(1:200),type="l",col="blue", lwd=3,
+     xlim=c(0,200),ylim=c(0,130),
+     xlab=expression("Own-Quantity (Q"[1]*")"),
+     ylab=expression("Own-Price (P"[1]*")"),xaxs="i",yaxs="i",bty="n", xaxt='n',yaxt='n')
+lines(c(0,100),c(50,50),col="green")
+lines(c(0,100),c(90,90),col="green")
+lines(c(100,100),c(0,90),col="green")
+lines(1:200, 140-.5*(1:200),type="l",col="red", lwd=3)
+axis(1, at=c(0,100,200), labels=c("",expression("Q"[1]^Farm*" = "*tau*"Q"[1]^Retail),""),lwd.ticks=1)
+axis(2, at=c(0,50,90,130), labels=c("",expression("P"[1]^Farm),expression("P"[1]^Retail),""),lwd.ticks=1)
+legend(80,130,c("Farm demand","Retail demand"),lty=c(1,1), lwd=3, col=c(rgb(0,0,1),rgb(1,0,0,))) 
+```
+
+
+##<span style="color:SaddleBrown">Supply Elasticities are Computed Similarly to Demand Elasticities (Table 6 of *An Interactive Text*)</span>
+
+Type                      | Point Formula      | Arc Formula
+--------------------------|--------------------|--------------
+Own-price elasticity   | $\phi_{ii}=\frac{\Delta Q_i}{\Delta P_i} \times \frac{P_i}{Q_i}$| $\phi_{ii}=\frac{Q_i^1-Q_i^0}{P_i^1-P_i^0} \times \frac{P_i^1+P_i^0}{Q_i^1+Q_i^0}$
+Cross-price elasticity | $\phi_{ij}=\frac{\Delta Q_i}{\Delta P_j} \times \frac{P_j}{Q_i},\ i\ne j$| $\phi_{ij}=\frac{Q_i^1-Q_i^0}{P_j^1-P_j^0} \times \frac{P_j^1+P_j^0}{Q_i^1+Q_i^0},\ i\ne j$
+Input-price elasticity      | $\phi_{iW}=\frac{\Delta Q_i}{\Delta W} \times \frac{W}{Q_i}$| $\phi_{iW}=\frac{Q_i^1-Q_i^0}{W^1-W^0} \times \frac{W^1+W^0}{Q_i^1+Q_i^0}$
+Elasticity for other supply shift variable $Z$ | $\phi_{iZ}=\frac{\Delta Q_i}{\Delta Z} \times \frac{Z}{Q_i}$| $\epsilon_{iZ}=\frac{Q_i^1-Q_i^0}{Z^1-Z^0} \times \frac{Z^1+Z^0}{Q_i^1+Q_i^0}$
+
+* The difference is that $Q_i$ is the quantity supplied, making this a supply elasticity as opposed to a demand elasticity.  
+
+##<span style="color:SaddleBrown">Classifications Based on Magnitude of Elasticity of Supply (Table 5 of *An Interactive Text*)</span>
+
+Type                  | Range                           | Implication
+----------------------|---------------------------------|----------------------------------------
+Own-price    | $\phi_{ii} > 1$| Supply for good $i$ is elastic
+Own-price    | $\phi_{ii}= 1$| Supply for good $i$ is unitary elastic
+Own-price    | $0 \le \phi_{ii} \lt 1$| Supply for good $i$ is inelastic
+----------------------|---------------------------------|----------------------------------------
+Cross-price  | $\phi_{ij}> 0,\ i\ne j$| Good $j$ is a joint product for good $i$
+Cross-price  | $\phi_{ij}< 0, i\ne j$| Good $j$ is a competing product for good $i$
+----------------------|---------------------------------|----------------------------------------
+Input price  | $\phi_{iW} \le 0$| Input price elasticities are non-positive
+
+
+
+
+##<span style="color:SaddleBrown">Some Special Cases for Supply Elasticities</span>
+
+* Perfectly elastic supply.  
+
+1. An inverse supply curve with a slope of zero (a horizontal line) corresponds to perfectly elastic supply.  
+
+2. This means is that any quantity can be purchased at the prevailing market price.
+
+* Perfectly inelastic supply.
+
+1. An inverse supply curve with an infinite slope (a vertical line) corresponds to perfectly inelastic supply.  
+
+2. A fixed stock of a product does not imply a perfectly elastic supply.  
