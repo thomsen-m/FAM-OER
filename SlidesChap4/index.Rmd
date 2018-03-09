@@ -1,0 +1,679 @@
+---
+title: "Market Equilibrium and Equilibrium Modeling"
+author: "Based on *An Interactive Text for Food and Agricultural Marketing* by [Michael R. Thomsen](https://agribusiness.uark.edu/directory/index/uid/mthomsen/name/Michael+R.+Thomsen/) which is licensed und
+er a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/). ![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)  Source files are available on [GitHub](https://github.com/thomsen-m/FAM-OER)."
+
+date: "Today's date is `r format(Sys.time(), '%d %B %Y')`"
+output:
+  slidy_presentation: default
+  beamer_presentation: default
+runtime: shiny
+---
+
+***
+
+##<span style="color:SaddleBrown"><span style="color:SaddleBrown">Objectives</span>
+
+* Identify an equilibrium in a single market given a supply equation and a demand equation.
+
+* Distinguish between exogenous and endogenous variables.
+
+* Predict the impact of a change in an exogenous variable on the equilibrium price and quantity in a single market.
+
+* Use elasticities to model the impact of an exogenous shock on a market equilibrium.
+
+* Calculate exogenous demand and supply shocks using elasticities. Use these shocks to model changes to an equilibrium.
+
+* Distinguish between partial equilibrium models and general equilibrium models.
+
+* Explain feedback from one market to another within a general equilibrium model.
+
+***
+##<span style="color:SaddleBrown"><span style="color:SaddleBrown">Market Equilibrium</span>
+
+* The term equilibrium suggests a point of stability.  
+
+* If we are talking about one single market in isolation, an equilibrium can be defined as a price such that the quantity demanded is equal to the quantity supplied.  
+
+* When supply equals demand, there is no reason for consumers to bid prices up or for producers to bid prices down.  
+
+* Price is, in this respect, stable.  
+
+##<span style="color:SaddleBrown"><span style="color:SaddleBrown">An Example</span>
+* Suppose that the demand for good 1 is given by 
+
+$$Q_1^D = 100 - \frac{1}{2}P_1+D,$$
+
+* Suppose that supply for good 1 is given by
+
+$$Q_1^S = -20 +P_1+S,$$
+
+* To find the equilibrium price, we set $Q_1^S = Q_1^D$ and solve for $P_1$ as follows:
+
+$$-20 +P_1+S = 100 - \frac{1}{2}P_1+D  \implies P_1 = 80+\frac{2}{3}(D-S).$$
+
+* Substitute this solution for $P_1$ into the supply or the demand equation to get.
+
+$$Q_1= 60+\frac{2D+S}{3}.$$
+
+##<span style="color:SaddleBrown"> Graphical Representation of the Equilibrium With Demand Shocks (Demonstration 1 of *An Interactive Text*)</span>
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      radioButtons("shiftD", label = "Shock to Demand:",
+                   choices = list("None (0 units)" = 0, 
+                                  "Negative (-12 units)" = -12, 
+                                  "Positive (+12 units)" = 12),
+                   selected = 0,inline=F),
+      radioButtons("shiftS", label = "Shock to supply:",
+                   choices = list("None (0 units)" = 0),
+                   selected = 0,inline=T)
+    ),
+    mainPanel(plotOutput("demandPlot"))
+  ),
+  server = function(input,output) {
+    #Reactive terms to be used for the dynamic plot
+    newP<-reactive((120-as.numeric(input$shiftS)+as.numeric(input$shiftD))/1.5)
+    newQ<-reactive(100+as.numeric(input$shiftD)-0.5*newP())
+
+    #Start the plot, plot title DynMain() is driven by the UI of the app
+    output$demandPlot <- renderPlot({
+      par(bg="beige")
+      plot(100-0.5*(c(50,100)),c(50,100),col="red",
+           type="l", lty=2,
+           xlab=expression("Q"[1]), ylab=expression("P"[1]),
+           xaxs="i",yaxs="i",bty="n",
+           xlim = c(40, 80), ylim = c(50, 100)
+           ,xaxt='n',yaxt='n'
+           )
+      lines(100+as.numeric(input$shiftD)-0.5*(c(50,100)),c(50,100),col="red",lwd=3)
+      lines(-20+(c(50,100)),c(50,100),col="blue",lty=2)
+      lines(-20+as.numeric(input$shiftS)+(c(50,100)),c(50,100),col="blue",lwd=3)
+      lines(c(0,60),c(80,80),col="purple",lty=2)
+      lines(c(60,60),c(0,80),col="purple",lty=2)
+      lines(c(0,60+as.numeric(input$shiftD)),c(80,80),col="purple",lty=2)
+      lines(c(60+as.numeric(input$shiftD),60+as.numeric(input$shiftD)),c(0,80),col="purple",lty=2)
+      lines(c(0,newQ()),c(newP(),newP()),col="purple",lty=2)
+      lines(c(newQ(),newQ()),c(0,newP()),col="purple",lty=2)
+      
+      
+      points(60,80,pch=21,col="gray",bg="gray")
+      points(newQ(),newP(),pch=21,col="purple",bg="purple")
+      text(newQ(),newP(),"E",pos=3)
+      
+      axis(1, at=c(40,60,60+as.numeric(input$shiftD),newQ(),80), labels=c("",60,60+as.numeric(input$shiftD),newQ(),""),lwd.ticks=1)
+      axis(2, at=c(50,80,newP(),100), labels=c("",80,newP(),""),lwd.ticks=1)
+    })
+  },
+  options = list(height = 475, width=900)
+)
+```
+
+
+##<span style="color:SaddleBrown"> Graphical Representation of the Equilibrium With Supply Shocks (Demonstration 2 of *An Interactive Text*)</span>
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      radioButtons("shiftS", label = "Shock to Supply:",
+                   choices = list("None (0 units)" = 0, 
+                                  "Negative (-12 units)" = -12, 
+                                  "Positive (+12 units)" = 12),
+                   selected = 0,inline=F),
+      radioButtons("shiftD", label = "Shock to Demand:",
+                   choices = list("None (0 units)" = 0),
+                   selected = 0,inline=T)
+    ),
+    mainPanel(plotOutput("demandPlot"))
+  ),
+  server = function(input,output) {
+    #Reactive terms to be used for the dynamic plot
+    newP<-reactive((120-as.numeric(input$shiftS))/1.5)
+    newQ<-reactive(-20+as.numeric(input$shiftS)+newP())
+
+    #Start the plot, plot title DynMain() is driven by the UI of the app
+    output$demandPlot <- renderPlot({
+      par(bg="beige")
+      plot(100-0.5*(c(50,100)),c(50,100),col="red",
+           type="l", lty=2,
+           xlab=expression("Q"[1]), ylab=expression("P"[1]),
+           xaxs="i",yaxs="i",bty="n",
+           xlim = c(40, 80), ylim = c(50, 100)
+           ,xaxt='n',yaxt='n'
+           )
+      lines(100-0.5*(c(50,100)),c(50,100),col="red",lwd=3)
+      lines(-20+(c(50,100)),c(50,100),col="blue",lty=2)
+      lines(-20+as.numeric(input$shiftS)+(c(50,100)),c(50,100),col="blue",lwd=3)
+      lines(c(0,60),c(80,80),col="purple",lty=2)
+      lines(c(60,60),c(0,80),col="purple",lty=2)
+      lines(c(0,60+as.numeric(input$shiftS)),c(80,80),col="purple",lty=2)
+      lines(c(60+as.numeric(input$shiftS),60+as.numeric(input$shiftS)),c(0,80),col="purple",lty=2)
+      lines(c(0,newQ()),c(newP(),newP()),col="purple",lty=2)
+      lines(c(newQ(),newQ()),c(0,newP()),col="purple",lty=2)
+      
+      
+      points(60,80,pch=21,col="gray",bg="gray")
+      points(newQ(),newP(),pch=21,col="purple",bg="purple")
+      text(newQ(),newP(),"E",pos=3)
+      
+      axis(1, at=c(40,60,60+as.numeric(input$shiftS),newQ(),80), labels=c("",60,60+as.numeric(input$shiftS),newQ(),""),lwd.ticks=1)
+      axis(2, at=c(50,80,newP(),100), labels=c("",80,newP(),""),lwd.ticks=1)
+    })
+  },
+  options = list(height = 475, width=900)
+)
+```
+
+##<span style="color:SaddleBrown">Exogenous and Endogenous Variables in an Equilibrium Model</span>
+* Endogenous variables are determined within the system of equations that comprise the model.
+
+* In general, the number of endogenous variables in the system will be equal to the number of demand and supply equations.  
+
+* Exogenous variables affect the equilibrium but are determined outside of the system of equations. 
+
+* Exogenous shocks disrupt an existing equilibrium and bring about a new one.
+
+##<span style="color:SaddleBrown">A Basic Framework for Identifying the Cause of an Equilibrium Change (Demonstration 3 of *An Interactive Text*)</span>
+
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      radioButtons("shiftD", label = "Shock to Demand:",
+                   choices = list("None" = 0, "Negative" = -10, "Positive" = 10),
+                   selected = 0,inline=F),
+      radioButtons("shiftS", label = "Shock to supply:",
+                   choices = list("None" = 0, "Negative" = -10, "Positive" = 10),
+                   selected = 0,inline=F)
+    ),
+    mainPanel(plotOutput("demandPlot"))
+  ),
+  server = function(input,output) {
+    #Reactive terms to be used for the dynamic plot
+    newP<-reactive((120-as.numeric(input$shiftS)+as.numeric(input$shiftD))/1.5)
+    newQ<-reactive(100+as.numeric(input$shiftD)-0.5*newP())
+
+    #Start the plot, plot title DynMain() is driven by the UI of the app
+    output$demandPlot <- renderPlot({
+      par(bg="beige")
+      plot(100-0.5*(c(50,100)),c(50,100),col="red",
+           type="l", lty=2,
+           xlab="", ylab="",xaxs="i",yaxs="i",bty="n",
+           xlim = c(40, 80), ylim = c(50, 100)
+           ,xaxt='n',yaxt='n'
+           )
+      lines(100+as.numeric(input$shiftD)-0.5*(c(50,100)),c(50,100),col="red",lwd=3)
+      lines(-20+(c(50,100)),c(50,100),col="blue",lty=2)
+      lines(-20+as.numeric(input$shiftS)+(c(50,100)),c(50,100),col="blue",lwd=3)
+      lines(c(0,100),c(80,80),col="purple",lty=2)
+      lines(c(60,60),c(0,200),col="purple",lty=2)
+      points(60,80,pch=21,col="gray",bg="gray")
+      points(newQ(),newP(),pch=21,col="purple",bg="purple")
+      axis(1, at=c(40,newQ(),80), labels=c("",expression("Q"[1]^"E"),""),lwd.ticks=1)
+      axis(2, at=c(50,newP(),100), labels=c("",expression("P"[1]^"E"),""),lwd.ticks=1)
+      text(50,70,"1 (D<0)",pos=4,cex=2)
+      text(50,90,"2 (S<0)",pos=4,cex=2)
+      text(70,70,"4 (S>0)",pos=4,cex=2)
+      text(70,90,"3 (D>0)",pos=4,cex=2)
+    })
+  },
+  options = list(height = 475, width=900)
+)
+```
+
+
+##<span style="color:SaddleBrown">Effects of Demand and Supply Shocks on a Market Equilibrium (see Table 1 of *An Interactive Text*)</span>
+
+Supply Shock | Demand Shock |Effect on Eq. Price | Effect on Eq. Quantity  |
+-------------|--------------|--------------------|-------------------------|
+$+$          |None          |$\downarrow$        |$\uparrow$
+$-$          |None          |$\uparrow$          |$\downarrow$
+None         |$+$           |$\uparrow$          |$\uparrow$
+None         |$-$           |$\downarrow$        |$\downarrow$
+$+$          |$+$           |Ambiguous           |$\uparrow$
+$+$          |$-$           |$\downarrow$        |Ambiguous
+$-$          |$+$           |$\uparrow$          |Ambiguous
+$-$          |$-$           |Ambiguous           |$\downarrow$
+
+
+##<span style="color:SaddleBrown">Modeling with Elasticities</span>
+
+* Let $\% \Delta D$ and $\% \Delta S$ be percentage quantity shocks to demand and supply, respectively.
+
+* Demand in elasticity form
+
+$$ \%\Delta Q_1^D = \varepsilon_{11}\%\Delta P_1 + \% \Delta D,$$
+
+* Supply in elasticity form
+
+$$ \%\Delta Q_1^S = \phi_{11}\%\Delta P_1 + \% \Delta S.$$
+
+* Set $\%\Delta Q_1^S = \%\Delta Q_1^D$ and solve for $\%\Delta P_1$ to get the percentage change in equilibrium price:
+
+
+$$\text{Equation 1:}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \%\Delta P_1^E = \frac{\% \Delta D-\% \Delta S}{\phi_{11}-\varepsilon_{11}}.$$
+
+* Substitute this back into $\%\Delta Q_1^S$ or  $\%\Delta Q_1^D$ to get the percentage change in equilibrium quantity:
+
+
+$$\text{Equation 2:}\ \ \ \ \ \ \ \ \ \ \%\Delta Q_1^E = \frac{\phi_{11} \% \Delta D- \varepsilon_{11} \% \Delta S}{\phi_{11}-\varepsilon_{11}}.$$
+
+
+##<span style="color:SaddleBrown"> Advantages of Using Elasticities</span>
+
+1. We do not need to assume demand and supply are linear.  The equilibrium model is a system is linear in the elasticities even if the underlying supply or demand equations are non-linear. 
+
+2. In the real-world, we usually know initial conditions and so the percentage impacts that result from the model in elasticity form contain the information we need to assess the economic effects on the market. 
+
+3. The approach can accommodate any number of exogenous shocks.  Moreover, these shocks can occur simultaneously. 
+
+4. The approach can be extended to real-world situation involving numerous inter-related markets.
+
+##<span style="color:SaddleBrown"> Estimating Exogonous Supply and Demand Shocks For Models with Elasticities</span>
+
+1.  Use an elasticity for an exogenous variable that causes the shock
+
+
+$$\% \Delta S = \phi_{1Z}\%\Delta Z,$$
+and
+
+$$\% \Delta D = \varepsilon_{1X}\%\Delta X.$$
+
+
+2.  Convert potential quantity shocks to percentages (see HMD studies cited in *An Intereactive Text*)
+
+3.  Use own-price elasticities to convert changes in costs or willingness to pay into quantity shocks
+
+
+##<span style="color:SaddleBrown"> Example: A Regulation that Affects Supply</span>
+
+* Suppose that the fed cattle market is at an initial equilibrium at a price of \$1.25 per pound. 
+
+* It is estimated that compliance with a new regulation will cost producers \$0.03 per pound. 
+
+* Note that the \$0.05 cost increase is about 2.4 percent (0.03/1.25 = 0.024) of the current market price.  
+
+* The costs resulting from the regulation are analogous to a 2.4 percent reduction in the price that producers receive. 
+
+##<span style="color:SaddleBrown"> Use the Own-price Supply Elasticity to Estimate the Quantity Shock from this Regulation. Then Assess Impact on the Equilibrium.</span>
+
+* Suppose that farm-level supply and demand elasticities are as follows:  $\phi_{11} = 2$ and $\varepsilon_{11} = -0.8$.  
+
+* The increase in per-unit costs of 2.4 percent of the current price translates into a supply shock of  $\% \Delta S$ = 2(-2.4) = -4.8 percent.  
+
+*  We can now use Equation 1 to to predict the equilibrium price response as follows:
+
+$$\%\Delta P_1^E = \frac{0-(-4.8)}{2-(-0.8)} \approx 1.71.$$
+
+* From Equation 2, we get the equilibrium quantity response to be
+
+$$\%\Delta Q_1^E = \frac{(2)(0)-(-0.8)(-4.8)}{2-(-0.8)} \approx -1.37.$$
+
+##<span style="color:SaddleBrown"> Example: A Preference Change that Affects Demand</span>
+* Suppose that you have access to a study showing that high-protein diet fads are growing in popularity and that within a year, consumers will be willing to pay three percent more for chicken.  What is the effect on the equilibrium price and quantity? 
+
+* Since the positive preference change means that consumers receive three percent more value for the product, this is analogous to a three percent reduction in the price that consumers pay.  
+
+##<span style="color:SaddleBrown"> Use the Own-price Demand Elasticity to Estimate the Quantity Shock from this Change. Then Assess the Impact on the Equilibrium.</span>
+
+* Suppose that retail level supply and demand elasticities for chicken are as follows: $\phi_{11} = 1.75$ and $\varepsilon_{11} = -1.1$.  
+
+* The demand shock is  $\% \Delta D$ = -1.1(-3) = 3.3 percent.  
+
+* Using Equation 1, the effect on the equilibrium price is
+$$\%\Delta P_1^E = \frac{3.3-0}{1.75-(-1.1)} \approx 1.16.$$
+
+* From Equation 2, we get the equilibrium quantity response to be
+
+$$\%\Delta Q_1^E = \frac{(1.75)(3.3)-(-1.1)(0)}{1.75-(-1.1)} \approx 2.03.$$
+
+##<span style="color:SaddleBrown"> Partial vs. General Equilibrium Models</span>
+
+* In many (if not most) cases, a change in one market affects other markets.  
+
+* For example, a shock to the pork market would be expected to have an impact on the beef and poultry markets because these products are substitutes for pork. 
+
+* We should account for feedback between these related markets as they adjust to a new equilibrium.  
+
+* A partial equilibrium model is for a single market or sector in isolation without feedback from other markets or sectors.  
+
+*  General equilibrium models differ from partial equilibrium models in that they incorporate related product markets or economic sectors into the analysis.  
+
+*  In a general equilibrium model, we explicitly account for feedback from other markets to account for the fact that exogenous shocks occurring in other markets have implications for the market in question.
+
+##<span style="color:SaddleBrown"> Partial vs. General Equilibrium Models (continued)</span>
+
+* Classification of a model as a partial equilibrium or general equilibrium can vary a bit in the literature.  
+
+*  In a general equilibrium model, the equilibrium quantities and prices in all markets are endogenous.  
+
+* Exogenous variables in a general equilibrium model again reflect any variable outside the system that shifts demand or supply in one or more markets.  
+
+*  When markets are related in consumption  or production, the price in market 2 will shift demand or supply in market 1 and *vice versa*.  
+
+* For this reason, the term "exogenous variable" is much better to use than the term "shift variable" within the context of an equilibrium model.  
+
+
+##<span style="color:SaddleBrown">The Case of Substitutes in Consumption (Demonstration 4 of *An Interactive Text*)</span>
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      radioButtons("shock", label = "Supply Shock to Market 1:",
+                   choices = list("Negative" = -1, "None" = 0, "Positive" = 1),
+                   selected = 0,inline=F)
+    ),
+    mainPanel(plotOutput("Mkt1Plot"),plotOutput("Mkt2Plot"))
+    ),
+  server = function(input,output) {
+    #Supply in market 1: A+shock+aP1
+    #Demand in market 1: B+bP1+ccP2
+    #Supply in market 2: A+aP2
+    #Demand in market 2: B+ccP1+bP2
+    A <- 1
+    B <- 7
+    a <- 0.5
+    b <- -1
+    cc <- 0.5
+    coef<- rbind(c(1,0,-a,0),c(1,0,-b,-cc),c(0,1,0,-a),c(0,1,-cc,-b))
+    solBase<-solve(coef,c(A,B,A,B))
+    solNew<-reactive(solve(coef,c(A+as.numeric(input$shock),B,A,B)))
+    #output$Test<-renderText(solNew())
+    #output$Test2<-renderText(solBase)
+    output$Mkt1Plot<-renderPlot({
+      par(bg="beige")
+      plot(A+a*(0:8),0:8,type="l",col="blue", lty=2, lwd=3,
+           xlim=c(3,5),ylim=c(5,7),
+           xlab="",
+           ylab="",
+           xaxs="i",yaxs="i",bty="n",
+           main="Market 1",
+           xaxt='n',yaxt='n'
+           )
+      lines(B+cc*solBase[4]+b*(0:8),0:8,col="red",lty=2,lwd=3)
+      lines(A+as.numeric(input$shock)+a*(0:8),0:8,col="blue",lwd=3)
+      lines(B+cc*solNew()[4]+b*(0:8),0:8,col="red",lwd=3)
+      lines(c(0,solBase[1]),c(solBase[3],solBase[3]),col="black",lty=2)
+      lines(c(solBase[1],solBase[1]),c(0,solBase[3]),col="black",lty=2)
+      lines(c(0,solNew()[1]),c(solNew()[3],solNew()[3]),col="purple",lty=2)
+      lines(c(solNew()[1],solNew()[1]),c(0,solNew()[3]),col="purple",lty=2)
+      points(solNew()[1],solNew()[3],col="purple",bg="purple",pch=21)
+      axis(1, at=c(3,5,solBase[1],solNew()[1]), labels=c("","","",expression("Q"[1]^"E")),lwd.ticks=1)
+      axis(2, at=c(5,7,solBase[3],solNew()[3]), labels=c("","","",expression("P"[1]^"E")),lwd.ticks=1)
+      })
+    output$Mkt2Plot<-renderPlot({
+      par(bg="beige")
+      plot(A+a*(0:8),0:8,type="l",col="blue", lty=2, lwd=3,
+           xlim=c(3,5),ylim=c(5,7),
+           xlab="",
+           ylab="",
+           xaxs="i",yaxs="i",bty="n",
+           main="Market 2",
+           xaxt='n',yaxt='n'
+      )
+      lines(B+cc*solBase[3]+b*(0:8),0:8,col="red",lty=2,lwd=3)
+      lines(A+a*(0:8),0:8,col="blue",lwd=3)
+      lines(B+cc*solNew()[3]+b*(0:8),0:8,col="red",lwd=3)
+      lines(c(0,solBase[2]),c(solBase[4],solBase[4]),col="black",lty=2)
+      lines(c(solBase[2],solBase[2]),c(0,solBase[4]),col="black",lty=2)
+      lines(c(0,solNew()[2]),c(solNew()[4],solNew()[4]),col="purple",lty=2)
+      lines(c(solNew()[2],solNew()[2]),c(0,solNew()[4]),col="purple",lty=2)
+      points(solNew()[2],solNew()[4],col="purple",bg="purple",pch=21)
+      axis(1, at=c(3,5,solBase[2],solNew()[2]), labels=c("","","",expression("Q"[2]^"E")),lwd.ticks=1)
+      axis(2, at=c(5,7,solBase[4],solNew()[4]), labels=c("","","",expression("P"[2]^"E")),lwd.ticks=1)
+    })
+    
+  },
+  options=list(height=800, width=900)
+  )
+```
+
+##<span style="color:SaddleBrown">The Case of Complements in Consumption (Demonstration 5 of *An Interactive Text*)</span>
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      radioButtons("shock", label = "Supply Shock to Market 1:",
+                   choices = list("Negative" = -1, "None" = 0, "Positive" = 1),
+                   selected = 0,inline=F)
+    ),
+    mainPanel(plotOutput("Mkt1Plot"),plotOutput("Mkt2Plot"))
+    ),
+  server = function(input,output) {
+    #Supply in market 1: A+shock+aP1
+    #Demand in market 1: B+bP1+ccP2
+    #Supply in market 2: A+aP2
+    #Demand in market 2: B+ccP1+bP2
+    A <- 1
+    B <- 7
+    a <- 0.5
+    b <- -1
+    cc <- -0.5
+    coef<- rbind(c(1,0,-a,0),c(1,0,-b,-cc),c(0,1,0,-a),c(0,1,-cc,-b))
+    solBase<-solve(coef,c(A,B,A,B))
+    solNew<-reactive(solve(coef,c(A+as.numeric(input$shock),B,A,B)))
+    #output$Test<-renderText(solNew())
+    #output$Test2<-renderText(solBase)
+    output$Mkt1Plot<-renderPlot({
+      par(bg="beige")
+      plot(A+a*(0:8),0:8,type="l",col="blue", lty=2, lwd=3,
+           xlim=c(1.5,3.5),ylim=c(2,4),
+           xlab="",
+           ylab="",
+           xaxs="i",yaxs="i",bty="n",
+           main="Market 1",
+           xaxt='n',yaxt='n'
+           )
+      lines(B+cc*solBase[4]+b*(0:8),0:8,col="red",lty=2,lwd=3)
+      lines(A+as.numeric(input$shock)+a*(0:8),0:8,col="blue",lwd=3)
+      lines(B+cc*solNew()[4]+b*(0:8),0:8,col="red",lwd=3)
+      lines(c(0,solBase[1]),c(solBase[3],solBase[3]),col="black",lty=2)
+      lines(c(solBase[1],solBase[1]),c(0,solBase[3]),col="black",lty=2)
+      lines(c(0,solNew()[1]),c(solNew()[3],solNew()[3]),col="purple",lty=2)
+      lines(c(solNew()[1],solNew()[1]),c(0,solNew()[3]),col="purple",lty=2)
+      points(solNew()[1],solNew()[3],col="purple",bg="purple",pch=21)
+      axis(1, at=c(1.5,3.5,solBase[1],solNew()[1]), labels=c("","","",expression("Q"[1]^"E")),lwd.ticks=1)
+      axis(2, at=c(2,4,solBase[3],solNew()[3]), labels=c("","","",expression("P"[1]^"E")),lwd.ticks=1)
+      })
+    output$Mkt2Plot<-renderPlot({
+      par(bg="beige")
+      plot(A+a*(0:8),0:8,type="l",col="blue", lty=2, lwd=3,
+           xlim=c(1.5,3.5),ylim=c(2,4),
+           xlab="",
+           ylab="",
+           xaxs="i",yaxs="i",bty="n",
+           main="Market 2",
+           xaxt='n',yaxt='n'
+      )
+      lines(B+cc*solBase[3]+b*(0:8),0:8,col="red",lty=2,lwd=3)
+      lines(A+a*(0:8),0:8,col="blue",lwd=3)
+      lines(B+cc*solNew()[3]+b*(0:8),0:8,col="red",lwd=3)
+      lines(c(0,solBase[2]),c(solBase[4],solBase[4]),col="black",lty=2)
+      lines(c(solBase[2],solBase[2]),c(0,solBase[4]),col="black",lty=2)
+      lines(c(0,solNew()[2]),c(solNew()[4],solNew()[4]),col="purple",lty=2)
+      lines(c(solNew()[2],solNew()[2]),c(0,solNew()[4]),col="purple",lty=2)
+      points(solNew()[2],solNew()[4],col="purple",bg="purple",pch=21)
+      axis(1, at=c(1.5,3.5,solBase[2],solNew()[2]), labels=c("","","",expression("Q"[2]^"E")),lwd.ticks=1)
+      axis(2, at=c(2,4,solBase[4],solNew()[4]), labels=c("","","",expression("P"[2]^"E")),lwd.ticks=1)
+    })
+  },
+  options=list(height=800, width=900)
+  )
+```
+
+##<span style="color:SaddleBrown">Solution to Models with Multiple Markets</span>
+
+* Consider a model with two markets that could be related in supply and/or demand.
+
+$$
+\begin{array}
+{r}
+Supply\ in\ Market\ 1: \\
+Demand\ in\ Market\ 1: \\
+Supply\ in\ Market\ 2: \\
+Demand\ in\ Market\ 2: \\
+\end{array}
+\begin{array}
+{r}
+\%\Delta Q_1 = \phi_{11} \%\Delta P_1 + \phi_{12} \%\Delta P_2 + \%\Delta S_1 \\
+\%\Delta Q_1 = \varepsilon_{11} \%\Delta P_1 + \varepsilon_{12} \%\Delta P_2 + \%\Delta D_1 \\
+\%\Delta Q_2 = \phi_{21} \%\Delta P_1 + \phi_{22} \%\Delta P_2 + \%\Delta S_2 \\
+\%\Delta Q_2 = \varepsilon_{21} \%\Delta P_1 + \varepsilon_{22} \%\Delta P_2 + \%\Delta D_2 \\
+\end{array}
+$$
+
+* There are four endogenous variables in this model.  We will find a solution with matrix algebra. 
+
+##<span style="color:SaddleBrown">Solution to Models with Multiple Markets (continued) </span>
+
+* Organize the system of equations so all endogenous variables are on the left and all exogenous terms are on the right.
+
+$$
+\begin{array}
+{r}
+Supply\ in\ Market\ 1: \\
+Demand\ in\ Market\ 1: \\
+Supply\ in\ Market\ 2: \\
+Demand\ in\ Market\ 2: \\
+\end{array}
+\begin{array}
+{r}
+\%\Delta Q_1 + 0 \times \%\Delta Q_2  - \phi_{11} \%\Delta P_1 - \phi_{12} \%\Delta P_2 = \%\Delta S_1 \\
+\%\Delta Q_1 + 0 \times \%\Delta Q_2 -  \varepsilon_{11} \%\Delta P_1 - \varepsilon_{12} \%\Delta P_2 = \%\Delta D_1 \\
+0 \times \%\Delta Q_1 + \%\Delta Q_2 - \phi_{21} \%\Delta P_1 - \phi_{22} \%\Delta P_2 = \%\Delta S_2 \\
+0 \times \%\Delta Q_1 + \%\Delta Q_2 - \varepsilon_{21} \%\Delta P_1 - \varepsilon_{22} \%\Delta P_2 = \%\Delta D_2 \\
+\end{array}
+$$
+
+##<span style="color:SaddleBrown">Matrix Algebra Solution to the System of Equations</span>
+
+*  This system can be expressed in matrix notation, $\mathbf{A x = b}$, as follows:
+
+$$\left[\begin{array}
+{rrrr}
+1 & 0 & -\phi_{11}        & -\phi_{12}        \\
+1 & 0 & -\varepsilon_{11} & -\varepsilon_{12} \\
+0 & 1 & -\phi_{21}        & -\phi_{22}        \\
+0 & 1 & -\varepsilon_{21} & -\varepsilon_{22} \\
+\end{array}\right] 
+\left[\begin{array}
+{r}
+\%\Delta Q_1 \\
+\%\Delta Q_2 \\
+\%\Delta P_1 \\
+\%\Delta P_2 \\
+\end{array}\right] = 
+\left[\begin{array}
+{r}
+\% \Delta S_1 \\
+\% \Delta D_1 \\
+\% \Delta S_2 \\
+\% \Delta D_2 \\
+\end{array}\right] $$
+
+* The solution is $\mathbf{x = A^{-1} b}$
+
+* Solutions are generally found on a computer because computing inverses by hand is tedious.  
+
+    + Solutions can be found in spreadsheets using the *minverse()* and *mmult()* functions.
+
+    + Solutions can be found in software packages like R, which are capable of manipulating matrices.
+    
+    + This approach can accommodate a general case with N markets.
+
+##<span style="color:SaddleBrown">The effect of an exogenous supply shock in a two market system. The markets are related in demand but unrelated in supply (Demonstration 6 of *An Interactive Text*) .</span>
+
+```{r, echo=FALSE}
+library(shiny)
+shinyApp(
+  ui = fluidPage(
+    includeCSS("test.css"),
+    sidebarPanel(
+       radioButtons("type", label = "Relationship in Demand",
+                   choices = list("Complements" = -1, "Substitutes" = 1),
+                   selected = 1,inline=F),
+       radioButtons("shock", label = "Shock to Supply in Market 1",
+                   choices = list("Negative 3%" = -3, "None"= 0, "Positive 3%" = 3),
+                   selected = 0,inline=F),
+      width=4
+    ),
+    mainPanel(p("Given the following:"),
+              uiOutput("m1"),
+              uiOutput("m2"),
+              p(" "),
+              p("The A matrix is:"),
+              uiOutput("A"),
+              p(" "),
+              p("The b matrix is:"),
+              uiOutput("b"),
+              p(" "),
+              p("The solution matrix (x) is:"),
+              uiOutput("x")
+              )
+    ),
+  server = function(input,output) {
+    #Enter matices for demand coefficients and datapoints
+    probDat<- data.frame(e1 = c(-1.2, 0.50), e2=c(0.6,-1.4),f1=c(1.3,0),f2=c(0,0.9))
+    x<-reactive(round(solve(
+      matrix(c(1,0,-probDat$f1[1],-probDat$f1[2],
+               1,0,-probDat$e1[1],-as.numeric(input$type)*probDat$e1[2],
+               0,1,-probDat$f2[1],-probDat$f2[2],
+               0,1,-as.numeric(input$type)*probDat$e2[1],-probDat$e2[2]),
+             nrow=4,byrow=T),
+      matrix(c(as.numeric(input$shock),0,0,0),nrow=4)
+      ),digits=3))
+    
+    #Reactive terms to be used for the dynamic plot
+    output$m1<-renderUI({withMathJax(paste("$$\\phi_{11}=",probDat$f1[1], 
+                                           ";\\ \\phi_{12}=",probDat$f1[2],
+                                           ";\\ \\varepsilon_{11}=", probDat$e1[1],
+                                           ";\\ \\varepsilon_{12}=",as.numeric(input$type)*probDat$e1[2],
+                                           ".$$"))})
+    output$m2<-renderUI({withMathJax(paste("$$\\phi_{21}=",probDat$f2[1], 
+                                           ";\\ \\phi_{22}=",probDat$f2[2],
+                                           ";\\ \\varepsilon_{21}=", as.numeric(input$type)*probDat$e2[1],
+                                           ";\\ \\varepsilon_{22}=",probDat$e2[2],
+                                           ".$$"))})
+    output$A<-renderUI({withMathJax(paste("$$\\mathbf{A} = \\left[\\begin{array}{rrrr}
+                                                          1 & 0 & -\\phi_{11}& -\\phi_{12}\\\\
+                                                          1 & 0 & -\\varepsilon_{11} & -\\varepsilon_{12}\\\\
+                                                          0 & 1 & -\\phi_{21}&-\\phi_{22}\\\\
+                                                          0 & 1 & -\\varepsilon_{21} & -\\varepsilon_{22} \\\\
+                                          \\end{array}\\right] ="," 
+                                          \\left[\\begin{array}{rrrr}
+                                                          1 & 0 &", -probDat$f1[1],"&", -probDat$f1[2],"\\\\
+                                                          1 & 0 &", -probDat$e1[1],"&", -as.numeric(input$type)*probDat$e1[2],"\\\\
+                                                          0 & 1 &", -probDat$f2[1],"&", -probDat$f2[2],"\\\\
+                                                          0 & 1 &", -as.numeric(input$type)*probDat$e2[1],"&", -probDat$e2[2],"\\\\
+                                          \\end{array}\\right]$$"))})
+    output$b<-renderUI({withMathJax(paste("$$\\mathbf{b} = \\left[\\begin{array}{c}
+                                                          \\%\\Delta S_{1}\\\\
+                                                          \\%\\Delta D_{1}\\\\
+                                                          \\%\\Delta S_{2}\\\\
+                                                          \\%\\Delta D_{2}\\\\
+                                          \\end{array}\\right] =", " 
+                                          \\left[\\begin{array}{c}",
+                                                          as.numeric(input$shock), "\\\\
+                                                          0\\\\
+                                                          0\\\\
+                                                          0\\\\
+                                          \\end{array}\\right]$$"))})
+    output$x<-renderUI({withMathJax(paste("$$\\mathbf{x} = \\left[\\begin{array}{c}
+                                                          \\%\\Delta Q_{1}\\\\
+                                                          \\%\\Delta Q_{2}\\\\
+                                                          \\%\\Delta P_{1}\\\\
+                                                          \\%\\Delta P_{2}\\\\
+                                          \\end{array}\\right] =", " 
+                                          \\left[\\begin{array}{r}",
+                                                          x()[1,1], "\\\\",
+                                                          x()[2,1], "\\\\",
+                                                          x()[3,1], "\\\\",
+                                                          x()[4,1], "\\\\
+                                          \\end{array}\\right]$$"))})
+  },
+  options=list(height=500)
+)
+```
+
+

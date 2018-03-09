@@ -16,7 +16,7 @@ __*An Interactive Text for Food and Agricultural Marketing*__ by [Michael R. Tho
 
 #<span style="color:SaddleBrown">Overview and Objectives</span>
 
-In this chapter you will use material learned earlier in the course to be better understand price determination and the behavior of markets. The chapter starts with a general overview of an equilibrium for a single market and then moves on to basic framework for predicting the effect of a shock to either the demand or supply side of the market on equilibrium price and quantity.  In most real-world modeling exercises, elasticities are used to characterize and equilibrium in percentage change form.  These models are often called "equilibrium displacement models" and are the topic of the second section of the chapter.  Again, the emphasis will first be on a single market to keep things simple.  The third section of the chapter extends the framework to examine the effects of a shock to multiple markets simultaneously. In most cases, a shock to one market will reverberate through other related markets.  You will also learn how to use elasticities to compute shocks to supply and demand in these kinds of models.  The specific learning objectives for this chapter are as follows:
+In this chapter you will use material learned earlier in the course to be better understand price determination and the behavior of markets. The chapter starts with a general overview of an equilibrium for a single market and then moves on to a basic framework for predicting the effect of a shock to either the demand or supply side of the market on the equilibrium price and quantity.  In most real-world modeling exercises, elasticities are used to characterize an equilibrium in percentage change form.  These models are often called "equilibrium displacement models" and are the topic of the second section of the chapter.  Again, the emphasis will first be on a single market to keep things simple.  The third and fourth sections of the chapter extend the framework to examine the effects of a shock on multiple markets simultaneously.  This provides a more realistic treatment of actual markets because a shock to one market will generally reverberate through other related markets. Feedback from these related markets will amplify or diminish the effect in the market experiencing the initial shock.  The specific learning objectives for this chapter are as follows:
 
 * Identify an equilibrium in a single market given a supply equation and a demand equation.
 
@@ -36,27 +36,27 @@ In this chapter you will use material learned earlier in the course to be better
 
 #<span style="color:SaddleBrown">Market Equilibrium</span>
 
-In a market, the demand and supply come together to determine the price and quantity of a product.  A market is said to be in equilibrium when the prevailing price causes the quantity supplied to equal the quantity demanded.  The term equilibrium suggests a point of stability.  Because supply equals demand at an equilibrium, there is no reason for consumers to bid prices up through unmet requests for the product nor is their a reason for producers to bid prices down because of untaken offers of the product.  Price is, in this respect, stable.  
+In a market, demand and supply come together to determine the price and quantity of a product.  A market is said to be in equilibrium when the prevailing price causes the quantity supplied to equal the quantity demanded.  The term equilibrium suggests a point of stability.  Because supply equals demand at an equilibrium, there is no reason for consumers to bid prices up through unmet requests for the product nor is their a reason for producers to bid prices down because of untaken offers of the product.  Price is, in this respect, stable.  
 
-Consider an example involving a single market.  Suppose that the demand for Good 1 is given by 
+Consider an example involving a single market.  Suppose that the demand for good 1 is given by 
 $$Q_1^D = 100 - \frac{1}{2}P_1+D,$$
 
 where $Q_1^D$ is quantity demanded, $P_1$ is price, and $D$ is a demand shock.  $D$ can be positive, negative, or zero.  
 
-Next, suppose that supply for Good 1 is given by
+Next, suppose that supply for good 1 is given by
 $$Q_1^S = -20 +P_1+S,$$
 where $Q_1^S$ is quantity supplied and $S$ is a supply shock.  Again, $S$ can be positive, negative, or zero.  
 
-To find the equilibrium price, we set $Q_1^S = Q_1^D$ and solve for $P_1$ as follows:
+To find the equilibrium price, set $Q_1^S = Q_1^D$ and solve for $P_1$ as follows:
 $$-20 +P_1+S = 100 - \frac{1}{2}P_1+D  \implies P_1 = 80+\frac{2}{3}(D-S).$$
-Next, substitute this solution for $P_1$ into the supply or the demand equation. If our solution for $P_1$ is correct, we will get the same quantity regardless of which equation we use:
+Next, substitute this solution for $P_1$ into the supply or the demand equation. If the solution for $P_1$ is correct, you will get the same quantity regardless of which equation you use:
 
 $$Q_1^S=-20+ 80+\frac{2(D-S)}{3}+S = 60+\frac{2D+S}{3}.$$
 
 $$Q_1^D=100 - \frac{1}{2}(80+\frac{2(D-S)}{3})+X = 60+\frac{2D+S}{3}.$$
-An equilibrium based on this example is depicted below in Demonstrations 1 and 2.  Note that when there is no demand or supply shock ($D = S = 0$), $P_1^E = 80$ and $Q_1^E = 60$.  This is the initial equilibrium depicted in the demonstrations.  Use Demonstration 1 to add a positive shock to demand.  When you do this, the demand schedule shifts to the right by 12 units.  This disrupts the equilibrium.  At the current price of \$80, only 60 units are supplied but now 72 units are demanded.  Since demand now exceeds supply, the price will be bid up until a new equilibrium price of \$88 is reached which causes the new demand schedule to equate with the supply schedule at a new equilibrium quantity of 68 units.  Thus, the initial shock of positive 12 units ultimately resulted in an 8 unit increase in the equilibrium quantity after the market price adjusted to a new equilibrium price.  
+An equilibrium based on this example is depicted below in Demonstrations 1 and 2.  Note that when there is no demand or supply shock ($D = S = 0$), $P_1^E = 80$ and $Q_1^E = 60$.  This is the initial equilibrium depicted in the demonstrations.  Use Demonstration 1 to add a positive shock to demand.  When you do this, the demand schedule shifts to the right by 12 units.  This disrupts the equilibrium.  At the current price of \$80, only 60 units are supplied but now 72 units would be demanded.  Since demand now exceeds supply, the price will be bid up until a new equilibrium price of \$88 is reached which causes the new demand schedule to equate with the supply schedule at a new equilibrium quantity of 68 units.  Thus, the initial shock of positive 12 units ultimately resulted in an 8 unit increase in the equilibrium quantity after the market price adjusted to a new equilibrium price.  
 
-Reset the demand shock in Demonstration 1 to be zero.  You will return to the original equilibrium of $P_1^E = 80$ and $Q_1^E = 60$.  Now use the demonstration to apply a negative shock to demand.  This causes demand to shift to the left by 12 units.  At the current price of \$80, only 48 units are demanded after the shock, but suppliers will continue to offer 60 units on the market. Because supply now exceeds demand, the price will be bid down until the market reaches a new equilibrium price of \$72 and a new equilibrium quantity of 52 units.  Again the initial shock of negative 12 units ultimately resulted in an 8 unit decrease in the equilibrium quantity after the market price reached a new equilibrium.  
+Reset the demand shock in Demonstration 1 to be zero.  You will return to the original equilibrium of $P_1^E = 80$ and $Q_1^E = 60$.  Now use the demonstration to apply a negative shock to demand.  This causes demand to shift to the left by 12 units.  At the current price of \$80, only 48 units would be demanded after the shock, but suppliers will continue to offer 60 units on the market. Because supply now exceeds demand, the price will be bid down until the market reaches a new equilibrium price of \$72 and a new equilibrium quantity of 52 units.  Again the initial shock of negative 12 units ultimately resulted in an 8 unit decrease in the equilibrium quantity after the market price reached a new equilibrium.  
 
 ***
  
@@ -116,7 +116,7 @@ shinyApp(
 
 ***
 
-Demonstration 2, is similar except that it allows you to consider the effect of positive or negative shocks to supply as opposed to demand.  Spend some time with demonstration 2 to visualize the effects of positive or negative supply shocks.  As you do, note that a shock disrupts the equilibrium so that supply no longer equals demand.  As a result, prices are bid up or down as necessary until a new equilibrium price is determined that matches supply to demand.  Pay attention to the direction of the quantity and price change in response to the positive and negative supply shocks.  
+Demonstration 2, is similar except that it allows you to consider the effect of positive or negative shocks to supply as opposed to demand.  Spend some time with demonstration 2 to visualize the effects of a positive or negative supply shock.  As you do, note that a shock disrupts the equilibrium so that supply no longer equals demand.  As a result, prices are bid up or down as necessary until a new equilibrium price is determined that matches demand to the new supply schedule.  Pay attention to the direction of the quantity and price change in response to the positive and negative supply shocks.  
 
 ***
 
@@ -179,11 +179,12 @@ shinyApp(
 ###Exogenous and Endogenous Variables in an Equilibrium Model
 In the above example, an equilibrium was found by solving a system of equations.  In the case of one market, there are two equations (one supply equation and one demand equation) and two unknowns (the equilibrium price and the equilibrium quantity).  These unknown variables are called __*endogenous*__ variables.  They are given this name because they are determined inside the system of equations.  The etymology of the prefix "endo" is from a Greek word meaning "within."  In general, the number of endogenous variables in the system will be equal to the number of demand and supply equations.  For example, in a model of two markets, there are four equations (two pairs of demand and supply equations) and four endogenous variables (an equilibrium price and quantity in each of the two markets).
 
-__*Exogenous*__ variables affect the equilibrium but are determined outside of the system of equations. As you might have guessed, the prefix "exo" also has its origin in a Greek word meaning "outside."  In terms of the demand or supply schedules, a change in an exogenous variable causes one or more of the schedules to shift.  In the example above, there were two exogenous variables: $D$ and $S$. There is no upper limit on the number of exogenous variables that can be included in the system.  Exogenous variables will be a subset of those designated in chapters 1 and 2 as demand or supply shift variables.  However the the term "shifter" and "exogenous" are not synonymous.  To be be truly exogenous, the shift variable needs to be unaffected by the market being analyzed in the model.  Otherwise, it is not truly exogenous. For example, based on Chapter 1, one could argue that beef and pork are substitutes.  If this is true, the price of pork shifts the demand for beef.  Nevertheless, it would problematic to assume that the price of pork is exogenous because the price of beef also shifts the demand for pork.  In this case, an accurate model would need to encompass the markets for both beef and pork, in which case the the prices and quantities of beef and pork would all be endogenous variables in the model.  In many contexts, a change in average consumer income, another demand shift variable, could be treated as exogenous.  This is fine so long as it is reasonable to assert that income is dictated by macroeconomic forces that are minimally affected by the market being analyzed.  There will be cases where income should not be considered exogenous.  In fact, income is endogenous in one of the consumer models we will consider in Chapter 5.  In this model, income is determined by the consumer's allocation of time spent in leisure activities, in the labor force, and in household production.  Similarly, in some cases, the supply side of the market will be small enough to not materially affect the price of an input.  In such cases, it may be reasonable to assume that input prices are exogenous variables within the model.  In others, it will be necessary to formally incorporate input markets into the model and input prices will be endogenous.  
+__*Exogenous*__ variables affect the equilibrium but are determined outside of the system of equations. As you might have guessed, the prefix "exo" also has its origin in a Greek word meaning "outside."  In terms of the demand or supply schedules, a change in an exogenous variable causes one or more of the schedules to shift.  In the example above, there were two exogenous variables: $D$ and $S$. There is no upper limit on the number of exogenous variables that can be included in the system.  Exogenous variables will be a subset of those designated in chapters 1 and 2 as demand or supply shift variables.  However the the term "shifter" and "exogenous" are not synonymous.  To be be truly exogenous, the shift variable needs to be unaffected by the markets being analyzed in the model.  Otherwise, it is not truly exogenous. For example, one could argue that beef and pork are substitutes.  If this is true, the price of pork shifts the demand for beef.  Nevertheless, it would problematic to assume that the price of pork is exogenous because the price of beef also shifts the demand for pork.  In this case, an accurate model would need to encompass the markets for both beef and pork, in which case the the prices and quantities of beef and pork would all be endogenous variables in the model.  
+
+In many contexts, a change in average consumer income, another demand shift variable, could be treated as exogenous.  This is fine so long as it is reasonable to assert that income is dictated by macroeconomic forces that are minimally affected by the market being analyzed.  However, there will be cases where income should not be considered exogenous.  In fact, income is endogenous in one of the consumer models that will be presented in Chapter 5.  In this model, income is determined by the consumer's allocation of time spent in leisure activities, in the labor force, and in household production.  Similarly, in some cases, the supply side of the market will be small enough to not materially affect the price of an input.  In such cases, it may be reasonable to assume that input prices are exogenous variables within the model.  In others, it will be necessary to formally incorporate input markets into the model and input prices will be endogenous.  
 
 ###A Basic Framework for Identifying the Cause of an Equilibrium Change
 
-Schrimper (2001) describes a basic framework that can be used to compare two equilibrium points and make a conclusive, albeit qualified, statement about whether demand has shifted or whether supply has shifted.  This framework is presented in Demonstration 3 as a pedagogical device to help you understand the effects of exogenous demand or supply shocks on an equilibrium.  Demand and supply schedules are superimposed on the framework to facilitate an explanation of what follows and what is presented below in Table 1.  However, statements about whether demand or supply has shifted do not require you to know the schedules, only what quadrant of the framework a new equilibrium point lies relative to the old.  
 
 ***
 
@@ -276,7 +277,7 @@ Substituting Equation 1 back into $\%\Delta Q_i^S$ or $\%\Delta Q_i^D$ provides 
 
 
 $$\text{Equation 2:}\ \ \ \ \ \ \ \ \ \ \%\Delta Q_i^E = \frac{\phi_{ii} \% \Delta D_i - \varepsilon_{ii} \% \Delta S_i}{\phi_{ii}-\varepsilon_{ii}}.$$
-Use of elasticities in modeling equilibria has some clear advantages.  First, there is no need to assume that demand and supply are linear.  The equilibrium model is a system of equations that is linear in the elasticities even if the underlying supply or demand equations are non-linear. Second, while it is true that equilibrium models in elasticity form provide percentage changes in equilibrium price and quantity, the prevailing equilibrium price and quantity are commonly known.  Thus, percentage impacts from these models contain the information needed to assess the economic effects of an exogenous shock on the market. Third, the approach described below can accommodate any number of exogenous shocks and these shocks can occur simultaneously. Finally, the modeling approaches of this section can be extended to real-world situations involving numerous inter-related markets.  The remainder of this section of the chapter will address a three different problem contexts where elasticities are used to develop an equilibrium model.  In two of these contexts, elasticities will also be used to estimate exogenous shocks to demand and supply. 
+Use of elasticities in modeling equilibria has some clear advantages.  First, there is no need to assume that demand and supply are linear.  The equilibrium model is a system of equations that is linear in the elasticities even if the underlying supply or demand equations are non-linear. Second, while it is true that equilibrium models in elasticity form provide percentage changes in equilibrium price and quantity, the prevailing equilibrium price and quantity are commonly known.  Thus, percentage impacts from these models contain the information needed to assess the economic effects of an exogenous shock on the market. Third, the approach described below can accommodate any number of exogenous shocks and these shocks can occur simultaneously. Finally, the modeling approaches of this section can be extended to real-world situations involving numerous inter-related markets.  
 
 ###Using Elasticities of Supply or Demand from Exogenous Shift Variables
 Recall from Chapter 3, that the general definition of an elasticity enables it to be used to forecast a quantity change.  This means that if you have the elasticity of demand or supply with respect to an exogenous variable, it can be used to predict a shock to demand or supply as follows: 
@@ -285,31 +286,31 @@ $$\% \Delta S_i = \phi_{iZ}\%\Delta Z,$$
 and
 
 $$\% \Delta D_i = \varepsilon_{iX}\%\Delta X.$$
-As explained above, we can estimate exogenous supply or demand shocks, $\% \Delta S_i$ or $\% \Delta D_i$, with elasticities for exogenous variables, provided that we have them.  This approach works well to analyze the effects of something like a change in average consumer income on demand or the effect of an input price change on supply.  This is because it is often feasible to estimate income elasticities of demand or input price elasticities of supply. However, there are other kinds of shocks that we may need to model but for which we do not have an elasticity.
+Thus, one way to obtain exogenous supply or demand shocks, $\% \Delta S_i$ or $\% \Delta D_i$, is to use projected changes in exogenous variables into demand/supply shocks using the elasticities for these exogenous variables.
 
 ###Convert Potential Quantity Shocks to Percentages
-In some of these cases, it may be feasible to estimate the supply or demand shock in terms of units and then convert those units into a percentage of market quantity.  For instance, in the early 2000's, there was an outbreak of Hoof and Mouth Disease (HMD) in the United Kingdom. According to the BBC, the outbreak resulted in the destruction of more than six million sheep, cattle, and pigs [(Bates 2016)](http://www.bbc.com/news/magazine-35581830). Fortunately, the last confirmed case of HMD in the United States was 1929, but HMD is endemic in parts of the world and there is always a risk that it could again become a problem in the United States as well [(USDA-APHIS 2013a)](https://www.aphis.usda.gov/publications/animal_health/2013/fs_fmd_general.pdf).  In fact, the USDA has an entire agency, The Animal Plant Health Inspection Service, that works closely with Customs and Border Protection to prevent the introduction of HMD and other diseases or pests that could harm US Agriculture [(USDA-APHIS 2013b)](https://www.aphis.usda.gov/publications/animal_health/2013/fs_fmd_hcd_protection.pdf).
+Unfortunately, some shocks do correspond to exogenous variables for which you have elasticity estimates.  In these cases it may be feasible to estimate the supply or demand shock in terms of units and then convert those units into a percentage of market quantity.  For instance, in the early 2000's, there was an outbreak of Hoof and Mouth Disease (HMD) in the United Kingdom. According to the BBC, the outbreak resulted in the destruction of more than six million sheep, cattle, and pigs [(Bates 2016)](http://www.bbc.com/news/magazine-35581830). The last confirmed case of HMD in the United States was 1929, but HMD is endemic in parts of the world and there is always a risk that it could again become a problem in the United States as well [(USDA-APHIS 2013a)](https://www.aphis.usda.gov/publications/animal_health/2013/fs_fmd_general.pdf).  In fact, the USDA has an entire agency, The Animal Plant Health Inspection Service, that works closely with Customs and Border Protection to prevent the introduction of HMD and other diseases or pests that could harm US Agriculture [(USDA-APHIS 2013b)](https://www.aphis.usda.gov/publications/animal_health/2013/fs_fmd_hcd_protection.pdf).
 
-Paarlberg, Lee, and Seitzinger (2002) considered the potential effects of an HMD outbreak on meat, poultry and dairy markets in the US. They used supply shocks of -5 percent for beef cattle and milk production, -2 percent for swine production, and -9 percent for lamb and sheep production.  These estimates were based on actual livestock reductions observed in the UK outbreak.  They also considered demand shocks to account for potential taste changes away from red meats and to account for the fact that discovery of HMD in the US would result in closure of export markets for livestock products.  The point to be made here is that in many settings, such as a possible HMD outbreak, analysts may be able to come up with reasonable estimates for supply and demand shocks that can be used for $S$ and/or $D$ and then assess the effect on an equilibrium.  A more involved analysis of the potential US market response to an HMD outbreak is provided in [Paarlberg et al. (2008)](https://www.ers.usda.gov/webdocs/publications/err57/12171_err57_1_.pdf).  This study provides background on the markets being examined and includes an appendix containing baselines and elasticities used in the equilibrium models.  Moreover, the study measures market equilibrium responses to HMD outbreaks of differing levels of severity.  
+Paarlberg, Lee, and Seitzinger (2002) considered the potential effects of an HMD outbreak on meat, poultry and dairy markets in the US. They used supply shocks of -5 percent for beef cattle and milk production, -2 percent for swine production, and -9 percent for lamb and sheep production.  These estimates were based on actual livestock reductions observed in the UK outbreak.  They also considered demand shocks to account for potential taste changes away from red meats and to account for the fact that discovery of HMD in the US would result in closure of export markets for livestock products.  The point to be made here is that in many settings, such as a possible HMD outbreak, modelers may be able to come up with reasonable estimates for supply and demand shocks that can be used for $\% \Delta S$ and/or $\% \Delta D$ and then assess the effect on an equilibrium.  A more involved analysis of the potential US market response to an HMD outbreak is provided in [Paarlberg et al. (2008)](https://www.ers.usda.gov/webdocs/publications/err57/12171_err57_1_.pdf).  This study provides background on the markets being examined and includes an appendix containing baselines and elasticities used in the equilibrium models.  Moreover, the study measures market equilibrium responses to HMD outbreaks of differing levels of severity.  
 
-In the Paarlberg, Lee, and Seitzinger (2002) and [Paarlberg et al. (2008)](https://www.ers.usda.gov/webdocs/publications/err57/12171_err57_1_.pdf) studies, the exogenous event was an HMD outbreak and the analyses examined how equilibrium prices and quantities would respond to this event given existing estimates of market elasticities. It is worth pointing out that these authors included markets for feedstuffs in their models.  This is because an adjustment to livestock markets would have ramifications on markets for feedstuffs, which would then feed back into the markets for livestock products.  For this reason, it was important to include feedstuff prices and quantities as endogenous variables. 
+In the Paarlberg, Lee, and Seitzinger (2002) and [Paarlberg et al. (2008)](https://www.ers.usda.gov/webdocs/publications/err57/12171_err57_1_.pdf) studies, the exogenous event was an HMD outbreak and the analyses examined how equilibrium prices and quantities would respond to this event given existing estimates of market elasticities. It is worth pointing out that these authors included markets for feedstuffs in their models.  This is because an adjustment to livestock markets would have ramifications on markets for feedstuffs, which would then ripple back into the markets for livestock products.  For this reason, it was important to include feedstuff prices and quantities as endogenous variables in the model. 
 
 ###Use Own-Price Elasticities to Convert Changes in Costs or Willingness to Pay Into Quantity Shocks
-In some cases, the exogenous shock we wish to model may not have an elasticity nor be easily represented in terms of a percentage of current market quantity.  However, if we can estimate the effect as a percentage of the current equilibrium price we can use own-price elasticities to find the shock.  This is because an increase in costs is analogous to price decrease for producers.  Similarly, an improvement in a quality attribute valued by consumers is analogous to a price decrease for the consumer.  
+In other cases, the exogenous shock that needs to be modeled may not have an elasticity nor be easily represented in terms of a percentage of current market quantity.  However, if you can estimate the effect as a percentage of the current equilibrium price you can use own-price elasticities to find the shock.  This is because an increase in cost is analogous to price decrease for producers.  Similarly, an improvement in a quality attribute valued by consumers is analogous to a price decrease for the consumer.  
 
-###A Supply Shock Problem
-Let us consider a supply shock problem.  Suppose new biosecurity regulations are proposed to prevent spread of HMD on feedlot operations. Suppose further that the fed cattle market is at an initial equilibrium with a price of \$1.25 per pound. It is estimated that it will cost producers \$0.03 per pound to comply with the regulations. How will this affect market equilibrium?  We know that the regulations will raise costs and this will shift the supply curve to the left resulting in a new equilibrium with a higher price and low quantity (see Table 1).  The question is, how much higher and lower?  To find out, let us first note that the \$0.03 cost increase is 2.4 percent (0.03/1.25 = 0.024) of the current market price.  Consequently, the costs resulting from the regulation are analogous to a 2.4 percent reduction in the price that producers receive. Suppose that farm-level supply and demand elasticities are as follows:  $\phi_{11} = 2$ and $\varepsilon_{11} = -0.8$.  The increase in per-unit costs translates into a supply shock of  $\% \Delta S$ = 2(-2.4) = -4.8 percent.  We can now use Equation 1 to to predict the equilibrium price response as follows:
+#### A Supply Shock Problem
+Let us consider a supply shock problem.  Suppose new biosecurity regulations are proposed to prevent spread of HMD on feedlot operations. Suppose further that the fed cattle market is at an initial equilibrium with a price of \$1.25 per pound. It is estimated that it will cost producers \$0.03 per pound to comply with the regulations. How will this affect market equilibrium?  You know that the regulations will raise costs and this will shift the supply curve to the left resulting in a new equilibrium with a higher price and low quantity (see Table 1 above).  The question is, how much higher and lower?  To find out, let us first note that the \$0.03 cost increase is 2.4 percent (0.03/1.25 = 0.024) of the current market price.  Consequently, the costs resulting from the regulation are analogous to a 2.4 percent reduction in the price that producers receive. Suppose that farm-level supply and demand elasticities are as follows:  $\phi_{11} = 2$ and $\varepsilon_{11} = -0.8$.  The increase in per-unit costs translates into a supply shock of  $\% \Delta S$ = 2(-2.4) = -4.8 percent.  You can now use Equation 1 to to predict the equilibrium price response as follows:
 
 $$\%\Delta P_1^E = \frac{0-(-4.8)}{2-(-0.8)} \approx 1.71.$$
-From Equation 2, we get the equilibrium quantity response to be
+From Equation 2, you get the equilibrium quantity response to be
 
 $$\%\Delta Q_1^E = \frac{(2)(0)-(-0.8)(-4.8)}{2-(-0.8)} \approx -1.37.$$
 
-### A Demand Shock Problem
-Suppose that you have access to a study showing that high protein diet fads are growing in popularity and that within a year, consumers will, on average, be willing to pay 3 percent more chicken.  If this study is correct, how would it affect the equilibrium price and quantity of chicken?  The study suggests that consumer preferences for chicken with strengthen.  Thus, we would expect demand to shift outwards, and the equilibrium price and quantity should rise (see Table 1).  The question is by how much?  Since consumers are projected to obtain 3 percent more value from chicken, this is analogous to a 3 percent reduction in the price that consumers pay.  Suppose that retail level supply and demand elasticities for chicken are as follows: $\phi_{11} = 1.75$ and $\varepsilon_{11} = -1.1$.  The demand shock is  $\% \Delta D$ = -1.1(-3) = 3.3 percent.  Using Equation 1, the effect on the equilibrium price is
+#### A Demand Shock Problem
+Suppose that you have access to a study showing that high protein diet fads are growing in popularity and that within a year, consumers will, on average, be willing to pay 3 percent more for chicken.  If this study is correct, how would it affect the equilibrium price and quantity of chicken?  The study suggests that consumer preferences for chicken with strengthen.  Thus, you would expect demand to shift outwards, and the equilibrium price and quantity should rise (see Table 1).  The question is by how much?  Since consumers are projected to obtain 3 percent more value from chicken, this is analogous to a 3 percent reduction in the price that consumers pay.  Suppose that retail level supply and demand elasticities for chicken are as follows: $\phi_{11} = 1.75$ and $\varepsilon_{11} = -1.1$.  The demand shock is  $\% \Delta D$ = -1.1(-3) = 3.3 percent.  Using Equation 1, the effect on the equilibrium price is
 $$\%\Delta P_1^E = \frac{3.3-0}{1.75-(-1.1)} \approx 1.16.$$
 
-From Equation 2, we get the equilibrium quantity response to be
+From Equation 2, you get the equilibrium quantity response to be
 
 $$\%\Delta Q_1^E = \frac{(1.75)(3.3)-(-1.1)(0)}{1.75-(-1.1)} \approx 2.03.$$
 
@@ -317,15 +318,15 @@ $$\%\Delta Q_1^E = \frac{(1.75)(3.3)-(-1.1)(0)}{1.75-(-1.1)} \approx 2.03.$$
 
 #<span style="color:SaddleBrown">Partial vs. General Equilibrium Models</span>
 
-So far we have only considered the impact of an exogenous shock on one market. In many (if not most) cases, this is not a very good assumption.  For instance, a shock to the pork market would be expected to have an impact on the beef and poultry markets because these products are substitutes for pork. Moreover, as shown in the Paarlberg, Lee, and Seitzinger (2002) and Paarlberg et al. (2008) studies on HMD mentioned above, something that affects livestock markets would likely affect markets for grain and other feedstuffs.  Thus, an initial shock to the pork market will impact related product and input markets.  We should account for feedback between these related markets as they adjust to a new equilibrium.  
+So far, the impact of an exogenous shock has been considered for only one market. In many (if not most) cases, this is not a very good assumption.  For instance, a shock to the pork market would be expected to have an impact on the beef and poultry markets because these products are substitutes for pork. Moreover, as shown in the Paarlberg, Lee, and Seitzinger (2002) and Paarlberg et al. (2008) studies on HMD mentioned above, something that affects livestock markets would likely affect markets for grain and other feedstuffs.  Thus, an initial shock to the pork market will impact related product and input markets.  You should account for feedback between these related markets as they adjust to a new equilibrium.  
 
-As we add additional markets into an equilibrium analysis framework, our problem becomes more complex.  It may be infeasible to model all the related markets.  In some cases, the best an analyst can do is assess a single market in isolation.  This is called a partial equilibrium model. In a partial equilibrium model, we can assess how an equilibrium within the single market adjusts given an exogenous shock but we are ignoring feedback that may result from related markets.  
+As additional markets are added into an equilibrium analysis framework, the problem becomes more complex.  It may not be feasible to model all the related markets.  In some cases, the best an analyst can do is assess a single market in isolation.  This is called a partial equilibrium model. In a partial equilibrium model, you are ignoring feedback that may result from related markets.  
 
-General equilibrium models differ from partial equilibrium models in that they incorporate related product markets or economic sectors into the analysis.  In a general equilibrium model, we explicitly account for feedback from other markets to account for the fact that exogenous shocks occurring in other markets have implications for the market in question.
+General equilibrium models differ from partial equilibrium models in that they incorporate related markets or economic sectors into the analysis.  In a general equilibrium model, feedback from other markets is considered to account for the fact that exogenous shocks occurring in other markets have implications for the market in question.
 
-Classification of a model as a partial equilibrium or general equilibrium can vary a bit in the literature.  Specifically, we will sometimes see a model described as partial equilibrium model even though multiple markets are included in the analysis.  For example, Paarlberg, Lee, and Seitzinger (2002) and Paarlberg et al. (2008) classify their analyses as a partial equilibrium model, even though their models included markets for meat, dairy, livestock, and feedstuffs.   This is because they restrict their focus to a tightly linked group of markets and do not examine the ramifications of an HMD outbreak on other sectors of the economy.  
+Classification of a model as a partial equilibrium or general equilibrium can vary a bit in the literature.  Specifically, you will sometimes see a model described as partial equilibrium model even though multiple markets are included in the analysis.  For example, Paarlberg, Lee, and Seitzinger (2002) and Paarlberg et al. (2008) classify their analyses as a partial equilibrium model, even though their models included markets for meat, dairy, livestock, and feedstuffs.   This is because they restrict their focus to a tightly linked group of markets and do not examine the ramifications of an HMD outbreak on other sectors of the economy.  
 
-Normally, in a general equilibrium model, the equilibrium quantities and prices in all markets are endogenous.  For instance, if we are modeling three related markets, there would be six endogenous variables:  three equilibrium prices and three equilibrium quantities.  Exogenous variables in a general equilibrium model again reflect any variable outside the system that shifts demand or supply in one or more markets.  Note that when markets are related in consumption  or production, the price in Market 2 will shift demand or supply in Market 1 and *vice versa*.  However, prices are not exogenous because they are part of the equilibrium and are determined within the system of supply and demand equations that represent all markets included in the model.  For this reason, the term "exogenous variable" is much better to use than the term "shift variable" within the context of an equilibrium model.  The former implies that the value of the variable is determined outside the system.  The latter just implies that the value of the variable causes a shift in one or more of the demand or supply schedules but does not indicate whether the value is determined internally or externally.  
+Normally, in a general equilibrium model, the equilibrium quantities and prices in all markets are endogenous.  For instance, if you are modeling three related markets, there would be six endogenous variables:  three equilibrium prices and three equilibrium quantities.  Exogenous variables in a general equilibrium model again reflect any variable outside the system that shifts demand or supply in one or more markets.  Note that when markets are related in consumption  or production, the price in Market 2 will shift demand or supply in Market 1 and *vice versa*.  However, prices are not exogenous because they are part of the equilibrium and are determined within the system of supply and demand equations that represent all markets included in the model.  For this reason, the term "exogenous variable" is much better to use than the term "shift variable" within the context of an equilibrium model.  The former implies that the value of the variable is determined outside the system.  The latter just implies that the value of the variable causes a shift in one or more of the demand or supply schedules but does not indicate whether the value is determined internally or externally.  
 
 ***
 
@@ -337,7 +338,7 @@ To help you visualize feedback between markets, let us consider two markets that
 
 2. Because Products 1 and 2 are substitutes in consumption, the lower price in Market 1 causes a leftward demand shift in Market 2, resulting in a lower price in Market 2 as well.  
 
-3.  The lower price in Market 2 feeds back into Market 1.  Because the price in Market 2 is now lower and Good 2 is a substitute for Good 1, this causes the demand in Market 1 to shift inward and the price in Market 1 to falls further.  
+3.  The lower price in Market 2 feeds back into Market 1.  Because the price in Market 2 is now lower and good 2 is a substitute for good 1, this causes the demand in Market 1 to shift inward and the price in Market 1 to falls further.  
 
 A couple of points are worth mentioning here.  First, it should be clear that partial equilibrium models may over or understate the true impact of a a shock.  In the case just examined, feedback from Market 2 amplified the actual effect of the shock to Market 1.  In other words, a partial equilibrium model that only included Market 1 would understate the price effect of positive supply shock.  Second, in stepping through this example, adjustments to Markets 1 and 2 were presented as a sequential process, as steps 1-3.  This was mainly to reinforce the intuition of feedback from Market 2 into Market 1.  In reality, steps 1-3 occur simultaneously and the feedback is bidirectional as the markets in the system adjust to the new equilibria.  
 
@@ -421,7 +422,7 @@ shinyApp(
 
 ***
 
-Demonstration 5 provides an example for the case of complements in consumption.  Use demonstration 5 to add a positive supply shock to Market 1. Again, we see that feedback from Market 2 amplifies the resulting change in equilibrium price in Market 1.  In this case, however, it is for a different reason.  The initial supply shock causes the price in Market 1 to fall.  Because Good 2 is a complement to Good 1, this causes demand in Market 2 to increase and results in a price increase in Market 2, which feeds back into Market 1.  Demand in Market 1 decreases as a result of the higher price in Market 2  which amplifies the the price reduction.  You can repeat the process for a negative shock to Market 1 to see that the resulting price increase in Market 1 is similarly amplified by feedback from Market 2. 
+Demonstration 5 provides an example for the case of complements in consumption.  Use demonstration 5 to add a positive supply shock to Market 1. Again, you see that feedback from Market 2 amplifies the resulting change in equilibrium price in Market 1.  In this case, however, it is for a different reason.  The initial supply shock causes the price in Market 1 to fall.  Because good 2 is a complement to good 1, this causes demand in Market 2 to increase and results in a price increase in Market 2, which feeds back into Market 1.  Demand in Market 1 decreases as a result of the higher price in Market 2  which amplifies the the price reduction.  You can repeat the process for a negative shock to Market 1 to see that the resulting price increase in Market 1 is similarly amplified by feedback from Market 2. 
 
 The top panels of Demonstrations 4 and 5 are very similar.  In each case, feedback between the markets amplifies the price change to Market 1.  The difference lies in the effects of the initial shock on Market 2.  In the case of substitutes, the price change in Market 2 is of the same direction as the price change in Market 1.  In the case of complements the price in Market 2 is of the opposite direction to the price change Market 1.  
 
@@ -504,7 +505,7 @@ shinyApp(
 
 ***
 
-###Finding Solutions in Equilibrium Models with Multiple Markets
+#<span style="color:SaddleBrown">Finding Solutions in Equilibrium Models with Multiple Markets</span>
 
 In a model with a single market, there are two endogenous variables and two equations.  You can find a unique solution for $\% \Delta P$ and $\% \Delta Q$.  With multiple markets, there will be two equations (one supply equation and one demand equation) for each market.  Solving for the endogenous variables becomes a bit messy unless you use matrix algebra.  Let us step through the process of putting a two-market model, such as those depicted in Demonstrations 4 and 5 above, into matrix format.  In the case of two markets there will be four equations.  
 
@@ -742,8 +743,130 @@ $$\left[\begin{array}
 \% \Delta D_N \\
 \end{array} \right]$$
 
-Anymore, computational resources are generally not a limiting factor in analyzing models with many markets.  Rather, accurate estimates of the elasticities needed to implement the models can often be challenging.  The Food and Agricultural Policy Research Group [(FAPRI)](http://www.fapri.org/) maintains models of domestic and international agricultural commodity markets and provides a [database](http://www.fapri.iastate.edu/tools/elasticity.aspx) of elasticities for agricultural commodities in many regions of the world that they use to support their modeling efforts.  For a time, USDA's Economic Research Service compiled a database of published elasticity estimates.  This is no longer an active effort, but the elasticities compiled are available on the agency's [website](https://www.ers.usda.gov/data-products/commodity-and-food-elasticities/).  In some cases, estimates of the needed elasticities will not exist or will be outdated and it will be necessary to estimate or impute elasticities to use in a modeling problem.
+Anymore, computational resources are generally not a limiting factor in analyzing models with many markets.  Rather, accurate estimates of the elasticities needed to implement the models can often be challenging.  The Food and Agricultural Policy Research Group [(FAPRI)](http://www.fapri.org/) maintains models of domestic and international agricultural commodity markets and provides a [database](http://www.fapri.iastate.edu/tools/elasticity.aspx) of elasticities for agricultural commodities in many regions of the world to use in their modeling efforts.  For a time, USDA's Economic Research Service compiled a database of published elasticity estimates.  This is no longer an active effort, but the elasticities compiled are available on the agency's [website](https://www.ers.usda.gov/data-products/commodity-and-food-elasticities/).  In some cases, estimates of the needed elasticities will not exist or will be outdated, and it will be necessary to estimate or impute elasticities to use in a modeling problem. The model of fresh berry markets developed by Sobekova (2012) and summarized below illustrates a reasonably simple example of a situation where elasticities had to be developed to parameterize an equilibrium model.  
 
+In her MS thesis, Sobekova (2012) estimated the demand elasticities she needed to model markets for fresh berries.  She used data from Nielsen on retail berry sales by week across different US cities to estimate own and cross-price elasticities of demand for strawberries, blueberries, blackberries, and raspberries.  She did not directly estimate retail-level supply elasticities but was able to develop reasonable estimates of farm-level supply elasticities from earlier work.  She then gathered data from USDA's Agricultural Marketing Service on value of fresh berries at shipping-point locations and estimated the an elasticity of price transmission, $\tau_i$, between the farm and retail levels of the market.  This allowed her to express retail-level supply elasticities as
+$$ \phi_i^R = \tau_i \phi_i^F, $$
+where superscripts R and F refer to the retail and farm levels, respectively.   Elasticities used in her model are presented below in Table 2.  
+
+***
+
+#### Table 2. Elasticities used in Sobekova's (2012) model of the retail berry market
+
+Type of berry    | $P_{sb}$ | $P_{bb}$ | $P_{bk}$ | $P_{rb}$ | Farm Supply | Price Transmission | Retail Supply |
+-----------------|----------|----------|----------|----------|-------------|--------------------|---------------|
+Strawberries (sb)|    -1.26 |      0.32|      0.52|      0.39|      0.30|   0.98|  `r round(0.30*0.98,digits=2)`|
+Blueberries (bb) |     0.12 |     -1.49|      0.24|      0.20|      0.22|   0.40|  `r round(0.22*0.40,digits=2)`|
+Blackberries (bk)|     0.05 |      0.06|     -1.88|      0.06|      0.20|   0.47|  `r round(0.20*0.47,digits=2)`|
+Raspberries (rb) |     0.08 |      0.10|      0.13|      1.66|      0.21|   0.59|  `r round(0.21*0.59,digits=2)`|
+
+Note: Demand elasticities are in the first four columns of the table and can be interpreted as the the elasticity of retail demand for the product on the row with respect to the price in column.  
+
+***
+
+Notice from the table that the own-price demand elasticities are all in the elastic range.  All the cross-price elasticities are positive indicating that consumers view the different types of berries as substitutes.  Demonstration 7 presents the equilibrium model in matrix form.  There are eight endogenous variables as shown in the column headings for the A matrix and in the solution vector.  These consist of percentage changes in four quantities and four prices, corresponding to each of the four types of berries in the model.  You can control exogenous demand or supply shocks using the radio buttons in the left panel of the demonstration.  Take a moment to verify how the elasticities in Table 2 translate into matrix A in Demonstration 7.  
+
+Use Demonstration 7 to consider the effect of a positive supply shock to one of the markets.  Make sure all demand shocks are set to zero, then add a positive supply shock to one and only one of the markets.  This will increase revenue to producers in the market experiencing the positive supply shock.  You can see this because the positive change in quantity is larger in magnitude than the negative change in price.  The impact of the shock on producers in the remaining berry markets is negative.  Demand decreases in each market not affected by the shock because the remaining berries are substitutes in demand.
+
+Now consider the effect of a positive demand shock to one of the markets.  Make sure all supply shocks are set to zero, then add a positive shock to one and only one of the markets. The impact is biggest on the market experiencing the demand shock but the spillover effects cause an increase in price and quantity in each of the related markets as well. Spend some time with the demonstration by considering other shocks to demand and or supply.  if you want to test your knowledge, see if you can replicate this model in a spreadsheet or in R.
+
+#### Demonstration 7. Interactive implementation of Sobekova's (2012) model for retail fresh berry markets.  
+
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      radioButtons("Ss", label = "Shock to strawberry (sb) supply",
+                   choices = list("-2.5 %" = -2.5, 
+                                  "0 %" = 0, 
+                                  "+2.5 %" = 2.5),
+                   selected = 0,inline=T),
+      radioButtons("Ds", label = "Shock to strawberry (sb) demand",
+                   choices = list("-2.5 %" = -2.5, 
+                                  "0 %" = 0, 
+                                  "+2.5 %" = 2.5),
+                   selected = 0,inline=T),
+      radioButtons("Sb", label = "Shock to blueberry (bb) supply",
+                   choices = list("-2.5 %" = -2.5, 
+                                  "0 %" = 0, 
+                                  "+2.5 %" = 2.5),
+                   selected = 0,inline=T),
+      radioButtons("Db", label = "Shock to blueberry (bb) demand",
+                   choices = list("-2.5 %" = -2.5, 
+                                  "0 %" = 0, 
+                                  "+2.5 %" = 2.5),
+                   selected = 0,inline=T),
+      radioButtons("Sk", label = "Shock to blackberry (bk) supply",
+                   choices = list("-2.5 %" = -2.5, 
+                                  "0 %" = 0, 
+                                  "+2.5 %" = 2.5),
+                   selected = 0,inline=T),
+      radioButtons("Dk", label = "Shock to blackberry (bk) demand",
+                   choices = list("-2.5 %" = -2.5, 
+                                  "0 %" = 0, 
+                                  "+2.5 %" = 2.5),
+                   selected = 0,inline=T),
+      radioButtons("Sr", label = "Shock to raspberry (rb) supply",
+                   choices = list("-2.5 %" = -2.5, 
+                                  "0 %" = 0, 
+                                  "+2.5 %" = 2.5),
+                   selected = 0,inline=T),
+      radioButtons("Dr", label = "Shock to raspberry (rb) demand",
+                   choices = list("-2.5 %" = -2.5, 
+                                  "0 %" = 0, 
+                                  "+2.5 %" = 2.5),
+                   selected = 0,inline=T),
+      width=5
+    ),
+    mainPanel(
+      uiOutput("mesA"),
+      verbatimTextOutput("A"),
+      uiOutput("mesB"),
+      verbatimTextOutput("b"),
+      uiOutput("mesSoln"),
+      verbatimTextOutput("solution"),
+      width=7
+      )
+  ),
+  server = function(input,output) {
+    A<-matrix(c(1, 0, 0, 0,      -0.29,          0,          0,               0,
+                1, 0, 0, 0,       1.26,      -0.32,      -0.52,           -0.39,
+                0, 1, 0, 0,          0,      -0.09,          0,               0,
+                0, 1, 0, 0,      -0.12,       1.49,      -0.24,           -0.20,
+                0, 0, 1, 0,          0,          0,      -0.09,               0,
+                0, 0, 1, 0,      -0.05,      -0.06,       1.88,           -0.06,
+                0, 0, 0, 1,          0,          0,          0,           -0.12,
+                0, 0, 0, 1,      -0.08,      -0.10,      -0.13,            1.66
+    ),
+    nrow=8,byrow=T,
+    dimnames=list(c("Supply sb","Demand sb","Supply bb","Demand bb","Supply bk","Demand bk","Supply rb","Demand rb"),
+                  c("Qsb","Qbb","Qbk","Qrb","Psb","Pbb","Pbk","Prb"))
+    )
+    #x<-reactive(round(solve(A,as.numeric(c(input$Ss,input$Ds,input$Sb,input$Db,input$Sk,input$Dk,input$Sr,input$Dr))),digits=3))
+    b<-reactive({
+      b<-as.numeric(c(input$Ss,input$Ds,input$Sb,input$Db,input$Sk,input$Dk,input$Sr,input$Dr))
+      b<-as.matrix(b,nrow=8, ncol=1)
+      dimnames(b)<-list(c("Supply sb","Demand sb","Supply bb","Demand bb","Supply bk","Demand bk","Supply rb","Demand rb"),
+                        "Pct. Shock")
+      b
+      })
+    x<-reactive(
+        {x<-as.data.frame(round(solve(A,b()),digits=3),
+                      col.names=c("Pct.Change")
+        )
+        colnames(x)<-"Pct. Change"
+        x}
+      )
+    output$solution<-renderPrint(x())
+    output$A<-renderPrint(A)
+    output$b<-renderPrint(b())
+    output$mesA<-renderUI("Matrix A")
+    output$mesB<-renderUI("Vector b")
+    output$mesSoln<-renderUI("Solution Vector")
+    },
+  options=list(height=700)
+)
+```
 
 #<span style="color:SaddleBrown">Concluding Comments</span>
 This chapter provided an opportunity to put almost everything you have learned up to this point in the course to work. In particular, you have learned how to use elasticities of demand an supply within a modeling framework to predict the effects of an exogenous shock on the market price and quantity.  You have also learned how to use elasticities to estimate the exogenous shocks that go into your model. Problems Sets and 1 and 2 below are intended to reinforce these concepts within the context of a single market.   
@@ -756,6 +879,8 @@ Paarlberg, Philip L., John G. Lee, and Ann H. Seitzinger. 2002. "Potential
 Revenue Impact of an Outbreak of Foot-and-Mouth Disease in the United States." *Journal of the American Veterinary Medical Association* 220(7):988-92.
 
 Paarlberg, Philip L., Ann Hillberg Seitzinger, John G. Lee, and Kenneth H. Mathews, Jr. 2008. *Economic Impacts of Foreign Animal Disease.* ERR-57. U.S. Dept. of Agriculture, Econ. Res. Serv. Available at: https://www.ers.usda.gov/webdocs/publications/45980/12163_err57fm_1_.pdf?v=41056
+
+Sobekova, K. 2012. *Market Analysis of Fresh Berries in the United States* University of Arkansas, MS Thesis.
 
 USDA-APHIS. 2013a. "Factsheet: Food-and-Mouth Disease." Available at: https://www.aphis.usda.gov/publications/animal_health/2013/fs_fmd_general.pdf
 
