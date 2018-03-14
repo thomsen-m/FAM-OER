@@ -1,0 +1,1044 @@
+---
+title: "Consumer Theory and Models"
+author: "Michael Thomsen, University of Arkansas Agricultural Economics and Agribusiness"
+date: "`r as.Date(file.info('/srv/shiny-server/AGEC3303/Chap5/index.Rmd')$mtime)`"
+output: html_document
+runtime: shiny
+---
+
+***
+
+#<span style="color:purple">Objectives</span>
+
+* Explain the idea of consumer sovereignty.
+
+* Explain the main logic of consumer choice theory in terms of preferences and budget sets.
+
+* Graph budget sets and budget frontiers, given price and income data, and explain what happens to the budget set as prices and/or income change.
+
+* Outline the basic assumptions required for well-behaved preferences.  Given a specific example, be able to determine whether these assumptions are satisfied.
+
+* Describe the difference between ordinal utility and cardinal utility.
+
+* Graphically derive individual demand functions.
+
+* Diagram efficient consumption frontiers (Lancaster type budget constraints) and identify products that are and are not competitive.
+
+* Analyze how changes in price, income, and product characteristics affect consumer choice in Lancaster's framework.
+
+* Describe hedonic pricing models and identify characteristics to be included in a hedonic pricing model for a given
+product.
+
+* Derive the full-time income constraint of Becker's model.
+
+* Use the logic of Becker's model to explain consumer valuation of time-saving (convenience) built into food products.
+
+* Use the logic of Lancaster's and Becker's models to analyze trends in food consumption.
+
+
+***
+
+#<span style="color:purple">Consumer Sovereignty</span>
+
+An important concept in free market economies is consumer sovereignty.  This term implies that consumers are the ultimate governors of the economic system.  The idea is that consumers vote with their dollars.  A firm that provides a product or service that better meets consumer wants and needs or meets them at a lower cost is likely to succeed and be profitable.  A firm that fails to do so will not remain in business very long.  Evidence that businesses recognize the importance of consumer sovereignty is provided by the signs common in many workplaces reminding employees that "the customer is always right."  This notion is also encapsulated in the Latin phrase, *De gustibus non disputatum est*, which translates into English as "tastes are not disputable".  
+
+Consumer sovereignty gives rise to a broad scope of marketing activities.  The prevalence with which we hear about the supremacy of the customer might make the notion of consumer sovereignty seem cliché.  However consumer sovereignty is important to our understanding of the broad scope of marketing activities.  To illustrate, consider children's breakfast cereals.  Lots of money is spent on the packaging and promotion of these products.  A critic might ask whether we wouldn't be better off as a society if we were to simply take flour from oats, rice, corn, or wheat; add sugar and a binding agent; pellet it; and feed it to our children.  Children would get the same nutrition regardless of whether there is a friendly looking pirate on the box and a cheap toy inside.  The critic may argue that all the money that is spent on promoting these products is wasteful and contributes nothing to the nutritional well-being of our children.  Rather, the money could be better used for a worthwhile cause like cancer research.  This critic may be right.  But if parents continue to vote in favor of this type of product with their food dollars then companies will continue to supply it.
+
+#<span style="color:purple">Neoclassical Consumer Theory</span>
+
+The basic idea behind consumer choice theory is very simple: The consumer seeks to obtain the best bundle of goods and services that he/she possibly can. This is true of the neoclassical theory covered in this section as well as alternative models to be described below.  In deciding what is the best bundle of goods and services, economists generally assume that the consumer has preferences that can be represented by a utility function.  The utility function assigns a number to a given bundle of goods and services.  A bundle that the consumer likes more is assigned a higher number.  A bundle that the consumer likes less is assigned a lower number.  We assume that consumers are able to rank various bundles of goods and services in terms of their desirability; that is, consumers know what their utility function looks like.  We also assume that consumers are rational in the sense that they can use their utility function to make decisions about what goods to consume.
+
+Preferences represented by a utility function determine the "best" bundle of goods and services.  However, think carefully about the fundamental idea that a consumer chooses the best bundle of goods and services that he/she possibly can.  The "possibly can" part of the idea is very important.  My best bundle might include several multimillion-dollar homes: one at a ski resort in the Rockies, one on the north shore of Lake Superior (for summer months), and one in the Virgin Islands (for winter months when I am not skiing).  Of course, my best bundle would also include a private jet to take me wherever I fancied.   Naturally, very few people could obtain this best bundle.  This is because the dollars consumers have to spend is limited by their available income.
+
+We could reformulate our fundamental idea in terms of economic jargon as follows:  consumers maximize their utility subject to a budget or income constraint.  The utility function determines what is best.  The budget or income constraint determines the set of possible bundles that the consumer could obtain.
+
+## Budget Sets in the Neoclassical Model
+
+The __*budget set*__ contains all combinations of goods that the consumer can afford.  In what follows, we will consider a simple budget sets that include only two goods.  Such a simplification may not work well in empirical applications using real world data because each consumer probably has hundreds, if not thousands, of possible goods in their budget set (just think about the wide variety of goods available in any supermarket or department store).  However, in terms of understanding the model, a two-good world can get us a long way.  With two goods, we can develop an understanding of the essential logic of the consumer choice model and examine virtually every concept important to consumer theory.  Simplifying the world to only two goods also allows us to represent the consumer's choice problem graphically (as in Demonstration 1 below) as well as algebraically.
+
+Algebraically, we can express the budget set over the quantities of two goods, $Q_1$ and $Q_2$ as all pairs: 
+$$\{Q_1,Q_2\} : P_1 Q_1 + P_2 Q_2 \le M,$$
+where $P_1$ and $P_2$ are prices of goods 1 and and 2, respectively, and $M$ is the consumer's income.  Our expression for the budget set simply states that the amount spent on good 1 plus the amount spent on good 2 must be less than the consumer's income.
+
+The __*budget frontier*__ consists of those bundles that completely exhaust the consumer's income.  In the expression for the budget set above, replace the inequality with an equal sign and you have those points that comprise the budget frontier.  When we graph a budget set, we'll represent $Q_1$ on the horizontal axis and $Q_2$ on the vertical axis.  With this in mind, let's replace the inequality above with an equality and rearrange the expression above to get $Q_2$ all by itself on the left-hand side of the equation.  This is the expression for the budget frontier:
+
+$$Q_2 = \frac{M}{P_2}-\frac{P_1}{P_2} Q_1.$$
+
+Note that this is an equation for a line with a vertical intercept of $\frac{M}{P_2}$ and a slope of $-\frac{P_1}{P_2}$.
+
+Demonstration 1 provides a graph of the budget set.  Look carefully at this demonstration for there is an easy and quick way to graph the budget set in a two-good economy like the one depicted in the demonstration.  We have already noted that the vertical intercept is  $\frac{M}{P_2}$.  Note also from the demonstration that the horizontal intercept is $\frac{M}{P_1}$.  In a homework or exam situation, if you know $M$, $P_1$, and $P_2$, you can, in a matter of seconds, graph your budget frontier.  Simply divide $M$ by $P_2$ to get your vertical intercept, divide $M$ by $P_1$ to get your horizontal intercept, and connect the dots.  It is as easy as that!  You now have your frontier.  Shade points south and west of the frontier to represent the entire budget set.  
+
+***
+
+####Demonstration 1. The Budget Set
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      radioButtons("M", label = "Income (M)",
+                   choices = list("$80" = 80, 
+                                  "$100" = 100, 
+                                  "$120" = 120),
+                   selected = 100,inline=T),
+      radioButtons("P1", label = "Price of Good 1 (P1)",
+                   choices = list("$6" = 6, 
+                                  "$8" = 8, 
+                                  "$10" = 10),
+                   selected = 8,inline=T),
+      radioButtons("P2", label = "Price of Good 2 (P2)",
+                   choices = list("$8" = 8, 
+                                  "$10" = 10, 
+                                  "$12" = 12),
+                   selected = 10,inline=T)
+    ),
+    mainPanel(plotOutput("budgetPlot"))
+  ),
+  server = function(input,output) {
+    #Reactive terms to be used for the dynamic plot
+    PP1<-reactive(as.numeric(input$P1))
+    PP2<-reactive(as.numeric(input$P2))
+    MM<-reactive(as.numeric(input$M))
+    output$budgetPlot <- renderPlot({
+      par(bg="beige")
+      plot(c(0,12.5),c(10,0),col="red",
+           type="l", lty="dashed",
+           xlab=expression("Q"[1]), ylab=expression("Q"[2]),
+           xaxs="i",yaxs="i",bty="n",
+           xlim = c(0, 21), ylim = c(0, 16)
+           ,xaxt='n',yaxt='n'
+           )
+      lines(c(0,MM()/PP1()),c(MM()/PP2(),0),col="red",lwd=3)
+      polygon(c(0,0,12.5),c(0,10,0),col=rgb(1,0,1,0.1),border=NA)
+      polygon(c(0,0,MM()/PP1()),c(0,MM()/PP2(),0),col=rgb(1,0,1,0.5),border=NA)
+      axis(1, at=c(0,MM()/PP1(),21), labels=c("",round(MM()/PP1(),2),""),lwd.ticks=1)
+      axis(2, at=c(0,MM()/PP2(),16), labels=c("",round(MM()/PP2()),""),lwd.ticks=1)
+    })
+  },
+  options = list(height = 475)
+)
+```
+
+***
+Use Demonstration 1 to see what happens to the budget set when $P_1$, $P_2$, or $M$ changes. 
+
+* Case 1: an increase in $P_1$.  The horizontal intercept, $\frac{M}{P_1}$, becomes smaller and moves west (towards the origin) along the horizontal axis.  The budget frontier line becomes steeper and the entire budget set becomes smaller.
+
+* Case 2: a decrease in $P_1$.  The horizontal intercept, $\frac{M}{P_1}$, becomes larger and moves east (away from the origin) along the horizontal axis.  The budget frontier line becomes flatter and the entire budget set becomes larger.
+
+* Case 3: an increase in $P_2$.  The vertical intercept, $\frac{M}{P_2}$, becomes smaller and moves south (towards the origin) along the vertical axis.  The budget frontier line becomes flatter and the entire budget set becomes smaller.
+
+*  Case 4: a decrease in $P_2$.  The vertical intercept, $\frac{M}{P_2}$, becomes larger and moves north (away from the origin) along the vertical axis.  The budget frontier line becomes steeper and the entire budget set becomes larger.
+
+*  Case 5: an increase in $M$.  Both vertical and horizontal intercepts become larger.  The budget frontier line makes a parallel shift to the northeast (away from the origin).  The entire budget set becomes larger.
+
+* Case 6: a decrease in $M$.  Both vertical and horizontal intercepts become smaller.  The budget frontier line makes a parallel shift to the southwest (towards the origin).  The entire budget set becomes smaller.
+
+***
+
+## Preferences in the Neoclassical Model
+A budget set identifies what bundles are affordable to a consumer.  Our fundamental idea was that a consumer would choose the best bundle from this set.  Just what this "best" bundle happens to be will depend on the consumer's preferences.  As we move into preferences, it will be useful to introduce some preference relations that we can use to indicate how the consumer views different bundles.  These relations are defined in Table 1.
+
+***
+
+#### Table 1. Preference Relations
+
+Relation | Name      | Example | Interpretation
+---------|-----------|---------|---------------
+$\approx$|Indifference| $x \approx y$ | $x$ is indifferent to $y$
+$\succeq$|Weakly preferred| $x \succeq y$ | $x$ is at least as good as $y$
+$\succ$|Strictly preferred| $x \succ y$ | $x$ is better than $y$
+
+***
+
+### Representing Preferences Graphically
+In introductory microeconomics, you probably learned about indifference curves (they may have been called iso-utility curves).  Figure 1 presents indifference curves that represent a consumer's preferences.  Each labeled point in Figure 1 represents a bundle of the two goods.  The curves are called indifference curves because they represent bundles that the consumer likes equally well.  For instance, the consumer is just as happy with bundle A as he/she is with bundle B.  Unless, you are instructed otherwise, you are to assume that points on indifference curves to the northeast are increasingly preferred.  For instance, E is preferred to all labeled bundles on this diagram because it lies on the indifference curve that is furthest northeast.  
+
+Based on Figure 1 we can say the following about the consumers preferences over the five labeled bundles:
+$$E \succ D \approx C \succ B \approx A.$$
+
+Given the preference relations defined above, the following are also true, although less precise, statements of the preference ordering for the consumer with the preference map in Figure 1:
+$$E \succeq D \succeq C \succeq B \succeq A,$$
+and
+$$E \succeq C \succeq D \succeq A \succeq B.$$
+
+***
+
+```{r, echo=FALSE}
+par(bg="beige")
+plot(seq(.1,15,.1),25/seq(.1,15,.1), type="l", lwd=3, col="black", ylim=c(0,12), xlim=c(0,8),
+     xlab=expression("Q"[1]), ylab=expression("Q"[2]),xaxs="i",yaxs="i",bty="n",xaxt='n',yaxt='n'
+     )
+lines(seq(.1,15,.1),16/seq(.1,15,.1), lwd=3, col="black")
+lines(seq(.1,15,.1),9/seq(.1,15,.1), lwd=3, col="black")
+lines(seq(.1,15,.1),36/seq(.1,15,.1), lwd=3, col="black")
+points(4,36/4,pch=21,col="black",bg="black")
+points(5,25/5,pch=21,col="black",bg="black")
+points(2.5,25/2.5,pch=21,col="black",bg="black")
+points(.8,9/.8,pch=21,col="black",bg="black")
+points(7,9/7,pch=21,col="black",bg="black")
+text(4,36/4,"E",pos=4)
+text(5,25/5,"C",pos=3)
+text(2.5,25/2.5,"D",pos=4)
+text(.8,9/.8,"B",pos=4)
+text(7,9/7,"A",pos=3)
+axis(1, at=c(0,8), labels=c("",""),lwd.ticks=1)
+axis(2, at=c(0,12), labels=c("",""),lwd.ticks=1)
+```
+
+#### Figure 1. Graphical representation of preferences.
+
+***
+### Utility Functions
+
+A preference map, such as that in Figure 1, is a two-dimensional representation of a utility function.  The important thing about a utility function is that it assigns numbers that indicate the consumer's strength of preference for a given bundle.  If the consumer likes bundle C more than bundle A, then a utility function would assign a higher number to bundle C and a lower number to bundle A.  If the consumer likes bundle B just as much as bundle A, then the utility function would assign the same number to both bundles A and B.  There is an important concept here.  This concept is that a utility function provides an __*ordinal*__ (not __*cardinal*__) ranking of preferences.  We don't necessarily care what number the utility function gives us.  We only care that our function assigns higher numbers to bundles the consumer likes more, lower numbers to bundles the consumer likes less, and the same number to bundles the consumer likes equally well. 
+
+Figure 2 depicts a utility function.  The function is depicted in blue tones and shows the level of utility corresponding to different combinations of goods 1 and 2.  The horizontal plane in the figure, depicted in green, intersects the utility function at a specified height.  Where the plane intersects the function, we get all combinations of goods 1 and 2 that provide the consumer with level of utility equal to this height.  If we were to look at the utility function directly from above, we would see that the intersection of the plane with the function maps out an indifference curve.  Thus, an indifference curve map, such as that shown in Figure 1 is actually a two dimensional representation of a three dimensional phenomenon.  Each indifference curve depicts a given height on the utility function.
+
+
+***
+
+![](http://shiny.uark.edu:3838/AGEC3303/Chap5/png/Utility1.png)
+
+
+####Figure 2.  An indifference curve depcits the level of utility from a utility function.
+
+***
+
+##Assumptions About Preferences
+There are several assumptions that we will usually make about preferences.  These assumptions simplify the consumer's choice problem and also result in individual demand equations that conform to the law of demand. 
+
+**Preferences are complete.** If preferences are complete, it means that the consumer is able to rank bundles.  This is not unreasonable assumption in most cases.  If I gave you a choice between two packages of almonds with one apple (bundle A) or one package of almonds with two apples (bundle B), you could probably tell me which bundle you most preferred or whether you were indifferent between the two.  
+
+**Preferences are transitive.** Transitive preferences simply mean that $C \succeq B$, and $B \succeq A$, then it must be that $C \succeq A$.  Like completeness, transitivity is a fairly straightforward assumption.  The transitivity assumption assures that indifference curves will never intersect one another.
+
+**Preferences are convex.** We generally make two additional assumptions about the consumer's preferences.  One is that preferences are convex.  Given (1) the consumer likes bundle A exactly as much as bundle B ($A \approx B$), and (2) bundle A is not the same bundle as bundle B ($A \ne B$), we can say that preferences are strictly convex if the consumer prefers an average bundle $C = 0.5 A + 0.5 B$ to either bundle A or B by itself.  Convexity implies that consumers like to have variety in their consumption.  Another way to say this is that "means are preferred to extremes."  
+
+In most cases, convexity is a very reasonable assumption.  We have to think pretty hard for cases where convexity might not hold.  Suppose, for example, that I like cocktail olives and that I like chocolate ice cream.  However, I do not like to have cocktail olives with my ice cream.  In this case, I would prefer an extreme bundle (all cocktail olives or all ice cream) to a mean bundle (some cocktail olives and some ice cream).  My preferences would not be convex.  This example is a bit stretched, however.  It assumes that I would somehow be forced to eat cocktail olives and ice cream at the same time.  Why could not I eat the ice cream now and save the cocktail olives for later?  Over the course of the day, I may want to have something sweet with my lunch (ice cream) and something savory with my supper (cocktail olives).  Thus, even though I do not like cocktail olives and ice cream at the same time, my preferences are still convex because I like a variety of sweet and savory foods over the course of a day.  
+
+**Preferences are monotonic.** The second additional assumption is that preferences are monotonic.  Monotonicity simply means that the consumer prefers bundles with more goods to bundles with less.  Given two bundles, bundles A and B, monotonicity means the consumer prefers B to A if:
+
+1.	B contains at least as much of each good as does A, and 
+
+2.	B contains strictly more of at least one good than does A.  
+
+Is monotonicity a reasonable assumption?  Clearly after eating three sandwiches, I may be sick, literally, if forced to eat a fourth. If you have already enrolled in 18 credit hours of courses, taking an additional three hours might result in a nervous breakdown and leave you worse off.  It would seem that we could come up with quite a few examples where monotonicity does not hold.  That said, I would argue that, for the most part, monotonicity is a very reasonable assumption.  Mainly, we do not see consumers making choices in regions where their preferences are not monotonic.  That is, consumers are only making choices involving goods for which they are not totally satiated (I generally do not wait in line to purchase a sandwich unless I am hungry).  The theory of the consumer is supposed to provide a reasonable approximation to what occurs in the real world.  If, in the real world, consumers are only making choices in regions where monotonicity holds, then it is a reasonable for us to assume monotonicity in our model.
+
+##Choice in the Neoclassical Model
+
+Having covered budget sets and preferences in some detail, we can now return to the basic idea of consumer theory: Consumers choose the best bundle of goods and services that they possibly can.  The "best" part of the idea is given by preferences.  The "possibly can" part of the idea is determined by budget sets.  We can think of the consumer's problem in terms of achieving the highest indifference curve possible given the budget set.  
+
+Figure 3 provides a graphical illustration of the consumer's choice problem.  Points A, B, and C are on the frontier of the budget set.  At each of these points, the consumer is exhausting all of his/her income.  Only point C, however, is optimal.  Given convexity, point C is preferred to either A or B.  As a result, our utility function places point C on a higher indifference curve.  In fact, it is not possible to find a point within the consumer's budget set that is preferred to C.  Thus, point C is the best bundle that the consumer can afford.  At point C, the indifference curve is tangent to the budget frontier line.
+
+
+```{r, echo=FALSE}
+par(bg="beige")
+par(pty="s") #makes plot square
+plot(seq(.1,15,.1),25/seq(.1,15,.1), type="l", lwd=3, col="black", ylim=c(0,12), xlim=c(0,12),
+     xlab=expression("Q"[1]), ylab=expression("Q"[2]), xaxs="i",yaxs="i",bty="n",xaxt='n',yaxt='n'
+     )
+lines(seq(.1,15,.1),9/seq(.1,15,.1), lwd=3, col="black")
+lines(c(0,10),c(10,0),lwd=3,col="red")
+polygon(c(0,0,10),c(0,10,0),col=rgb(1,0,1,0.1),border=NA)
+points(5,25/5,pch=21,col="purple",bg="purple")
+points(1,9/1,pch=21,col="black",bg="black")
+points(9,9/9,pch=21,col="black",bg="black")
+text(5,25/5,"C",pos=3)
+text(1,9,"A",pos=4)
+text(9,1,"B",pos=3)
+axis(1, at=c(0,12), labels=c("",""),lwd.ticks=1)
+axis(2, at=c(0,12), labels=c("",""),lwd.ticks=1)
+```
+
+####Figure 3. Point C is the consumer's optimal choice.  If preferences are strictly monotonic and strictly convex, the optimal choice occurs where the indifference curve is tangent to the budget frontier line.
+
+Again, Figure 3 is a two-dimensional representation of a three-dimensional phenomenon.  Figure 4, depicts the utility function (blue toned surface).  The yellow-toned vertical plane intersecting the utility function is the budget constraint.  The consumer cannot afford points and corresponding levels of utility that lie to the right of this vertical budget plane.  The consumer's goal is to reach the highest elevation on the utility function possible.  In Figure 4, this highest level is shown by the purple point.  If we set the green-toned horizontal plane to the elevation of the affordable point that provides the greatest utility and then viewed the model directly from above, this three-dimensional model would look very similar to the two-dimensional model in Figure 3.  We would see an indifference curve that is created by the intersection of the green horizontal plane and the utility function.  This indifference curve would just touch the vertical budget plane at the optimal point.
+
+***
+
+![](http://shiny.uark.edu:3838/AGEC3303/Chap5/png/Choice1.png)
+
+####Figure 4. The neoclassical choice model in three dimensions.
+
+***
+
+##Individual Demand Curves
+
+The theory of consumer choice, the idea that the consumers seek the highest point on their utility function given an affordability constraint, can be used to generate demand curves.  This is illustrated in Demonstration 2 below.  Notice that as $P_1$ increases, the consumers budget set becomes smaller and his or her optimal choice changes to include a smaller amount of $Q_1$.  Conversely as $P_1$ decreases, the consumer's budget set becomes larger and his or her optimal choice includes a larger amount of $Q_1$.  The lower panel of the demonstration depicts a mapping of the optimal choices of $Q_1$ corresponding to the level of $P_1$.  The result is a nice, downward sloping, demand schedule.  As you change the value of $P_1$ in the demonstration, be sure to note the relationship between the the choice model in the upper panel and the demand schedule in the lower panel.  
+
+Anything aside from own-price that effects the budget sets or the preference map shifts the individual demand curve.  For example, in Demonstration 2, you can change the level of income.  As you do this, notice that the budget set changes and the demand curve shifts.  In general, any variable, aside from own-price, that affects the budget set or that effects the preference map will shift the individual's demand schedule.  
+
+***
+
+####Demonstration 2.  The Choice Model and the Consumer's Individual Demand Schedule
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      radioButtons("M", label = "Income (M)",
+                   choices = list("High" = 120, 
+                                  "Baseline" = 100, 
+                                  "Low" = 80),
+                   selected = 100,inline=F),
+      radioButtons("P1", label = "Price of Good 1 (P1)",
+                   choices = list("High" = 14,
+                                  "Moderately High" = 12,
+                                  "Baseline" = 10, 
+                                  "Moderately Low" = 8, 
+                                  "Low" = 6),
+                   selected = 10,inline=F)
+    ),
+    mainPanel(plotOutput("choicePlot"),
+              plotOutput("demandPlot")
+              )
+  ),
+  server = function(input,output) {
+    #Reactive terms to be used for the dynamic plot
+    PP1<-reactive(as.numeric(input$P1))
+    MM<-reactive(as.numeric(input$M))
+    QQ1<-reactive(0.5*MM()/PP1())
+    QQ2<-reactive(0.5*MM()/10)
+    UU<-reactive(QQ1()^0.5*QQ2()^0.5)
+    output$choicePlot <- renderPlot({
+      par(bg="beige")
+      par(pty="s") #makes plot square
+      plot(seq(.1,15,.1),25/seq(.1,15,.1), type="l", lwd=1, col="grey", ylim=c(0,12), xlim=c(0,12),
+           xlab=expression("Q"[1]), ylab=expression("Q"[2]), xaxs="i",yaxs="i",bty="n",xaxt='n',yaxt='n',
+           main=expression("Preference Map and Budget Set for Q"[1]*" and Q"[2])
+           )
+      lines(seq(.1,15,.1),9/seq(.1,15,.1), lwd=2, col="grey")
+      lines(seq(.1,15,.1),16/seq(.1,15,.1), lwd=2, col="grey")
+      lines(seq(.1,15,.1),36/seq(.1,15,.1), lwd=2, col="grey")
+      lines(seq(.1,15,.1),49/seq(.1,15,.1), lwd=2, col="grey")
+      lines(seq(.1,15,.1),UU()^2/seq(.1,15,.1), lwd=2, col="blue")
+      lines(c(0,MM()/PP1()),c(MM()/10,0),lwd=3,col="red")
+      polygon(c(0,0,MM()/PP1()),c(0,MM()/10,0),col=rgb(1,0,1,0.1),border=NA)
+      lines(c(0,QQ1()),c(QQ2(),QQ2()),col="purple",lty=2,lwd=3)
+      lines(c(QQ1(),QQ1()),c(0,QQ2()),col="purple",lty=2,lwd=3)
+      points(5,25/5,pch=21,col="gray",bg="gray")
+      points(QQ1(),QQ2(),pch=21,col="purple",bg="purple")
+      text(QQ1(),QQ2(),"C",pos=3)
+      axis(1, at=c(0,12), labels=c("",""),lwd.ticks=1)
+      axis(2, at=c(0,12), labels=c("",""),lwd.ticks=1)
+      })
+    output$demandPlot <- renderPlot({
+      par(bg="beige")
+      par(pty="s") #makes plot square
+      plot(0.5*100/seq(1,16,.1),seq(1,16,.1), type="l", lty=2, lwd=2, col="grey", ylim=c(0,16), xlim=c(0,12),
+           xlab=expression("Q"[1]), ylab=expression("P"[1]), xaxs="i",yaxs="i",bty="n",xaxt='n',yaxt='n',
+           main=expression("Inverse Demand Schedule for Q"[1])
+           )
+      lines(0.5*MM()/seq(1,16,.1),seq(1,16,.1), lwd=3, col="purple")
+      lines(c(0,QQ1()),c(PP1(),PP1()),col="purple",lty=2,lwd=3)
+      lines(c(QQ1(),QQ1()),c(0,16),col="purple",lty=2,lwd=3)
+      points(5,10,pch=21,col="grey",bg="grey")
+      points(QQ1(),PP1(),pch=21,col="purple",bg="purple")
+      axis(1, at=c(0,12), labels=c("",""),lwd.ticks=1)
+      axis(2, at=c(0,16), labels=c("",""),lwd.ticks=1)
+      })
+    },
+  options = list(height = 800)
+)
+```
+
+***
+
+#<span style="color:purple">Lancaster's (1966) Characteristics Model</span>
+
+In the neoclassical model of consumer choice, the consumer has preferences that can be represented by a utility function.  The solution to the consumer's choice involves a constrained optimization problem wherein the consumer seeks the bundle that returns the highest utility possible given their budget set.  The benefit of the neoclassical model is that it provides a framework for examining the role of price changes, income changes, and (in some cases) preference changes on consumer behavior.  We have seen, for example, that given some reasonable assumptions, the solution to the neoclassical choice model results in demand functions that are downward sloping in own-price and that could depend on prices of related substitute and complement goods as well as consumer income.
+
+An alternative formulation of the consumer's choice problem is provided by Lancaster (1966).  This model is similar to the neoclassical model in that it relies on the same basic premise:  Consumers seek the best bundle of goods given an affordability constraint.  However, it differs from the neoclassical model in terms of how preferences and budget sets are formulated.
+
+## Preferences in the Lancaster Model
+The essential difference in the Lancaster model is that the consumer views a purchased good as a bundle of characteristics.  For example, the consumer is not interested in a half gallon of orange juice *per se*.  Rather he or she is interested in characteristics such as vitamin C, potassium, a sweet or tart taste sensation, carbohydrates for energy, dietary fiber, etc.  The consumer could satisfy the desire for these characteristics through orange juice or several other products.  For example, grapefruit juice might provide similar micro-nutrient characteristics to orange juice but would differ in terms of the taste characteristics provided (less sweet with a slightly bitter aftertaste) and macro-nutrients (perhaps slightly fewer calories).  Concord grape juice would lack the tartness of orange juice, provide a taste sensation that is more sweet, would likely contain more calories, provide more or less of certain micro-nutrients, and would provide a mouth-feel different from either orange juice or grapefruit juice.  The point to be made here is that orange juice, grapefruit juice, and Concord grape juice are more than just products, they are delivery mechanisms for a variety of characteristics that the consumer may value.
+
+## Utility in the Lancaster Model
+In Lancaster's model, the consumer has preferences that can be represented by a utility function.  However, preferences and utility levels are defined in terms of characteristics of purchased goods and services.  We can define a utility function in Lancaster's framework as follows:
+
+$$U = f(c_{11},c_{12},c_{13},\ldots,c_{1N},c_{21},c_{22},c_{23},\ldots,c_{2N},\ldots,c_{M1},c_{M2},c_{M3},\ldots,c_{MN}),$$
+
+where $c_{ij}$ is the amount of the $i^{th}$ characteristic contained in one unit of the $j^{th}$ purchased good, $i = 1, 2, 3, \ldots, M$ and $j = 1, 2, 3, \ldots, N$.
+
+For example, we might identify and measure characteristics in three juice products: orange juice ($Q_1$) , grapefruit juice ($Q_2$), and Concord grape juice ($Q_3$).  Suppose, for simplicity, that we are only concerned with two characteristics: sweetness (characteristic 1) and tartness (characteristic 2).  In this case, the $c_{ij}$ terms in the consumer's utility function would be interpreted as follows:
+
+* $c_{11}$ = the amount of characteristic 1 (sweetness) in product 1 (orange juice)
+* $c_{12}$ = the amount to characteristic 1 (sweetness) in product 2 (grapefruit juice)
+* $c_{13}$ = the amount of characteristic 1 (sweetness) in product 3 (Concord grape juice)
+
+* $c_{21}$ = the amount of characteristic 2 (tartness) in product 1 (orange juice)
+* $c_{22}$ = the amount characteristic 2 (tartness) in product 2 (grapefruit juice)
+* $c_{23}$ = the amount of characteristic 2 (tartness) in product 3 (Concord grape juice)
+
+The formulation of preferences in the Lancaster model clearly has implications for product design and marketing.  Within one single product, there can be the opportunity to adjust characteristics being offered to consumers with different tastes.  For example, if you look at ready-to-serve orange juice in the typical supermarket, you will see variations in terms of pulp, whether the product is from concentrate, and whether the product has been fortified with other nutrients not naturally found in orange juice (e.g., calcium).  Basically, food marketers understand that altering the characteristics of a product can make it more attractive to certain consumer segments.  
+
+The Lancaster model does assume that we can measure the characteristics that are of interest to consumers.  In many cases, this would be straightforward.  For example, if we were looking at an automobile, characteristics that might be important to the consumer include horsepower, fuel efficiency, head room, leg room, number of doors, whether the vehicle is four-wheel drive, and so forth.  Some characteristics that are important to the consumer such as reliability and smoothness of ride might be more difficult to measure. However, there are third-party entities that provide ratings for experience characteristics like reliability and handling.  Moreover, the consumer will generally test drive the vehicle to assess some of these characteristics before purchase.  In the case of food products, sensory analysis can provide quantitative measures of characteristics such as texture, firmness, mouth-feel, aftertastes, and other attributes of the product.
+
+##Budget sets in the Lancaster Model
+Provided we can measure characteristics, we can construct a budget constraint for the Lancaster model.  Remember that in the Lancaster model, consumers care about characteristics.  Purchased goods matter to the consumer only because of the characteristics contained therein.  In other words, utility is derived indirectly from purchased goods and services.  This being the case, the budget constraint for Lancaster's model needs to reflect the amount of characteristics the consumer can afford.  
+
+Figure 5 provides a diagram of a Lancaster-type budget set for two characteristics.  Following our earlier conventions, let $P_1$ and $P_2$ be the prices of products 1 and 2, respectively, and let M be the consumer's budget.  Notice that in Figure 5, the characteristics are on the vertical and horizontal axis.  The consumer cannot buy characteristics directly, but obtains characteristics by purchasing products 1 and 2.  Thus we convert the affordable amounts of products 1 and 2 into the characteristics they deliver.  In Figure 5, each purchased good is a vector extending from the origin. The affordable set of characteristics in Figure 5 is the triangular shaped area inside the two product vectors and the red line segment connecting the endpoints of the two vectors.  The consumer can obtain any point inside this triangle by buying goods 1 and 2 in the appropriate combination.  The __*efficient consumption frontier*__ (in red) consists of combinations of products that provide the most characteristics for the consumer's dollar.  This efficient consumption frontier is analogous to the budget frontier in the neoclassical model.
+
+***
+```{r, echo=FALSE}
+par(bg="beige")
+par(pty="s") #makes plot square
+plot(c(0,5),c(0,10),type='l',lwd=3, xlab=expression(C[1]), ylab=expression(C[2]), ylim=c(0,12),xlim=c(0,12), col.lab="blue",
+ xaxs="i",
+ yaxs="i",
+ bty="n",
+ xaxt='n',
+ yaxt='n'
+ )
+lines(c(0,5,5),c(10,10,0),lty=2)
+lines(c(0,10,10),c(5,5,0),lty=2)
+text(5,10,"Good 1",pos=3,cex=0.75)
+lines(c(0,10),c(0,5),lwd=3)
+text(10,5,"Good 2",pos=4,cex=0.75)
+lines(c(5,10),c(10,5),lwd=3,col="red")
+axis(1, at=c(0,5,10,12), labels=c("",expression(frac(M,P[1])%*%c[11]),expression(frac(M,P[2])%*%c[12]),""),cex.axis=0.75,padj=.5)
+axis(2, at=c(0,5,10,12), labels=c("",expression(frac(M,P[2])%*%c[22]),expression(frac(M,P[1])%*%c[21]),""),cex.axis=.75,padj=.5)
+```
+
+####Figure 5. The efficient consumption fronteir (in red) for two characteristics, $C_1$ and $C_2$.
+
+***
+
+##Choice in the Lancaster Model
+In the Lancaster Model, the consumer's optimal choice is the bundle of goods that provides the combination of characteristics that provide him or her with the highest level of utility given the affordability constraint.  If the consumer has monotonic preferences over the two preferences, this choice will occur somewhere on the efficient consumption frontier.  In Figure 6, a consumer's indifference curves are imposed over the affordable set, and the optimal choice occurs at point E.  In this particular example, the consumer spends half of his or her budget on good 1 and half on good 2.  This happens to occur at a tangency between the line segment constituting the efficient consumption frontier and the consumer's indifference curve.  However, optimal choices need not be points of tangency in the Lancaster model even if preferences are monotonic and convex over the characteristics.  Had we drawn the preferences differently, we could have had the optimal choice occurring at one of the product vector endpoints.  We will see this in the example that follows.
+
+***
+```{r, echo=FALSE}
+par(bg="beige")
+par(pty="s") #makes plot square
+plot(c(0,5),c(0,10),type='l',lwd=3, xlab=expression(C[1]), ylab=expression(C[2]), ylim=c(0,12),xlim=c(0,12), col.lab="blue",
+ xaxs="i",
+ yaxs="i",
+ bty="n",
+ xaxt='n',
+ yaxt='n'
+ )
+lines(c(0,5,5),c(10,10,0),lty=2)
+lines(c(0,10,10),c(5,5,0),lty=2)
+text(5,10,"Good 1",pos=3,cex=0.75)
+lines(c(0,10),c(0,5),lwd=3)
+text(10,5,"Good 2",pos=4,cex=0.75)
+lines(c(5,10),c(10,5),lwd=3,col="red")
+lines(56.26/seq(5.5,10,.1),seq(5.5,10,.1),lwd=1,col="blue")
+lines(48/seq(5.2,9.2,.1),seq(5.2,9.2,.1),lwd=1,col="blue")
+lines(64/seq(6,10.2,.1),seq(6,10.2,.1),lwd=1,col="blue")
+points(7.5,7.5,pch=21,bg="purple",col="purple")
+text(7.5,7.5,"E",col="purple",pos=3,cex=0.75)
+axis(1, at=c(0,5,10,12), labels=c("",expression(frac(M,P[1])%*%c[11]),expression(frac(M,P[2])%*%c[12]),""),cex.axis=0.75,padj=.5)
+axis(2, at=c(0,5,10,12), labels=c("",expression(frac(M,P[2])%*%c[22]),expression(frac(M,P[1])%*%c[21]),""),cex.axis=.75,padj=.5)
+```
+
+####Figure 6. Choice in the Lancaster Model.  The consumer chooses the combination of characteristics that provide the highest level of utility.  Given the consumer with the preferences shown here, the optimal choice occurs at E. 
+
+***
+
+##An Example
+Suppose that we have characteristic and price data for California and Florida oranges as presented in Table 2.  As should be clear from the table, California oranges are sweeter than Florida oranges but Florida oranges are juicier than California oranges.  Let us also consider a consumer who purchases oranges because he/she values the attributes of juiciness and sweetness.  
+
+***
+
+####Table 2.  Characteristic and Price Data for Oranges
+
+Characteristic|California Orange | Florida Orange
+--------------|------------------|---------------
+Juiciness (J)  | 1 unit           | 2 units
+Sweetness (S) | 2 units          | 1 unit
+
+***
+
+The information in Table 2 is reflected below in Demonstration 3.  As shown in the demonstration, the price of each type of orange is initially \$6 per unit and the consumer has an initial budget of \$30 that is used to purchase oranges ($M = \$30$).  If the consumer spends all of the \$30 budget on California oranges, he or she could obtain five California oranges in total.  Multiplying this total by the value of the characteristics per orange indicates that these five California oranges would provide a total of five units of juiciness and 10 units of sweetness.  Similarly, if the consumer spends all the budget on Florida oranges, he or she could obtain five Florida oranges in total, which would provide 10 units of juiciness and five units of sweetness.  This sets up the initial values in the demonstration.  
+
+***
+
+####Demonstration 3.  Efficient Consumption Frontier for Example of CA and FL Oranges
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      radioButtons("M", label = "Income (M)",
+                   choices = list("$24" = 24, 
+                                  "$30" = 30, 
+                                  "$36" = 36),
+                   selected = 30,inline=T),
+      radioButtons("PCA", label = "Price of CA Oranges",
+                   choices = list("$12.50" = 12.5, 
+                                  "$8" = 8, 
+                                  "$6" = 6,
+                                  "$5"=5),
+                   selected = 6,inline=F),
+      radioButtons("PFL", label = "Price of FL Oranges",
+                   choices = list("$12.50" = 12.5, 
+                                  "$8" = 8, 
+                                  "$6" = 6,
+                                  "$5"=5),
+                   selected = 6,inline=F)
+    ),
+    mainPanel(plotOutput("ecfPlot"))
+  ),
+  server = function(input,output) {
+    #Reactive terms to be used for the dynamic plot
+    PPCA<-reactive(as.numeric(input$PCA))
+    PPFL<-reactive(as.numeric(input$PFL))
+    MM<-reactive(as.numeric(input$M))
+    JCA<-reactive(1*MM()/PPCA())
+    SCA<-reactive(2*MM()/PPCA())
+    JFL<-reactive(2*MM()/PPFL())
+    SFL<-reactive(1*MM()/PPFL())
+    colECF<-reactive(ifelse((JCA()-JFL())*(SCA()-SFL())<=0,"red","beige"))
+    colPT<-reactive(ifelse((JCA()-JFL())*(SCA()-SFL())>0,"red","beige"))
+    output$ecfPlot <- renderPlot({
+      par(bg="beige")
+      par(pty="s") #makes plot square
+      plot(c(0,JCA()),c(0,SCA()),type='l',lwd=3, xlab="Juciness", ylab="Sweetness", ylim=c(0,15),xlim=c(0,15), col.lab="blue",
+           xaxs="i", yaxs="i", bty="n", xaxt='n', yaxt='n')
+      lines(c(0,JFL()),c(0,SFL()),lwd=3)
+      lines(c(JCA(),JFL()),c(SCA(),SFL()),lwd=3,col=colECF())
+      points(max(c(JCA(),JFL())),max(c(SCA(),SFL())),pch=21,bg=colPT(),col=colPT())
+      text(JCA(),SCA(),"CA",pos=4)
+      text(JFL(),SFL(),"FL",pos=3)
+      axis(1, at=c(0,JCA(),JFL(),15), labels=c("",JCA(),JFL(),""))
+      axis(2, at=c(0,SFL(),SCA(),15), labels=c("",SFL(),SCA(),""))
+    })
+  },
+  options = list(height = 450)
+)
+```
+
+***
+
+Use Demonstration 3 to adjust the price of the oranges and income.  Make note of the following features from the demonstration:
+
+1. The efficient consumption frontier can collapse to a point if one of the products becomes uncompetitive.  To see this, change the California price to \$5 and set the Florida price to $12.50.  In this case, a consumer that cared only about juiciness could still get more juiciness by buying California oranges.  California oranges dominate Florida oranges in terms of both juiciness and sweetness meaning that Florida is priced out of the market.  Similarly, if you set the California price to \$12.50 and the Florida price to \$5 the efficient consumption frontier collapses to a point that includes only Florida oranges. Florida oranges become the most efficient mechanism by which to obtain both sweetness and juiciness and California is priced out of the market.
+
+2. An increase in price causes the product vector to contract radially towards the origin.  
+
+3. A decrease in price causes the product vector to expand radially away from the origin.  
+
+4. A change in income causes both vectors to expand proportionately. The efficient consumption frontier shifts in the same direction of the income change.  If both products are competitive, the new efficient consumption frontier is parallel to the old.
+
+Now let us complicate the example by assuming that Arizona comes up with a new orange that has all the sweetness of a California orange and all the juiciness of a Florida orange.  The characteristics of the Arizona orange are presented in Table 3 below.  This is clearly a better orange, but it is also more costly to grow.  The Arizona orange is priced initially at \$10 in Demonstration 4 below. Notice that at \$10, the Arizona orange is not on the efficient consumption frontier.  Even though it is a better orange in terms of its attributes, it is too costly and is not market feasible at \$10.  Consumers can obtain more of the characteristics in question by purchasing California oranges, Florida oranges, or some combination thereof.  
+
+***
+
+####Table 3. Updated Characteristics Table
+Characteristic|CA Orange | FL Orange | AZ Orange
+--------------|----------|-----------|-------------
+Juiciness     | 1 unit   | 2 units   | 2 units
+Sweetness     | 2 units  | 1 unit    | 2 units
+
+***
+
+####Demonstration 4.  The Expanded Example
+
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      radioButtons("M", label = "Income (M)",
+                   choices = list("$24" = 24, 
+                                  "$30" = 30, 
+                                  "$36" = 36),
+                   selected = 30,inline=T),
+      radioButtons("PCA", label = "Price of CA Oranges",
+                   choices = list("$5" = 5, 
+                                  "$6" = 6,
+                                  "$8"=8),
+                   selected = 6,inline=T),
+      radioButtons("PFL", label = "Price of FL Oranges",
+                   choices = list("$6" = 6, 
+                                  "$7" = 7,
+                                  "$9"=9),
+                   selected = 6,inline=T),
+      radioButtons("PAZ", label = "Price of AZ Oranges",
+                   choices = list("$7" = 7, 
+                                  "$8" = 8,
+                                  "$10"=10),
+                   selected = 10,inline=T)
+    ),
+    mainPanel(plotOutput("ecfPlot"))
+  ),
+  server = function(input,output) {
+    #Reactive terms to be used for the dynamic plot
+    PPCA<-reactive(as.numeric(input$PCA))
+    PPFL<-reactive(as.numeric(input$PFL))
+    PPAZ<-reactive(as.numeric(input$PAZ))
+    MM<-reactive(as.numeric(input$M))
+    JCA<-reactive(round(1*MM()/PPCA(),2))
+    SCA<-reactive(round(2*MM()/PPCA(),2))
+    JFL<-reactive(round(2*MM()/PPFL(),2))
+    SFL<-reactive(round(1*MM()/PPFL(),2))
+    JAZ<-reactive(round(2*MM()/PPAZ(),2))
+    SAZ<-reactive(round(2*MM()/PPAZ(),2))
+    slope<-reactive((SCA()-SFL())/(JCA()-JFL()))
+    int<-reactive(SFL()-slope()*JFL())
+    x1<-reactive(ifelse((JCA()-JAZ())*(SCA()-SAZ())<0,JCA(),max(c(JCA(),JAZ()))))
+    y1<-reactive(ifelse((JCA()-JAZ())*(SCA()-SAZ())<0,SCA(),max(c(SCA(),SAZ()))))
+    x2<-reactive(JAZ())
+    y2<-reactive(ifelse(SAZ()>=int()+slope()*JAZ(),JAZ(),int()+slope()*JAZ()))
+    x3<-reactive(ifelse((JFL()-JAZ())*(SFL()-SAZ())<0,JFL(),max(c(JFL(),JAZ()))))
+    y3<-reactive(ifelse((JFL()-JAZ())*(SFL()-SAZ())<0,SFL(),max(c(SFL(),SAZ()))))
+    #colECF<-reactive(ifelse((JCA()-JFL())*(SCA()-SFL())<=0,"red","beige"))
+    colPT<-reactive(ifelse(JAZ()==max(c(x1(),x2(),x3()))&SAZ()==max(c(y1(),y2(),y3())),
+                           "red","beige"))
+    output$ecfPlot <- renderPlot({
+      par(bg="beige")
+      par(pty="s") #makes plot square
+      plot(c(0,JCA()),c(0,SCA()),type='l',lwd=3, xlab="Juciness", ylab="Sweetness",
+           ylim=c(0,15),xlim=c(0,15), col.lab="blue",
+           xaxs="i", yaxs="i", bty="n", xaxt='n', yaxt='n')
+      lines(c(0,JFL()),c(0,SFL()),lwd=3)
+      lines(c(0,JAZ()),c(0,SAZ()),lwd=3)
+      points(JAZ(),SAZ(),pch=21,bg=colPT(),col=colPT())
+      lines(c(x1(),x2(),x3()),c(y1(),y2(),y3()),lwd=3,col="red")
+      #lines(c(JCA(),JAZ(),JFL()),c(SCA(),SAZ(),SFL()),lwd=3,col="red")
+      #lines(c(JCA(),JFL()),c(SCA(),SFL()),lwd=3,col=colECF())
+      text(JCA(),SCA(),"CA",pos=4)
+      text(JFL(),SFL(),"FL",pos=3)
+      text(JAZ(),SAZ(),"AZ",pos=3)
+      axis(1, at=c(0,JCA(),JAZ(),JFL(),15), labels=c("",JCA(),JAZ(),JFL(),""))
+      axis(2, at=c(0,SFL(),SAZ(),SCA(),15), labels=c("",SFL(),SAZ(),SCA(),""))
+    })
+  },
+  options = list(height = 450)
+)
+```
+
+***
+
+If the price of Arizona oranges falls to \$8 in Demonstration 4, they become competitive with the other two oranges.  At a price of \$7, Arizona oranges start to push out the efficient frontier, changing it from a triangle to a diamond shape.  In this case, the Arizona orange starts to be the best choice for those consumers who like a balance of juiciness and sweetness.  Note that California and Florida oranges are still on the frontier when Arizona oranges are priced at \$7.  This is because consumers who have strong preferences for sweetness but not juiciness or juiciness but not sweetness may still find it optimal to purchases bundles with California or Florida oranges, respectively.  
+
+This is illustrated in Figure 6 below.  Figure 6, shows indifference curves for three consumers.  One consumer has the horizontal indifference curves shown in blue.  This consumer cares only about sweetness.  This consumer cares nothing about juiciness.  His or her utility is maximized by purchasing all California oranges because this provides the largest amount of sweetness.  Another consumer has the vertical indifference curves shown in yellow.  This consumer cares only about juiciness and nothing about sweetness.  He or she maximizes utility by purchasing only Florida Oranges.  The consumer with the typically shaped and strictly convex indifference curves shown in green likes both juiciness and sweetness.  He or she maximizes utility by purchasing the Arizona oranges.
+
+***
+
+```{r, echo=FALSE}
+par(bg="beige")
+par(pty="s") #makes plot square
+plot(c(0,5),c(0,10),type='l',lwd=3, xlab="Juciness", ylab="Sweetness",
+     ylim=c(0,12),xlim=c(0,12), col.lab="blue",
+     xaxs="i", yaxs="i", bty="n", xaxt='n', yaxt='n'
+ )
+lines(c(0,10),c(0,5),lwd=3)
+lines(c(0,8.57),c(0,8.57),lwd=3)
+text(5,10,"CA",pos=3)
+text(10,5,"FL",pos=4)
+text(8.57,8.57,"AZ",pos=4)
+lines(c(5,8.57,10),c(10,8.57,5),lwd=3,col="red")
+lines(73.45/seq(5,12,.1),seq(5,12,.1),lwd=2, col="green")
+lines(65/seq(5,12,.1),seq(5,12,.1),lwd=2, col="green")
+lines(c(3,7),c(10,10),lwd=2,col="blue")
+lines(c(3,7),c(9.5,9.5),lwd=2,col="blue")
+lines(c(10,10),c(3,7),lwd=2,col="goldenrod")
+lines(c(9.5,9.5),c(3,7),lwd=2,col="goldenrod")
+arrows(4,9,4,11,col="blue")
+arrows(9,4,11,4,col="goldenrod")
+arrows(7,8,9,10,col="green")
+points(5,10,pch=21,bg="blue",col="blue")
+points(10,5,pch=21,bg="goldenrod",col="goldenrod")
+points(8.57,8.57,pch=21,bg="green",col="green")
+axis(1, at=c(0,5,8.57,10,12), labels=c("",5,8.57,10,""),cex.axis=0.75,padj=.5)
+axis(2, at=c(0,5,8.57,10,12), labels=c("",5,8.57,10,""),cex.axis=0.75,padj=.5)
+```
+
+####Figure 7. Choice by consumers with different preferences shown in blue, green, and yellow.  Characteristics reflected in the figure are from Table 3. Other assumptions are $M=\$30$, $P_{CA}=\$6$, $P_{FL} =\$6$, and $P_{AZ}=\$7$. Arrows point in the direction of increasing preferences.
+
+
+***
+
+##Hedonic pricing models
+In Lancaster's framework, characteristics are the things that matter in the consumer's utility function.  The consumer gets characteristics by purchasing goods and services that contain them.  When we observe a market price we are observing the price for a purchased good that probably reflects a number of characteristics.  We do not directly observe the price of a given characteristic. In the automobile example, the price reflects horsepower along with several other characteristics.  We might observe that cars with higher horsepower also tend to have higher price tags.  This suggests that we should able to construct a model to get an estimate of the implicit price for horsepower.  Such a model is called a hedonic pricing model.  A hedonic pricing model could be specified as follows:
+
+$$p = f(c_1, c_2, \ldots, c_M),$$
+
+where $p$ is price of the product in question and $c_1, c_2, \ldots, c_M$ are levels of different characteristics.  
+
+A hedonic pricing model can be used to obtain the implicit marginal value of a characteristic.  For example, if $p$ is the price of an automobile and $c_1$ is horsepower, then $\frac{\Delta p}{\Delta c_1}$ (the slope coefficient for $c_1$) is the increase in automobile price that one would expect to result from increasing horsepower by a small amount.
+
+As an example, suppose that you were asked to specify a hedonic pricing model for retail strip steaks.  You might use something such as 
+
+$$p = f(weight, thickness, color, quality, freshness)$$.  
+
+We could measure weight (g) and thickness (cm).  Color could be measured using a sensory instrument that quantifies light reflected from the steak in terms of the color spectrum.  Quality could be measured in terms of internal marbling or we might use a series of binary (0 or 1) variables to control for USDA quality grade (prime, choice, select, and so forth) because these grades take marbling into account.  Freshness might be measured in terms of days remaining before the "sale by" date.  
+
+If we can estimate a hedonic pricing model, then we may be able to say something about the returns to improving one or more of the characteristics.  In the case of our retail strip steak, it may be possible to increase freshness by using vacuum packaging.  Before we invest in such a technology, it would be nice to know how much consumers would be willing to pay for this product improvement.  Vacuum packaging will probably darken the color and result in a steak that is purplish in color rather than a bright red.  It is possible that despite enhanced freshness, consumers would pay less for vacuum packed steaks because they view the darker color to be undesirable.  A hedonic pricing model could be very useful decision tool in this type of a situation.
+
+#<span style="color:purple">Becker's (1965) Household Production Model</span>
+
+Another model of consumer behavior is Becker's (1965) household production model. Here, the consumer has a utility function that depends on two things:
+
+1.  household produced goods and services, and 
+2.  time spent in leisure activities.  
+
+To illustrate the idea of Becker's model, suppose that the household produced good in question is a meal.  To be more specific, let us suppose this meal consists of pasta with a marinara sauce. Ultimate utility comes from consuming the meal.  However, in order to obtain this utility, the consumer will need to: 
+
+1. purchase ingredients from the marketplace,
+2. spend time in the kitchen and dining room, and
+3. have some basic knowledge about cooking that we will call human capital.  
+
+A key point of the Becker model is that items the consumer buys at the supermarket provide him or her with no utility *per se*. The consumer derives no satisfaction from inputs such as a bag of pasta, tomatoes, garlic cloves, or oregano leaves. Satisfaction is not obtained until these ingredients have been combined with time and human capital to produce a meal. 
+
+We could think of almost any human activity in terms of the household production model. Even a good night's rest could be viewed as household production. A good night's requires purchased inputs (shelter, a bed, linens, and possibly sleeping pills). It requires an investment in time (normally 6 to 8 hours). Finally, it might require some human capital (the ability to clear one's mind of the pressures of the day and relax into sleep). We might similarly think of enjoying a football game as another household produced good. This requires purchased inputs (tickets, television, cable or satellite subscription, snacks), time (several hours), and human capital (some knowledge of the rules and strategies of the game).  The point I am trying to make is that most human activities could be classified as household production.  In actual implementations of the Becker model, activities such as sleep or enjoying sporting events might be lumped into leisure time.  
+
+When we think of household production, it would be wrong to suppose that only activities within the home would fall within the Becker framework. Suppose that instead of making the pasta dinner in the home kitchen, the consumer decides to purchase it from an Italian restaurant. Utility is ultimately derived from consuming the prepared meal. In this case, the consumer requires purchased goods (taxi fare or one's own automobile and gasoline, clothing suitable for the restaurant, and a pasta dinner ordered from the menu). The consumer must also invest time to enjoy the meal. Human capital in the case of a restaurant meal involves knowledge about quality and service of competing restaurants and related products that go along with the meal (e.g., a suitable beverage or appetizer that complements the main course). Even though a restaurant meal is not "homemade", we could easily conceptualize it within the household production model.
+
+The formal elements of the Becker model include a utility function:
+
+$$U = f[(hh\ produced\ goods), (leisure\ time)]$$
+
+The consumer maximizes utility subject to:
+
+1. A hh production function: 
+$$hh\ goods = g[(time\ in\ hh\ production), (market\ goods), (human\ capital)]$$
+
+2. Income-use constraint: 
+
+$$money\ income \ge spending\ on\ market\ goods$$
+
+3. Income-source constraint: 
+
+$$money\ income = (wage) \times (time\ in\ labor\ force) + (other\ income)$$
+
+4. Time-use constraint:  
+$$total\ time = (time\ in\ hh\ production) + (time\ in\ labor\ force) + (leisure\ time)$$
+
+A main advantage of Becker's model is that it incorporates the value of the consumer's time. The income-use constraint in the Becker model is essentially the same as in the neoclassical model. The consumer cannot spend more on purchased inputs than his or her available income.  However, the model differs in that it incorporates where the consumer gets income (the income-source constraint) along with the potential uses for the consumer's time.  We can combine the income-use, income-source, and time-use constraints into one overall constraint known as the full time-income constraint below.
+
+$$
+\begin{aligned}
+(wage)\times(total\ time)+(other\ income) \ge\ & (wage)\times(time\ in\ hh\ production)+ \\&(wage)\times(leisure\ time)+(spending\ on\ market\ goods)
+\end{aligned}
+$$
+
+
+The left side of the full time-income constraint represents income potential.  The right side of the full time-income constraint represents how income potential is used.
+
+A key insight from Becker's model is that time spent in the kitchen has a very real cost. Many consumers are spending more time in the workforce to generate income. They are using this income to save time in household production by buying goods that require minimal preparation. Senauer, Asp, and Kinsey (1991) make a distinction between time-intensive goods and expenditure-intensive goods. A cake from the bakery costs more money than a couple of cups of flour, vegetable oil, eggs, and a bit of baking powder and cocoa. However, when you consider the opportunity cost of making a cake from scratch, the bakery cake might be the cheapest way to obtain this good. In this example, the bakery cake is an expenditure-intensive good while the raw ingredients to make a cake from scratch are time-intensive goods. 
+
+***
+
+#<span style="color:purple">References</span>
+
+Becker, G. S. 1965. "A Theory of the Allocation of Time." *Economic Journal* 75:493-517.
+
+Lancaster, K. J. 1966. "A New Approach to Consumer Theory." *Journal of Political Economy* 74:132-157.
+
+Senauer, B., E. Asp, and J. Kinsey. 1991. *Food Trends and the Changing Consumer.* St. Paul, MN: Eagan Press.
+
+***
+
+#<span style="color:purple">Problem Sets</span>
+
+###Problem Set 1: Multiple Choice
+```{r, echo=FALSE}
+###############################################################################
+# ResponseMC(correct,nchoices=4)
+# A shinyApp function to accept and check a multiple choice response.  The only
+# argument to the function is the letter of the correct response.  
+#
+# Example:
+# ResponseMC("a",5) is used if "a" is the correct choice and a-e options.
+###############################################################################
+
+ResponseMC<- function(correct,nchoices=4){
+  shinyApp(
+    ui = fluidPage(
+      fluidRow(
+        column(2,
+               selectInput(
+                 "answer",
+                 label = NULL,
+                 choices = c("No selection",letters[1:nchoices]),
+                 selected = "No selection", 
+                 selectize=F)),
+        column(4,htmlOutput("resp"))
+        )
+      ),
+    server= function(input,output) {
+      output$resp<-renderText(
+        ifelse(input$answer=="No selection",
+               "Choose a letter from the menu.",
+               ifelse(input$answer==correct, 
+                      paste("You are correct! The answer is ", correct,".",sep=""),
+                      paste("Sorry. The correct answer is ", correct,".",sep=""))
+               )
+        )
+      },
+    options = list(height = 50)
+  )
+  }
+```
+
+
+1.	**This preference axiom says more is always preferred to less?**
+a.	Preferences are complete
+b.	Preferences are transitive
+c.	Preferences are convex
+d.	Preferences are monotonic
+
+```{r, echo=FALSE}
+ResponseMC("d")
+```
+
+2.	**This preference axiom says that consumers are capable of ranking bundles.**
+a.	Preferences are complete
+b.	Preferences are transitive
+c.	Preferences are convex
+d.	Preferences are monotonic
+
+```{r, echo=FALSE}
+ResponseMC("a")
+```
+
+3.	**Which preference axiom best characterizes the statement that “means are preferred to extremes”?**
+a.	Preferences are complete
+b.	Preferences are transitive
+c.	Preferences are convex
+d.	Preferences are monotonic
+
+```{r, echo=FALSE}
+ResponseMC("c")
+```
+
+4.	**In Lancaster's model of the consumer, utility is a function of**
+a.	Leisure time
+b.	Household produced goods and services
+c.	Product characteristics
+d.	Purchased goods
+
+```{r, echo=FALSE}
+ResponseMC("c")
+```
+
+5.	**In the Neoclassical model of the consumer, utility is a function of**
+a.	Leisure time
+b.	Household produced goods and services
+c.	Product characteristics
+d.	Purchased goods
+
+```{r, echo=FALSE}
+ResponseMC("d")
+```
+
+6.	**Which best describes a hedonic pricing model?**
+a.	The full time income constraint from Becker's model
+b.	Product price is a function of product characteristics
+c.	Product price is a function of quantity placed on the market
+d.	All of the above
+
+```{r, echo=FALSE}
+ResponseMC("b")
+```
+
+7.	**In consumer theory, the direct utility functions we examined in class**
+a.	Are ordinal functions
+b.	Are cardinal functions
+c.	Are pointless because utility cannot be measured
+d.	Are applicable in Becker’s model but are not applicable in Lancaster’s model
+
+```{r, echo=FALSE}
+ResponseMC("a")
+```
+
+8.	**Which best summarizes the basic idea of consumer choice theory?**
+a.	Consumers optimize by choosing the healthiest but lowest cost bundle of food items
+b.	Consumers have preferences that are complete, reflexive, transitive, monotonic, and convex
+c.	Consumers select the bundle of goods of services they like best from all bundles in their budget set
+d.	Consumers minimize spending subject to meeting their minimum daily caloric needs
+
+```{r, echo=FALSE}
+ResponseMC("c")
+```
+
+9.	**Hedonic pricing models**
+a.	Could be used to value characteristics that are not traded on the market
+b.	Explain price of a purchased good in terms of characteristics that consumers perceive to be important
+c.	Have theoretical roots in Lancaster’s characteristics model
+d.	All of the above
+e.	Choices a and c only
+
+```{r, echo=FALSE}
+ResponseMC("d", 5)
+```
+
+10.	**Consumer sovereignty**
+a.	Means that consumers are vulnerable and so sovereign states need to be especially vigilant when implementing and enforcing consumer protection laws
+b.	Means that economic activity is ultimately directed by consumers through their purchase decisions
+c.	Means that economic activity is directed by central planners who are elected by sovereign consumers
+d.	Was first introduced by the Magna Carta, which placed limits on the power of the reigning sovereign
+
+```{r, echo=FALSE}
+ResponseMC("b")
+```
+
+11.	**An ordinal utility function differs from a cardinal utility function in that**
+a.	Cardinal utility always satisfies the cardinal axioms of preferences (complete, reflexive, etc.) while ordinal utility might not.
+b.	Ordinal utility is usually used for ordinary products, while cardinal utility is used for the luxury goods
+c.	With an ordinal utility function we are interested primarily in how the function ranks bundles
+d.	Ordinal utility is a function of prices.  Cardinal utility is a function of quantities
+
+```{r, echo=FALSE}
+ResponseMC("c")
+```
+
+12.	**The full time-income constraint is featured in**
+a.	Becker’s household production model
+b.	Lancaster’s characteristics model
+c.	The neoclassical model
+d.	All of the above
+
+```{r, echo=FALSE}
+ResponseMC("a")
+```
+
+13.	**This model is based on the simple idea that consumers choose the best bundle of goods and services that they can possibly afford**
+a.	Becker’s household production model
+b.	Lancaster’s characteristics model
+c.	The neoclassical model
+d.	All of the above
+
+```{r, echo=FALSE}
+ResponseMC("d")
+```
+
+14.	**If preferences are transitive**
+a.	More is always preferred to less
+b.	The consumer likes variety (means are preferred to extremes)
+c.	The consumer is able to rank bundles
+d.	They have a logical ordering in that if X is preferred to Y, and Y is preferred to Z, then X is preferred to Z
+
+```{r, echo=FALSE}
+ResponseMC("d")
+```
+
+15.	**If preferences are complete**
+a.	More is always preferred to less
+b.	The consumer likes variety (means are preferred to extremes)
+c.	The consumer is able to rank bundles
+d.	They have a logical ordering in that if X is preferred to Y, and Y is preferred to Z, then X is preferred to Z
+
+```{r, echo=FALSE}
+ResponseMC("c")
+```
+
+17.	**Which best describes an expenditure intensive good as described in class**
+a.	An organic tenderloin roast and fresh local organic vegetables from the farmers’ market
+b.	A fast food restaurant meal
+c.	A canoeing trip on Buffalo River
+d.	All-purpose flour
+
+```{r, echo=FALSE}
+ResponseMC("b")
+```
+
+####Use the diagram below to answer the remaining problems in this problems set.
+```{r, echo=FALSE}
+par(bg="beige")
+par(pty="s") #makes plot square
+plot(seq(.1,15,.1),25/seq(.1,15,.1), type="l", lwd=3, col="black", ylim=c(0,12), xlim=c(0,12),
+     xlab=expression("Q"[1]), ylab=expression("Q"[2]), xaxs="i",yaxs="i",bty="n",xaxt='n',yaxt='n'
+     )
+lines(seq(.1,15,.1),9/seq(.1,15,.1), lwd=3, col="black")
+lines(seq(.1,15,.1),36/seq(.1,15,.1), lwd=3, col="black")
+lines(c(0,10),c(10,0),lwd=3,col="red")
+
+polygon(c(0,0,10),c(0,10,0),col=rgb(1,0,1,0.1),border=NA)
+points(5,25/5,pch=21,col="black",bg="black")
+points(8,25/8,pch=21,col="black",bg="black")
+points(2,9/2,pch=21,col="black",bg="black")
+points(9,9/9,pch=21,col="black",bg="black")
+points(4.5,36/4.5,pch=21,col="black",bg="black")
+points(9,9/9,pch=21,col="black",bg="black")
+text(5,25/5,"B",pos=3)
+text(2,9/2,"D",pos=4)
+text(9,9/9,"E",pos=3)
+text(8,25/8,"C",pos=3)
+text(4.5,36/4.5,"A",pos=3)
+axis(1, at=c(0,12), labels=c("",""),lwd.ticks=1)
+axis(2, at=c(0,12), labels=c("",""),lwd.ticks=1)
+```
+
+18.	**The consumer likes C better than B**
+a.	True
+b.	False
+
+```{r, echo=FALSE}
+ResponseMC("b",2)
+```
+
+19.	**C costs more than B**
+a.	True
+b.	False
+
+```{r, echo=FALSE}
+ResponseMC("a",2)
+```
+
+20.	**E costs just as much as B**
+a.	True
+b.	False
+
+```{r, echo=FALSE}
+ResponseMC("a",2)
+```
+
+21.	**D costs less than E**
+a.	True
+b.	False
+
+```{r, echo=FALSE}
+ResponseMC("a",2)
+```
+
+22.	**A is the optimal choice**
+a.	True
+b.	False
+
+```{r, echo=FALSE}
+ResponseMC("b",2)
+```
+
+23.	**The consumer likes B and E the same**
+a.	True
+b.	False
+
+```{r, echo=FALSE}
+ResponseMC("b",2)
+```
+
+24.	**The consumer likes D and E the same **
+a.	True
+b.	False
+
+```{r, echo=FALSE}
+ResponseMC("a",2)
+```
+
+25.	**Of labeled points, A is the most preferred**
+a.	True
+b.	False
+
+```{r, echo=FALSE}
+ResponseMC("a",2)
+```
+
+26.	**Consider the utility functions in the table below and the preference map in the diagram above.  Which, if any, of these functions provides a correct ordering of preferences?**
+a.	Function 1 only
+b.	Function 2 only
+c.	Functions 1 and 3
+d.	Functions 1,2,and 3
+e.	Functions 1, 3, and 4
+
+```{r, echo=FALSE}
+ResponseMC("e",5)
+```
+
+Bundle|Function 1|Function 2|Function 3|Function 4
+------|----------|----------|----------|-----------
+A|	10|	2	|1000|	0
+B|	5|	5	|500|	-5
+C|	5|	5	|500|	-5
+D|	2|	10|	200|	-8
+E|	2|	10|	200|	-8

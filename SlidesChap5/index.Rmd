@@ -1,0 +1,634 @@
+---
+title: "Consumer Theory and Models"
+author: "Based on *An Interactive Text for Food and Agricultural Marketing* by [Michael R. Thomsen](https://agribusiness.uark.edu/directory/index/uid/mthomsen/name/Michael+R.+Thomsen/) which is licensed und
+er a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/). ![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)  Source files are available on [GitHub](https://github.com/thomsen-m/FAM-OER)."
+
+date: "Today's date is `r format(Sys.time(), '%d %B %Y')`"
+output:
+  slidy_presentation: default
+  beamer_presentation: default
+runtime: shiny
+---
+
+***
+
+##<span style="color:SaddleBrown">Objectives</span>
+
+* Explain the main logic of consumer choice theory in terms of preferences and budget sets.
+
+* Graph budget sets and budget frontiers, given price and income data, and explain what happens to the budget set as prices and/or income change.
+
+* Outline the basic assumptions required for well-behaved preferences.  Given a specific example, be able to determine whether these assumptions are satisfied.
+
+* Describe the difference between ordinal utility and cardinal utility.
+
+* Graphically derive individual demand functions.
+
+* Diagram efficient consumption frontiers (Lancaster-type budget constraints) and identify products that are and are not competitive.
+
+* Analyze how changes in price, income, and product characteristics affect consumer choice in Lancaster's framework.
+
+* Describe hedonic pricing models and identify characteristics to be included in a hedonic pricing model for a given
+product.
+
+* Derive the full-time income constraint of Becker's model.
+
+* Use the logic of Becker's model to explain consumer valuation of time-saving (convenience) built into food products.
+
+* Use the logic of Lancaster's and Becker's models to analyze trends in food consumption.
+
+
+##<span style="color:SaddleBrown">Consumer Sovereignty</span>
+
+* Consumers are the ultimate governors of the economic system
+* *De gustibus non disputatum est*
+* Gives rise to a broad scope of marketing activities
+
+
+##<span style="color:SaddleBrown">Consumer Theory</span>
+
+* Basic idea: The consumer seeks to obtain the best bundle of goods and services that he/she possibly can. 
+* What is best is determined by preferences
+* Possibly can is determined by a budget or affordability set
+* This basic idea is behind each model we will cover
+1. Neoclassical model
+2. The Lancaster model
+3. The Becker model
+
+##<span style="color:SaddleBrown">Budget Sets in the Neoclassical Model</span>
+
+* The assumption of a two-good economy
+
+1. Primarily a pedagogical assumptions 
+2. Provides an understanding of the essential logic of the consumer choice model
+3. Can accommodate many if not most cases of interest
+
+* The budget set is:
+
+$$\{Q_1,Q_2\} : P_1 Q_1 + P_2 Q_2 \le M,$$
+
+* The budget frontier consists of those bundles that completely exhaust the consumer's income.  
+
+$$Q_2 = \frac{M}{P_2}-\frac{P_1}{P_2} Q_1.$$
+
+##<span style="color:SaddleBrown">Demonstration 1. The Budget Set</span>
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      radioButtons("M", label = "Income (M)",
+                   choices = list("$80" = 80, 
+                                  "$100" = 100, 
+                                  "$120" = 120),
+                   selected = 100,inline=T),
+      radioButtons("P1", label = "Price of Good 1 (P1)",
+                   choices = list("$6" = 6, 
+                                  "$8" = 8, 
+                                  "$10" = 10),
+                   selected = 8,inline=T),
+      radioButtons("P2", label = "Price of Good 2 (P2)",
+                   choices = list("$8" = 8, 
+                                  "$10" = 10, 
+                                  "$12" = 12),
+                   selected = 10,inline=T)
+    ),
+    mainPanel(plotOutput("budgetPlot"))
+  ),
+  server = function(input,output) {
+    #Reactive terms to be used for the dynamic plot
+    PP1<-reactive(as.numeric(input$P1))
+    PP2<-reactive(as.numeric(input$P2))
+    MM<-reactive(as.numeric(input$M))
+    output$budgetPlot <- renderPlot({
+      par(bg="beige")
+      plot(c(0,12.5),c(10,0),col="red",
+           type="l", lty="dashed",
+           xlab=expression("Q"[1]), ylab=expression("Q"[2]),
+           xaxs="i",yaxs="i",bty="n",
+           xlim = c(0, 21), ylim = c(0, 16)
+           ,xaxt='n',yaxt='n'
+           )
+      lines(c(0,MM()/PP1()),c(MM()/PP2(),0),col="red",lwd=3)
+      polygon(c(0,0,12.5),c(0,10,0),col=rgb(1,0,1,0.1),border=NA)
+      polygon(c(0,0,MM()/PP1()),c(0,MM()/PP2(),0),col=rgb(1,0,1,0.5),border=NA)
+      axis(1, at=c(0,MM()/PP1(),21), labels=c("",round(MM()/PP1(),2),""),lwd.ticks=1)
+      axis(2, at=c(0,MM()/PP2(),16), labels=c("",round(MM()/PP2()),""),lwd.ticks=1)
+    })
+  },
+  options = list(height = 475, width=800)
+)
+```
+
+##<span style="color:SaddleBrown">Preferences in the Neoclassical Model</span>
+
+#### Table 1. Preference Relations
+
+Relation | Name      | Example | Interpretation
+---------|-----------|---------|---------------
+$\approx$|Indifference| $x \approx y$ | $x$ is indifferent to $y$
+$\succeq$|Weakly preferred| $x \succeq y$ | $x$ is at least as good as $y$
+$\succ$|Strictly preferred| $x \succ y$ | $x$ is better than $y$
+
+
+##<span style="color:SaddleBrown">Representing preferences graphically</span>
+
+```{r, echo=FALSE}
+par(bg="beige")
+plot(seq(.1,15,.1),25/seq(.1,15,.1), type="l", lwd=3, col="black", ylim=c(0,12), xlim=c(0,8),
+     xlab=expression("Q"[1]), ylab=expression("Q"[2]),xaxs="i",yaxs="i",bty="n",xaxt='n',yaxt='n'
+     )
+lines(seq(.1,15,.1),16/seq(.1,15,.1), lwd=3, col="black")
+lines(seq(.1,15,.1),9/seq(.1,15,.1), lwd=3, col="black")
+lines(seq(.1,15,.1),36/seq(.1,15,.1), lwd=3, col="black")
+points(4,36/4,pch=21,col="black",bg="black")
+points(5,25/5,pch=21,col="black",bg="black")
+points(2.5,25/2.5,pch=21,col="black",bg="black")
+points(.8,9/.8,pch=21,col="black",bg="black")
+points(7,9/7,pch=21,col="black",bg="black")
+text(4,36/4,"E",pos=4)
+text(5,25/5,"C",pos=3)
+text(2.5,25/2.5,"D",pos=4)
+text(.8,9/.8,"B",pos=4)
+text(7,9/7,"A",pos=3)
+axis(1, at=c(0,8), labels=c("",""),lwd.ticks=1)
+axis(2, at=c(0,12), labels=c("",""),lwd.ticks=1)
+```
+
+#### Figure 1. Graphical representation of preferences
+
+$$E \succ D \approx C \succ B \approx A$$
+
+$$E \succeq D \succeq C \succeq B \succeq A$$
+
+$$E \succeq C \succeq D \succeq A \succeq B$$
+
+
+##<span style="color:SaddleBrown">Utility Functions</span>
+* An indifference curve map is a two-dimensional representation of a utility function
+
+* Utility functions are ordinal functions (not cardinal functions)
+
+* This means we care only about how the function ranks bundles
+
+1. Bundles the consumer likes more get higher numbers
+
+2.  Bundles the consumer likes less get lower numbers
+
+3.  Bundles the consumer likes the same get the same number
+
+
+##<span style="color:SaddleBrown">Assumptions About Preferences</span>
+
+* Preferences are complete. The consumer can rank bundles.
+
+* Preferences are transitive.Transitive preferences simply mean that $C \succeq B$, and $B \succeq A$, then it must be that $C \succeq A$.  
+
+* Preferences are convex. Consumers like to have variety in their consumption.  Another way to say this is that "means are preferred to extremes".  
+
+* Preferences are monotonic. Monotonicity  means that the consumer prefers bundles with more goods to bundles with less.  Given two bundles, bundles A and B, monotonicity means the consumer prefers B to A if:
+
+1.	B contains at least as much of each good as does A, and 
+
+2.	B contains strictly more of at least one good than does A.  
+
+##<span style="color:SaddleBrown">Choice in the Neoclassical Model</span>
+
+* Given monotonicity the optimal choice will be on the frontier of the budget set
+* Given convexity the optimal choice will be interior to the budget set
+* Point C is the optimal choice
+* At this point, the indifference curve is tangent to the budget frontier line.
+
+```{r, echo=FALSE}
+par(bg="beige")
+par(pty="s") #makes plot square
+plot(seq(.1,15,.1),25/seq(.1,15,.1), type="l", lwd=3, col="black", ylim=c(0,12), xlim=c(0,12),
+     xlab=expression("Q"[1]), ylab=expression("Q"[2]), xaxs="i",yaxs="i",bty="n",xaxt='n',yaxt='n'
+     )
+lines(seq(.1,15,.1),9/seq(.1,15,.1), lwd=3, col="black")
+lines(c(0,10),c(10,0),lwd=3,col="red")
+polygon(c(0,0,10),c(0,10,0),col=rgb(1,0,1,0.1),border=NA)
+points(5,25/5,pch=21,col="purple",bg="purple")
+points(1,9/1,pch=21,col="black",bg="black")
+points(9,9/9,pch=21,col="black",bg="black")
+text(5,25/5,"C",pos=3)
+text(1,9,"A",pos=4)
+text(9,1,"B",pos=3)
+axis(1, at=c(0,12), labels=c("",""),lwd.ticks=1)
+axis(2, at=c(0,12), labels=c("",""),lwd.ticks=1)
+```
+
+####Figure 3. Point C is the consumer's optimal choice.  If preferences are strictly monotonic and strictly convex, the optimal choice occurs where the indifference curve is tangent to the budget frontier line.
+
+##<span style="color:SaddleBrown">From Consumer Choice to Individual Demand</span>
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      radioButtons("M", label = "Income (M)",
+                   choices = list("High" = 120, 
+                                  "Baseline" = 100, 
+                                  "Low" = 80),
+                   selected = 100,inline=F),
+      radioButtons("P1", label = "Price of Good 1 (P1)",
+                   choices = list("High" = 14,
+                                  "Moderately High" = 12,
+                                  "Baseline" = 10, 
+                                  "Moderately Low" = 8, 
+                                  "Low" = 6),
+                   selected = 10,inline=F)
+    ),
+    mainPanel(plotOutput("choicePlot"),
+              plotOutput("demandPlot")
+              )
+  ),
+  server = function(input,output) {
+    #Reactive terms to be used for the dynamic plot
+    PP1<-reactive(as.numeric(input$P1))
+    MM<-reactive(as.numeric(input$M))
+    QQ1<-reactive(0.5*MM()/PP1())
+    QQ2<-reactive(0.5*MM()/10)
+    UU<-reactive(QQ1()^0.5*QQ2()^0.5)
+    output$choicePlot <- renderPlot({
+      par(bg="beige")
+      par(pty="s") #makes plot square
+      plot(seq(.1,15,.1),25/seq(.1,15,.1), type="l", lwd=1, col="grey", ylim=c(0,12), xlim=c(0,12),
+           xlab=expression("Q"[1]), ylab=expression("Q"[2]), xaxs="i",yaxs="i",bty="n",xaxt='n',yaxt='n',
+           main=expression("Preference Map and Budget Set for Q"[1]*" and Q"[2])
+           )
+      lines(seq(.1,15,.1),9/seq(.1,15,.1), lwd=2, col="grey")
+      lines(seq(.1,15,.1),16/seq(.1,15,.1), lwd=2, col="grey")
+      lines(seq(.1,15,.1),36/seq(.1,15,.1), lwd=2, col="grey")
+      lines(seq(.1,15,.1),49/seq(.1,15,.1), lwd=2, col="grey")
+      lines(seq(.1,15,.1),UU()^2/seq(.1,15,.1), lwd=2, col="blue")
+      lines(c(0,MM()/PP1()),c(MM()/10,0),lwd=3,col="red")
+      polygon(c(0,0,MM()/PP1()),c(0,MM()/10,0),col=rgb(1,0,1,0.1),border=NA)
+      lines(c(0,QQ1()),c(QQ2(),QQ2()),col="purple",lty=2,lwd=3)
+      lines(c(QQ1(),QQ1()),c(0,QQ2()),col="purple",lty=2,lwd=3)
+      points(5,25/5,pch=21,col="gray",bg="gray")
+      points(QQ1(),QQ2(),pch=21,col="purple",bg="purple")
+      text(QQ1(),QQ2(),"C",pos=3)
+      axis(1, at=c(0,12), labels=c("",""),lwd.ticks=1)
+      axis(2, at=c(0,12), labels=c("",""),lwd.ticks=1)
+      })
+    output$demandPlot <- renderPlot({
+      par(bg="beige")
+      par(pty="s") #makes plot square
+      plot(0.5*100/seq(1,16,.1),seq(1,16,.1), type="l", lty=2, lwd=2, col="grey", ylim=c(0,16), xlim=c(0,12),
+           xlab=expression("Q"[1]), ylab=expression("P"[1]), xaxs="i",yaxs="i",bty="n",xaxt='n',yaxt='n',
+           main=expression("Inverse Demand Schedule for Q"[1])
+           )
+      lines(0.5*MM()/seq(1,16,.1),seq(1,16,.1), lwd=3, col="purple")
+      lines(c(0,QQ1()),c(PP1(),PP1()),col="purple",lty=2,lwd=3)
+      lines(c(QQ1(),QQ1()),c(0,16),col="purple",lty=2,lwd=3)
+      points(5,10,pch=21,col="grey",bg="grey")
+      points(QQ1(),PP1(),pch=21,col="purple",bg="purple")
+      axis(1, at=c(0,12), labels=c("",""),lwd.ticks=1)
+      axis(2, at=c(0,16), labels=c("",""),lwd.ticks=1)
+      })
+    },
+  options = list(height = 800,width=800)
+)
+```
+
+##<span style="color:SaddleBrown">The Lancaster Model</span>
+* In the Lancaster model is that the consumer views a purchased good as a bundle of characteristics.  
+
+* Utility in the Lancaster Model
+
+
+$$U = f(c_{11},c_{12},c_{13},\ldots,c_{1N},c_{21},c_{22},c_{23},\ldots,c_{2N},\ldots,c_{M1},c_{M2},c_{M3},\ldots,c_{MN}),$$
+
+where $c_{ij}$ is the amount of the $i^{th}$ characteristic contained in one unit of the $j^{th}$ purchased good, $i = 1, 2, 3, \ldots, M$ and $j = 1, 2, 3, \ldots, N$.
+
+##<span style="color:SaddleBrown">An Illustration</span>
+
+* Consider three juice products: orange juice ($Q_1$) , grapefruit juice ($Q_2$), and Concord grape juice ($Q_3$).  
+
+* Suppose the consumer is concerned with two characteristics: sweetness (characteristic 1) and tartness (characteristic 2).  In this case the $c_{ij}$ terms in the consumer's utility function would be interpreted as follows:
+
+    + $c_{11}$ = the amount of characteristic 1 (sweetness) in product 1 (orange juice)
+    + $c_{12}$ = the amount to characteristic 1 (sweetness) in product 2 (grapefruit juice)
+    + $c_{13}$ = the amount of characteristic 1 (sweetness) in product 3 (Concord grape juice)
+    + $c_{21}$ = the amount of characteristic 2 (tartness) in product 1 (orange juice)
+    + $c_{22}$ = the amount characteristic 2 (tartness) in product 2 (grapefruit juice)
+    + $c_{23}$ = the amount of characteristic 2 (tartness) in product 3 (Concord grape juice)
+
+##<span style="color:SaddleBrown">Budget Sets in the Lancaster Model</span>
+```{r, echo=FALSE}
+par(bg="beige")
+par(pty="s") #makes plot square
+plot(c(0,5),c(0,10),type='l',lwd=3, xlab=expression(C[1]), ylab=expression(C[2]), ylim=c(0,12),xlim=c(0,12), col.lab="blue",
+ xaxs="i",
+ yaxs="i",
+ bty="n",
+ xaxt='n',
+ yaxt='n'
+ )
+lines(c(0,5,5),c(10,10,0),lty=2)
+lines(c(0,10,10),c(5,5,0),lty=2)
+text(5,10,"Good 1",pos=3,cex=0.75)
+lines(c(0,10),c(0,5),lwd=3)
+text(10,5,"Good 2",pos=4,cex=0.75)
+lines(c(5,10),c(10,5),lwd=3,col="red")
+axis(1, at=c(0,5,10,12), labels=c("",expression(frac(M,P[1])%*%c[11]),expression(frac(M,P[2])%*%c[12]),""),cex.axis=0.75,padj=.5)
+axis(2, at=c(0,5,10,12), labels=c("",expression(frac(M,P[2])%*%c[22]),expression(frac(M,P[1])%*%c[21]),""),cex.axis=.75,padj=.5)
+```
+
+####Figure 5. The efficient consumption fronteir (in red) for two characteristics, $C_1$ and $C_2$
+
+##<span style="color:SaddleBrown">Choice in the Lancaster Model</span>
+
+```{r, echo=FALSE}
+par(bg="beige")
+par(pty="s") #makes plot square
+plot(c(0,5),c(0,10),type='l',lwd=3, xlab=expression(C[1]), ylab=expression(C[2]), ylim=c(0,12),xlim=c(0,12), col.lab="blue",
+ xaxs="i",
+ yaxs="i",
+ bty="n",
+ xaxt='n',
+ yaxt='n'
+ )
+lines(c(0,5,5),c(10,10,0),lty=2)
+lines(c(0,10,10),c(5,5,0),lty=2)
+text(5,10,"Good 1",pos=3,cex=0.75)
+lines(c(0,10),c(0,5),lwd=3)
+text(10,5,"Good 2",pos=4,cex=0.75)
+lines(c(5,10),c(10,5),lwd=3,col="red")
+lines(56.26/seq(5.5,10,.1),seq(5.5,10,.1),lwd=1,col="blue")
+lines(48/seq(5.2,9.2,.1),seq(5.2,9.2,.1),lwd=1,col="blue")
+lines(64/seq(6,10.2,.1),seq(6,10.2,.1),lwd=1,col="blue")
+points(7.5,7.5,pch=21,bg="purple",col="purple")
+text(7.5,7.5,"E",col="purple",pos=3,cex=0.75)
+axis(1, at=c(0,5,10,12), labels=c("",expression(frac(M,P[1])%*%c[11]),expression(frac(M,P[2])%*%c[12]),""),cex.axis=0.75,padj=.5)
+axis(2, at=c(0,5,10,12), labels=c("",expression(frac(M,P[2])%*%c[22]),expression(frac(M,P[1])%*%c[21]),""),cex.axis=.75,padj=.5)
+```
+
+####Figure 6. Choice in the Lancaster Model.  The consumer chooses the combination of characteristics that provide the highest level of utility.  Given the consumer with the preferences shown here, the optimal choice occurs at E. 
+
+
+##<span style="color:SaddleBrown">Working Through the Lancaster Model, An Example</span>
+
+
+####Table 2.  Fictional Characteristic and Price Data for the Apple Example
+
+Characteristic|Red Delicious (RD) Apple | Golden Delicious (GD) Apple
+----------------|-----------------------|----------------------------
+Crispiness      | 1 unit                | 2 units
+Sweetness       | 2 units               | 1 unit
+
+
+***
+
+####Demonstration 3.  Efficient Consumption Frontier for Example of RD and GD Apples
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      radioButtons("M", label = "Income (M)",
+                   choices = list("$24" = 24, 
+                                  "$30" = 30, 
+                                  "$36" = 36),
+                   selected = 30,inline=T),
+      radioButtons("PRD", label = "Price of RD Apples",
+                   choices = list("$12.50" = 12.5, 
+                                  "$8" = 8, 
+                                  "$6" = 6,
+                                  "$5"=5),
+                   selected = 6,inline=F),
+      radioButtons("PGD", label = "Price of GD Apples",
+                   choices = list("$12.50" = 12.5, 
+                                  "$8" = 8, 
+                                  "$6" = 6,
+                                  "$5"=5),
+                   selected = 6,inline=F)
+    ),
+    mainPanel(plotOutput("ecfPlot"))
+  ),
+  server = function(input,output) {
+    #Reactive terms to be used for the dynamic plot
+    PPRD<-reactive(as.numeric(input$PRD))
+    PPGD<-reactive(as.numeric(input$PGD))
+    MM<-reactive(as.numeric(input$M))
+    JRD<-reactive(1*MM()/PPRD())
+    SRD<-reactive(2*MM()/PPRD())
+    JGD<-reactive(2*MM()/PPGD())
+    SGD<-reactive(1*MM()/PPGD())
+    colECF<-reactive(ifelse((JRD()-JGD())*(SRD()-SGD())<=0,"red","beige"))
+    colPT<-reactive(ifelse((JRD()-JGD())*(SRD()-SGD())>0,"red","beige"))
+    output$ecfPlot <- renderPlot({
+      par(bg="beige")
+      par(pty="s") #makes plot square
+      plot(c(0,JRD()),c(0,SRD()),type='l',lwd=3, xlab="Crispiness", ylab="Sweetness", ylim=c(0,15),xlim=c(0,15), col.lab="blue",
+           xaxs="i", yaxs="i", bty="n", xaxt='n', yaxt='n')
+      lines(c(0,JGD()),c(0,SGD()),lwd=3)
+      lines(c(JRD(),JGD()),c(SRD(),SGD()),lwd=3,col=colECF())
+      points(max(c(JRD(),JGD())),max(c(SRD(),SGD())),pch=21,bg=colPT(),col=colPT())
+      text(JRD(),SRD(),"RD",pos=4)
+      text(JGD(),SGD(),"GD",pos=3)
+      axis(1, at=c(0,JRD(),JGD(),15), labels=c("",JRD(),JGD(),""))
+      axis(2, at=c(0,SGD(),SRD(),15), labels=c("",SGD(),SRD(),""))
+    })
+  },
+  options = list(height = 450, width=800)
+)
+```
+
+##<span style="color:SaddleBrown">Working Through the Lancaster Model, An Example (continued)</span>
+
+
+####Table 3. Updated Characteristics Table for the Apple Example
+Characteristic|Red Delicious (RD) Apple | Golden Delicious (GD) Apple | Fuji (FJ) Apple
+--------------|-------------------------|-----------------------------|-------------
+Crispiness    |                1 unit   |                   2 units   | 2 units
+Sweetness     |                2 units  |                   1 unit    | 2 units
+
+***
+
+####Demonstration 4.  The Expanded Example
+
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      radioButtons("M", label = "Income (M)",
+                   choices = list("$24" = 24, 
+                                  "$30" = 30, 
+                                  "$36" = 36),
+                   selected = 30,inline=T),
+      radioButtons("PRD", label = "Price of RD Apples",
+                   choices = list("$5" = 5, 
+                                  "$6" = 6,
+                                  "$8"=8),
+                   selected = 6,inline=T),
+      radioButtons("PGD", label = "Price of GD Apples",
+                   choices = list("$6" = 6, 
+                                  "$7" = 7,
+                                  "$9"=9),
+                   selected = 6,inline=T),
+      radioButtons("PFJ", label = "Price of FJ Apples",
+                   choices = list("$7" = 7, 
+                                  "$8" = 8,
+                                  "$10"=10),
+                   selected = 10,inline=T)
+    ),
+    mainPanel(plotOutput("ecfPlot"))
+  ),
+  server = function(input,output) {
+    #Reactive terms to be used for the dynamic plot
+    PPRD<-reactive(as.numeric(input$PRD))
+    PPGD<-reactive(as.numeric(input$PGD))
+    PPFJ<-reactive(as.numeric(input$PFJ))
+    MM<-reactive(as.numeric(input$M))
+    JRD<-reactive(round(1*MM()/PPRD(),2))
+    SRD<-reactive(round(2*MM()/PPRD(),2))
+    JGD<-reactive(round(2*MM()/PPGD(),2))
+    SGD<-reactive(round(1*MM()/PPGD(),2))
+    JFJ<-reactive(round(2*MM()/PPFJ(),2))
+    SFJ<-reactive(round(2*MM()/PPFJ(),2))
+    slope<-reactive((SRD()-SGD())/(JRD()-JGD()))
+    int<-reactive(SGD()-slope()*JGD())
+    x1<-reactive(ifelse((JRD()-JFJ())*(SRD()-SFJ())<0,JRD(),max(c(JRD(),JFJ()))))
+    y1<-reactive(ifelse((JRD()-JFJ())*(SRD()-SFJ())<0,SRD(),max(c(SRD(),SFJ()))))
+    x2<-reactive(JFJ())
+    y2<-reactive(ifelse(SFJ()>=int()+slope()*JFJ(),JFJ(),int()+slope()*JFJ()))
+    x3<-reactive(ifelse((JGD()-JFJ())*(SGD()-SFJ())<0,JGD(),max(c(JGD(),JFJ()))))
+    y3<-reactive(ifelse((JGD()-JFJ())*(SGD()-SFJ())<0,SGD(),max(c(SGD(),SFJ()))))
+    #colECF<-reactive(ifelse((JRD()-JGD())*(SRD()-SGD())<=0,"red","beige"))
+    colPT<-reactive(ifelse(JFJ()==max(c(x1(),x2(),x3()))&SFJ()==max(c(y1(),y2(),y3())),
+                           "red","beige"))
+    output$ecfPlot <- renderPlot({
+      par(bg="beige")
+      par(pty="s") #makes plot square
+      plot(c(0,JRD()),c(0,SRD()),type='l',lwd=3, xlab="Crispiness", ylab="Sweetness",
+           ylim=c(0,15),xlim=c(0,15), col.lab="blue",
+           xaxs="i", yaxs="i", bty="n", xaxt='n', yaxt='n')
+      lines(c(0,JGD()),c(0,SGD()),lwd=3)
+      lines(c(0,JFJ()),c(0,SFJ()),lwd=3)
+      points(JFJ(),SFJ(),pch=21,bg=colPT(),col=colPT())
+      lines(c(x1(),x2(),x3()),c(y1(),y2(),y3()),lwd=3,col="red")
+      #lines(c(JRD(),JFJ(),JGD()),c(SRD(),SFJ(),SGD()),lwd=3,col="red")
+      #lines(c(JRD(),JGD()),c(SRD(),SGD()),lwd=3,col=colECF())
+      text(JRD(),SRD(),"RD",pos=4)
+      text(JGD(),SGD(),"GD",pos=3)
+      text(JFJ(),SFJ(),"FJ",pos=3)
+      axis(1, at=c(0,JRD(),JFJ(),JGD(),15), labels=c("",JRD(),JFJ(),JGD(),""))
+      axis(2, at=c(0,SGD(),SFJ(),SRD(),15), labels=c("",SGD(),SFJ(),SRD(),""))
+    })
+  },
+  options = list(height = 450, width=800)
+)
+```
+
+##<span style="color:SaddleBrown">Working Through the Lancaster Model, An Example (continued)</span>
+
+```{r, echo=FALSE}
+par(bg="beige")
+par(pty="s") #makes plot square
+plot(c(0,5),c(0,10),type='l',lwd=3, xlab="Crispiness", ylab="Sweetness",
+     ylim=c(0,12),xlim=c(0,12), col.lab="blue",
+     xaxs="i", yaxs="i", bty="n", xaxt='n', yaxt='n'
+ )
+lines(c(0,10),c(0,5),lwd=3)
+lines(c(0,8.57),c(0,8.57),lwd=3)
+text(5,10,"RD",pos=3)
+text(10,5,"GD",pos=4)
+text(8.57,8.57,"FJ",pos=4)
+lines(c(5,8.57,10),c(10,8.57,5),lwd=3,col="red")
+lines(73.45/seq(5,12,.1),seq(5,12,.1),lwd=2, col="green")
+lines(65/seq(5,12,.1),seq(5,12,.1),lwd=2, col="green")
+lines(c(3,7),c(10,10),lwd=2,col="blue")
+lines(c(3,7),c(9.5,9.5),lwd=2,col="blue")
+lines(c(10,10),c(3,7),lwd=2,col="goldenrod")
+lines(c(9.5,9.5),c(3,7),lwd=2,col="goldenrod")
+arrows(4,9,4,11,col="blue")
+arrows(9,4,11,4,col="goldenrod")
+arrows(7,8,9,10,col="green")
+points(5,10,pch=21,bg="blue",col="blue")
+points(10,5,pch=21,bg="goldenrod",col="goldenrod")
+points(8.57,8.57,pch=21,bg="green",col="green")
+axis(1, at=c(0,5,8.57,10,12), labels=c("",5,8.57,10,""),cex.axis=0.75,padj=.5)
+axis(2, at=c(0,5,8.57,10,12), labels=c("",5,8.57,10,""),cex.axis=0.75,padj=.5)
+```
+
+####Figure 7. Choice by consumers with different preferences shown in blue, green, and yellow.  Characteristics reflected in the figure are from Table 3. Other assumptions are $M=\$30$, $P_{RD}=\$6$, $P_{GD} =\$6$, and $P_{FJ}=\$7$. Arrows point in the direction of increasing preferences.
+
+
+##<span style="color:SaddleBrown">Hedonic pricing models</span>
+
+* A way to value characteristics contained in products
+
+$$p = f(c_1, c_2, \ldots, c_M),$$
+
+where $p$ is price of the product in question and $c_1, c_2, \ldots, c_M$ are levels of different characteristics.  
+
+
+* Suppose that you were asked to specify a hedonic pricing model for retail strip steaks.  You might use something such as 
+
+$$p = f(weight, thickness, color, quality, freshness)$$.  
+
+* Could we measure these characteristics?
+    + We could measure weight (g) and thickness (cm).  
+    + Color could be measured using a sensory instrument that quantifies light reflected from the steak in terms of the color spectrum.  
+    + Quality could be measured in terms of internal marbling or we might use a series of binary (0 or 1) variables to control for USDA quality grade (prime, choice, select, and so forth) because these grades take marbling into account.  
+    + Freshness might be measured in terms of days remaining before the "sale by" date.  
+
+* If we can estimate a hedonic pricing model, then we may be able to say something about the returns to improving one or more of the characteristics.  In the case of our retail strip steak, it may be possible to increase freshness by using
+
+##<span style="color:SaddleBrown">The Becker Model (Household (hh) Production Model)</span>
+
+* The consumer has a utility function that depends on two things:
+
+1.  household produced goods and services, and 
+2.  time spent in leisure activities.  
+
+* Utility requires hh production.  
+* For example to get utility from a meal the consumer will require:
+1. purchase ingredients from the marketplace,
+2. spend time in the kitchen and dining room, and
+3. have some basic knowledge about cooking that we will call human capital.  
+
+* We could think of most human activities as hh production, even activities that take place outside the home.  
+
+
+##<span style="color:SaddleBrown">The Becker Model (continued)</span>
+* The utility function in the Becker Model:
+
+$$U = f[(hh\ produced\ goods), (leisure\ time)]$$
+
+* The consumer maximizes utility subject to:
+
+1. A hh production function: 
+$$hh\ goods = g[(time\ in\ hh\ production), (market\ goods), (human\ capital)]$$
+
+2. Income-use constraint: 
+
+$$money\ income \ge spending\ on\ market\ goods$$
+
+3. Income-source constraint: 
+
+$$money\ income = (wage) \times (time\ in\ labor\ force) + (other\ income)$$
+
+4. Time-use constraint:  
+$$total\ time = (time\ in\ hh\ production) + (time\ in\ labor\ force) + (leisure\ time)$$
+
+##<span style="color:SaddleBrown">The Full Time Income Constraint in the Becker Model</span>
+
+$$
+\begin{aligned}
+(wage)\times(total\ time)+(other\ income) \ge\ & (wage)\times(time\ in\ hh\ production)+ \\&(wage)\times(leisure\ time)+(spending\ on\ market\ goods)
+\end{aligned}
+$$
+
+
+*  The left side of the full time-income constraint represents income potential.  The right side of the full time-income constraint represents how income potential is used.
+
+##<span style="color:SaddleBrown">Time Intensive and Expenditure Intensive Goods</span>
+
+* A key insight from Becker's model is that time spent in the kitchen has a very real cost. 
+* A cake from the bakery costs more money than the price of the ingredients. 
+* When you consider the opportunity cost of making a cake from scratch, the bakery cake might be the cheapest way to obtain this good. 
+* In this example, the bakery cake is an expenditure intensive good while the raw ingredients to make a cake from scratch are time intensive goods. 
+
+
+
+

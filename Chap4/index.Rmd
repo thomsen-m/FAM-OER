@@ -758,7 +758,7 @@ Type of berry    | $P_{sb}$ | $P_{bb}$ | $P_{bk}$ | $P_{rb}$ | Farm Supply | Pri
 Strawberries (sb)|    -1.26 |      0.32|      0.52|      0.39|      0.30|   0.98|  `r round(0.30*0.98,digits=2)`|
 Blueberries (bb) |     0.12 |     -1.49|      0.24|      0.20|      0.22|   0.40|  `r round(0.22*0.40,digits=2)`|
 Blackberries (bk)|     0.05 |      0.06|     -1.88|      0.06|      0.20|   0.47|  `r round(0.20*0.47,digits=2)`|
-Raspberries (rb) |     0.08 |      0.10|      0.13|      1.66|      0.21|   0.59|  `r round(0.21*0.59,digits=2)`|
+Raspberries (rb) |     0.08 |      0.10|      0.13|     -1.66|      0.21|   0.59|  `r round(0.21*0.59,digits=2)`|
 
 Note: Demand elasticities are in the first four columns of the table and can be interpreted as the the elasticity of retail demand for the product on the row with respect to the price in column.  
 
