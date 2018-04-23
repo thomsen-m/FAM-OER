@@ -1,0 +1,650 @@
+---
+title: "Prices Over Time"
+date: "`r as.Date(file.info('index.Rmd')$mtime)`"
+output: html_document
+theme: journal
+runtime: shiny
+---
+
+***
+
+![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
+
+__*An Interactive Text for Food and Agricultural Marketing*__ by [Michael R. Thomsen](https://agribusiness.uark.edu/directory/index/uid/mthomsen/name/Michael+
+R.+Thomsen/) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).  Source
+ files are available on [GitHub](https://github.com/thomsen-m/FAM-OER).
+
+***
+
+#<span style="color:SaddleBrown">Overview and Objectives</span>
+
+Markets can be defined in terms of three dimensions (1) a product or service, (2) a location, and (3) a point in time.  This chapter emphasizes prices over time. What constitutes a point in time can vary depending on the question being asked and the product and geographic context of the market.  In markets for commodity futures and options, high-frequency intraday prices are available, but it has also been common to analyze daily reference points such as the open, close or settlement price.  Cash prices for some agricultural commodities are reported daily or weekly. Monthly or quarterly periodicities are also common.  In this chapter, you will learn to think about price series in terms of several components.  A time series can be decomposed into four components as illustrated in quarterly price series presented in Demonstration 1.  Specifically, these components are:
+
+1.  __*The trend.*__  The trend is the general long-term direction of movement in the series.  Demonstration 1 shows a positive trend, with prices increasing with time.  To better visualize the trend in Demonstration 1, remove every other component but the trend from the demonstration. 
+2.  __*The seasonal component.*__ A seasonal pattern is observed with regularity over a year.  Use Demonstration 1 to remove everything but the seasonal component.  Look at the series carefully and you will see that the price is highest in the first quarter of the year and is lowest in the third quarter.  This pattern repeats itself each year. 
+3. __*The cyclical component.*__ A cyclical pattern repeats with some regularity over several years.  Cyclical patterns differ from seasonal patterns in that cyclical patterns occur over multiple years, whereas seasonal patterns occur within one year.  In Demonstration 1, remove all components but the cyclical component.  The period shown illustrates one full cycle from a peak in quarter 1 to another peak in quarter 22.  Thus, the cycle shown lasts about 5.5 years.  
+4. __*The random component.*__ Movements in the series that cannot be explained by the trend, seasonal, or cyclical components are considered to be random.
+
+***
+
+####Demonstration 1. The Components of a Time Series
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      checkboxInput("trend", label = "Trend", T),
+      checkboxInput("season", label = "Seasonal Component", T),
+      checkboxInput("cycle", label = "Cyclical Component", T),
+      checkboxInput("random", label = "Random Component", T)
+      ),
+    mainPanel(plotOutput("tsPlot"))
+  ),
+  server = function(input,output) {
+    rand<-rnorm(28,0,10)
+    tt<-reactive(as.numeric(input$trend))
+    ss<-reactive(as.numeric(input$season))
+    cc<-reactive(as.numeric(input$cycle))
+    rr<-reactive(as.numeric(input$random))
+    output$tsPlot <- renderPlot({
+      par(bg="beige")
+      plot(1:28,40+
+             tt()*2*1:28+
+             ss()*8*rep(cos(1:4),7)+
+             cc()*20*cos(6*1:28)+
+             rr()*0.5*rand,
+           pch=21,bg="blue",col="blue",ylab="Price",xlab="Quarter (t)",xaxs="i",yaxs="i",bty="n",
+           xaxt='n',yaxt='n',xlim=c(0,28),ylim=c(0,120))
+           axis(1, at=c(0,4,8,12,16,20,24,28), labels=c(0,4,8,12,16,20,24,28),lwd.ticks=1)
+           axis(2, at=seq(0,120,20), labels=seq(0,120,20),lwd.ticks=1)
+           lines(c(4,4),c(0,120),lty=2)
+           lines(c(8,8),c(0,120),lty=2)
+           lines(c(12,12),c(0,120),lty=2)
+           lines(c(16,16),c(0,120),lty=2)
+           lines(c(20,20),c(0,120),lty=2)
+           lines(c(24,24),c(0,120),lty=2)
+           lines(c(28,28),c(0,120),lty=2)
+    })
+  },
+  options = list(height = 475)
+  )
+```
+
+***
+
+The overall aim of this chapter to provide you with some basic tools to work with and make sense of information contained in a price series.  The specific objectives of this chapter are as follows:
+
+* Explain the four components of a price series.
+
+* Use index numbers to account for inflation and express monetary values in constant dollars.  
+
+* Compute an N-period moving average to remove the seasonal component from a price series.
+
+* Distinguish between demand and supply induced seasonality and be able to provide examples of each.
+
+* Describe conditions that are likely to give rise to price cycles.
+
+***
+
+#<span style="color:SaddleBrown">The Trend</span>
+
+The trend is the general long-term direction of movement in the series and is thought to arise when growth in long-run demand differs from growth in long-run supply.  A positive trend, such as that shown in Demonstration 1, would result when increases in long-run demand outpace those in long-run supply. Similarly, a negative trend would occur when increases in long-run supply outpace increases in long-run demand.
+
+One way to analyze a trend is through regression analysis. The analyst would estimate a model such as  
+
+$$P_t = \alpha + \beta t + \epsilon_t,$$
+where $P_t$ is the price at time $t$, $\alpha$ is the average price over the period analyzed, $\beta$ is the trend coefficient, and $\epsilon$ is an error term.  The regression model could be augmented to include shift variables to remove seasonal components as well as quadratic terms to model cyclical patterns.   Provided that the regression model captures the trend, seasonality, and cyclical components, $\epsilon_t$ would reflect the random component of the time series.  Another way to visualize a trend is to filter out seasonality and randomness through a moving average as described later in the chapter.  
+
+Because trends characterize the longer-term direction in prices, it is often necessary to account for inflation.  Inflation refers to general increases in price levels over time.  Deflation, by contrast, refers to general decreases in price levels over time.  Because of inflation and deflation, the purchasing power of the dollar differs from year to year.  In the post World-War II era, the US economy and most other economies have been characterized by inflation.  Thus, you may incorrectly conclude that there is a positive trend in prices and that demand has outpaced supply, when in fact the price series simply reflects changes in the purchasing power of the dollar.  
+
+### Real (Constant) vs. Nominal (Current) Prices
+If you had a time machine that took you back to 1970, you would find that the supermarket price of a no-frills loaf of bread was about 24 cents.  In 2016, a similar loaf of bread would have costed you about \$1.40.  These prices are __*nominal prices*__.  Nominal prices are what consumers actually paid for a product at the time of purchase.  In 1970, the nominal price was 24 cents, and in 2016 the nominal price was \$1.40.  However, between 1970 and 2016, the purchasing power of the dollar changed considerably.  The 24 cent price reflects the purchasing power of the dollar in 1970 and the \$1.40 price reflects the purchasing power of the dollar in 2016.  Of course, wages and consumer incomes have increased in nominal terms since 1970 as well.  
+
+The adjective "nominal" applies to any monetary value that has not been adjusted for inflation, e.g., nominal incomes, nominal tuition costs, nominal health care costs. Sometimes you will see monetary units expressed as "current dollars".  The adjective "current" is a synonym for "nominal."  Monetary units designated as current have similarly not been adjusted for inflation.  If you see a table that has a note indicating that prices are in __*current dollars*__ then you know that you are looking at nominal prices.  With this in mind, the following two statements mean the same thing:
+
+1. In nominal terms, the price of a loaf of bread was \$0.24 in 1970 and \$1.40 in 2016.
+2. In current dollars, the price of a loaf of bread was \$0.24 in 1970 and \$1.40 in 2016.
+
+__*Real prices*__ (or __*constant prices*__), by contrast, always refer to prices in terms of the purchasing power of the dollar in some reference year.  Real prices (or constant prices) are adjusted for inflation.  With real prices, the purchasing power of the dollar is held constant at some reference or base period.  In a table or figure presenting real prices, the title, caption or a footnote will typically indicate the base period.  For example, if prices are in constant 1990 dollars, this tells you that
+
+1. 	The prices are adjusted for inflation, and
+2.	Prices reflect the purchasing power of the dollar in 1990.  
+
+As you will see below, it turns out that in constant 2016 dollars the price of bread was \$1.48 in 1970 and \$1.40 in 2016.  Because these constant prices use 2016 as the reference period.  The real price and nominal price will be the same for 2016.  
+
+In any kind of analysis with time series data, you would generally want to use real, not nominal, prices, especially if you are examining prices over an extended period of time.  However, many sources where you might obtain data for your analysis will present nominal monetary values.  For example, total sales figures from a company's income statement will reflect nominal prices for the year the income statement was generated.  If you are looking at a company's sales over a period of several years, we might erroneously conclude that sales had grown when in actuality inflation, not true sales growth, resulted in higher values of total sales.
+
+### Converting Nominal (Current) Values into Real (Constant) Values
+
+To convert any nominal price to a real price you need a broad price index that measures inflation.  The most common index used in the United States is the Consumer Price Index for all Urban Consumers (CPI-U).  The Consumer Price Index is provided by the US Department of Labor and is released each month.  Annual values of the Consumer Price Index for some selected years are reported in Table 1.  You can obtain values of the CPI-U directly from the US Department of Labor's Bureau of Labor Statistics website [(US-BLS 2017)](https://www.bls.gov/cpi/).
+
+***
+
+####Table 1. Consumer Price Index for All Urban Consumers (1982-84 = 100), Selected Years
+Year | CPI-U |Year  | CPI-U |
+-----|-------|------|-------|
+1960 |  29.6 | 1995 | 152.4 |
+1965 |  31.5 | 2000 | 172.2 |
+1970 |  38.8 | 2005 | 195.3 |
+1975 |  53.8 | 2010 | 218.1 |
+1980 |  82.4 | 2011 | 224.9 |
+1982 |  96.5 | 2012 | 229.6 |
+1983 |  99.6 | 2013 | 233.0 |
+1984 | 103.9 | 2014 | 236.7 |
+1985 | 107.6 | 2015 | 237.0 |
+1990 | 130.7 | 2016 | 240.0 |
+
+***
+
+A price index, such as the CPI-U presented in Table 1, reflects price levels as a percentage of prices in some base period.  1982-84 is the base period currently being used by the US Bureau of Labor Statistics, the entity responsible for computing the CPI [(US-BLS 2017)](https://www.bls.gov/cpi/cpifact8.htm).  Take an average of the index values reported in Table 1 for 1982, 1983, and 1984 and you will see that this average is 100.
+
+$$\frac{96.5+99.6+103.9}{3}=100 $$
+
+The BLS has been using the 1982-84 base period since January 1988.  
+
+The numbers in Table 1 present price levels as a percentage of the 1982-84 base period.  To illustrate, consider the value of the index in 2000.  In 2000, the CPI is 172.2.  This means that general price levels in 2000 were (172.2 - 100) = 72.2 percent higher than they were during the 1982-84 base period.  Similarly, the value of the index in 2016 is 240.0. Price levels in 2016 were (240-100) = 140 percent higher than in the base period.  In 1980, the value of the index is 82.4.  This means that price levels were (82.4-100) = -17.6 percent higher (or 17.6 percent lower) than they were during the 1982-84 base period.  
+
+The CPI-U reflects prices that consumers pay over a broad category of expense items including, food, housing, transportation, apparel, health care, education, and so forth [(US-BLS 2017)](https://www.bls.gov/cpi/cpifact8.htm).  As such, it is a measure of the purchasing power of the dollar relative to the base year and can be used to convert nominal prices into real prices.  
+
+Notice from Table 1 that the CPI-U increases as time passes.  This indicates that the economy has been characterized by inflation.  If the CPI fell from one year to the next, it would indicate deflation.  Deflation occurred in the US during the great depression of the 1930s.  The CPI-U with a base year of 1982-84 fell from 17.2 in 1929 to 12.9 in 1933.  During the post-war period, year-to-year changes in the CPI have been positive with few exceptions.  In the recent great recession, the annual-average CPI did fall slightly from 215.3 in 2008 to 214.5 in 2009.  
+
+Given a broad price index like the CPI-U, nominal prices can be converted into real prices via the following formula:
+
+$$Real\ Price = \frac{Nominal\ Price}{Index}\times 100$$
+When you do this conversion, your real prices will reflect the purchasing power of the dollar in the base period of your index.  Consequently, if we used the CPI in Table 1 to adjust nominal prices for inflation, we would get a real price series that reflects the purchasing power of the dollar during the 1982-84 period.  Using Table 1, we could get real prices for bread in constant 1982-84 dollars as shown in Table 2.
+
+***
+
+####Table 2. Converting Bread Prices from Nominal to Real Terms
+Year | Nominal Price   | Real Price (1982-84 dollars)|
+-----|-----------------| ----------------------------|
+1970 |    $\$0.24$     |  $\frac{\$0.24}{38.8}\times 100 = \$0.62$  
+2016 |    $\$1.40$     |  $\frac{\$1.40}{240.0}\times 100 = \$0.58$
+
+***
+
+Thus you can conclude that in real terms, the price of a no-frills loaf of bread decreased by 4 cents.  The problem is that these 4 cents reflect the purchasing power of 1982-84 dollars.  1982-84 was a long time ago, before most of you were even born.  Even old timers might have problems remembering what prices were way back in 1982-84.  
+
+### Changing the Base Period
+
+Fortunately, the base period of any price index can be changed.  All you need to do is 
+
+1. choose a new base period, 
+2. divide the index numbers in all periods by the value of the original index for the new base period, and
+3. multiply the resulting new index by 100.  
+
+For example, suppose you wanted 2016 to be the base period.  Divide every index number in the series by the 2016 value of 240.0 and multiply the resulting new numbers by 100:
+
+$$I_{2016 = 100}^t = \frac{I_{1982-84 = 100}^t}{I_{1982-84 = 100}^{2016}}\times 100,$$
+
+where $I$ refers to the index, and $t$ reflects the year in question.  This conversion is presented in Table 3.  Note that the index value in column 3 of the table for 2016 is now 100.  Because there has been positive inflation during recent years, index values in years prior to 2016 in column 3 all have values less than 100.   Take a moment to replicate a few of the transformed index values in the third column of the table.  
+
+***
+
+####Table 3. Consumer Price Index for All Urban Consumers
+
+Year | 1982-84=100 | 2016=100
+-----|-------------|------------
+1970 |  38.8       |   16.2
+1980 |  82.4       |   34.3
+1990 | 130.7       |   54.5
+2000 | 172.2       |   71.7
+2010 | 218.1       |   90.9
+2016 | 240.0       |  100.0
+
+***
+
+If you use this transformed index (2016=100) to adjust for inflation, you will obtain a real price series that reflects the purchasing power of the dollar in 2016.  With this in mind, the real price of bread can be expressed in constant 2016 dollars as shown in Table 4.
+
+***
+
+####Table 4. Real and Nominal Prices for Bread
+Year | Nominal Price | Real Price (2016 = 100)
+-----|---------------| ---------------------------
+1970 |    $0.24$     |  $\frac{0.24}{16.2}\times 100 = 1.48$  
+2016 |    $1.40$     |  $\frac{1.40}{100.0}\times 100 = 1.40$
+
+***
+
+Be sure to notice that the real price equals the nominal price in the base year.  This is because real prices reflect the purchasing power in terms of nominal base-year dollars.
+
+
+#<span style="color:SaddleBrown">Seasonal Component</span>
+
+A seasonal pattern is observed with regularity within a given period of time, usually within a year.  Typically, the interest is in seasonal patterns over a calendar or marketing year, but there may be contexts in which we could see regular patterns over shorter periods. For example, shopping traffic in a supermarket is seasonal through a week (with higher traffic on weekends) or even on a weekday (with more traffic around the end of the workday).    
+
+Seasonal patterns can be demand-induced or supply-induced.  For example, demand for products like Christmas trees, carving pumpkins, and whole turkeys are highly seasonal.  In these examples, demand is driven by consumption around holidays.  In volume, although not so much in price, there are clear demand-induced seasonal patterns in wine consumption (Anez 2005).  White and rose wines are traditionally served chilled.  These have higher volume sales in the summer months.  Red wines, traditionally served at room temperature, have higher volume sales in the winter months.  There are volume spikes for all wines regardless of color around holidays. 
+
+Supply-induced seasonal patterns are observed in the market for perishable commodities like fruits and vegetables.  For example, [Sobekova, Thomsen and Ahrendsen (2013)](http://ageconsearch.umn.edu/bitstream/164771/2/01_Sobekova.pdf) show seasonal price patterns for strawberries, blueberries, blackberries and raspberries.  For each of these crops, there is a clear relationship between available supply at different points in the year and price.  This is because berries are sourced from different regions of the country or world during different parts of the year.  The costs of producing and shipping berries to market differ depending on the supply region.  Essentially, the supply curve for berries differs depending on the season of the year and this leads to seasonality in the prices of these berries.  
+
+Storage costs can result in supply-induced seasonal price patterns for storable commodities like grains and oilseeds.  These crops are harvested once a year, but demand is spread over the year.  It is often the case that prices are lowest around the harvest season but then increase in the following months.  The increase in price is necessary to provide incentives to store commodities and make them available for use in non-harvest months.  Figure 1 shows average cash prices for corn by month over the 2001 to 2016 period.  The marketing year for corn runs from September 1 through August 31.  Notice that prices are lowest during the harvest months (September through November) and increase consistently until July, about the time when there are good expectations of what the upcoming corn crop will be and when elevators are under pressure to make room for wheat and other small grains harvested in the summer. 
+
+***
+
+```{r, echo=FALSE}
+par(bg="beige")
+plot(c(5,6,7,8,9,10,11,12,1,2,3,4), c(3.711728, 3.825377, 3.848844, 3.880636, 3.902255, 3.954159, 3.852552, 3.774873, 3.625491, 3.563153, 3.665926, 3.682651), pch=21, col="blue", bg="blue", ylab="$/bu",xlab="Month",xaxt='n')
+axis(1,c(2,4,6,8,10,12),labels=c("Oct.","Dec.","Feb.","Apr.","Jun.","Aug."))
+```
+
+####Figure 1. Average cash price for corn by month of the marketing year (2001-2016). Source: Based on cash prices reported by Top Flight Grain Cooperative (Illinois) via https://www.quandl.com/data/TFGRAIN/CORN-Cash-Price-of-Corn.
+
+***
+
+An n-period __*moving average*__ is an average of the n most recent time series observations.  If one chooses n to correspond to the periodicity of the data, a moving average can be used to remove the seasonal component of a time series, which may help you better see the trend or cyclical components.  The data presented in Table 5 are quarterly (four periods per year).  Verify that the four-period moving average is simply the average of the four most recent observations.  Note also that these price data show a very strong seasonal pattern.  The moving average, however, removes that seasonality.  This can be seen in Figure 2, which charts the data in Table 5 along with the four-period moving average.
+
+***
+
+#### Table 5.  Computing a Four-period Moving Average
+t	 |	Quarter	|	Price	|	Four-pd. Moving Avg.
+---|----------|-------|-----------------
+1	|	1	|	3	|	-
+2	|	2	|	8	|	-
+3	|	3	|	4	|	-
+4	|	4	|	8	|	5.75
+5	|	1	|	11	|	7.75
+6	|	2	|	16	|	9.75
+7	|	3	|	12	|	11.75
+8	|	4	|	16	|	13.75
+9	|	1	|	19	|	15.75
+10	|	2	|	24	|	17.75
+11	|	3	|	20	|	19.75
+12	|	4	|	24	|	21.75
+13	|	1	|	27	|	23.75
+14	|	2	|	32	|	25.75
+15	|	3	|	28	|	27.75
+16	|	4	|	32	|	29.75
+
+
+```{r, echo=FALSE}
+par(bg="beige")
+plot(1:16, 1:16*2+c(1,4,-2,0), pch=21, col="blue", bg="blue", ylab="Price",xlab="Quarter (t)")
+lines(1:16, 1:16*2+c(1,4,-2,0),col="blue")
+lines(4:16,4:16*2,lwd=3,col="red")
+```
+
+####Figure 2.  Table 5 Data with a Four-period Moving Average (in Red)
+
+***
+
+In the example above, a four-period moving average was used because we had quarterly data.  Every point in our moving average included one each of quarter 1 through 4.  If, instead, we were interested in removing seasonality from monthly data or weekly data, we would use 12-period or 52-period moving average instead.  The 12-period moving average would be used for monthly data because there are 12 months per year.  The 52-period moving average would be used for weekly data since there are 52 weeks per year.  
+
+#<span style="color:SaddleBrown">Cyclical Component</span>
+A cyclical pattern repeats with some regularity over several years.  Cyclical patterns differ from seasonal patterns in that cyclical patterns occur over multiple years, whereas seasonal patterns occur within one year.  
+
+One example of a cyclical pattern, the business cycle, is from macroeconomics.  Over time, economic expansions are followed by economic recessions followed again by economic expansions.  There is not perfect regularity in the business cycle, as expansions and recessions differ in length. Nevertheless, this process has repeated itself over and over through time.  
+
+Cycles are also observed in some agricultural commodity prices and are most pronounced when there is a time lapse between a change in price and the producer's response to this change. The time lapse is due to two things:
+
+1. __*A biological lag*__.   The biological lag refers to the length of time between the decision to expand production and the resulting change in supply. 
+2. __*A psychological lag*__.  The psychological lag is the length of time when prices must be high or low in order to convince producers that production plans should be changed.
+
+Price cycles emerge when future production decisions are based on current prices and when producers have little control over prices (i.e., when producers are price takers).  Thus, cycles are more likely to emerge in industries where there are a large number of relatively small operations.  Price cycles are also more likely when there is a a large degree of control over output.  Otherwise, random shocks tend to disrupt the cyclical pattern and cause it to dissipate.  For this reason, cycles are often more common for livestock than for crops.  
+
+One commonly mentioned price cycle is the cattle cycle.  The cattle cycle lasts about 8 to 12 years from peak to peak or trough to trough.  There is some evidence of cycles, albeit shorter cycles, in hogs and broilers.  Demonstration 2 shows monthly feeder cattle prices from the nearby feeder cattle futures contract from the mid-1970s through 2016.  The raw prices are plotted as red points and a centered 12-period moving average is superimposed in blue.  Do you see any evidence of a cattle cycle in these data?  The demonstration allows you to examine the data in both nominal and real terms.  Evidence of the cattle cycle is easier to see if you look at the data in real terms.
+
+***
+
+####Demonstration 2.  Feeder Cattle Prices with 12-Month Centered Moving Average (Sept. 1973 through Dec. 2016)
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      radioButtons("choice", label = "Series",
+                   choices = list("Current prices" = 1, 
+                                  "Constant 2016 prices" = 3),
+                   selected = 1,inline=F)
+    ),
+    mainPanel(plotOutput("cattlePlot"))
+  ),
+  server = function(input,output) {
+    load("cattleDat.Rda")
+    #Reactive terms to be used for the dynamic plot
+    srs<-reactive(as.numeric(input$choice))
+    series<-reactive(cattleDat[,srs()])
+    mavg<-reactive(cattleDat[ ,srs()+1])
+    #Generate plot
+    output$cattlePlot <- renderPlot({
+      par(bg="beige")
+      plot(seq.Date(as.Date("1973-09-15"),as.Date("2016-12-15"),by="month"),series(),
+           col="red", pch=20, bg="red", xlab="Date", ylab="Nearby Futures Price ($/cwt)")
+      lines(seq.Date(as.Date("1973-09-15"),as.Date("2016-12-15"),by="month"),mavg(),
+                                        col="blue",lwd=3)
+      })
+  }
+)
+```
+
+The feeder cattle price series shown is constructed as the simple average of daily nearby feeder cattle futures prices by calendar month.  
+
+***
+
+#<span style="color:SaddleBrown">Random Component</span>
+
+Movements in the series that cannot be explained by the trend, seasonal, or cyclical components are considered to be random.  Many exogenous factors can cause demand or supply to shift and the equilibrium price to change.  In agriculture, these include weather, plant or animal diseases, political upheavals that affect trade, and a number of other shocks to demand or supply.  A moving average as described above can help to remove random elements of the time series as well as seasonality.  Large random shocks could also disrupt a cyclical pattern as described above.  In empirical work randomness describes movements in a price series that cannot be explained with the model.  
+
+***
+
+#<span style="color:SaddleBrown">Concluding Comments</span>
+
+The overall aim of this chapter was to provide you with some basic tools to work with and make sense of information contained in a time series of prices.  At the University of Arkansas, there is a full-semester course dedicated specifically to agricultural prices and forecasting.  This is true of most agricultural business and or agricultural economics programs.  Consequently, coverage of price series in a general survey course will necessarily be brief. Nevertheless, given the information presented in this chapter, you should be able to identify the different components of a price time series, perform basic adjustment of a series for inflation, and explain some of the conditions that give rise to seasonal and cyclical patterns in agricultural commodity prices.  Spend some time with the problem sets below to reinforce the material presented in this chapter.
+
+
+***
+
+#<span style="color:SaddleBrown">References</span>
+
+Anez, W. 2005. *Econometric Analysis of Wine Demand in the United States.*  University of Arkansas, MS Thesis.
+
+Sobekova, K., M.R. Thomsen, and B.L. Ahrendsen. 2013. “Market Trends and Consumer Demand for Fresh Berries.” *APSTRACT: Applied Studies in Agribusiness and Commerce* 7:11-14.
+
+US Bureau of Labor Statistics. 2017. Consumer Price Index. Available at [https://www.bls.gov/cpi/cpifact8.htm](https://www.bls.gov/cpi/cpifact8.htm)
+
+***
+
+#<span style="color:SaddleBrown">Problem Sets</span>
+
+###Problem Set 1: Inflation Adjustment
+
+Year | CPI-U (1982-84=100)
+-----|------
+1970 |  38.8
+1980 |  82.4
+1990 | 130.7
+2000 | 172.2
+2010 | 218.1
+2016 | 240.0   
+
+
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      selectInput(
+        "prob",
+        label = "Problem Number",
+        choices = as.character(c(1:10)),
+        selected = "5", 
+        selectize=F),
+      checkboxInput("show", label = "Show Answer?", F),
+      p("Answers:"),
+      uiOutput("Answer0"),
+      uiOutput("Answer1"),
+      width=4
+    ),
+    mainPanel(p("Given the following:"),
+              uiOutput("price1"),
+              uiOutput("price2"),
+              p(" "),
+              uiOutput("Quest")
+    )
+  ),
+  server = function(input,output) {
+    #Enter problem data 
+    probDat<- data.frame(
+      p2000=c(120,220,310,415,520,370,320,870,425,425),
+      p2016=c(520,670,320,670,560,400,360,910,415,415),
+      cpi=c(130.7,  38.8,  240,   100,      82.4,  172.2, 218.1, 130.7, 240,   100),
+      y=  c('1990','1970','2016','1982-84','1980','2000','2010','1990','2016','1982-84')
+      )
+    pprob<-reactive({as.numeric(input$prob)}) #problem number from UI
+    output$price1<-renderUI({paste("The nominal price in 2000 was $",probDat[input$prob,"p2000"],".",sep="")})
+    output$price2<-renderUI({paste("The nominal price in 2016 was $",probDat[input$prob,"p2016"],".",sep="")})
+    output$Quest<-renderUI({paste("Express these prices in constant ",probDat[input$prob,"y"]," dollars.",sep="")})
+    output$Answer0<-renderUI({
+      if(!input$show) return()
+      paste("The real price in 2000 was $",
+            round(probDat[input$prob,"p2000"]/round(172.2/probDat[input$prob,"cpi"],digits=4),digits=2),
+            ".",sep="")
+    })
+    output$Answer1<-renderUI({
+      if(!input$show) return()
+      paste("The real price in 2016 was $",
+            round(probDat[input$prob,"p2016"]/round(240/probDat[input$prob,"cpi"],digits=4),digits=2),
+            ".",sep="")
+    })
+  },
+    options = list(height = 300)
+)
+```
+
+
+
+###Problem Set 2: Multiple Choice
+```{r, echo=FALSE}
+###############################################################################
+# ResponseMC(correct,nchoices=4)
+# A shinyApp function to accept and check a multiple choice response.  The only
+# argument to the function is the letter of the correct response.  
+#
+# Example:
+# ResponseMC("a",5) is used if "a" is the correct choice and a-e options.
+###############################################################################
+
+ResponseMC<- function(correct,nchoices=4){
+  shinyApp(
+    ui = fluidPage(
+      fluidRow(
+        column(2,
+               selectInput(
+                 "answer",
+                 label = NULL,
+                 choices = c("No selection",letters[1:nchoices]),
+                 selected = "No selection", 
+                 selectize=F)),
+        column(4,htmlOutput("resp"))
+        )
+      ),
+    server= function(input,output) {
+      output$resp<-renderText(
+        ifelse(input$answer=="No selection",
+               "Choose a letter from the menu.",
+               ifelse(input$answer==correct, 
+                      paste("You are correct! The answer is ", correct,".",sep=""),
+                      paste("Sorry. The correct answer is ", correct,".",sep=""))
+               )
+        )
+      },
+    options = list(height = 50)
+  )
+  }
+```
+
+1.	__Which scenario is most likely to give rise to seasonal price patterns in a prices series?__
+a.	Storage costs for a storable agricultural commodity
+b.	Production lags (e.g., biological lags)
+c.	Random factors that shock supply or demand
+d.	A consistent and sustained general growth in market demand over a long period of time
+
+
+```{r, echo=FALSE}
+ResponseMC("a")
+```
+
+
+2.	__Which scenario is most likely to give rise to cyclical price patterns in a price series?__
+a.	Storage costs for a storable agricultural commodity
+b.	Production lags (e.g., biological lags)
+c.	Random factors that shock supply or demand
+d.	A consistent and sustained general growth in market demand over a long period of time
+
+
+```{r, echo=FALSE}
+ResponseMC("b")
+```
+
+
+3.	__Which scenario is most likely to give rise to a trend in a price series?__
+a.	Storage costs for a storable agricultural commodity
+b.	Production lags (e.g., biological lags)
+c.	Random factors that shock supply or demand
+d.	A consistent and sustained general growth in market demand over a long period of time
+
+
+```{r, echo=FALSE}
+ResponseMC("d")
+```
+
+
+4.	__Production lags, such as the biological lag or the psychological lag are likely to give rise to__
+a.	Spatial patterns in a time series of prices
+b.	Cyclical patterns in a time series of prices
+c.	Seasonal patterns in a time series of prices
+d.	All of the above
+
+
+```{r, echo=FALSE}
+ResponseMC("b")
+```
+
+
+5.	__Which best describes inflation?__
+a.	Inflated statements such as “our product is the most delicious”
+b.	An effort to set the selling price above the break-even point
+c.	A general increase in calorie consumption as foods have become cheaper over time
+d.	A general increase in price levels across the economy
+
+
+```{r, echo=FALSE}
+ResponseMC("d")
+```
+
+
+6.	__What best describes a four-period moving average?__
+a.	An average of the four periods with the largest values
+b.	An average of the four periods with the smallest values
+c.	An average of the four most recent periods
+d.	All of the above
+
+```{r, echo=FALSE}
+ResponseMC("c")
+```
+
+
+7.	__Which is not one of the four components of a time series?__
+a.	The trend component
+b.	The random component
+c.	The spatial component
+d.	The seasonal component
+
+
+```{r, echo=FALSE}
+ResponseMC("c")
+```
+
+
+8.	__If a price index number is 103, we can say:__
+a.	That prices are 103 percent higher than they were in the base year.
+b.	That price levels are 3 percent higher than they were in the base year.
+c.	Nothing, unless we first convert to nominal dollars.
+d.	That relative to the base year, prices have fallen slightly.
+
+
+```{r, echo=FALSE}
+ResponseMC("b")
+```
+
+
+9.	__If you were to adjust a monetary time series for inflation using the Consumer Price Index with 1982-84 = 100 you would get__
+a.	nominal prices.
+b.	real prices in 1982-84 dollars.
+c.	prices that are always equal to 100.
+d.	current prices.
+
+
+```{r, echo=FALSE}
+ResponseMC("b")
+```
+
+
+10.	__If you have weekly data and wanted to remove seasonality, you could__
+a.	Use a 52-period moving average
+b.	Use a 7-period moving average
+c.	Use a 5-period moving average (assuming weekends are not included)
+d.	Estimate the biological lag model
+e.	Choices (b) and (c) only
+
+
+```{r, echo=FALSE}
+ResponseMC("a",5)
+```
+
+
+11.	__Fluctuations in prices over time that cannot be explained by a trend, a cycle, or a seasonal pattern are called__
+a.	the market component of the time series.
+b.	the demand-induced component of the time series.
+c.	the equilibrium component of the time series.
+d.	the random component of the time series.
+
+```{r, echo=FALSE}
+ResponseMC("d")
+```
+
+12.	__If a price index has a value of 0.96 then we know that__
+a.	We are probably looking at the base period since this number is close to 100.
+b.	Relative to the base period prices are 4 percent lower.
+c.	Relative to the base period prices are 96 percent higher.
+d.	We are dealing with a producer price index and not a consumer price index.
+
+```{r, echo=FALSE}
+ResponseMC("b")
+```
+
+
+13.	__If you are presented with ‘nominal’ prices then you know that:__
+a.	Prices are in US dollars as opposed to some other currency
+b.	These prices have not been adjusted for inflation
+c.	These prices have been adjusted for inflation
+d.	These prices reflect the trade-off between two physical commodities, for example the price of one nominal product such as corn as a ratio to the price of another nominal product such as soybeans.
+
+```{r, echo=FALSE}
+ResponseMC("b")
+```
+
+14.	__If you see a table indicated that prices are in constant 2010 dollars then you know that__
+a.	You are looking at current prices.
+b.	Prices have been adjusted for inflation.
+c.	Prices have not been adjusted for inflation.
+d.	Both (a) and (c).
+
+```{r, echo=FALSE}
+ResponseMC("b")
+```
+
+15.	__A price cycle is most likely to be observed__
+a.	In areas of the United States, such as Colorado, where cycling is an especially popular pastime.
+b.	When there has been a general increase in long run demand over the period being analyzed.
+c.	When there has been a general decrease in long run supply over the period being analyzed.
+d.	When there is a significant biological lag (e.g., tree fruits, livestock).
+
+```{r, echo=FALSE}
+ResponseMC("d")
+```
+
+16.	__If we have monthly time series data that is highly seasonal, the best way to remove the seasonal component would be to__
+a.	Employ the time series seasonal decompression model that has been the main topic of the course since we returned from Spring Break.
+b.	Apply a 12-period moving average to the data.
+c.	Throw out observations from August and December.  In most cultures, these months usually contain aberrations that are due to summer vacations and major winter holidays.
+d.	Do none of the above.  We must first determine whether the seasonal component is supply induced or demand induced.
+
+```{r, echo=FALSE}
+ResponseMC("b")
+```
+
+17.	__In the base year, the value of a price index is__
+a.	100
+b.	0
+c.	Indeterminate unless you are using inflation adjusted numbers
+d.	The highest point in the index series
+
+```{r, echo=FALSE}
+ResponseMC("a")
+```
+
+
+***
+
+![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
+
+__*An Interactive Text for Food and Agricultural Marketing*__ by [Michael R. Thomsen](https://agribusiness.uark.edu/directory/index/uid/mthomsen/name/Michael+R.+Thomsen/) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).  Source files are available on [GitHub](https://github.com/thomsen-m/FAM-OER).
+
+***

@@ -377,7 +377,6 @@ Crispiness      | 1 unit                | 2 units
 Sweetness       | 2 units               | 1 unit
 
 
-***
 
 ####Demonstration 3.  Efficient Consumption Frontier for Example of RD and GD Apples
 ```{r, echo=FALSE}
@@ -442,7 +441,6 @@ Characteristic|Red Delicious (RD) Apple | Golden Delicious (GD) Apple | Fuji (FJ
 Crispiness    |                1 unit   |                   2 units   | 2 units
 Sweetness     |                2 units  |                   1 unit    | 2 units
 
-***
 
 ####Demonstration 4.  The Expanded Example
 

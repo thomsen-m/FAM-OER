@@ -1,0 +1,441 @@
+---
+title: "Signals and Advertising"
+date: "`r as.Date(file.info('index.Rmd')$mtime)`"
+output: html_document
+theme: journal
+runtime: shiny
+---
+
+***
+
+![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
+
+__*An Interactive Text for Food and Agricultural Marketing*__ by [Michael R. Thomsen](https://agribusiness.uark.edu/directory/index/uid/mthomsen/name/Michael+
+R.+Thomsen/) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).  Source
+ files are available on [GitHub](https://github.com/thomsen-m/FAM-OER).
+
+***
+
+#<span style="color:SaddleBrown">Overview and Objectives</span>
+
+In many economic models, it is assumed that information is freely available.  For example, in the neoclassical model of the consumer covered in Chapter 5, the consumer knew prices and the amount of satisfaction that would derived from purchased goods.  In Lancaster’s model or Becker’s model, the consumer knew even more and could ascertain the amounts of characteristics that were inherent in purchased goods or the time commitments required for household production.  Moreover, both the buyer and seller were equally informed about characteristics of the product.  In many real world cases, information is not freely available.  Information is costly to obtain and a buyer must search for availability of goods and the prices at which they are being offered.  Moreover, it is often difficult to judge, pre-purchase, how much of a given characteristic a product will contain.  
+
+If information is necessary for economic decision making and is costly, then it might be interesting to subject it to more formal analysis.  In fact, economic analysis of information has been one of the most productive areas in the past few decades.  The focus in this chapter will be necessarily brief with the overall aims being (1) to shed light on some primary information problems in the functioning of markets and (2) to emphasize the roles that advertising and other activities can play in solving these problems.  The specific objectives of this chapter are as follows:
+
+
+* Explain the problems of adverse selection and moral hazard that result from information asymmetries.
+
+* Explain the role of advertising to facilitate transactions that involve costly information, asymmetric information, or some combination of the two.
+
+* Distinguish between default-independent and default-contingent signals, provide examples of each, and describe situations where each may be effective.
+
+* Explain the concept of a separating equilibrium and why it is important to the functioning of economic signals.
+
+***
+
+#<span style="color:SaddleBrown">Asymmetric Information</span>
+
+Asymmetric information describes situations wherein one party to the transaction (e.g., the seller) has more information about the product or service in question than another party (e.g., the buyer).  For example, in many cases, the producer will possess better information about the quality of raw materials used in the manufacture of a product than the buyer.  The producer may present the product to the buyer as representing the finest quality.  The buyer could inspect the product prior to purchase, but there may be ways that the producer could mask shoddy workmanship.  In many cases, the buyer will be unable to distinguish between good and poor quality before the sale.  The consumer may only learn whether the producer used substandard inputs after consumption of the product or through its extended use.  In short, the producer could use better information (and the buyer's lack of information) to his or her advantage.  
+
+If only as a savvy consumer, you can relate to the scenario just described.  In a famous paper, Akerlof (1970) noted that asymmetric information could, in severe cases, cause markets for high quality products to fail.  He described a “lemons market,” where only low-quality products are provided.  In this context, 
+the term “lemons” refers to used automobiles of poor quality, the example used in Akerlof’s (1970) paper.  The lemons market occurs because no buyer would be willing to pay a premium for high quality because everyone understands that sellers have an incentive to pass off low-quality products at a high-quality price.  
+
+To consider further how asymmetric information could cause market failures, let us explore two problems that relate to asymmetric information.  One is called adverse selection.  The other is called moral hazard.  Adverse selection refers to cases where asymmetric information makes it difficult for parties to enter into a mutually beneficial transaction because of concerns that one party could use its informational advantage to the detriment of the other.  The lemons market is an example of adverse selection.  Adverse selection problems are the primary focus of this chapter.  Moral hazard, on the other hand, refers to cases where asymmetric information can create problems after two parties have entered into a business arrangement because of one party’s inability to accurately monitor the behavior or effort of the other.  According to Milgrom and Roberts (1992), adverse selection and moral hazard arose out of insurance market terminology but have since taken on broader meanings.  Given the origins in insurance markets, let us use insurance as an example to illustrate each of these two problems.  
+
+### Adverse Selection
+
+Adverse selection results when asymmetric information creates pre-contractual problems.  For example, customers who buy dental insurance likely know more about their risks of needing costly dental procedures than do insurance providers.  Let us take the hypothetical case of John Doe.  John is a recent graduate and knows that he has a high likelihood of being predisposed to dental problems because they run in his family.  Moreover, he has had many cavities up to this point in his life.  John is fairly certain that there will be expensive dental procedures in his near future.  When there is an opportunity to sign up for dental insurance through his employer, John Doe jumps at the chance.  To him it seems like a great deal.  Jane Doe (no relation to John), on the other hand, has the same opportunity to sign up for dental insurance.  Jane has never had a cavity before and feels fortunate to have a good set of teeth.  To Jane, the premiums for dental insurance seem high.  She would like to have some insurance against the costs of expensive dental care should she need it, but she knows that the most she will pay her dentist in a normal year will be the cost of routine cleanings and checkups.  She can pay those out-of-pocket for much less than what she would pay in dental insurance premiums.  Because of this, Jane decides not to enroll in the dental insurance program.  
+
+In the end, one would expect customers with bad teeth to enroll in dental insurance and customers with good teeth not to enroll.  This is adverse selection.  Many people with good teeth would like to insure against the cost of dental care should it be needed. but a problem arises because the insurance company is unable to distinguish between high-risk and low-risk customers *a priori*.  It is possible that dental insurance is lemons market in that only high-premium insurance catering to high-risk customers is available.  Asymmetric information, in this example, could prevent the emergence of a market for lower-cost dental insurance tailored to lower-risk customers.  
+
+### Moral Hazard
+
+Moral hazard results when asymmetric information creates post-contractual problems that result from one party being unable to fully monitor the effort or actions of the other.  Once a people buy insurance, they may be less careful because they are at least partially insured against a loss.  Insurance companies cannot monitor customers all the time, so an asymmetric information problem emerges after an insurance policy has been sold.  Moral hazard is partially mitigated by providing incentives in the form of deductibles, co-payments, and partial coverage.  For example, a person who has dental insurance, will likely still practice good oral hygiene.  Aside from large deductibles and copayments, corrective dental procedures such as fillings, root canals, and crowns can be painful and inconvenient.  Such losses in utility are not covered by the insurance.  
+
+### Market Solutions to Adverse Selection and Moral Hazard
+
+In the case of moral hazard, a common market solution is to develop contracts that provide incentives.  For example, your automobile insurance company probably gives you a discount on your premiums if you have not filed a claim in the past few years, have a good driving record (few or no arrests for traffic violations), and/or have good grades.  Basically, the company that insures you would like you to drive carefully.  Since you are often in a hurry and have coverage that at least partially offsets the costs you would incur in the event of an accident, it knows that you may, on occasion, not be as careful as it would like you to be.  It is prohibitively costly for the company to have a representative follow you around and file detailed reports on the carefulness of your driving habits.  Instead, the insurance company offers you a set of incentives, based on things that it can observe (like the number of traffic violations) and that it knows are correlated with the degree of risk it takes in insuring you.
+
+Livestock production contracts in agriculture are good examples of incentive-based contracts designed to address moral hazard problems.  In broiler chicken production, an integrator provides contract growers with chicks, feed, and other inputs.  The integrator would like its contract growers to work hard to minimize mortality and increase feed conversion.  The integrator could offer a fixed payment for each flock of birds grown.  However, this would result in a moral hazard problem because contract growers would get the same payment regardless of whether they put lots of effort or minimal effort into growing the birds.  To address moral hazard, broiler contracts are designed so that growers who do well relative to others in their settlement pool receive premiums while those who do less well receive penalties.  Again, it is costly for the integrator to monitor the effort expended by each of its contract growers, but it can easily measure mortality and feed conversion rates.  If these are correlated with grower effort, it can design contract provisions to provide incentives for growers to put the desired levels of effort into raising the birds.  
+
+A common market solution to adverse selection problems is to rely on an economic signal.  A signal is a way for one party to send a believable message to another about the characteristics contained in the products.  Advertising is an example of an economic signal.  As you will see, advertising clearly has a multifaceted role and can address problems of costly information as well as problems of asymmetric information.  The remainder of the chapter is comprised primarily of a discussion of advertising and other economic signals to overcome adverse selection problems resulting from asymmetric information. 
+
+***
+
+#<span style="color:SaddleBrown">Advertising as Information</span>
+
+Advertising, until recent decades, has been fairly neglected in economic analysis.  It is probably safe to say that economists saw advertising as an obvious way for sellers to influence consumer tastes and preferences.  It was taken for granted that the purpose of advertising was to make the demand curve less elastic and provide sellers with more discretion in setting prices.  There is probably truth in this.  However, recent work has shown that advertising can do much to overcome informational problems in markets and, hence, can be valuable in helping markets function and in improving the efficiency of the economic allocation problem.  In a classic article, Nelson (1974) noted that the messages conveyed in advertising activities depend on whether the good being advertised has **search characteristics** or **experience characteristics**.  
+
+**Search characteristics refer to aspects of a product that can readily be assessed by inspection prior to sale.**  There is no asymmetric information problem with search characteristics.  Customers have access to the same information as the seller.  However, knowledge about search characteristics could be costly information because finding out about search characteristics might require effort on part of the consumer.  Thus, advertising could play a role in reducing search costs to consumers.  Unlike search characteristics, **experience characteristics are known to customers only through use of the product and cannot be determined by inspection prior to sale**.  Asymmetric information can be a major problem when it comes to experience characteristics.
+
+To better develop the distinction between search and experience characteristics, consider corn flakes.  A box of corn flakes at the supermarket contains both search characteristics and experience characteristics.  Assuming that labeling regulations are effective and adequately enforced, the consumer can look at the box to determine how many ounces it contains, the ingredients that were used in the manufacture of the product, a date that provides information about the product’s freshness, and the nutrients that the product will provide.  Each of these is a search characteristic.  The customer does not need to buy the product to be fully informed about characteristics such as these.  A consumer might have other questions about the corn flakes such as:  Will they have a rich toasted corn flavor?  Are they crunchy, and will they stay crunchy after milk is added?  Will the corn flakes pair well with a handful of fresh blueberries?  These are all questions about experience characteristics.  There is no way for the consumer to be sure about the taste and texture attributes of the cornflakes until after the cornflakes leave the store and he or she consumes them.  
+
+### Advertising Can Address Both Search and Experience Characteristics
+
+Advertising can clearly play a role when it comes to helping consumers become informed about search characteristics.  Advertising can inform consumers that a product exists and provide information about its price and search attribute.  This can lower the cost that consumers would otherwise face in their search for information and can help the economy work smoothly.  However, many advertising messages do not seem to be doing anything that would aid in information search.  
+
+For example, anyone in the United States, and most of the world for that matter, knows that Coca-Cola is a soft drink available for purchase almost anywhere at any time.  Most people do not need an advertising message to let them know Coca-Cola exists, tastes sweet, is carbonated, and provides caffeine.  Occasionally Coca-Cola may come out with a new flavor variation, e.g., vanilla-flavored Coke.  In such instances, it might facilitate consumer search to have an advertising campaign informing consumers that a new vanilla-flavored variation of Coca-Cola is available.  Similarly, a retail establishment might offer a temporary price reduction on Coca-Cola products. Consumer search would be aided if an advertising message provided information about this change in price.  
+
+These exceptions aside, most advertisements for soft drinks like Coca-Cola do not convey material information about product availability, search attributes or price. Most consumers would find it hard to believe that Coca-Cola plays a central role in the recreational excursions of polar bear families as depicted in a recent [Super Bowl advertisement](https://www.youtube.com/watch?v=l8-Mr1Vf2iw).  Why would Coca-Cola spend the enormous sum of money that it takes to develop and run an add on the Superbowl that ultimately does little to reduce search costs?  Nelson (1974) provides a compelling explanation.
+
+Nelson’s (1974) main argument is that when it comes to experience characteristics, advertising is informative.  The mere fact that a seller advertises provides information about experience characteristics, even if the content of the advertisement does not explicitly mention the characteristic.  As shown below, Nelson’s (1974) basic idea can be formalized using an economic model that shows an equilibrium wherein high-quality producers choose to advertise and low-quality producers choose to not advertise.  In this model, "high quality" will refer to products containing experience characteristics for which consumers are willing to pay a premium.  
+
+### The Logic of Advertising as a Signal
+
+Let us consider a market with the following features: 
+
+1. There is asymmetric information wherein sellers have more information about the quality of their products than do buyers.  
+
+2. Buyers are aware that they have less information and are naturally wary of adverse selection problems.  As a result, buyers discount quality claims made by sellers.  
+
+The high-quality seller needs some way to convince the skeptical buyer that the product she is selling indeed does provide high quality.  If she cannot convince buyers of her high quality, she cannot sell at the high-quality price and will not be willing to incur extra costs required to produce high-quality products.  The high-quality seller must convince the buyer that it would be against her interest to use asymmetric information to her advantage.  That is, the seller needs to convince buyers that it would not make sense for her to charge a high-quality price for a low-quality product.  
+
+An extravagant advertising campaign is something that is visible to the buyer and something that the buyer will presumably understand to be costly.  The buyer might reason that if the seller is spending a great deal of money on an advertisement, the seller must have good quality because the only way to recoup the advertising outlay would be to generate repeat purchases.  If quality is bad, repeat purchases would not materialize, and the seller would not recover advertising costs.  Hence, firms that advertise must be those who are providing high quality.  As explained in more detail below, under certain conditions expenditures on things like advertising can serve as an irredeemable bond that commits the seller to high quality.  Advertising is one example of a signaling mechanism that could potentially overcome adverse selection problems that result from asymmetric information.  
+
+***
+
+#<span style="color:SaddleBrown">Market Signals to Counteract Asymmetric Information Problems</span>
+
+Advertising is a good example of an economic signal, but there are many others.  For example, a firm that develops a new product that is of high quality could face reluctance from consumers who, never having encountered the product before, are skeptical of the quality claims.  A low introductory price could send a signal to consumers in much the same way as a costly advertising campaign.  In fact, low introductory prices are often used in conjunction with advertising campaigns for new products.  By offering a low introductory price, the message the firm is trying to send is: "We are selling this product for less than it is worth because we know that once you try it, you will like it so much we will make up our initial losses in repeat purchases."  Both advertising and low introductory prices depend on repeat purchases in order to be effective signals.  
+
+Some signals do not depend on repeat purchases.  For example, a company that offers a warranty is signaling customers that their product is of high quality.  Customers understand that the firm will incur costs if it has to fulfill warranty obligations, so it would be unprofitable to offer a generous warranty on low-quality products.  Hence, customers and firms might use the presence, absence, or terms of warranties to overcome asymmetric information problems.  
+
+### Types of Market Signals
+
+Kirmani and Rao (2000) reviewed both theoretical and empirical literature on economic signals and the ways they overcome asymmetric information problems in different contexts.  They grouped signals broadly into two groups.  The first group is what they termed to be **default-independent signals**.  These signals represent up-front costs that firms incur to show customers that providing low quality would not be in the firm’s economic interest.  Advertising and low introductory prices, two examples already mentioned, are classified as default-independent signals.  Other default independent signals include investments in brand equity defined broadly, coupons, and slotting allowances that manufacturers pay to retailers.  With a default-independent signal, the firm incurs the signaling cost regardless of whether it ultimately provides high quality or low quality.  The main feature is that buyers understand the signal to mean that it is in the firm’s interest to provide high quality.  Investments in advertising, profits lost through low introductory prices, or large cash outlays for slotting allowances, can only be recovered if quality turns out to be high and repeat sales are good.  Repeat sales are very important to default-independent signals.  For non-durable and frequently purchased items (like food products) default-independent signals are common.  
+
+The second group of signals consists of what Kirmani and Rao (2000) classify to be **default-contingent signals**.  These include warranties, money-back guarantees, and the like.  For these types of signals, the firm makes no significant initial investment in the signal.  If quality turns out to be bad, however, the firm stands to face costs associated with the signal.  For example, if a warranty is used to signal quality and the firm defaults by providing low quality contrary to claim, it would face losses that come from settlement of customer warranty claims.  In this case, repeat sales are irrelevant to whether the warranty is an effective signal.  Hence, default-contingent signals are commonly associated with durable and infrequently purchased items.  However, default-contingent signals can be important for frequently purchased products as well.  One example is the use of a high selling price to signal high quality.  This involves no up-front cost to the firm, but if the firm defaults and provides low quality at a high price, its ability to charge the high price in the future is jeopardized.  By charging the high price, the firm is putting its future revenues at risk if it provides low quality.
+
+### An Effective Signal Requires a Seperating Equilibrium
+
+This is a good place to introduce the notion of a separating equilibrium.  A separating equilibrium is an outcome where the high-quality firms send signals and the low-quality firms do not.  For a signal of any sort to work, it must be that high-quality firms find it advantageous to signal and low-quality firms find signals to be against their economic interest.  When there is a separating equilibrium, the only thing customers need to do is to identify which firms are sending signals and which firms are not.  Customers are informed of quality differences merely by observing which firms signal.  In short, the signal becomes information about quality.
+
+Unfortunately, there is nothing that says separating equilibriums will always result or will even be the norm.  For example, most, if not all, producers of consumer products go to some extra expense in making their packaging look attractive.  If both poor-quality and high-quality products come in attractive packaging, then attractive packaging cannot be an effective signal and cannot be used by customers to make quality judgments.  In this case, there is not a separating equilibrium because both poor-quality and high-quality producers find it advantageous to signal. 
+
+### Potential for Customer Abuse and Other Limitations of Signals
+
+For some types of default-contingent signals, particularly warranties and money back guarantees, there is potential for customer abuse that results in both high-quality and low-quality firms being unwilling to signal.  For example, if attention to maintenance is bothersome and costly, then customers with warranty protection may give less attention to such matters than customers without warranty protection.  (Note that this is an example of moral hazard on part of the customer.)  Also, the degree of subjectivity that constitutes acceptable quality will be important for default-contingent signals, such as warranties, to be effective. Warranties might work well with automobiles.  It is likely that both the buyer and seller can reach an agreement as to whether a problem exists and would be covered under the warranty.  For example, the transmission either works or it does not.  For vacation packages, another infrequently purchased item, it would be much harder to determine whether the customer who wanted his money back after reporting a bad vacation experience has a legitimate complaint or is simply trying to abuse a money back guarantee.
+
+Similarly, some default independent signals such as low introductory prices could, in some situations, be ineffective for lack of a separating equilibrium.  If a high-quality firm uses a low introductory price, it is likely to attract quality-insensitive customers as well as quality-sensitive customers.  When the high-quality firm stops its low price campaign and raises its price to the high-quality level, it loses its quality-insensitive customers.  These customers do not much care about quality anyway and opt for lower-priced and lower-quality products once the campaign ends.  The low introductory price signal depends on repeat purchases and a large proportion of quality-insensitive customers who do not provide repeat purchases raises the cost of using a low introductory price as a signal.  In this case, customer heterogeneity raises the cost of a signal perhaps to the point where both high-quality and low-quality firms find it in their advantage to not signal.   
+
+***
+
+#<span style="color:SaddleBrown">A Formal Model of Signals</span>
+
+Consider a market with two kinds of firms.  The first type is a high-quality firm.  This firm is capable of producing high-quality products but must incur extra production costs if it decides to produce high quality.  Because of asymmetric information, the high-quality firm might cheat customers by charging a high-quality price for low-quality products.  The other type of firm is a low-quality firm.  This firm is only capable of producing low quality.  Because of asymmetric information, the low-quality firm might deceive customers by offering its low-quality products at a high-quality price.  Finally, assume that there is a demand for both high-quality and low-quality products.  The high-quality demand is comprised of quality-sensitive customers who are willing to pay a premium for quality.  The low-quality market is comprised of quality-insensitive customers who are unwilling to pay a premium for quality.  
+
+Let us define the following profit outcomes in terms of the firm’s choice of price and/or quality level.
+
+1.  $\pi(P_H,H)$ is the profit level of a high-quality firm that sells at the high-quality price and truthfully provides high quality (and incurs extra production costs).
+
+2.  $\pi(P_H,L)$ is the profit level of a high- or low-quality firm that is untruthful.  It sells at the high-quality price but actually provides customers with a low-quality product.  
+
+3.  $\pi(P_L,L)$ is the profit level of a high- or low-quality firm that truthfully provides low quality.
+
+4.  $\pi(P_L,H)$ is the profit of a high-quality firm who provides high quality (and incurs extra production costs) but sells at the low-quality price.  
+
+Let us rule out the the fourth case by assuming $\pi(P_L,H) < 0$. That is, it is never profitable for a high-quality firm to produce a high-quality product but sell at the low-quality price.  Thus, cases 1 to 3 are the only ones of interest in our model.
+
+### Conditions for a Lemons Market
+
+Given asymmetric information, a lemons market could occur if 
+
+A.  There is an incentive for high-quality firms to cheat by providing low quality at the high-quality price.  In other words, $\pi(P_H,L)>\pi(P_H,H)$.  In this case, the incentive to cheat is the difference $\pi(P_H,L)-\pi(P_H,H) > 0$,
+
+and/or
+
+B.  There is an incentive for low-quality firms to deceive by pretending to be high-quality firms because $\pi(P_H,L)>\pi(P_L,L)$.  In this case, the incentive to deceive is $\pi(P_H,L)-\pi(P_L,L) > 0$.
+
+With either or both of these incentives in place, customers would be wary of any firm that charges the high-quality price.  Even if the customer cares a great deal about quality, he/she would naturally be suspicious of cheating or deception by sellers and would want to avoid paying a premium for quality that is not provided.  If customers were very suspicious of cheating or deception, none may be willing to pay the high-quality price.  The result is a market outcome where only low quality is provided and all firms get $\pi(P_L,L)$.  It may be true that $\pi(P_H,H)>\pi(P_L,L)$ and high-quality firms would be better off economically by truthfully providing high quality.  However, customer suspicions prevent high-quality firms from accessing the high-quality market.  This is the lemons problem mentioned earlier in the chapter.
+
+### A Signal to Correct the Lemons Problem
+
+An economic signal could correct the lemons problem if the cost of the signal was lower when a firm provided high quality and higher when the firm provided low quality.  Let us consider the case of a warranty.  Define $C$ as the warranty cost of a firm that provides high quality and define $C^\prime$ to be the warranty cost of a firm that provides low quality.  High-quality products should have fewer warranty claims, so it is reasonable to assert that
+$C^\prime > C$ .  
+
+Could offering a warranty serve as the entry ticket for a high-quality firm that wants to truthfully sell on the high-quality market?  The answer is yes, provided that customers understand the signal and each of the following conditions hold.  
+
+**Condition 1.  Access to the high-quality market is economically attractive in the presence of a truthful signal.** If warranties are to be a successful signal, then high-quality firms must be willing to truthfully provide high quality in the presence of warranty costs.  It must be that
+
+1A. $\pi(P_H,H)-C>\pi(P_L,L)$,
+
+which implies
+
+1B.  $\pi(P_H,H) - \pi(P_L,L) > C$.
+
+The left side of 1B represents the benefits of truthfully accessing the high-quality market and selling at a high-quality price.  The right side is the cost of offering warranties on high-quality products.
+
+**Condition 2:  The signal removes the incentive for high-quality firms to cheat.**  If warranties are to be a successful signal, then the warranty must remove the incentive for high-quality firms to cheat.  It must be that
+
+2A.  $\pi(P_H,H)-C>\pi(P_H,L) - C^\prime$,
+
+which implies
+
+2B. $C^\prime - C > \pi(P_H,L) - \pi(P_H,H)$.
+
+The left side of inequality 2B represents the additional signal cost the firm would face if it cheated.  The right side represents the incentive to cheat.  Thus, if 2B holds, the cost of cheating is larger than the benefits of cheating.
+
+**Condition 3: The signal removes the incentive for low-quality firms to deceive.** Finally, if warranties are to be a successful signal then they must make it unattractive for low-quality firms to deceive customers by pretending to be high-quality firms.  It must be that
+
+3A.   $\pi(P_L,L)>\pi(P_H,L) - C^\prime$,
+
+which implies
+
+3B. $C^\prime> \pi(P_H,L) - \pi(P_L,L)$.
+
+The left side of inequality 3B is the cost of offering a warranty on low-quality products, and the right hand side represents the incentive to deceive. Thus if 3B holds, the costs of deception exceed the benefits.
+
+If all three of these conditions hold, there will be a separating equilibrium in the model where high-quality firms will signal and truthfully provide high-quality and low-quality firms will not signal and will provide low quality.  Consumers who are willing to pay a premium for quality can safely purchase from firms with the signal.  Those consumers who are not quality conscious will buy from firms that do not signal.  In short, the signal corrects the lemons market problem and allows for the high-quality market to exist.  If any one of these three conditions do not hold, however, there is no separating equilibrium and the signal is ineffective.  
+
+### Advertising Cost as Quality-Dependent
+
+The example of a warranty was chosen to explain the separating equilibrium because it is simple to see why warranty costs in the presence of false quality claims would be higher than warranty costs in the presence of true quality claims.  Let us now consider why and how advertising might also be an effective signal.  Given the model presented above, advertising could be an effective signal if advertising had a lower cost when quality claims were true than when quality claims were false.  
+
+To see why this might be the case, let $A$ represent brand equity and suppose that access to the high-quality market in any given time period, $t$ requires that $A_t > \bar A$.  Firms with brand equity greater than or equal to $\bar A$ are able to charge the high-quality price.  Firms with brand equity below $\bar A$ cannot and must charge the low-quality price.  Suppose further that brand equity depreciates with time and needs to be replenished with advertising.  The dynamics of brand equity when high quality is truthfully provided are
+
+$$A_t = \delta A_{t-1}+ a_t,$$
+where $0<\delta<1$ is the rate of depreciation in brand equity and $a_t$ is advertising expenditure in the current period.  
+
+The dynamics of brand equity when a firm provides low quality are
+
+$$A_t = \delta^\prime A_{t-1}+ a_t,$$
+
+where $0 \le \delta^\prime < \delta$.  If a firm puts low-quality products on the market, a smaller portion, $\delta^\prime < \delta$, of its brand equity carries over from the prior period.  This means that brand equity depreciates at a faster rate when low quality is provided.  This is a reasonable assertion.  
+
+Given these dynamics, the minimal steady-state expenditure required to maintain continuous access to the high-quality market for a firm that truthfully provides high quality would be $a_t = (1 - \delta) \bar A$.  If a firm falsely claimed high quality, its cost of accessing the high-quality market would be higher at $a_t = (1 - \delta^\prime) \bar A$.  Thus, advertising has the feature that it is less expensive when high-quality is provided than when not.  In the parlance of the signalling model above, we have a truthful signal cost, $C$, and a false signal cost, $C^\prime$, that satisfy
+
+$$C = (1 - \delta) \bar A < C^\prime = (1 - \delta^\prime) \bar A. $$
+This quality-dependent difference in advertising cost could bring about a separating equilibrium provided that $C$ and $C^\prime$ are of appropriate magnitudes to satisfy conditions 1 through 3 above.
+
+***
+
+#<span style="color:SaddleBrown">Concluding Comments</span>
+
+Economists have long held that advertising has been a means of influencing consumer preferences in a manner that makes demand less elastic and gives further discretion in price setting.  The argument here is that advertising is way for sellers to increase their market power in an imperfectly competitive market.  This argument is not without merit but does not explain the breadth and differences in advertising messages observed in real world commerce.  Furthermore, if this were the only purpose of advertising, it would be difficult to defend it as a valuable use of economic resources.  Advertising would be doing nothing to make the economy more productive.  Its sole purpose would be to transfer wealth from buyers to sellers and would probably worsen welfare losses that result from resource misallocation problems observed in models of imperfectly competitive behavior.  As such, advertising would be a prime candidate for regulation or even prohibition under laws similar to those that prohibit collusion, price fixing, or other anti-competitive behavior.  
+
+Recent work in information economics has noted that advertising can facilitate consumer search and can provide believable signals about experience attributes that cannot be verified pre-sale.  Economists are developing a deeper understanding of advertising and its role in a market economy.  If advertising does aid search and mitigate problems of asymmetric information, then it plays a valuable role that can facilitate the functioning of markets.   
+
+***
+
+#<span style="color:SaddleBrown">References</span>
+
+Akerlof, G. “The Market for Lemons: Qualitative Uncertainty and the Market Mechanism” Quarterly Journal of Economics 84(1970):488-500.
+
+Kirmani, A. and A. R. Rao.  “No Pain, No Gain: A Critical Review of the Literature on Signaling Unobservable Product Quality.” Journal of Marketing 64(2000):66-79.
+
+Milgrom, P. and J. Roberts. Economics, Organization, and Management.  Englewood Cliffs, NJ: Prentice Hall, 1992.
+
+Nelson, P. “Advertising as Information.” Journal of Political Economy 82(1974):729-754. 
+
+***
+
+#<span style="color:SaddleBrown">Problem Sets</span>
+
+###Problem Set 1. Determin Whether the Signal will Work?
+
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      selectInput(
+        "prob",
+        label = "Problem Number",
+        choices = as.character(c(1:10)),
+        selected = "5", 
+        selectize=F),
+      checkboxInput("show", label = "Show Answer?", F),
+      p("Answers:"),
+      uiOutput("Answer0"),
+      uiOutput("Answer1"),
+      uiOutput("Answer2"),
+      uiOutput("Answer3"),
+      width=4
+    ),
+    mainPanel(p("Given the following:"),
+              uiOutput("PHL"),
+              uiOutput("PHH"),
+              uiOutput("PLL"),
+              uiOutput("C"),
+              uiOutput("Cprime"),
+              p(" "),
+              uiOutput("Quest0"),
+              uiOutput("Quest1"),
+              uiOutput("Quest2"),
+              uiOutput("Quest3")
+    )
+  ),
+  server = function(input,output) {
+    probDat<- data.frame(
+      PHL=c(120,130,140,150,160,150,140,130,120,130),
+      PHH=c(100,100,120,120,120,110,110,110,90,90),
+      PLL=c(80,60,70,50,80,60,70,50,80,60),
+      C=c(16,32,24,31,41,38,34,20,29,42),
+      Cprime=c(38,71,75,99,80,93,66,82,44,66),
+      cond1=c('Yes','Yes','Yes','Yes','No','Yes','Yes','Yes','No','No'),
+      cond2=c('Yes','Yes','Yes','Yes','No','Yes','Yes','Yes','No','No'),
+      cond3=c('No','Yes','Yes','No','No','Yes','No','Yes','Yes','No')
+    )
+    pprob<-reactive({as.numeric(input$prob)}) #problem number from UI
+    output$PHL<-renderUI({paste("Profits of falsely claiming high quality with no signal are ",probDat[input$prob,"PHL"],".",sep="")})
+    output$PHH<-renderUI({paste("Profits of truthfully claiming high quality with no signal are ",probDat[input$prob,"PHH"],".",sep="")})
+    output$PLL<-renderUI({paste("Profits of truthfully claiming low quality are ",probDat[input$prob,"PLL"],".",sep="")})
+    output$C<-renderUI({paste("The cost of a true signal of high quality is ",probDat[input$prob,"C"],".",sep="")})
+    output$Cprime<-renderUI({paste("The cost of a false signal of high quality is ",probDat[input$prob,"Cprime"],".",sep="")})
+    output$Quest0<-renderUI({"(1) Is truthful access to the high-quality market profitable given the signal?"})
+    output$Quest1<-renderUI({"(2) Does the signal remove the incentive of high-quality firms to cheat?"})
+    output$Quest2<-renderUI({"(3) Does the signal remove the incentive of low-quality firms to deceive?"})
+    output$Quest3<-renderUI({"(4) Is there a separating equilibrium that corrects the lemons market?"})
+    
+    output$Answer0<-renderUI({
+      if(!input$show) return()
+      paste("Answer for (1):",probDat[input$prob,"cond1"])
+    })
+    output$Answer1<-renderUI({
+      if(!input$show) return()
+      paste("Answer for (2):",probDat[input$prob,"cond2"])
+    })
+    output$Answer2<-renderUI({
+      if(!input$show) return()
+      paste("Answer for (3):",probDat[input$prob,"cond3"])
+    })
+    output$Answer3<-renderUI({
+      if(!input$show) return()
+      "There is a separating equilibrium if all answers are 'Yes'"
+    })
+  },
+  options = list(height = 300)
+)
+```
+
+***
+
+###Problem Set 2. Multiple Choice
+
+```{r, echo=FALSE}
+###############################################################################
+# ResponseMC(correct,nchoices=4)
+# A shinyApp function to accept and check a multiple choice response.  The required
+# argument to the function is the letter of the correct response.
+#
+# Example:
+# ResponseMC("a",5) is used if "a" is the correct choice and a-e options.
+###############################################################################
+
+ResponseMC<- function(correct,nchoices=4){
+  shinyApp(
+    ui = fluidPage(
+      fluidRow(
+        column(2,
+               selectInput(
+                 "answer",
+                 label = NULL,
+                 choices = c("No selection",letters[1:nchoices]),
+                 selected = "No selection", 
+                 selectize=F)),
+        column(4,htmlOutput("resp"))
+        )
+      ),
+    server= function(input,output) {
+      output$resp<-renderText(
+        ifelse(input$answer=="No selection",
+               "Choose a letter from the menu.",
+               ifelse(input$answer==correct, 
+                      paste("You are correct! The answer is ", correct,".",sep=""),
+                      paste("Sorry. The correct answer is ", correct,".",sep=""))
+               )
+        )
+      },
+    options = list(height = 50)
+  )
+  }
+```
+
+
+1.	**Which was not one of the examples of an economic signal?**
+a.	Low introductory prices
+b.	A warranty
+c.	Advertising
+d.	Production management contracts
+
+```{r, echo=FALSE}
+ResponseMC("d")
+```
+
+
+2.	**Which of the following is a market solution to the adverse selection problem?**
+a.	Incentive-based contracts
+b.	First degree price discrimination
+c.	Equilibrium pricing mechanisms
+d.	Behavioral economics models
+e.	Economic signals
+
+
+```{r, echo=FALSE}
+ResponseMC("e",5)
+```
+
+3.	**Which of the following is a market solution to the moral hazard problem?**
+a.	Incentive-based contracts
+b.	First degree price discrimination
+c.	Equilibrium pricing mechanisms
+d.	Behavioral economics models
+e.	Economic signals
+
+```{r, echo=FALSE}
+ResponseMC("a",5)
+```
+
+4.	**Which of the following would be the best example of a default-contingent signal?**
+a.	Advertising
+b.	Low-introductory prices
+c.	Warranties
+d.	Job-market signaling with a college education
+
+```{r, echo=FALSE}
+ResponseMC("c")
+```
+
+5.	**Which of the following would be the best example of a default-independent signal?**
+a.	Advertising
+b.	Low-introductory prices
+c.	Job-market signaling with a college education
+d.	All of the above
+
+```{r, echo=FALSE}
+ResponseMC("d")
+```
+
+6.	**Asymmetric information means**
+a.	One party to a transaction is better informed than another
+b.	That information is freely available to both parties but neither party has correct information
+c.	Both parties are about equally informed but each places a different value on the information
+d.	Choices (b) and (c) only
+
+7.	**Provided there is a separating equilibrium, this mechanism can mitigate the adverse selection (lemons market) problem**
+a.	An incentive based contract
+b.	An economic signal
+c.	A tit-for-tat responses
+d.	A 2nd degree price discrimination strategy
+
+```{r, echo=FALSE}
+ResponseMC("b")
+```
+
+8.	**Which best describes a separating equilibrium**
+a.	A partial equilibrium model
+b.	A situation where all firms signal regardless of quality
+c.	A situation where only firms providing high quality find it in their interest to signal
+d.	A situation where no firms signal
+
+```{r, echo=FALSE}
+ResponseMC("c")
+```
+
+
+***
+
+![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
+
+__*An Interactive Text for Food and Agricultural Marketing*__ by [Michael R. Thomsen](https://agribusiness.uark.edu/directory/index/uid/mthomsen/name/Michael+R.+Thomsen/) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).  Source files are available on [GitHub](https://github.com/thomsen-m/FAM-OER).
+
+***

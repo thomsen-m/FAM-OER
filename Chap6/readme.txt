@@ -1,0 +1,1 @@
+The file "cattleDat.Rda" contains an R data frame used in Demonstration 2.  See the note to the demonstration.  Columns 1 and 3 contain the average nearby feeder cattle futures price by month in nominal and real 2016 dollars, respectively.  Columns 2 and 4 contain a 12-period centered moving average of columns 1 and 3, respectively.

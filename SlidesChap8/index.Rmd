@@ -1,0 +1,323 @@
+---
+title: "Slides for Chapter 8: Price Discrimination"
+author: "Based on *An Interactive Text for Food and Agricultural Marketing* by [Michael R. Thomsen](https://agribusiness.uark.edu/directory/index/uid/mthomsen/name/Michael+R.+Thomsen/) which is licensed und
+er a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/). ![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)  Source files are available on [GitHub](https://github.com/thomsen-m/FAM-OER)."
+
+date: "Today's date is `r format(Sys.time(), '%d %B %Y')`"
+output:
+  slidy_presentation: default
+  beamer_presentation: default
+runtime: shiny
+---
+
+
+##<span style="color:SaddleBrown">Objectives</span>
+
+* Distinguish between first-degree, second-degree, and third-degree price discrimination. 
+
+* Explain the logic of bundle pricing and access fees to capture consumer surplus.
+
+* Characterize the self-selection problem inherent in second-degree price discrimination.
+
+* Explain third-degree price discrimination and provide examples encountered in everyday commerce.
+
+* Describe conditions that are necessary for the various types of discriminatory pricing strategies described in this chapter.
+
+* Explain the logic of package pricing (bundling across products), contractual tie-in sales, and captive product pricing.
+
+***
+
+##<span style="color:SaddleBrown">Price Discrimination</span>
+
+* Price discrimination is a way for firms to turn consumer surplus into profits by charging different consumers different prices based on their willingness to pay.  
+
+* Price discrimination occurs if one consumer or one group of consumers is charged a different price even though the cost of providing the product or service to each consumer or each group of consumers is the same.  
+
+* Some forms of price discrimination are illegal under anti-trust laws.  Specifically, price discrimination that reduces competition is illegal under the Robinson-Patman Act.  
+
+*  Discrimination is based on willingness to pay not dislike or ill will towards a consumer or group of consumers.  
+
+##<span style="color:SaddleBrown">Perfect or First-Degree Price Discrimination</span>
+
+* If a seller can perfectly price discriminate, he or she is able to charge the buyer's maximum willingness to pay for each unit.  
+
+* To effectively employ first-degree price discrimination, the seller needs to know the demand curve of each individual.  
+
+* Fortunately for consumers, this is something that the seller is not likely to know.  
+
+* However, some sales situations are designed so that the seller may be able to find out about willingness to pay.
+
+##<span style="color:SaddleBrown">Some Preliminaries</span>
+
+1.  We will not be using the full market demand schedule in the models that follow. Instead we are interested in individual demand (the demand for a given customer) or the demand for a given segment of the market.  
+
+2.  To simplify the examples we will assume marginal cost is constant.  In addition to simplifying the analysis, a constant marginal cost is probably not unreasonable in many cases.  Especially when we consider output changes that respond to demand at the scale of the individual consumer.
+
+##<span style="color:SaddleBrown">Revisiting the Competitive and Monopoly Outcomes</span>
+```{r, echo=FALSE}
+par(bg="beige")
+plot(10-2*(0:10),0:10,type="l",col="blue", lwd=3,
+     xlim=c(0,12),ylim=c(0,6),
+     xlab="Q",
+     ylab="P",xaxs="i",yaxs="i",bty="n",
+     #xaxt='n',yaxt='n',
+     main="Panel A.  Competitive (P = MC)"
+)
+lines(c(0,10),c(3,3),col="red",lty=1,lwd=3)
+lines(c(4,4),c(0,3),col="black",lty=2)     
+#axis(1, at=1:7, labels=c("",DynTickXA(),""),lwd.ticks=1)
+#axis(2, at=c(0,input$price,100), labels=c("",DynTickYA(),""),lwd.ticks=1)
+text(6,4,"Profits = $0",pos=4)
+text(6,3.5,"Cons. Surplus = $4",pos=4)
+legend(3,6,c("P = 5 - 0.5Q","MC = 3"),lty=c(1,1),lwd=c(3,3),col=c("blue","red"))
+       
+par(bg="antiquewhite")
+plot(10-2*(0:10),0:10,type="l",col="blue", lwd=3,
+     xlim=c(0,12),ylim=c(0,6),
+     xlab="Q",
+     ylab="P",xaxs="i",yaxs="i",bty="n",
+     #xaxt='n',yaxt='n',
+     main="Panel B. Monopoly (MR = MC)"
+)
+lines(c(0,5),c(5,0),col="purple",lty=1,lwd=3)
+lines(c(0,10),c(3,3),col="red",lty=1,lwd=3)
+lines(c(2,2),c(0,4),col="black",lty=2)     
+lines(c(0,2),c(4,4),col="black",lty=2)     
+#axis(1, at=1:7, labels=c("",DynTickXA(),""),lwd.ticks=1)
+#axis(2, at=c(0,input$price,100), labels=c("",DynTickYA(),""),lwd.ticks=1)
+text(6,4,"Profits = $2",pos=4)
+text(6,3.5,"Cons. Surplus = $1",pos=4)
+legend(3,6,c("P = 5 - 0.5Q","MR = 5 - Q","MC = 3"),lty=c(1,1,1),lwd=c(3,3,3),col=c("blue","purple","red"))
+```
+
+#### Figure 1. By pricing as a monopolist the firm can appropriate some but not all of the potentially available consumer surplus.
+
+
+##<span style="color:SaddleBrown">Schemes that approximate First-degree Price Discrimination</span>
+
+If each consumer has the same demand curve, the firm can do much better.  The firm can implement one of two pricing schemes:
+
+1. Bundle the goods and sell bundles.
+
+2. Charge an access fee that is equal to consumer surplus when price per unit is set equal to marginal cost.
+
+
+##<span style="color:SaddleBrown">Bundle Pricing</span>
+
+$$P = 5 - 0.5Q$$  
+
+$$MC = 3$$
+
+* The bundle price would equal to the consumer’s maximum willingness to pay for  the four units, which is the entire area under the demand curve as we move from zero to four units.  This is  \$16/bundle.  
+
+* With the bundle pricing scheme, the firm only offers bundles for sale. Consumers cannot buy individual units. They must buy bundles of four and pay the $16 price or not buy the product at all.  
+
+* The bundle price is set at the consumer's maximum willingness to pay.  
+
+* No surplus is left for the consumer.  
+
+* The bundle pricing scheme results in \$4 in economic profits, double the profits of pricing as a monopolist.  
+
+##<span style="color:SaddleBrown">Access Fees</span>
+
+$$P = 5 - 0.5Q$$
+
+$$MC = 3$$
+
+
+* The firm could charge an access fee of \$4.  
+
+* The price per unit after paying the access fee is then set at MC or \$3/unit.  
+
+* The consumer who pays the access fee is then able to purchase all he or she wants at \$3/unit.  
+
+* The consumer will only purchase four units.  His or her willingness to pay for additional units beyond four is less than the \$3 price.  
+
+* In the end, the firm receives \$16 from each customer (the \$4 access fee and the \$12 in product sales).  
+
+* The access-fee scheme results in profits of \$4 from each consumer, which is double the profits of pricing as a monopolist.  
+
+##<span style="color:SaddleBrown">Some Examples of Access Fees</span>
+
+* Cover charges at a bar or night club
+
+* Membership fees at a club store
+
+* All-you-can-eat buffets
+
+* Tuition at some universities (e.g., flat rate for 12-18 credit hours)
+
+##<span style="color:SaddleBrown">Summary: Bundle Pricing and Access Fees</span>
+
+* These strategies can work when everyone has about the same individual demand curve
+
+* Everyone is charged the same bundle price or the same access fee plus per-unit price, so how is this price discrimination?
+
+* It is discriminatory in the sense that both schemes mimic a firm that charges higher prices for the first unit (where the consumer's willingness to pay is highest), and successively lower prices on additional units until the consumer's willingness to pay equals marginal cost.
+
+* In this respect, bundle pricing and access fees, are discriminatory in that the price charged is based on differences in willingness to pay.  
+
+##<span style="color:SaddleBrown">Second-Degree Price Discrimination </span>
+
+* Second-degree price discrimination can occur when demands are not homogeneous and therefor prevent bundling as described above.  
+
+* As an example, consider a market comprised of high demand customers and low demand customers.  
+
+* The problem facing the seller is that he or she cannot assign consumers to one segment or another.  
+
+* The seller needs to set the bundles so that members of each segment self select into a particular bundle.  
+
+* To successfully implement second-degree price discrimination, the bundles must be designed so that the small bundle is most attractive to the low-demand customers and the large bundle is most attractive to the high-demand customers.
+
+##<span style="color:SaddleBrown">Implementing Second-Degree Price Discrimination in this Example</span>
+
+* The firm must be careful when setting the volume discount.  In fact, for second-degree price discrimination to work, the volume discount must satisfy the following conditions.
+
+1. The small bundle must be attractive to the low-demand segment (non-negative surplus).
+
+2. The large bundle must be attractive to the high-demand segment (non-negative surplus).
+
+3. The small bundle must provide a value to the low-demand segment that is at least as good as the large bundle.
+
+4. The large bundle must provide a value to the high-demand segment that is at least as good as the small bundle.
+
+* The first two conditions are called participation constraints.  
+
+* The second two conditions are called self-selection constraints.
+
+***
+
+```{r, echo=FALSE}
+par(bg="beige")
+plot(0:4,8-2*0:4,type="l",col="blue", lwd=3,
+     xlim=c(0,6),ylim=c(0,12),
+     xlab="Q",
+     ylab="P",xaxs="i",yaxs="i",bty="n",
+     #xaxt='n',yaxt='n',
+     main="Panel A.  Low Demand Segment (Small Bundle)"
+)
+lines(c(0,6),c(4,4),col="red",lty=1,lwd=3)
+lines(c(2,2),c(0,4),col="black",lty=2)     
+lines(c(3,3),c(0,2),col="grey",lty=2)     
+lines(c(0,3),c(2,2),col="grey",lty=2)     
+text(2.5,10,"Small bundle size = 2 units",pos=4)
+text(2.5,9,"Small bundle price = $12",pos=4)
+text(2.5,8,"Profits from small bundle = $12 - $8 = $4",pos=4)
+text(2.5,7,"Cons. surplus from small  bundle = 0",pos=4)
+text(2.5,6,"Cons. surplus from large bundle = - 2",pos=4)
+legend(0.5,12,c("P = 8 - 2Q","MC = 4"),lty=c(1,1),lwd=c(3,3),col=c("blue","red"))
+       
+par(bg="antiquewhite")
+plot(0:5,10-2*0:5,type="l",col="blue", lwd=3,
+     xlim=c(0,6),ylim=c(0,12),
+     xlab="Q",
+     ylab="P",xaxs="i",yaxs="i",bty="n",
+     #xaxt='n',yaxt='n',
+     main="Panel B.  High Demand Segment (Large Bundle)"
+)
+lines(c(0,6),c(4,4),col="red",lty=1,lwd=3)
+lines(c(3,3),c(0,4),col="black",lty=2)     
+lines(c(2,2),c(0,6),col="grey",lty=2)     
+lines(c(0,2),c(6,6),col="grey",lty=2)     
+text(2.5,10,"Large bundle size = 3 units",pos=4)
+text(2.5,9,"Large bundle price = $17",pos=4)
+text(2.5,8,"Profits from large bundle = $17 - $12 = $5",pos=4)
+text(2.5,7,"Cons. surplus from small  bundle = $4",pos=4)
+text(2.5,6,"Cons. surplus from large bundle = $4",pos=4)
+legend(0.5,12,c("P = 10 - 2Q","MC = 4"),lty=c(1,1),lwd=c(3,3),col=c("blue","red"))
+```
+
+#### Figure 2.  An example of second-degree price discrimination meeting all four constraints.
+
+
+##<span style="color:SaddleBrown">Key Features of Second-Degree Price Discrimination</span>
+
+* The firm should choose the size of the small bundle and set its price in order to extract the entire willingness to pay from the low-demand segment.  By doing so, the firm gets as much as it can while still satisfying the participation constraint (specifically condition 1 above).  
+
+* Consumer surplus for low-demand customers will be zero.
+
+* The firm will then choose the size of the large bundle and set its price in order to capture as much of the high-demand customers' willingness to pay as possible.  
+
+* Unlike the low-demand segment, the firm will be unable to extract the entire magnitude of willingness to pay from the high-demand customers.  
+
+* High-demand customers will have positive consumer surplus.  
+
+* The firm must design and price large bundle so that it provides at least as much surplus to high-demand customers as does the small bundle.
+
+
+##<span style="color:SaddleBrown">Third-Degree Price Discrimination</span>
+
+If the seller can easily identify customers with different demand elasticities, then the seller may be able to employ third-degree price discrimination. There are many examples of third-degree price discrimination.  These include:
+
+* Senior citizen  or student discounts
+
+* Weekend (weekday) rates
+
+* Variable utility and phone rates
+
+* Federal marketing orders for agricultural products
+
+##<span style="color:SaddleBrown">Conditions for Third-Degree Price Discrimination</span>
+
+1.  The firm can assign customers into distinct groups and enforce differential pricing by group or there is a relatively straightforward mechanism of self selection.
+
+2.  Reselling between consumer groups is not feasible.  Otherwise, arbitrage will occur between segments with different demands.
+
+3.  The different groups have different elasticities of demand.  Otherwise, there is no point in offering different prices to different segments even if differential pricing by segment is possible.
+
+4.  The deals being offered must be socially benign.  
+
+##<span style="color:SaddleBrown">Logic of Third-Degree Price Discrimination</span>
+
+* With third-degree price discrimination, bundling or charging access fees are not possible.  If it were, the firm would simply offer different bundles or different access fees to each segment and would approximate first-degree price discrimination in each segment.  
+
+* In third-degree price discrimination, the best the firm can do is charge the monopoly price to each segment.  
+
+####Table 1: third-degree Price Discrimination
+
+Value        |Segment A|Segment B|Segment C
+-------------|---------|---------|---------
+Marginal Cost|    4.00 |    4.00 |    4.00
+$\varepsilon_i$| -2.81 |	 -2.55 |   -1.87
+$P_i$ 	     |    6.21 |    6.58 |    8.60
+
+
+##<span style="color:SaddleBrown">Package Pricing (Bundling Across Products)</span>
+
+* Often, goods or services are priced and sold as a take-it-or-leave-it package.  Some examples include :
+
+1.  Vacation packages
+
+2.  Combo meals
+
+3.  Cable TV packages
+
+####Table 2. Valuations for different food items across three customers
+
+Customer   |Fries |Sandwich|Drink|Total Bundle
+-----------|------|--------|-----|------------
+Customer A |2.00  |5.00    |0.75 |7.75
+Customer B |2.50  |3.50    |1.50 |7.50
+Customer C |1.75  |4.25    |1.00 |7.00
+
+
+##<span style="color:SaddleBrown">Contractual Tie-In Sales</span>
+
+
+* Tie-in sales are another way to extract additional revenues from high demand customers when the firm is unable to distinguish between high and low demand *a priori*. 
+
+  + The logic is that all customers are charged the same entry fee.  Once on board, the high demand customer generate more revenue from tie-in sales.  
+
+  + One of the best examples is a franchise.  After becoming the franchise, the franchisee will normally need to buy inputs from the franchisor.  High-demand franchisees, those with good locations and brisk businesses, will therefore generate more revenue for the franchisor than the low-demand franchisees.  
+
+##<span style="color:SaddleBrown">Captive Product Pricing</span>
+
+* Captive product pricing is a pricing strategy similar to tie-in sales, but without contractual obligations 
+
+  + Examples include vacuum cleaner bags, replacement blades for hand razors, and printer ink cartridges.
+  
+  + In these cases, the product itself, e.g., the shaving handle, is priced low and may even be given away.  
+  
+  + Revenue is made on high-priced sales of replacement components, e.g., razor blades, which the consumer pays once he/she becomes captive.  
+
+

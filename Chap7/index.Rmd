@@ -1,0 +1,834 @@
+---
+title: "Imperfect Competition and Strategic Interactions"
+date: "`r as.Date(file.info('index.Rmd')$mtime)`"
+output: html_document
+theme: journal
+runtime: shiny
+---
+
+***
+
+![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
+
+__*An Interactive Text for Food and Agricultural Marketing*__ by [Michael R. Thomsen](https://agribusiness.uark.edu/directory/index/uid/mthomsen/name/Michael+
+R.+Thomsen/) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).  Source
+ files are available on [GitHub](https://github.com/thomsen-m/FAM-OER).
+
+***
+
+#<span style="color:SaddleBrown">Overview and Objectives</span>
+
+Markets vary in ways that affect competition and pricing.  In some markets, competition is fierce.  In others, it is light.  Some firms have broad discretion in setting prices, while others face take-it-or-leave-it market prices. Pricing and competition depend on the structural characteristics of the market.  Economists classify markets as monopolies, oligopolies, monopolistically competitive, or perfectly competitive depending on the characteristics of selling firms in the market.  A brief overview of each market structure is as follows:
+
+A __*monopoly*__ is a market with only one seller.  The seller (called a monopolist) will often  have quite a bit of control over the price that it charges.    Earlier in the course, you examined a firm that was a price taker.  A monopolist is not a price taker.  As the only seller, the monopolist has an incentive to keep its price above its marginal cost.  In so doing, it takes surplus from consumers and turns that surplus into profits for itself.  Naturally, sellers like to have monopoly power.  The problem for the monopolist is to get as much of the consumer surplus as it can.  This problem is complicated in that the monopolist faces the market demand curve.  Because of the law of demand, the monopolist must lower its price if it wants to sell more, which entails sacrificing its profit margin.  On the other hand, if the monopolist attempts to raise price, and thereby increase its profit margin, it sacrifices volume.  There is a balancing act here that you have seen before with demand elasticities in Chapter 3.  In this chapter, you will see that the demand elasticity facing the monopolist is relevant and can help you solve the monopolist's problem.  
+
+An __*oligopoly*__ is a market where there are a few sellers. There must be at least two sellers (a duopoly), and there is no magic number on what constitutes the upper limit of a "few" sellers.  Like monopolists, oligopolists do have some discretion in setting their prices.  However, the problem is further complicated by the fact that the oligopolist must pay attention to the actions of its competitors.  Interactions among competitors are of primary interest in oligopoly models.  
+
+__*Monopolistic competition*__ refers to situations where there are generally many sellers (again, there is no magic number that divides "few sellers" from "many sellers").  A key feature of monopolistic competition is that products are differentiated in the minds of consumers and/or transactions costs give rise to varied perceptions among consumers as to the advantages or disadvantages of patronizing one firm over another.  Because products are differentiated, sellers are not price takers.  Like the monopolist, firms in monopolistic competition face a downward sloping demand curve.  In fact, you will see that the individual firm's problem in monopolistic competition has the same set-up as the monopolist's problem.
+
+__*Perfect competition*__ refers to situations where there are many sellers. Products are homogeneous or differ only in ways that readily apparent to all buyers. The actions of any single seller has no effect on the market price.  Firms under perfect competition are price takers.  The price taking assumption was introduced earlier in Chapter 2.  This assumption is the one key feature of perfect competition.  While the market demand curve slopes downward, the firm does not face the market demand curve; it only sees the prevailing market price.  It can sell all that it wants (or all that it can produce) at the going market price.  If the firm attempts to raise its price, there are no buyers.  For this reason, it can be said that the firm faces an elasticity of demand that is negative infinity.
+
+This chapter is about competition and market outcomes under these different market structures.  The specific learning objectives for the chapter are as follows:  
+
+* Describe and explain characteristics of different market structures on the selling side of the market.
+
+* Use the MR = MC profit maximizing condition to find profit maximizing solutions under different market structures.
+
+* Explain the strategic interactions in duopoly models, distinguish between Cournot and Bertrand models of duopoly, and explain how each is an example of the prisoners' dilemma
+
+* Explain the folk theorem and the ability of firms to avoid prisoners' dilemma outcomes in price competition over time.
+
+* Understand the economic welfare implications of imperfectly competitive market structures relative to the perfectly competitive benchmark.
+
+***
+
+
+#<span style="color:SaddleBrown">Considerations in Classifying a Market</span>
+ 
+How do you know whether a market is a monopoly, an oligopoly, monopolistically competitive, or perfectly competitive?  To answer this question, it is useful to clarify the boundaries of the market you are considering.  There are three dimensions of a market.  These are the product, the time, and the place. You should think about market boundaries in terms of each of these three dimensions.  In the product dimension, clarify how narrowly you are defining the product.  For instance, are you interested in the market for herbicides broadly, or are you interested in the market for herbicides designed to control a specific weed or class of weeds?  Once you have specified the product boundaries, you can then identify competitors that are operating in the market.  The next dimension is time.  Agricultural products are sometimes sourced from different locations at different times of the year.  Because of this, the set of sellers who comprise the market could be different at different points in time.  Finally, the place dimension is important because agricultural products are bulky and transportation costs are often an important consideration.  Thus, sellers in one geographic area may be different than sellers in another.  Moreover, there may be more sellers in one geographic area than another depending on demand conditions in the respective geographic areas.  Having defined the boundaries of a market along these three dimensions (product, time, and place), you can use several characteristics of the market to classify its structure.  
+
+The first, and probably most obvious, characteristic is __*the number of firms that comprise the market*__.  The number of firms is central to the definitions of market structures above.  In a monopoly, the market is comprised of one firm.  In an oligopoly there are a few firms.  If there are many firms, the market is either monopolistically or perfectly competitive, depending on the nature of the product.  
+
+Another issue of specific importance is __*whether the product of one seller is different from the product of another in the minds of consumers*__.  If so, the products are differentiated.  If not, the products are homogeneous.  If products are differentiated, it is useful to distinguish between two different types of product differentiation:
+
+1. A product is vertically differentiated if there are clear quality differences that can be measured objectively.  All buyers can agree upon the presence or absence of the quality attribute, regardless of whether the buyer actually places a value on the attribute in question.  For example, in lumber, there are vertical differences between oak and pine.  Buyers are knowledgeable about these differences and situations wherein one type of lumber is better suited than the other.  Usually there are vertical differences among agricultural products.  In many cases, grades and standards are used to convey information about these vertical quality differences.  
+
+2. Products are horizontally differentiated if there are less tangible quality differences among products that are nonetheless important to the consumer or some segments of consumers.  Horizontal differences usually come down to a matter of taste.  Most horizontal differences are conveyed through brand image.  For example, if you were to compare the ingredient lists on two different brands of cola, you would see that they were nearly identical.  It is hard to make the case that one brand is truly better than another for its intended purpose.  However, some consumers are probably quite loyal to one of the brands and may even dislike the other.  
+
+If horizontal product differences exist, then brands can play a role in conveying these differences, and an industry comprised of many competitors will be monopolistically competitive, as opposed to being perfectly competitive.  Vertical product difference can exist in either perfect or monopolistic competition.  In a perfectly competitive market, the market price is augmented by a series of market-determined discounts or premiums to account for the vertical quality differences.
+
+Finally, __*the ease with which new firms can enter the market*__ is important to market structure and market outcomes.  Entrants are latent or potential competitors.  As you learned in Chapter 2, if an outside firm finds a market to be attractive, it will come into the market, cause supply to shift outwards and depress prices.  Outcomes of some of the market structures depend on entry being difficult in one way or another.  Entry can be difficult for several reasons:
+
+1.  _Economies of scale are large compared to the size of the market._  In some cases, production technology is such that a firm must produce a very large number of units in order to cover fixed costs.  If demand is limited, there may only be room for one or two firms to operate at an efficient scale within a given market. This could foreclose entry because outside firms will not be able to achieve an efficient scale if the market is entered.
+
+2.  _Access to raw materials, technology, or distribution channels._  The inability to access key sources of raw materials, technology, or distribution channels can prevent entry, even if the production process is well understood and economies of scale are inconsequential.  In some cases, access is limited by patents or other legal restrictions.  This is common with some plant materials, seed varieties, and crop protectants.  
+
+3.  _Network externalities._  A network externality exists if there are benefits when multiple consumers use the same platform.  A livestock auction provides a good example.  Buyers benefit when there are more sellers participating in the auction.  Similarly, sellers benefit when there are more buyers participating in the auction. Software, such as a word processing package, provides another example of a network externality.  You have an incentive to use the package that is most commonly used by other users. This way, if a colleague sends you a document, you will likely be able to open and edit it without problems. Once established, the existence of network externalities in a market can make entry difficult.       
+
+Usually, entry is impossible in a market that is a monopoly.  The inability to enter the market is presumably why the market can remain a monopoly.  There is one exception, however.  This is the case of __*a contestable monopoly*__ (Baumol, Panzar, and Willig 1982).  A contestable monopoly exists in cases where the market can be served by one seller, but if this seller attempts to exploit its monopoly position by charging a high price, the market will be attacked by entrants who will cause the price to fall.  If entrants can get in and out of the market easily, the monopolist will be attacked by entry whenever the monopolist attempts to raise its price.  A contestable monopoly can exist if the fixed costs of entry can be recovered upon exit.  An argument could be made that some food brands have characteristics of contestable monopolies.  
+
+***
+
+####Table 1.  Summary of Industry Characteristics and Market Structures
+
+Structure          | Number of Firms | Horizontal Differences | Vertical Differences      | Entry
+-------------------|-----------------|------------------------|---------------------------|---------
+Monopoly           | One             | Not Applicable         | Possible, by product line | Difficult\*
+Oligopoly          | Few             | Possible               | Possible                  | Difficult
+Monopolistic Comp. | Many            | Yes                    | Possible                  | Easy
+Perfect Comp.      | Many            | No                     | Possible                  | Easy
+
+\* The exception is a contestable monopoly
+
+***
+
+#<span style="color:SaddleBrown">Marginal Revenue for Imperfectly Competitive Markets</span>
+
+The basics of profit maximization were described in Chapter 2 for a price-taking firm.  A price-taking firm falls under the perfectly competitive market structure.  Let us now extend the concept to other market structures, situations where firms are not price takers.  Recall that marginal revenue (MR) was defined as the increase in revenue that results from producing an additional unit of output.  Recall also that marginal cost (MC) was defined as the increase in total cost that results from producing an additional unit of output.  Profit is maximized where MR = MC.  One way to prove this is to use the logic of contradiction. 
+
+To prove that the only situation where profit could be maximized is if MR = MC, let us suppose otherwise. Suppose MR > MC, could profit be maximized?  The answer is no. If the firm produced on more unit, its revenue would increase by MR but its cost would increase by MC.  Since MR > MC, its profit would go up as it produced more.  Thus, profit could not be at a maximum if MR > MC.  Now suppose that MR < MC, could profit be maximized? Again the answer is no. If the firm produced one less unit, its revenue would go down by MR and its cost would go down by MC.  Since MR < MC, its profit would go up as it produced less.  Thus profits could not be maximized if MR < MC.  
+
+In Chapter 2, you learned that MR = P for a firm that is in a perfectly competitive market (a firm that is a price taker).  In imperfectly competitive markets like monopoly, oligopoly, or monopolistic competition, this is not the case.  In fact, MR < P in imperfectly competitive markets.  This is because the price that the firm receives is impacted by quantity that the firm places on the market.  A general formula for marginal revenue that applies to all market structures is
+
+$$MR = P + \frac{\Delta P}{\Delta Q} Q.$$
+
+The law of demand indicates that  $\frac{\Delta P}{\Delta Q} < 0$.  If more is placed on the market, price will need to fall in order to induce additional consumers into the market and/or convince existing consumers to purchase larger amounts. Thus, marginal revenue depends on the quantity placed on the market so long as $\frac{\Delta P}{\Delta Q}$ does not equal zero.
+
+
+### Marginal Revenue if Inverse Demand is Linear
+Look carefully at the MR formula above.  The second term, $\frac{\Delta P}{\Delta Q}Q$, is the slope of the inverse demand curve facing the firm multiplied by quantity.  The first term, $P$, is the inverse demand curve itself.  Thus if you have a linear inverse demand curve of the form  $P = a + b Q$, you can use the fact that $b = \frac{\Delta P}{\Delta Q}$ and the general formula above to find a simple expression for marginal revenue:  
+
+$$ MR = P + b Q = a + bQ  + bQ \implies MR =  a + 2bQ.$$
+
+Thus, if the inverse demand curve is linear, then the marginal revenue curve will have the same intercept as the inverse demand curve and twice the slope.    In the formula above, it is important to emphasize that the inverse demand curve in question is that which faces the firm.  Unless the firm is a monopolist, the inverse demand curve facing the firm will be different than the inverse demand curve facing the market.    
+
+### Marginal Revenue in Terms of the Elasticity of Demand Facing the Firm
+Using the definition of the point elasticity and a little bit of algebra, you can use the general formula for marginal revenue above to show that 
+
+$$MR = P (1+ \frac{1}{\varepsilon}),$$
+
+
+where $\varepsilon$ is the price elasticity of demand facing the firm.  It is important to emphasize that in this case, $\varepsilon$ is the elasticity facing the firm, which is not the same as the market elasticity.  Only if the firm is a monopolist will the elasticity of market demand be the same as the elasticity of demand facing the firm.  
+
+There are two interesting implications of the elasticity version of the MR formula.  First, if you know demand elasticity and assume profit maximizing behavior, you can arrive at an estimate of marginal cost because $MR = MC$ when profits are maximized.  Second, given a non-negative marginal cost, a firm that faces a downward sloping demand curve will always price in a region where demand is elastic.  This argument has been made before in Chapter 3.  Here you see it again in terms of the firm's profit maximizing condition.
+
+### Elasticity of Demand Facing Firms in Perfect Competition
+The difference between the elasticity of demand facing a firm and that facing the market is most pronounced in perfect competition.  In perfect competition, there are many firms.  Each firm is small relative to the size of the market.  As a result, the firm can put more quantity on the market and not have a material effect on the market price.  In this case, $\frac{\Delta P}{\Delta Q} = 0$ and the elasticity of demand facing the firm is $-\infty$.  The market demand may be elastic or inelastic.  However, the elasticity facing the firm is negative infinity (perfectly elastic).  In other words, if the competitive firm attempts to raise its price, it loses all of its sales.  Thus,  
+
+$$MR = P(1+ \frac{1}{-\infty}) = P.$$
+
+This is the profit maximizing condition for price-taking firm that was presented earlier in Chapter 2.
+
+***
+
+#<span style="color:SaddleBrown">Profit Maximization for a Monopolist or Monopolistically Competitive Firm</span>
+
+The profit maximizing condition can be used to solve the monopolist's problem.  Suppose, as in Demonstration 1 below, that the inverse demand curve facing the monopolist is $P = 100-3Q$.  Since this inverse demand curve is linear, the marginal revenue curve has the same intercept and a slope that is twice as steep.  Thus, $MR = 100 - 6Q$.  Suppose further that marginal cost is equal to \$4Q.  Set $MR = MC$ or $100 - 6Q = 4Q$ and solve for $Q$.  You get $Q$ = 10 units.  This is the profit maximizing quantity.
+
+Next, use the inverse demand curve to find the profit maximizing price.  Although the monopolist equates marginal revenue with marginal cost, it uses the inverse demand curve (not the marginal revenue curve) to set the price.  Substituting the profit maximizing quantity into the inverse demand curve, you get a price of $100 - 3(10) = \$70$.  
+
+Notice in the demonstration that the area of the blue rectangle represents profits.  Use Demonstration 1 to verify that profits go down if the monopolist does no set the quantity so that $MR = MC$. 
+
+***
+
+####Demonstration 1. Profit Maximization Problem for a Monopolist
+
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      sliderInput("qq","Quantity Chosen by Monopolist",min = 2,max = 16,value = 10,ticks = F)
+    ),
+    mainPanel(plotOutput("firmPlot"),
+              textOutput("mes1"),
+              textOutput("mes2"),
+              textOutput("mes3"))
+    
+    ),
+  server = function(input,output) {
+    ac<-reactive(round(100/input$qq+2*input$qq,2))
+    mc<-reactive(4*input$qq)
+    prof<-reactive(round((100-3*input$qq-ac())*input$qq,2))
+    output$mes1<-renderText(paste("Marginal Cost (MC) = $",format(mc(),nsmall=2),sep=""))
+    output$mes2<-renderText(paste("Average Total Cost (AC) = $",format(ac(),nsmall=2),sep=""))
+    output$mes3<-renderText(paste("Profit = (P - AC)Q =$",format(prof(),nsmall=2),sep=""))
+    output$firmPlot<- renderPlot({
+      par(bg="beige")
+      plot(1:25,100/(1:25)+2*(1:25),type="l",col="green", lwd=2,
+         xlim=c(0,25),ylim=c(0,120),
+         xlab="Quantity produced (Q)",
+         ylab="Value ($)",xaxs="i",yaxs="i",bty="n",
+         xaxt='n',yaxt='n'
+      )
+     rect(0,ac(),input$qq,100-3*input$qq, border=NA, col=rgb(ifelse(prof()>0,0,1), 0, ifelse(prof()>0,1,0),0.5))
+     lines(0:25,4*(0:25),col="purple",lwd=2) #Marg. cost
+     lines(1:25,100/(1:25)+2*(1:25),col="green", lwd=2)
+     lines(c(0,25),100-3*c(0,25),col="blue",lty=1,lwd=2) #Inv demand
+     lines(c(0,25),100-6*c(0,25),col="red",lty=1,lwd=2) #Marg. rev.
+     lines(c(input$qq,input$qq),c(0,100-3*input$qq),col="blue",lty=2)
+     axis(1, at=c(0,input$qq,25), labels=c("",input$qq,""),lwd.ticks=1)
+     axis(2, at=c(0,ac(),100-3*input$qq,100,120), labels=c("",ac(),100-3*input$qq,"",""),lwd.ticks=1)
+     legend(15,120,c(expression("AC = "*frac(100,Q)+"2Q"),"MC = 4Q","P = 100 - 3Q","MR=100-6Q"),lty=c(1,1,1,1), lwd=c(2.5,2.5,2.5,2.5),col=c("green","purple","blue","red")) 
+     })
+    },
+  options = list(height = 500)
+  )
+```
+
+***
+
+The steps involved in finding the solution to the firm's problem under monopolistic competition are exactly the same as the monopolist's problem above.  The primary difference between monopoly and monopolistic competition is that entry is possible in monopolistic competition.  If profits are positive, new firms will enter the market and/or existing firms will mimic the successful practices of competitors.  When economic profits are zero, there is no additional entry, and the market is at an equilibrium. In a no-entry equilibrium under monopolistic competition, the rectangular area that represents profits will be just equal to the sunk costs that would need to be incurred if the market were to be entered by a new firm.  New firms would see entry into the market as unattractive since the profits to be gained would be consumed by the sunk costs of entry.
+
+***
+
+#<span style="color:SaddleBrown">Profit Maximization in an Oligopoly</span>
+
+To introduce oligopoly, consider an example where there are only two firms that supply the market, Firm A and Firm B.  This is the simplest form of oligopoly (a duopoly).  To simplify the example further, assume that both firms have identical variable cost functions $VC = 20Q_i$, where $i \in [A, B]$.   This means that the marginal cost facing each firm is $MC = 20$. Finally, suppose that the inverse demand curve for this industry is 
+
+$$P = 200 - 2Q_A- 2Q_B.$$  
+
+Just to be clear, $Q_A$ is the amount that Firm A produces and $Q_B$ is the amount that Firm B produces.
+
+Because the inverse demand curve is linear, it is easy to find marginal revenue.  Note that Firm A can only choose $Q_A$. The amount of $Q_B$ is outside of Firm A's control, so the $Q_B$ component of the industry inverse demand curve becomes part of the intercept of the inverse demand curve that Firm A actually faces.  With this in mind, the MR for Firm A is 
+
+$$MR_A = 200 - 4Q_A-2Q_B.$$
+
+Set $MR = MC$ for Firm A to find profit maximizing quantity for Firm A conditional on Firm B's output choice
+
+$$200 - 4Q_A-2Q_B = 20 \implies Q_A = 45 - \frac{1}{2}Q_B.$$
+This is known as the **reaction function** for Firm A.  It indicates Firm A's optimal quantity choice as a function of Firm B's quantity.  In other words, it says how Firm A's quantity will react to a change in Firm B's quantity. 
+
+Next, repeat the above steps to find profit maximizing quantity for Firm B conditional on Firm A's output choice.  MR for Firm B is 
+
+$$MR_B = 200 - 2Q_A - 4Q_B.$$
+
+Set MR = MC for Firm B and solve for $Q_B$ to get Firm B's reaction function.
+
+$$200 - 2Q_A-4Q_B = 20 \implies Q_B = 45 - \frac{1}{2}Q_A.$$
+
+####Cournot Nash Equilibrium
+
+A __Cournot Nash equilibrium__ occurs where the reaction functions for these two firms intersect (see Figure 1).  To find the equilibrium, we can substitute Firm B's reaction function into the reaction function for Firm A:
+
+$$Q_A = 45 - \frac{1}{2}(45 - \frac{1}{2}Q_A).$$
+
+Now there is one equation and one unknown.  Solving for $Q_A$ provides $Q_A = 30$. Putting this back into Firm B's reaction function, we find that $Q_B = 30$ as well.  
+
+***
+
+```{r, echo=FALSE}
+par(bg="beige")
+plot(0:90,45-0.5*(0:90),type="l",lwd=2,col="red", 
+     ylab="Firm A's Quantity", xlab = "Firm B's Quantity",
+     ylim=c(0,90),xaxs="i",yaxs="i",bty="n", xaxt='n',yaxt='n')
+lines(0:90,90-2*(0:90),col="blue",lwd=2)
+lines(c(0,30),c(30,30),lty=2)
+lines(c(30,30),c(0,30),lty=2)
+axis(1, at=c(0,30,45,90),lwd.ticks=1)
+axis(2, at=c(0,30,45,90),lwd.ticks=1, las=1)
+legend(30,50,c("Firm A's Reaction Function","Firm B's Reaction Function"),lty=c(1,1), lwd=c(2.5,2.5),col=c("red","blue"))
+```
+
+####Figure 1. Cournot Nash Equilibrium for Two Firms in Oligopoly
+
+***
+
+Finally, we can find the price at the Cournot Nash Equilibrium by putting these quantities into the industry inverse demand curve to get
+
+$$P = 200 - 2(30)-2(30) = 80.$$
+
+A Nash equilibrium refers to a situation wherein each agent chooses a strategy that maximizes his or her payoffs conditional on the strategies of all other agents. In the example above, the strategy variable is the quantity to be placed on the market.  The Cournot equilibrium is a Nash equilibrium because 30 units is the optimal quantity to be placed on the market by Firm A, given that Firm B places 30 units on the market and *vice versa*.  This type of equilibrium, is named after [John Forbes Nash, Jr.](https://en.wikipedia.org/wiki/John_Forbes_Nash_Jr.), a mathematician who was awarded the Nobel Prize in Economics for this idea. The model in this example is one of Cournot oligopoly, wherein competition is on quantity.  This model is named after another mathematician, [Antoine Augustin Cournot](https://en.wikipedia.org/wiki/Antoine_Augustin_Cournot).
+
+
+***
+
+###The Prisoners' Dilemma
+
+The Cournot Nash equilibrium outcome is not optimal from the standpoint of the two oligopolists because there exists another feasible outcome that provides each firm with a higher level profits.  To demonstrate, suppose that the two firms merged. Now there would be just one combined quantity to put on the market $Q_M = Q_A + Q_B$.  The inverse demand equation for the combined firm would be 
+
+$$P = 200 - 2Q_M$$.
+
+Assuming that the merger does not impact marginal cost, the marginal cost would still be $MC = 20$, but marginal revenue for the merged firm would now be $P = 200 -4Q_M$.  Setting marginal revenue equal to marginal cost and solving for $Q_M$ results in the merged firm (now a monopolist) putting a quantity of 45 units on the market and charging a price of $P=200-2(45) = \$110$.  The point here is that technically it would be feasible for the oligopolists to each put half of this amount, 22.5 units, on the market.  The industry price would be \$110, and they would each be more profitable.  
+
+* At the Cournot Nash equilibrium, each firm makes profits above fixed costs of $(80-20) \times 30 = \$1,800$.
+
+* By each putting half of the monopoly quantity on the market, each firm would make profits above fixed costs of $(110-20) \times 22.5 = \$2,025$.
+
+The prisoners' dilemma is a metaphor commonly used in the social sciences, including economics, to help understand problems such as that facing the oligopolists in Cournot competition.  In the prisoners' dilemma, two criminals are apprehended and placed in separate cells.  The prosecutor has enough evidence to put each away for two years.  However, these criminals are guilty of an offence that carries an eight year sentence if evidence is sufficient to convict.  The prosecutor needs one or both of the prisoners to turn state's evidence.  The payoffs facing these prisoners is summarized in the following table
+
+***
+
+####Table 2. Payoffs in the Prisoners' Dilemma
+
+Prisoner 1 (rows), Prisoner 2 (cols.)    | Prisoner 2 Tells  | Prisoner 2 Doesn't Tell
+-----------------------------------------|-------------------|-------------------------
+**Prisoner 1 Tells**                     |  -6, -6           |  0, -8
+**Prisoner 1 Doesn't Tell**              |  -8,  0           | -2, -2
+
+ 
+Note: Prisoner 1's payoff is the first number in each cell (no pun intended), Prisoner 2's payoff is the second number.
+  
+***
+  
+The prosecutor meets the prisoners separately and offers to reduce the sentence by two years in return for implicating the other in the more serious crime.  Thus, if one prisoner implicates his friend while the other remains silent, the one that turns state's evidence will get a suspended sentence (zero years), while the other will get eight years.  If both prisoners implicate each other, both get six-year sentences.  If both remain silent, both get two-year sentences.  
+
+The Nash equilibrium in the prisoners' dilemma is for each prisoner to tell on the other.  As a result, each prisoner gets six years. Had the prisoners kept quiet, they would have gotten only two years each, something better from their perspective.  The reason the prisoners have a dilemma is that if I think you will tell on me, it is certainly in my best interest to tell on you.  Similarly, if I think you will not tell on me, it is still in my interest to tell on you and get the suspended sentence.  Moreover, I know that if I do not tell on you, your best course of action is to tell on me.  Thus, each prisoner's best action given his expectation of the other's action is to tell.
+
+The Cournot model of oligopoly is like the prisoners' dilemma.  In our example of the duopolists above, placing half of the monopoly quantity on the market is analogous to "not telling" in the prisoners' dilemma.  Now, suppose that Firm B decides to do this and sets its quantity at $Q_B = 22.5$.  Firm A uses its reaction function to set its quantity as
+
+$$Q_A = 45 -\frac{1}{2}(22.5) = 33.75.$$
+
+In this case, Firm B's profits above fixed costs are \$1,518.75.  Firm A's profits above fixed costs are \$2,278.13.  This is much better than what Firm A could get by matching Firm 2's quantity at 22.5 units and much worse for Firm B in comparison to what it could have achieved had it simply put its Cournot equilibrium quantity on the market.  Thus, in a Cournot oligopoly, firms have an incentive to put more on the market than that which optimizes profits for the industry as a whole.  This problem is compounded as more and more firms to the Cournot oligopoly.  In fact, the market price approaches the competitive price ($P = MC$) and profits go to zero as the number of firms in a Cournot oligopoly becomes large.  Demonstration 2 shows what happens to total industry profits at the Cournot Nash equilibrium as the number of firms in the industry increases.  Notice that the prisoners' dilemma becomes even more pronounced as the number of firms increases.  
+
+***
+
+####Demonstration 2.  Profitability of a Cournot Oligopoly Relative to a Monopoly as Number of Firms Change*
+
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      radioButtons("N", label = "Number of firms in Cournot Model:",
+                   choices = list(2,5,10,50,100,500),
+                   selected = 2,inline=F)
+    ),
+    mainPanel(plotOutput("CournotPlot"))
+  ),
+  server = function(input,output) {
+    
+    M<-reactive(diag(input$N)*2+2)
+    qq<-reactive(round(det(cbind(rep(180,ncol(M())),M()[,2:ncol(M())]))/det(M()),2))
+    QQ<-reactive(qq()*as.numeric(input$N))
+    PP<-reactive(round(200-2*QQ(),2))
+    prof<-reactive(round((PP()-20)*qq(),2))
+    Cprof<-reactive(round(prof()*as.numeric(input$N),2))
+    
+    output$CournotPlot<- renderPlot({
+            symbols(c(140, 170),c(200,200), circles = c(sqrt(4050/pi),sqrt(Cprof()/pi)), 
+            xlim=c(130,190),ylim=c(100,300),xlab = "", ylab = "", col=c("blue","red"), bg=c("blue","red")
+            ,xaxt="n",yaxt="n"
+            )
+    legend(130,300,c("Monopoly Profit Pie","Cournot Profit Pie"),pch=c(19,19), col=c("blue","red"))
+    text(160,280, paste("Number of firms = ",input$N),pos=4)
+    text(160,130, paste("Cournot quantity (per firm) = ",QQ(),"(",qq(),")"),pos=4)
+    text(160,120, paste("Cournot price = ",PP()),pos=4)
+    text(160,110, paste("Industry profits = ",Cprof()),pos=4)
+    text(160,100, paste("Profits per firm = ",prof()),pos=4)
+    text(130,130, paste("Monopoly quantity = ",45),pos=4)
+    text(130,120, paste("Monopoly price = ",110),pos=4)
+    text(130,110, paste("Monopoly profits = ",4050),pos=4)
+    })
+  }
+  #,
+  #options = list(width = 800)
+)
+```
+
+*In Demonstration 2, the market inverse demand curve is $P=200 - 2\sum{Q_i}$ and $MC = 20$ for all firms.
+
+***
+
+### Alternative Bertrand Version of the Oligopoly
+
+In the Cournot model, firms compete by setting quantities.  The Bertrand model is an alternative formulation of the oligopolists' problem and differs in that the firms compete by setting prices instead.  This model is named after [Joseph Bertrand](https://en.wikipedia.org/wiki/Joseph_Bertrand), a mathematician who is credited with formalizing this model.  Again, to keep things simple, assume that there are two firms.  Furthermore, assume that the products produced by each firm are identical.  This permits us to take the example above and adapt it to the Bertrand framework.  
+
+If Firm A sets its price lower than Firm B's price ($P_A<P_B$), then Firm A faces a direct demand function of 
+
+$$Q_A = 100 - \frac{1}{2} P_A.$$
+
+If Firm A sets its price above Firm B's price, then Firm A's demand is 
+$$Q_A = 0.$$
+Finally, if Firm A's price matches Firm B's price ($P_A = P_B$), then consumers randomly choose to patronize Firm A or Firm B with equal probability.  In this case, Firm A stands to get about half the market, so its demand is
+
+$$Q_A = 0.5 (100 - \frac{1}{2} P_A).$$
+
+The demand facing Firm B is similarly structured.  Firm B gets the entire market if $P_B<P_A$, sells nothing if $P_B > P_A$, and splits the market 50/50 with A if $P_B = P_A$.  As before, assume that each firm faces a constant marginal cost of MC = \$20.  
+
+The Bertrand Nash equilibrium outcome occurs where $P_A = P_B = MC$.  In this case, profits to each firm are zero, and the oligopoly outcome is the same as that which would have occurred under perfect competition.  Demonstration 3 reflects the scenario just described and shows why.  
+
+Suppose that Firm A and Firm B have each chosen the monopoly price of \$110.  Each makes \$2,025.  This cannot be a Nash equilibrium because \$110 is not the best price for Firm A given that Firm B charges \$110.  Firm A could undercut Firm B by charging a price of \$80, in which case Firm A's profits would go up to \$3,600. Of course, Firm B would undercut Firm A and the process would continue until each firm's price fell to its marginal cost of \$20.  This is the Bertrand Nash Equilibrium.  No firm would cut below its marginal cost.  
+
+***
+
+####Demonstration 3.  Bertrand Duopoly
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      selectInput(
+        "firmA",
+        label = "Firm A's Price",
+        choices = as.character(c(110,80,50,40,30,20,15)),
+        selected = "80", 
+        selectize=F),
+      selectInput(
+        "firmB",
+        label = "Firm B's Price",
+        choices = as.character(c(110,80,50,40,30,20,15)),
+        selected = "80", 
+        selectize=F)
+    ),
+    mainPanel(tableOutput("table"))
+    ),
+  server = function(input,output) {
+    pA<-reactive({as.numeric(input$firmA)}) 
+    pB<-reactive({as.numeric(input$firmB)}) 
+    q<-reactive(100-0.5*min(pA(),pB()))
+    qA<-reactive(ifelse(pA()==pB(),0.5*q(),ifelse(pA()<pB(),q(),0)))
+    qB<-reactive(q()-qA())
+    profA<-reactive((pA()-20)*qA())
+    profB<-reactive((pB()-20)*qB())
+    output$table<-renderTable(data.frame(
+      Price=c(pA(),pB()), 
+      Quantity=c(qA(),qB()),
+      Profits=c(profA(),profB()),
+      row.names=c("Firm A","Firm B")
+      ), rownames=T
+      )
+  },
+    options = list(height = 250)
+  )
+```
+
+***
+
+### The Folk Theorem
+
+Both Cournot and Bertrand outcomes typify the prisoners' dilemma because equilibrium outcomes do not maximize industry profits. In each case, there is a feasible outcome (sharing the market at the monopoly price and quantity) that makes firms better off than the Nash equilibrium profits.
+
+Might firms be able to coordinate tacitly on a quantity less than the Cournot quantity or on a price higher than the Bertrand price?  Suppose, for sake of argument, that Firm A and B are in Bertrand competition and each has matched the others price at \$80.  This price is above the Bertrand Nash Equilibrium price of \$20 per unit, but it corresponds to the market price the firms would get at the Cournot Nash Equilibrium.  If, in the current period, Firm A raises its price from \$80 to \$110, the monopoly price, how should Firm B respond?  Pretend that you are Firm B.  You might reason as follows:  
+
+* If I keep my price at \$80 and do not raise my price to match Firm A, I will have the entire market during this period.  My profits will be \$3,600. This is certainly better than \$2,025 I would receive if I did match Firm A's higher price.
+
+* However, if I do not match, I cannot expect that Firm A will not continue to keep its price high in the next period.  When it sees that I have not matched its price increase and it loses market share, it will certainly cut is price back to \$80 during the next period or possibly even lower.  I will be back to getting \$1,800 in profits (or possibly something worse).  
+
+* If I do match Firm A's price increase, Firm A will probably continue to keep its price high at \$110.  Thus I will be getting \$2,025 each period as opposed to \$1,800.  Over the long-term, matching the price increase would pay off.
+
+In this highly stylized example, the decision to match the price increase boils down to taking a one-time windfall of \$3,600 (if Firm B does not match) or a \$2,025 in profits in every period going forward (if Firm B does match).  
+
+The __*folk theorem*__ states that for an indefinitely repeated prisoners' dilemma (such as Bertrand) and provided that discount rates are not too high, an outcome preferable to the Nash equilibrium (e.g., a price above the Bertrand price) can be sustained over time.  One way firms reinforce the folk theorem is to match their competitors' pricing decisions __*tit-for-tat*__.  Tit-for-tat means that one agent responds in kind to another.  In the Bertrand example, Firm B plays tit-for-tat if it cuts (raises) its price whenever Firm A cuts (raises) its price. Firm B would want Firm A to know that it intends to play tit-for-tat in setting its prices. Thus, it might advertise to make sure Firm A is aware that it will face tit-for-tat retaliation in the event it decides to cut its price.  
+
+Many advertisements that you see send a subtle message to competitors that they can expect tit-for-tat retaliation in the event of a price cut.  For example, consider the following Walmart advertisement: [go to youtube.com](https://www.youtube.com/watch?v=CIXOU7DQdS8).  The advertisement is designed to make you feel like you will be getting the best price if you shop at Walmart and that the whole supply chain is organized to keep prices low.  However, this add could also sends a subtle message to competing retailers.  The message is as follows: If you cut your price, Walmart will match it.  In other words, think carefully before making a price cut because Walmart will respond tit-for-tat!
+
+Oligopolists may appeal to the folk theorem and avoid the prisoners' dilemma inherent in the Cournot and Bertrand models provided certain conditions are met.  The theorem itself mentions two conditions.  
+
+1. The first is that all firms expect the competitive interaction to continue indefinitely.  The folk theorem works because future profits serve as an incentive not to undercut competitors today.  If firms know that competition will be for this period and this period only, then there is no incentive not to undercut.  Moreover, if firms know they will compete for a known and finite number of periods, the incentive not to undercut unravels.  This is because all firms expect the others to undercut them in the last period, which means it would be best to undercut in the second-to-last period, which means it would best to undercut in the third-to-last period, and so forth.  The folk theorem only works if firms expect to be in competition for the foreseeable future.  
+
+2. Another requirement is that discount rates not be too high.  For the folk theorem to apply, future returns that result from not undercutting your competitor's price must be large enough to offset the immediate gains you will receive if you do undercut a competitor.  If discount rates are high, then returns in the future have less value today and the folk theorem is less likely to apply.  
+
+The rapidity with which firms can respond to price changes of competitors also affect whether the folk theorem can hold.  If firms play tit-for-tat, then when one firm undercuts, it can expect retaliation by other firms.  If it takes a long time for other firms to retaliate, then undercutting becomes more attractive regardless of the discount rate.  
+
+It also helps if firms are similar.  This is because it is illegal for firms to collude to fix prices.  There must be some price point that all firms can agree upon tacitly, without formally colluding to fix a price.  The existence of such a point will be more likely if firms are reasonably similar in terms of costs and product characteristics. 
+
+***
+
+#<span style="color:SaddleBrown">Concluding Comments : Effects of Imperfect Competition on Economic Welfare</span>
+
+In imperfectly competitive markets like monopoly, oligopoly, and monopolistic competition, it is often the case that sellers can increase profits at the expense of consumers through their ability to control quantity or price.   This is good for the seller but is bad for society as a whole.  To conclude this chapter, it is worthwhile to spend some time on the welfare implications of imperfect competition.  When markets are imperfectly competitive, the results are that (1) too little is produced; (2) too high of a price is charged for what is produced; and (3) there is a resulting dead-weight loss to the economy.  In short, imperfect competition costs the economy in terms of a misallocation of resources.  The combined value of economic activity measured as the sum of producers' and consumers' surplus would be higher if imperfectly competitive markets behaved competitively.  Table 3 illustrates this point using the Cournot Nash equilibrium example above.  Notice that total surplus in the market increases as the market becomes more competitive.  Producers' surplus declines but the gains in consumers' surplus more than offset the decline in producers' surplus.  
+
+***
+
+####Table 3. Economic Welfare at Cournot Nash Equilibrium for Different Numbers of Firms*
+
+Number of Firms                   | Producers' Surplus (Profits) | Consumers' Surplus | Total Surplus
+----------------------------------|------------------------------|--------------------|--------------
+1 (monopoly)                      | \$4,050                      | \$2,025            | \$6,075
+2 (oligopoly)                     | \$3,600                      | \$3,600            | \$7,200
+5 (oligopoly)                     | \$2,250                      | \$5,625            | \$7,875
+10 (oligopoly)                    | \$1,339                      | \$6,694            | \$8,033
+Many (approaching perfect competition)  | \$32                         | \$8,068            | \$8,100
+
+*In Table 3, the market inverse demand curve is $P=200 - 2\sum{Q_i}$ and $MC = 20$ for all firms.
+
+***
+
+For the simple reason that total surplus increases with stronger competition, most governments have laws in place to encourage competition in markets.  These are referred to as antitrust laws.  Regulatory agencies evaluate mergers and acquisitions to determine whether they will adversely impact competition.  A good example is provided by Hayenga and Wisner (2000).  These authors describe antitrust issues that were evaluated in approving a merger between Cargill and Continental Grain, two entities with large grain merchandising businesses.  Moreover, antitrust laws make it illegal to fix prices or form a cartel to limit quantity.  A famous case of price fixing in agriculture involved lysine, an amino acid used in livestock and poultry feeds.  ADM, a US company, conspired with Japanese and South Korean lysine manufacturers to keep the price of lysine above competitive levels.  The conspirators faced criminal and civil penalties as a result of the price-fixing conspiracy.  A very good overview of this case is presented by Connor (1997).  In fact, there was even a movie made about this incident starring Matt Damon. [See the trailer on youtube.com](https://www.youtube.com/watch?v=3SooBX1-kIQ).  The movie is titled *The Informant* and is based on a book by the same name.  I am unable to recommend the movie one way or the other as I have not seen it, but it may be something you want to check out some weekend.  If you do watch it, I will be interested to hear what you think.  Both the Hayenga and Wisner (1997) and Connor (1997) articles are available through the University of Arkansas Libraries.
+
+
+***
+
+#<span style="color:SaddleBrown">References</span>
+
+Baumol, W. J., J. C. Panzar, and R. D. Willig. 1982. *Contestable Markets and the Theory of Industry Structure.* New York: Harcourt Brace Jovanovich.
+
+Hayenga, M. and R. Wisner. 2000. Cargill’s Acquisition of Continental Grain’s Grain Merchandising Business. *Review of Agricultural Economics* 22:252-266
+
+Connor, J. M. 1997. The Global Lysine Price-Fixing Conspiracy of 1992-1995. *Review of Agricultural Economics* 19:412-427
+
+***
+
+#<span style="color:SaddleBrown">Problem Sets</span>
+
+#####Problem Set 1. Profit Maximization for the Monopolist of Monopolistically Competitive Firm
+
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      selectInput(
+        "prob",
+        label = "Problem Number",
+        choices = as.character(c(1:10)),
+        selected = "5", 
+        selectize=F),
+      checkboxInput("show", label = "Show Answer?", F),
+      p("Answers:"),
+      uiOutput("Answer0"),
+      uiOutput("Answer1"),
+      uiOutput("Answer2"),
+      width=4
+    ),
+    mainPanel(p("Given the following:"),
+              uiOutput("Demand"),
+              uiOutput("MC"),
+              uiOutput("AVC"),
+              uiOutput("E"),
+              p(" "),
+              uiOutput("Quest")
+    )
+  ),
+  server = function(input,output) {
+    #Enter matices for demand coefficients and datapoints
+    probDat<- data.frame(
+      a=c(100,200,300,400,460,200,288,300,400,456),
+      b=c(-2,-2.5,-3,-4,-5,-3,-3,-2.5,-4,-4.5),
+      c=c(20,20,30,40,50,20,30,30,80,42),
+      q=c(20,36,45,45,41,30,43,54,40,46),
+      p=c(60,110,165,220,255,110,159,165,240,249),
+      prof=c(800,3240,6075,8100,8405,2700,5547,7290,6400,9522)
+    )
+    pprob<-reactive({as.numeric(input$prob)}) #problem number from UI
+    output$Demand<-renderUI({paste("The inverse demand is P = ",probDat[input$prob,"a"],probDat[input$prob,"b"],"Q.",sep="")})
+    output$MC<-renderUI({paste("Marginal cost is ",probDat[input$prob,"c"],".",sep="")})
+    output$AVC<-renderUI({paste("Average variable cost is ",probDat[input$prob,"c"],".",sep="")})
+    output$E<-renderUI({"Assume a profit maximizing monopolist or monopolistically competitive firm."})
+    output$Quest<-renderUI({"Find the quantity, price and profits above fixed costs (FC)."})
+    
+    output$Answer0<-renderUI({
+      if(!input$show) return()
+      paste("The quantity is",probDat[input$prob,"q"],"units.")
+    })
+    output$Answer1<-renderUI({
+      if(!input$show) return()
+      paste("The price is",probDat[input$prob,"p"],"dollars.")
+    })
+    output$Answer2<-renderUI({
+      if(!input$show) return()
+      paste("Profits above FC are",probDat[input$prob,"prof"],"dollars.")
+    })
+  },
+    options = list(height = 300)
+)
+```
+
+####Problem Set 2. Two-Firm Cournot Duopoly
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      selectInput(
+        "prob",
+        label = "Problem Number",
+        choices = as.character(c(1:10)),
+        selected = "5", 
+        selectize=F),
+      checkboxInput("show", label = "Show Answer?", F),
+      p("Answers:"),
+      uiOutput("Answer0"),
+      uiOutput("Answer1"),
+      uiOutput("Answer2"),
+      width=4
+    ),
+    mainPanel(p("Given the following:"),
+              uiOutput("Demand"),
+              uiOutput("MC"),
+              uiOutput("AVC"),
+              p("Qa and Qb are quantities Firms A and B place on the market, respectively."),
+              uiOutput("Quest1"),
+              uiOutput("Quest2"),
+              uiOutput("Quest3")
+    )
+  ),
+  server = function(input,output) {
+    #Enter matices for demand coefficients and datapoints
+    probDat<- data.frame(
+      a=c(200,200,250,300,400,500,300,300,500,420),
+      b=c(-2,-2.5,-5,-4,-5,-4,-3,-2.5,-4,-4.5),
+      c=c(20,20,25,36,40,80,30,30,80,42),
+      cq=c(30,24,15,22,24,35,30,36,35,28),
+      cp=c(80,80,100,124,160,220,120,120,220,168),
+      cprof=c(1800,1440,1125,1936,2880,4900,2700,3240,4900,3528)
+    )
+    pprob<-reactive({as.numeric(input$prob)}) #problem number from UI
+    output$Demand<-renderUI({paste("The inverse demand is P = ",probDat[input$prob,"a"],probDat[input$prob,"b"],"Qa",probDat[input$prob,"b"],"Qb.",sep="")})
+    output$MC<-renderUI({paste("Marginal cost for each firm is ",probDat[input$prob,"c"],".",sep="")})
+    output$AVC<-renderUI({paste("Average variable cost for each firm is ",probDat[input$prob,"c"],".",sep="")})
+    output$Quest1<-renderUI({"Find the Cournot Nash equilibrium quantity for each firm."})
+    output$Quest2<-renderUI({"Calculate the market price at this equilibrium."})
+    output$Quest3<-renderUI({"Calculate the resulting profits above fixed costs (FC) for each firm."})
+    
+    output$Answer0<-renderUI({
+      if(!input$show) return()
+      paste("Each firm's quantity is",probDat[input$prob,"cq"],"units.")
+    })
+    output$Answer1<-renderUI({
+      if(!input$show) return()
+      paste("The market price is",probDat[input$prob,"cp"],"dollars.")
+    })
+    output$Answer2<-renderUI({
+      if(!input$show) return()
+      paste("Each firm's profits above FC are",probDat[input$prob,"cprof"],"dollars.")
+    })
+  },
+    options = list(height = 300)
+)
+```
+
+
+####Problem Set 3. Find the Monopolist's or Monopolistically Competitive Firm's Price
+```{r, echo=FALSE}
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      selectInput(
+        "prob",
+        label = "Problem Number",
+        choices = as.character(c(1:10)),
+        selected = "5", 
+        selectize=F),
+      checkboxInput("show", label = "Show Answer?", F),
+      p("Answer:"),
+      uiOutput("Answer0"),
+      width=4
+    ),
+    mainPanel(p("Given the following:"),
+              uiOutput("Elast"),
+              uiOutput("MC"),
+              p("   "),
+              uiOutput("Quest1")
+    )
+  ),
+  server = function(input,output) {
+    #Enter matices for demand coefficients and datapoints
+    probDat<- data.frame(
+      E=c(-1.5,-2.5,-2,-3,-2,-1.5,-2.5,-2,-3,-2),
+      MC=c(8,30,30,20,20,20,12,20,40,40),
+      P=c(24,50,60,30,40,60,20,40,60,80)
+    )
+    pprob<-reactive({as.numeric(input$prob)}) #problem number from UI
+    output$Elast<-renderUI({paste("The elasticity of demand facing the firm is ",probDat[input$prob,"E"],".",sep="")})
+    output$MC<-renderUI({paste("The firm's marginal cost is ",probDat[input$prob,"MC"],".",sep="")})
+    output$Quest1<-renderUI({"What price maximizes this firm's profits?"})
+    
+    output$Answer0<-renderUI({
+      if(!input$show) return()
+      paste("The profit maximizing price is ",probDat[input$prob,"P"],".", sep="")
+    })
+  },
+    options = list(height = 300)
+)
+```
+
+
+####Problem Set 4. Multiple Choice
+
+```{r, echo=FALSE}
+###############################################################################
+# ResponseMC(correct,nchoices=4)
+# A shinyApp function to accept and check a multiple choice response.  The required
+# argument to the function is the letter of the correct response.
+#
+# Example:
+# ResponseMC("a",5) is used if "a" is the correct choice and a-e options.
+###############################################################################
+
+ResponseMC<- function(correct,nchoices=4){
+  shinyApp(
+    ui = fluidPage(
+      fluidRow(
+        column(2,
+               selectInput(
+                 "answer",
+                 label = NULL,
+                 choices = c("No selection",letters[1:nchoices]),
+                 selected = "No selection", 
+                 selectize=F)),
+        column(4,htmlOutput("resp"))
+        )
+      ),
+    server= function(input,output) {
+      output$resp<-renderText(
+        ifelse(input$answer=="No selection",
+               "Choose a letter from the menu.",
+               ifelse(input$answer==correct, 
+                      paste("You are correct! The answer is ", correct,".",sep=""),
+                      paste("Sorry. The correct answer is ", correct,".",sep=""))
+               )
+        )
+      },
+    options = list(height = 50)
+  )
+  }
+```
+
+1.	**An industry with many sellers with differentiated products is classified as**
+a.	A monopoly
+b.	An oligopoly
+c.	Monopolistically competitive
+d.	Perfectly competitive
+
+```{r, echo=FALSE}
+ResponseMC("c")
+```
+
+2.	**The folk theorem is of primary interest in understanding competition in an industry that is**
+a.	A monopoly
+b.	An oligopoly
+c.	Monopolistically competitive
+d.	Perfectly competitive
+
+```{r, echo=FALSE}
+ResponseMC("b")
+```
+
+3.	**An industry where firms are price takers is**
+a.	A monopoly
+b.	A monopsony
+c.	Monopolistically competitive
+d.	Perfectly competitive
+
+```{r, echo=FALSE}
+ResponseMC("d")
+```
+
+4.	**An industry where firms face an infinitely negative own-price elasticity is**
+a.	A monopoly
+b.	A monopsony
+c.	Monopolistically competitive
+d.	Perfectly competitive
+
+```{r, echo=FALSE}
+ResponseMC("d")
+```
+
+5.	**In the Cournot model, competitors compete by choosing**
+a.	Prices
+b.	Quantities
+c.	Contracting methods
+d.	Management styles
+
+```{r, echo=FALSE}
+ResponseMC("b")
+```
+
+6.	**In the Bertrand model, competitors compete by choosing**
+a.	Prices
+b.	Quantities
+c.	Contracting methods
+d.	Management styles 
+
+```{r, echo=FALSE}
+ResponseMC("a")
+```
+
+7.	**The Cournot or Bertrand Nash equilibrium is**
+a.	Analogous to the prisoner’s dilemma outcome because there is a feasible outcome that is better for the firms involved.
+b.	Modeled using a hedonic pricing model
+c.	Similar to 1st degree price discrimination
+d.	Similar to 3rd degree price discrimination
+
+```{r, echo=FALSE}
+ResponseMC("a")
+```
+
+8.	**Which is true of a price taking firm?**
+a.	It can sell all that it wants at the going price.
+b.	Its actions have a negligible impact on the market price.
+c.	It will maximize profits by producing where price is equal to marginal cost.
+d.	All of the above.
+
+```{r, echo=FALSE}
+ResponseMC("d")
+```
+
+9.	**A profit maximizing firm will set price = marginal cost (p = MC) in which market structure?**
+a.	Perfect competition
+b.	Monopolistic competition
+c.	Oligopoly
+d.	Monopoly
+e.	All of the above
+
+```{r, echo=FALSE}
+ResponseMC("a",5)
+```
+
+10.	**A profit maximizing firm will set marginal revenue = marginal cost (MR = MC) in which market structure?**
+a.	Perfect competition
+b.	Monopolistic competition
+c.	Oligopoly
+d.	Monopoly
+e.	All of the above
+
+```{r, echo=FALSE}
+ResponseMC("e",5)
+```
+
+11.	**In which market structure are strategic interactions among firms of primary interest?**
+a.	Perfect competition
+b.	Monopolistic competition
+c.	Oligopoly
+d.	Monopoly
+
+```{r, echo=FALSE}
+ResponseMC("c")
+```
+
+12.	**Which best describes a tit-for-tat response?**
+a.	The firm always prices lower than the competitor
+b.	The firm always prices a bit higher than the competitor to protect its margin
+c.	The firm cuts (raises) its price in response to a cut (raise) in price by its competitor
+d.	The firm chooses its Nash equilibrium price
+
+```{r, echo=FALSE}
+ResponseMC("c")
+```
+
+13.	**A firm that advertises, "We will match any competitors price" **
+a.	Could be warning its competitors that it follows a tit-for-tat pricing strategy
+b.	Must have low costs
+c.	Is more worried about market share than profits
+d.	All of the above
+
+```{r, echo=FALSE}
+ResponseMC("a")
+```
+
+14.	**Which factor makes it more likely that firms will be able to tacitly cooperate on a price above the Bertrand price?**
+a.	Discount rates are high
+b.	It takes a long time for firms to respond to a price change by a competitor
+c.	Firm's know that the competitive interaction will last for only three periods
+d.	Discount rates are low
+e.  There are major differences among firms in terms of costs and quality
+
+```{r, echo=FALSE}
+ResponseMC("d",5)
+```
+
+15.	**Which best describes a Nash equilibrium?**
+a.	Tacit coordination on the monopoly price
+b.	A situation where MR < P
+c.	A situation where each agent is choosing its best strategy given the strategies of all other agents.
+d.	Cases where price is above the break-even point
+
+```{r, echo=FALSE}
+ResponseMC("c")
+```
+
+
+***
+
+![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
+
+__*An Interactive Text for Food and Agricultural Marketing*__ by [Michael R. Thomsen](https://agribusiness.uark.edu/directory/index/uid/mthomsen/name/Michael+R.+Thomsen/) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).  Source files are available on [GitHub](https://github.com/thomsen-m/FAM-OER).
+
+***
