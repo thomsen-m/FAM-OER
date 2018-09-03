@@ -95,7 +95,7 @@ server = function(input,output) {
     lines(c(0,xinter()-2*input$pprice),c(input$pprice,input$pprice),col="green")
     lines(c(xinter()-2*input$pprice,xinter()-2*input$pprice),c(0,input$pprice),col="green")
     points(max(xinter()-2*input$pprice,0),input$pprice,pch=21,col="red",bg="red")
-  })
+  },height=400,width=500)
 },
 options = list(height = 425, width=900)
 )
@@ -163,7 +163,7 @@ server = function(input,output) {
     lines(c(0,xinter()-2*input$pprice),c(input$pprice,input$pprice),col="green")
     lines(c(xinter()-2*input$pprice,xinter()-2*input$pprice),c(0,input$pprice),col="green")
     points(max(xinter()-2*input$pprice,0),input$pprice,pch=21,col="red",bg="red")
-  })
+  },height=400,width=500)
 },
 options = list(height = 475, width=900)
 )
@@ -280,7 +280,7 @@ server = function(input,output) {
     lines(c(2,2),c(min(input$pprice,7),7),col="green")
     lines(c(3,3),c(min(input$pprice,3),3),col="green")
     lines(c(4,4),c(min(input$pprice,1),1),col="green")
-  },height=350)
+  },height=350,width=500)
 },
 options = list(height = 400, width=900))
 ```
@@ -320,7 +320,7 @@ server = function(input,output) {
     lines(c(3,3),c(min(input$pprice,500),500),col="green")
     lines(c(4,4),c(min(input$pprice,300),300),col="green")
     lines(c(5,5),c(min(input$pprice,200),200),col="green")
-  },height=350)
+  },height=350,width=500)
 },
 options = list(height = 400, width=900))
 ```

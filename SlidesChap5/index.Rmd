@@ -113,7 +113,7 @@ shinyApp(
       polygon(c(0,0,MM()/PP1()),c(0,MM()/PP2(),0),col=rgb(1,0,1,0.5),border=NA)
       axis(1, at=c(0,MM()/PP1(),21), labels=c("",round(MM()/PP1(),2),""),lwd.ticks=1)
       axis(2, at=c(0,MM()/PP2(),16), labels=c("",round(MM()/PP2()),""),lwd.ticks=1)
-    })
+    },height=400,width=500)
   },
   options = list(height = 475, width=800)
 )
@@ -269,7 +269,7 @@ shinyApp(
       text(QQ1(),QQ2(),"C",pos=3)
       axis(1, at=c(0,12), labels=c("",""),lwd.ticks=1)
       axis(2, at=c(0,12), labels=c("",""),lwd.ticks=1)
-      })
+      },height=400,width=500)
     output$demandPlot <- renderPlot({
       par(bg="beige")
       par(pty="s") #makes plot square
@@ -284,7 +284,7 @@ shinyApp(
       points(QQ1(),PP1(),pch=21,col="purple",bg="purple")
       axis(1, at=c(0,12), labels=c("",""),lwd.ticks=1)
       axis(2, at=c(0,16), labels=c("",""),lwd.ticks=1)
-      })
+      },height=400,width=500)
     },
   options = list(height = 800,width=800)
 )
@@ -426,7 +426,7 @@ shinyApp(
       text(JGD(),SGD(),"GD",pos=3)
       axis(1, at=c(0,JRD(),JGD(),15), labels=c("",JRD(),JGD(),""))
       axis(2, at=c(0,SGD(),SRD(),15), labels=c("",SGD(),SRD(),""))
-    })
+    },height=400,width=500)
   },
   options = list(height = 450, width=800)
 )
@@ -511,7 +511,7 @@ shinyApp(
       text(JFJ(),SFJ(),"FJ",pos=3)
       axis(1, at=c(0,JRD(),JFJ(),JGD(),15), labels=c("",JRD(),JFJ(),JGD(),""))
       axis(2, at=c(0,SGD(),SFJ(),SRD(),15), labels=c("",SGD(),SFJ(),SRD(),""))
-    })
+    },height=400,width=500)
   },
   options = list(height = 450, width=800)
 )

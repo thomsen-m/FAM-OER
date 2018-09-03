@@ -104,7 +104,7 @@ shinyApp(
       
       axis(1, at=c(40,60,60+as.numeric(input$shiftD),newQ(),80), labels=c("",60,60+as.numeric(input$shiftD),newQ(),""),lwd.ticks=1)
       axis(2, at=c(50,80,newP(),100), labels=c("",80,newP(),""),lwd.ticks=1)
-    })
+    },height=400,width=500)
   },
   options = list(height = 475, width=900)
 )
@@ -159,7 +159,7 @@ shinyApp(
       
       axis(1, at=c(40,60,60+as.numeric(input$shiftS),newQ(),80), labels=c("",60,60+as.numeric(input$shiftS),newQ(),""),lwd.ticks=1)
       axis(2, at=c(50,80,newP(),100), labels=c("",80,newP(),""),lwd.ticks=1)
-    })
+    },height=400,width=500)
   },
   options = list(height = 475, width=900)
 )
@@ -216,7 +216,7 @@ shinyApp(
       text(50,90,"2 (S<0)",pos=4,cex=2)
       text(70,70,"4 (S>0)",pos=4,cex=2)
       text(70,90,"3 (D>0)",pos=4,cex=2)
-    })
+    },height=400,width=500)
   },
   options = list(height = 475, width=900)
 )
@@ -401,7 +401,7 @@ shinyApp(
       points(solNew()[1],solNew()[3],col="purple",bg="purple",pch=21)
       axis(1, at=c(3,5,solBase[1],solNew()[1]), labels=c("","","",expression("Q"[1]^"E")),lwd.ticks=1)
       axis(2, at=c(5,7,solBase[3],solNew()[3]), labels=c("","","",expression("P"[1]^"E")),lwd.ticks=1)
-      })
+      },height=400,width=500)
     output$Mkt2Plot<-renderPlot({
       par(bg="beige")
       plot(A+a*(0:8),0:8,type="l",col="blue", lty=2, lwd=3,
@@ -422,7 +422,7 @@ shinyApp(
       points(solNew()[2],solNew()[4],col="purple",bg="purple",pch=21)
       axis(1, at=c(3,5,solBase[2],solNew()[2]), labels=c("","","",expression("Q"[2]^"E")),lwd.ticks=1)
       axis(2, at=c(5,7,solBase[4],solNew()[4]), labels=c("","","",expression("P"[2]^"E")),lwd.ticks=1)
-    })
+    },height=400,width=500)
     
   },
   options=list(height=800, width=900)
@@ -475,7 +475,7 @@ shinyApp(
       points(solNew()[1],solNew()[3],col="purple",bg="purple",pch=21)
       axis(1, at=c(1.5,3.5,solBase[1],solNew()[1]), labels=c("","","",expression("Q"[1]^"E")),lwd.ticks=1)
       axis(2, at=c(2,4,solBase[3],solNew()[3]), labels=c("","","",expression("P"[1]^"E")),lwd.ticks=1)
-      })
+      },height=400,width=500)
     output$Mkt2Plot<-renderPlot({
       par(bg="beige")
       plot(A+a*(0:8),0:8,type="l",col="blue", lty=2, lwd=3,
@@ -496,7 +496,7 @@ shinyApp(
       points(solNew()[2],solNew()[4],col="purple",bg="purple",pch=21)
       axis(1, at=c(1.5,3.5,solBase[2],solNew()[2]), labels=c("","","",expression("Q"[2]^"E")),lwd.ticks=1)
       axis(2, at=c(2,4,solBase[4],solNew()[4]), labels=c("","","",expression("P"[2]^"E")),lwd.ticks=1)
-    })
+    },height=400,width=500)
   },
   options=list(height=800, width=900)
   )

@@ -142,7 +142,7 @@ shinyApp(
      axis(1, at=c(0,input$qq,25), labels=c("",input$qq,""),lwd.ticks=1)
      axis(2, at=c(0,ac(),100-3*input$qq,100,120), labels=c("",ac(),100-3*input$qq,"",""),lwd.ticks=1)
      legend(15,120,c(expression("AC = "*frac(100,Q)+"2Q"),"MC = 4Q","P = 100 - 3Q","MR=100-6Q"),lty=c(1,1,1,1), lwd=c(2.5,2.5,2.5,2.5),col=c("green","purple","blue","red")) 
-     })
+     },height=400,width=500)
     },
   options = list(height = 500, width=800)
   )
@@ -261,7 +261,7 @@ shinyApp(
     text(130,130, paste("Monopoly quantity = ",45),pos=4)
     text(130,120, paste("Monopoly price = ",110),pos=4)
     text(130,110, paste("Monopoly profits = ",4050),pos=4)
-    })
+    },height=400,width=600)
   }
   #,
   #options = list(width = 800)

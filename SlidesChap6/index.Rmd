@@ -68,7 +68,7 @@ shinyApp(
            lines(c(20,20),c(0,120),lty=2)
            lines(c(24,24),c(0,120),lty=2)
            lines(c(28,28),c(0,120),lty=2)
-    })
+    },height=400,width=500)
   },
   options = list(height = 475, width=800)
   )
@@ -320,7 +320,7 @@ shinyApp(
            col="red", pch=20, bg="red", xlab="Date", ylab="Nearby Futures Price ($/cwt)")
       lines(seq.Date(as.Date("1973-09-15"),as.Date("2016-12-15"),by="month"),mavg(),
                                         col="blue",lwd=3)
-      })
+      },height=400,width=500)
   }
 )
 ```

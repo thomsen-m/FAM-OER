@@ -242,7 +242,7 @@ shinyApp(
       text(900,1200,"No entry. Existing firms 
       remain in the short run.",col=rgb(1,0,1))
       text(900,700,"Existing firms shut down.",col="red")
-    })
+    },height=400,width=500)
   },
   options = list(height = 475, width=900)
   )
@@ -315,7 +315,7 @@ shinyApp(
      axis(1, at=c(0,input$qq,25), labels=c("",input$qq,""),lwd.ticks=1)
      axis(2, at=c(0,ac(),mc(),input$pp,100), labels=c("",ac(),mc(),input$pp,""),lwd.ticks=1)
      legend(6,100,c(expression("AC = "*frac(100,q)+"2q"),"MC = 4q","P = AR = MR"),lty=c(1,1,2), lwd=c(2.5,2.5),col=c("green","purple","black")) 
-     })
+     },height=400,width=500)
     },
   options = list(height = 475, width = 900)
   )
@@ -390,7 +390,7 @@ shinyApp(
       lines(c(0,qquant()),c(input$pprice,input$pprice),col="green")
       lines(c(xinter()+4*input$pprice,qquant()),c(0,input$pprice),col="green")
       points(max(qquant(),0),input$pprice,pch=21,col="red",bg="red")
-    })
+    },height=400,width=500)
   },
   options = list(height = 475, width=900)
 )
@@ -524,7 +524,7 @@ shinyApp(
       axis(1, at=c(0,80), labels=c("",""),lwd.ticks=1)
       axis(2, at=c(0,80), labels=c("",""),lwd.ticks=1)
         legend(40,80,c("Profit max. quantity","Cost at profit max.","Profit max. prod. plan"),lty=c(1,1,NA), lwd=c(2.5,2.5,NA),pch=c(NA,NA,19),col=c("blue","red","purple"),cex=0.7) 
-      })
+      },height=400,width=500)
     output$demandPlot <- renderPlot({
       par(bg="beige")
       par(pty="s") #makes plot square
@@ -539,7 +539,7 @@ shinyApp(
       points(xx1(),ww1(),pch=21,col="purple",bg="purple")
       axis(1, at=c(0,80), labels=c("",""),lwd.ticks=1)
       axis(2, at=c(0,16), labels=c("",""),lwd.ticks=1)
-      })
+      },height=400,width=500)
     },
   options = list(height = 800, width=900)
 )
