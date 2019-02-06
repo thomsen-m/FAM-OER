@@ -777,11 +777,11 @@ shinyApp(
     output$P0<-renderUI({paste("Your current price is",probDat[input$prob,"P0"],"dollars.")})
     output$AVC<-renderUI({paste("Your average variable cost is",probDat[input$prob,"AVC"],"dollars per unit.")})
     output$E<-renderUI({paste("You face an own-price demand elasticity of ",probDat[input$prob,"E"],".",sep="")})
-    output$Quest<-renderUI({paste("What will happen to profit above average cost if you raise your price by ",probDat[input$prob,"DP"],"dollars?")})
+    output$Quest<-renderUI({paste("What will happen to profit above variable cost if you raise your price by ",probDat[input$prob,"DP"],"dollars?")})
     
     output$Answer0<-renderUI({
       if(!input$show) return()
-      paste("Your current profit above average cost is",probDat[input$prob,"OldProf"],"dollars.")
+      paste("Your current profit above variable cost is",probDat[input$prob,"OldProf"],"dollars.")
     })
     output$Answer1<-renderUI({
       if(!input$show) return()
@@ -793,7 +793,7 @@ shinyApp(
     })
     output$Answer3<-renderUI({
       if(!input$show) return()
-      paste("Profit above average cost will go",probDat[input$prob,"Direct"],"to",probDat[input$prob,"NewProf"],"dollars.")
+      paste("Profit above variable cost will go",probDat[input$prob,"Direct"],"to",probDat[input$prob,"NewProf"],"dollars.")
     })
   }
 )
