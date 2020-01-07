@@ -47,7 +47,7 @@ runtime: shiny
 1. Each consumer buys less (more) of the product due to diminishing marginal utility.
 2. The total number of consumers decreases (increases) as consumers with valuations close to the prevailing price exit (enter) the marketplace.
 
-## <span style="color:SaddleBrown">An Inverse Demand Schedule (Demonstation 1 from *An Interactive Text*)</span>
+## <span style="color:SaddleBrown">An Inverse Demand Schedule (Demonstration 1 from *An Interactive Text*)</span>
 ```{r, echo=FALSE}
 shinyApp(
 ui = fluidPage(sidebarPanel(sliderInput("pprice",
