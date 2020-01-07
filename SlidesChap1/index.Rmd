@@ -241,7 +241,7 @@ lines(c(0,2),c(8,8),col="darkgreen")
 lines(c(0,2),c(12,12),col="lightgreen")
 ```
 
-####Figure 1. Value from a market transaction is comprised of consumer surplus and profits.
+#### Figure 1. Value from a market transaction is comprised of consumer surplus and profits.
 
 ## <span style="color:SaddleBrown">Consumer Surplus and the Law of Demand: Diminishing Marginal Utility (Demonstration 3 from *An Interactive Text*)</span>
 ```{r, echo=FALSE}
@@ -353,4 +353,4 @@ par(bg="beige")
     
 ```
 
-####Figure 2: Calculating consumer surplus (shaded in light blue) from a demand schedule.
+#### Figure 2: Calculating consumer surplus (shaded in light blue) from a demand schedule.

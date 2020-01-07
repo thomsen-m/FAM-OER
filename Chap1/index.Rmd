@@ -14,10 +14,11 @@ __*An Interactive Text for Food and Agricultural Marketing*__ by [Michael R. Tho
 
 ***
 
-#<span style="color:SaddleBrown">Overview and Objectives</span>
-This chapter addresses the demand side of the market. This is also the buyer or customer side of the market.  The overall aim of the chapter is to provide the background you need to use demand constructs to understand marketing strategies and models of market equilibrium that you will encounter later in the course.   The chapter is organized into three sections.  The first covers the states of effective, latent, and negative demand.  Most of the course will deal with marketing problems for products or services in a state of effective demand.  However, latent and negative demand states are important in product development and many social marketing contexts.  The second section introduces the basic mechanics of demand for a product or service under an effective demand state with a particular focus on the law of demand, the demand schedule, and variables that shift the demand schedule.  Some of this will be a review of material you encountered in your introductory microeconomics course, but some will likely be new and/or will be presented in a way you have not yet encountered.  The third section of the chapter introduces the idea of consumer surplus.  Consumer surplus is presented in a way that should deepen your understanding of the law of demand.  The concept will come up later in the course as a measure of economic welfare and will be used to understand pricing strategies used by sellers, many of which can characterized as attempts to convert consumer surplus into profits.  
+# <span style="color:SaddleBrown">Overview and Objectives</span>
 
-Th learning objectives for this chapter are as follows.
+This chapter addresses the demand side of the market. This is also the buyer or customer side of the market.  The overall aim of the chapter is to provide the background you need to use demand constructs to understand marketing strategies and models of market equilibrium that you will encounter later in the course.   The chapter is organized into three sections.  The first covers the states of effective, latent, and negative demand.  Most of the course will deal with marketing problems for products or services in a state of effective demand.  However, latent and negative demand states are important in product development and many social-marketing contexts.  The second section introduces the basic mechanics of demand for a product or service under an effective demand state with a particular focus on the law of demand, the demand schedule, and variables that shift the demand schedule.  Some of this will be a review of material you encountered in your introductory microeconomics course, but some will likely be new and/or will be presented in a way you have not yet encountered.  The third section of the chapter introduces the idea of consumer surplus.  Consumer surplus is presented in a way that should deepen your understanding of the law of demand.  The concept will come up later in the course as a measure of economic welfare and will be used to understand pricing strategies used by sellers, many of which can characterized as attempts to convert consumer surplus into profits.  
+
+The learning objectives for this chapter are as follows.
 
 * Distinguish between different states of demand and explain contexts wherein each state may be relevant.
 
@@ -35,66 +36,68 @@ Th learning objectives for this chapter are as follows.
 
 ***
 
-#<span style="color:SaddleBrown">Demand States</span>
-It is useful to think about different demand conditions or states.  Specifically, there are three:  effective demand, latent demand, and negative demand.  Much of the class will emphasize effective demand because markets exist for products in a state of effective demand.  For products in an effective demand state, you can see equilibrium prices and quantities.  It is also possible estimate demand and understand how demand responds to changes in prices, consumer income, or other factors that affect the desirability of the product.  In the other two demand states, markets do not yet exist, but there could or would be a market provided technological barriers can be addressed or consumer preferences can be changed.  For example, many product development efforts are aimed at overcoming some hurdle or limitation that prevents a product or service market from being feasible.
+# <span style="color:SaddleBrown">Demand States</span>
+
+It is useful to think about different demand conditions or states.  Specifically, there are three:  effective demand, latent demand, and negative demand.  Much of the class will emphasize effective demand because markets exist for products in a state of effective demand.  For products in an effective demand state, you can see equilibrium prices and quantities.  It is also possible estimate demand and understand how demand responds to changes in prices, consumer income, or other factors that affect the desirability of the product.  In the other two demand states, markets do not yet exist, but there could or would be a market provided technological barriers can be addressed or consumer preferences can be changed.  In fact, many product development efforts are aimed at overcoming some hurdle or limitation that would allow a product or service to move from a latent or negative demand state to an effective demand state.
 
 
-###Effective Demand
+### Effective Demand
 
 Normally, the word "demand" refers to a product in a state of effective demand.   Effective demand refers to the demand for products that are commercially feasible.  These products satisfy consumer wants and needs, and  consumers (or some segments thereof) are willing to buy them at prices that justify their production.  Automobiles, apples, vacation trips, restaurant meals, or any other good or service readily available in the economy is in a state of effective demand. Since market transactions are observed for products in a state of effective demand, it is possible to measure variables that influence demand.  These measurements can be used to estimate and forecast demand to gain insight into business or policy decisions.
 
 
-###Latent Demand
+### Latent Demand
 
-A state of latent demand is said to exist in cases where a need or want exists but a product does not.  For example, if there was a drug that completely cured cancer, there would be a demand for it.  Because of this latent demand, biotechnology companies spend large amounts of money on research and development efforts to create new drugs to more effectively combat cancer.  A latent demand state exists when the following conditions are present:
+A state of latent demand is said to exist in cases where a need or want exists but a product does not.  For example, if there was a cure for cancer, there would be a demand for it.  Because of this latent demand, biotechnology companies spend large amounts of money on research and development efforts to create new drugs to more effectively combat cancer.  A latent demand state exists when the following conditions are present:
 
 1. the product in question is not technically feasible given the current state of science and engineering (as in the case of a complete cure to cancer) or has yet to be conceived by an inventor or entrepreneur, or
 
 2. the product is technically feasible but not commercially feasible given current technology, existing infrastructure, or the existing regulatory environment.   
 
-With latent demand, one does not actually see market transactions.  For this reason, estimating the potential value of products in a latent demand state is often more difficult.  
+With latent demand, one does not actually see market transactions.  For this reason, estimating the potential value of products in a latent demand state is often more difficult.  Economists often use experimental methods to assess willingness to pay for products in a state of latent demand.     
 
-A change in technology, such as the introduction of the microwave oven, can unleash a number of new products that address latent demands and thereby bring them into a state of effective demand.  The first link below points to an early television commercial for the microwave.  This commercial speaks directly to how the microwave meets the latent demands of those who prepare meals over the eons of human history.  Today, much of what is in the frozen section of a supermarket is tailored to the microwave oven. Here is a link to an early microwave oven advertisement emphasizing how the microwave addresses latent demand [(visit  youtube.com)](https://www.youtube.com/watch?v=IKQzieCJqBA).
+A change in technology, such as the introduction of the microwave oven, can unleash a number of new products that address latent demands and thereby bring them into a state of effective demand.  The first link below points to an early television commercial for the microwave.  This commercial speaks directly to how the microwave meets the latent demands of those who prepare meals over the eons of human history.  Today, much of what is in the frozen section of a supermarket is tailored to the microwave oven. Here is a link to an early microwave oven advertisement emphasizing how the microwave addresses latent demand (<a href="https://www.youtube.com/watch?v=IKQzieCJqBA" target="_blank">visit youtube.com</a>).
 
-###Negative Demand
+### Negative Demand
 
 Negative demand refers to cases where there is a potential product that could meet a consumer want or need, but consumers are reluctant to purchase the product for one reason or another.  For example, many insect species are edible and could be produced at a cost that compares favorably to other food sources.  However, insects are not commonly being sold in attractive displays at the local supermarket.  The reason for this is that cultural norms in the USA frown upon consumption of insects.  This example is a bit “creepy,” and I hope it does not “bug” you too much, but the same general idea can apply to many actual or potential products that are viewed skeptically by consumers.  When confronted with negative demand, it may be possible to change the image of the product so that consumers view it as desirable.
 
-* National Geographic segment on edible insects [(visit youtube.com)](https://www.youtube.com/watch?v=oQBVW9APQik).
+* National Geographic segment on edible insects (<a href="https://www.youtube.com/watch?v=oQBVW9APQik" target="_blank">visit youtube.com</a>).
 
-* Fact sheet on entomophagy from the UN Food and Agriculture Organization [(visit fao.org)](http://www.fao.org/docrep/018/i3264e/i3264e00.pdf).
+* Fact sheet on entomophagy from the UN Food and Agriculture Organization (FAO) (<a href="http://www.fao.org/3/i3264e/i3264e00.pdf" target="_blank">visit fao.org</a>).
 
 
-###Food Irradiation:  A Case Example
 
-Food irradiation is a process that could potentially address latent demands.  In the late 1990's, irradiation was approved for use on raw meat and poultry.  There were some predictions that this would become a standard process, akin to pasteurization.  This turned out not to be the case.  One reason is that irradiated foods also face a negative demand problem.  Consumers have been hesitant to embrace irradiated foods.  Review the fact sheet and 10-minute video clip from the links below.
+### Food Irradiation:  A Case Example
 
-* Fact sheet from the University of Wisconsin on food irradiation [(visit wisc.edu)](https://uw-food-irradiation.engr.wisc.edu/Facts.html).  
+Food irradiation is a process that many thought could potentially address latent demands for safer food.  For example, irradiation could destroy Trichina parasites allowing pork to be cooked and served rare.  In the late 1990's, irradiation was approved by US regulatory agencies for use on raw meat and poultry.  There were some predictions that this would become a standard process, akin to pasteurization.  This turned out not to be the case.  One reason is that irradiated foods also faced a negative demand problem.  Consumers have been hesitant to embrace irradiated foods.  Review the fact sheet and short video clip from the links below. Both are from reputable organizations: a land-grant university and the United Nations.    
 
-* A PBS *Health Matters with Dr. Larry Santora* segment on food irradiation [(visit youtube.com)](https://www.youtube.com/watch?v=2MJc_WNl7ME&t=16s).  
+* Fact sheet from the University of Wisconsin on food irradiation (<a href="https://uw-food-irradiation.engr.wisc.edu/Facts.html" target="_blank">visit wisc.edu</a>).
+
+* Short video from International Atomic Energy Agency and FAO (<a href="https://www.youtube.com/watch?v=pe6AKh_tLys&t=1s" target="_blank">visit youtube.com</a>).
 
 Now consider the following questions:
 
 1. What fundamental problem (or problems) can food irradiation address?
 
-2. Is food irradiation safe?  What entities support its use?
+2. Is food irradiation safe?
 
 3. Are there labeling requirements that would allow you tell if a food item in a retail store was irradiated?  
 
-4. Is food irradiation used widely today?  Why not?  
+4. Why might consumers be reluctant to accept irradiated foods?  
 
 5. Why is microwaveable food so widely accepted but irradiated food not?
 
 ***
 
-#<span style="color:SaddleBrown">The Demand Schedule</span>
+# <span style="color:SaddleBrown">The Demand Schedule</span>
 
 The demand schedule is the relationship between own-quantity demanded and corresponding own-price levels.  Several variables could affect the demand for a product, including the prices or quantities of related goods.  The adjective "own-quantity" is used to mean the quantity of the product being analyzed. For example, the own-quantity of beef could be represented as $Q_{BEEF}$ and the own-price of beef as $P_{BEEF}$.  The price of pork, $P_{PORK}$, could conceivably affect demand for beef, but this is not the own-price of beef.  The point to be made is that the demand schedule is the relationship between the product's own-quantity and its own-price holding all other variables that could affect demand constant at some fixed value.  The normal convention in this course will be to use subscripts to denote the product in question.  For example, $Q_1$ refers to the demand for good 1, $P_2$ refers to the price of good 2, etc.  
 
 The demand schedule can be expressed mathematically as $Q_1 = f(P_1)$ or $P_1 = f^{-1}(Q_1)$. The term "direct demand" is used when $Q_1$ is on the left-hand side of the equation and the term "inverse demand" when $P_1$ is on the left-hand side.  When showing a demand relationship as an equation, the normal practice is to express the relationship in terms of direct demand.  However, it will generally be graphed in inverse form with the price of the product on the vertical axis and the quantity on the horizontal axis.  This convention is consistent with most microeconomics text books and can be useful when you want to simultaneously show production (supply side) relationships on the same plot.  Many textbooks, however, do not distinguish between direct and inverse demand.  The distinction is being made here because you learned back in middle-school algebra that if $y = f(x)$, then $y$ goes on the vertical axis and $x$ goes on the horizontal. The term "inverse demand," permits adherance to both algebraic and economic conventions.  
 
 ***
-####Demonstration 1: An inverse market demand schedule.
+#### Demonstration 1: An inverse market demand schedule.
 ```{r, echo=FALSE}
 shinyApp(
 ui = fluidPage(sidebarPanel(sliderInput("pprice",
@@ -151,9 +154,9 @@ options = list(height = 425)
 
 ***
 
-###The Law of Demand
+### The Law of Demand
 
-The law of demand states that quantity and price are negatively related.  In other words, if the price of the product increases, then the quantity demanded will decrease and *vice versa*.  The law of demand reflects two phenomena.  First, consumer preferences generally exhibit diminishing marginal utility. Diminishing marginal utility is a technical way of saying that consumers receive lower amounts of additional satisfaction from each additional unit of a product they consume. Because of diminishing marginal utility, the price will need to fall to induce consumers to buy more units of products that they already consume.  This contributes to the negative relationship between quantity demanded and price.  Second, in most cases, different consumers place different valuations on the same product.  For example, suppose that Jane and John Doe would both enjoy tickets to a St. Louis Cardinals baseball game.  Jane loves baseball and is a huge Cardinals fan.  John mildly enjoys baseball and prefers the Minnesota Twins.  It would stand to reason that Jane would probably place a higher value on the tickets than John would.   The point here is that it is often the case that some consumers are very enthusiastic about a product and are willing to participate in the market even when the price is high.  Other, less enthusiastic consumers stay out of the market at high prices but are willing to participate once the price comes down a bit.  For this reason, the number of consumers willing to participate in the market increases as the price falls and decreases as the price rises.  This also contributes to the negative relationship between quantity demanded and price.  
+The law of demand states that quantity and price are negatively related.  In other words, if the price of the product increases, then the quantity demanded will decrease and *vice versa*.  The law of demand reflects two phenomena.  First, consumer preferences generally exhibit diminishing marginal utility. Diminishing marginal utility is a technical way of saying that consumers receive lower amounts of additional satisfaction from each additional unit of a product they consume. Because of diminishing marginal utility, the price will need to fall to induce consumers to buy more units of products that they already consume.  This contributes to the negative relationship between quantity demanded and price.  Second, in most cases, different consumers place different valuations on the same product.  For example, suppose that Jane and John Doe would both enjoy tickets to a St. Louis Cardinals baseball game.  Jane loves baseball and is a huge Cardinals fan.  John mildly enjoys baseball and prefers the Minnesota Twins.  It would stand to reason that Jane would probably place a higher value on the tickets than John would.   The point here is that it is often the case that some consumers are very enthusiastic about a product and are willing to participate in the market even when the price is high.  Other, less enthusiastic, consumers stay out of the market at high prices but are willing to participate once the price comes down a bit.  For this reason, the number of consumers willing to participate in the market increases as the price falls and decreases as the price rises.  This also contributes to the negative relationship between quantity demanded and price.  
 
 Because of diminishing marginal utility and differences in valuation across consumers, an increase (decrease) in price has two potential effects, each of which contributes to the negative relationship between quantity and price.
 
@@ -165,34 +168,34 @@ Because of diminishing marginal utility and differences in valuation across cons
 
 The demand schedule characterizes the relationship between quantity demanded and that product's own-price.  For instance, the demand schedule for beef would show the relationship between quantity of beef demanded and the price of beef holding everything else constant.  What happens if something else changes?  There are other prices that could affect the demand for beef.  For many consumers, pork or poultry serve as reasonable substitutes for beef.  Consequently, if pork or poultry prices decline (rise) relative to beef prices, one would expect reduced (increased) quantities of beef to be demanded.  This suggests that other factors, aside from a product's own-price, need to be considered.  These other factors are called demand-shift variables.  If the value of a shift variable changes, you will need to plot a new demand schedule that reflects the updated relationship between quantity demanded and the product's own-price.  The following are some common demand shift variables.
 
-####Prices of related goods (substitutes or complements)
+#### Prices of related goods (substitutes or complements)
 
 Related goods in demand are classified as substitutes in consumption or complements in consumption. A substitute in consumption is a good that the consumer can use instead of the good in question to meet his or her underlying want or need.  For example, if you are analyzing the demand schedule for beef, then chicken, pork, or fish are all reasonable substitute products.  After all, one could order a chicken, pork, or seafood entree from the menu in lieu of beef; or the supermarket shopper may decide to cook chicken breasts, pork chops, or fish fillets for dinner instead of beef.  Formally, product 2 is considered to be a substitute for product 1 if an increase (decrease) in the price of product 2 causes an increase (decrease) in the demand schedule for product 1.  In other words, there is a positive relationship between the price of product 2 and the quantity of product 1 that consumers demand.  
 
 A complement in consumption is a good that the consumer uses along with the good in question.  For example, if you are analyzing the demand for sport utility vehicles (SUVs), then gasoline is reasonable complementary product.  After all, an SUV is a large automobile and uses a lot of gas.  In recent years, gasoline prices appear to have had an effect on the demand schedule for SUVs.  During periods of high gasoline prices, sales of SUVs suffer.  Formally, product 2 is considered to be a complement for product 1 if an increase (decrease) in the price of product 2 causes a decrease (increase) in the demand schedule for product 1.  In other words, there is a negative relationship between the price of product 2 and the quantity of product 1 that consumers demand.
 
-####Consumer income
+#### Consumer income
 
 Consumer incomes can also shift the demand schedule, but the direction and magnitude of the shift depend on the characteristics of the good in question.  Some goods are classified as normal goods.  Consumption of a normal good increases as income increases.  Formally, good 1 is said to be a normal good if an increase (decrease) in income causes an increase (decrease) in the demand schedule for good 1.  In other words, there is a positive relationship between consumption of good 1 and the amount of income available to consumers.  Other goods are classified as inferior goods.  Consumption of an inferior good decreases as income increases.  Formally, good 1 is said to be an inferior good if an increase (decrease) in income causes an decrease (increase) in the demand schedule for good 1.  In other words, there is a negative relationship between consumption of good 1 and the amount of income available to consumers. It is important to emphasize that the adjective "inferior" only refers to the income relationship and does not imply that the consumer dislikes the good in question.
 
-####Tastes and preferences
+#### Tastes and preferences
 
-Demand is subject to trends, fashions, health concerns, and a variety of other considerations.  For example, in 2012, media coverage of lean finely textured beef (LFTB), also known as "pink slime", had an impact on demand for ground beef.  This would classify as information that led to an unfavorable change in preferences (meaning the product in question is less favored by consumers than before).  Conversely, a growing number of studies linking blueberries to improved health has impacted demand for blueberries in a positive way.  This would classify as a favorable change in preferences.   
+Demand is subject to trends, fashions, health concerns, and a variety of other considerations.  For example, in 2012, media coverage of lean finely textured beef (LFTB), characterized as "pink slime", had an impact on demand for ground beef.  This would classify as information that led to an unfavorable change in preferences (meaning the product in question is less favored by consumers than before).  Conversely, a growing number of studies linking blueberries to improved health has impacted demand for blueberries in a positive way.  This would classify as a favorable change in preferences.   
 
-* Link to a 2012 magazine article on the LFTB controversy by economists J. Ross Pruitt and David P. Anderson [(visit choicesmagazine.org)](http://www.choicesmagazine.org/UserFiles/file/cmsarticle_268.pdf).
+* Link to a 2012 magazine article on the LFTB controversy by economists J. Ross Pruitt and David P. Anderson (<a href="http://www.choicesmagazine.org/UserFiles/file/cmsarticle_268.pdf" target="_blank">visit choicesmagazine.org</a>).
 
-* Link to the 2012 ABC News Segment on LFTB mentioned in the magazine article [(visit youtube.com)](https://www.youtube.com/watch?v=87uBMXdIyjo).
+* Link to the 2012 ABC News Segment on LFTB mentioned in the magazine article (<a href="https://www.youtube.com/watch?v=87uBMXdIyjo" target="_blank">visit youtube.com</a>).
 
-* Link to LSU AgCenter publication *Blueberries and Your Health*  [(visit lsuagcenter.com)](http://www.lsuagcenter.com/~/media/system/b/d/9/1/bd91d79e86236b7d4b9253a28d832d41/pub3267blueberriesandyourhealth.pdf).
+* Link to LSU AgCenter publication *Blueberries and Your Health* (<a href="http://www.lsuagcenter.com/~/media/system/b/d/9/1/bd91d79e86236b7d4b9253a28d832d41/pub3267blueberriesandyourhealth.pdf" target="_blank">visit lsuagcenter.com</a>).
 
 
-####Population
+#### Population
 
 Market demand reflects the sum of all consumers in the marketplace.  All else equal, as the number of consumers increases (decreases), the demand schedule will increase (decrease).    
 
 ***
 
-####Demonstration 2: Demand shift variables change the demand schedule.
+#### Demonstration 2: Demand shift variables change the demand schedule.
 ```{r, echo=FALSE}
 shinyApp(
 ui = fluidPage(
@@ -249,7 +252,7 @@ options = list(height = 475)
 
 ***
 
-###Demand Schedules from a Linear Demand Relationship
+### Demand Schedules from a Linear Demand Relationship
 
 A general demand relationship would need to include all the demand shifters that could affect demand in addition to own-price.  With this in mind, consider the following demand equation for good A:
 $$Q_A = 20Pop + 0.01M +2P_B - 4P_A$$
@@ -273,10 +276,10 @@ $$P_A = 100 - \frac{1}{4} Q_A$$
 
 ***
 
-#<span style="color:SaddleBrown">Consumer Surplus</span>
+# <span style="color:SaddleBrown">Consumer Surplus</span>
 Consumer surplus is a measure of consumer welfare.  The concept is remarkably simple and can be conceptualized as the value that the consumers receive above the price paid for the product.  Consumer surplus is an important part of the value created by market transactions but is often overlooked as it does not formally get recorded on the seller's financial statements nor is it quantified on customer receipts. The notion of consumer surplus will be used at different points later in the course.  It is useful to introduce it now because it can be used to explain the law of demand in terms of consumers seeking to obtain surplus through market transactions.  
 
-###Explaining Consumer Surplus
+### Explaining Consumer Surplus
 To motivate the idea of consumer surplus, imagine that you have a difficult exam in your 1:30 PM class.  Because you are so worried about the exam you decide to forego lunch and use the time to study instead.  At 2:30, after having written the exam, you realize how very hungry you are.  You head to your favorite sandwich shop for lunch.  You are willing to pay up to \$12 for a sandwich and are pleased to see that sandwiches are priced at \$8 on the menu.  Does the purchase of a sandwich make you better off?  Absolutely. By paying \$8 you receive a good that provides you with satisfaction worth \$12.  Your consumer surplus is \$4 and can be computed as the value you place on the product (\$12) less the purchase price (\$8).  
 
 Figure 1 shows that value from a market transaction such as this one is divided among the consumer (in the form of consumer surplus) and the firm (in the form of profits).   Suppose the sandwich shop can produce the sandwich for \$5 per unit.  The shop receives a profit margin of \$8 - \$5 = \$3.  The total value created by the transaction is \$7 (the \$12 value you place on the sandwich less the production cost of \$5) and is also equal to the \$3 profit margin going to the shop plus the \$4 consumer surplus going to you.  Thus, there is a simple identity for the value created from a transaction such as this:  
@@ -310,13 +313,13 @@ lines(c(0,2),c(8,8),col="darkgreen")
 lines(c(0,2),c(12,12),col="lightgreen")
 ```
 
-####Figure 1. Value from a market transaction is comprised of consumer surplus and profits.
+#### Figure 1. Value from a market transaction is comprised of consumer surplus and profits.
 
 ***
 
 Firms create value by producing goods and services that consumers value more highly than the costs of production.  Typically, as in our sandwich example, some of this value will be captured as a profit margin.  The rest of the value gets passed on to consumers in the form of surplus.  Thus, even though consumer surplus is not entered into a company's books or onto customer receipts, it is important to profitability.  Firms that create superior value can be said to have a competitive advantage in that they can gain market share by providing consumers with more-attractive surplus propositions and or can command higher profit margins while still offering consumers surplus on par with their competitors (Besanko et al. 2010).    
 
-###Consumer Surplus in the Context of Diminishing Marginal Utility
+### Consumer Surplus in the Context of Diminishing Marginal Utility
 Recall from above that the law of demand reflects diminishing marginal utility from successive units of a product.  To see this, let us continue our sandwich example.  A very hungry person receives a great deal of satisfaction from the first sandwich, probably enjoys the second, might nibble a bit on a third, but is not much interested in the fourth.  What is happening here is that as the person eats more and more, he or she starts to become satiated.  The first sandwich was wonderful but the fourth sandwich creates indigestion.  This translates into the monetary value the consumer places on sandwiches.  The hungry consumer is willing to pay a relatively high price for the first sandwich, a moderate price for the second, and much less, if anything, for the third or fourth sandwich.  This leads to the negative relationship between price and quantity as stipulated by the law of demand.
 
 Let us continue this example with Demonstration 3 below.  Suppose that your marginal valuation, the value you place on additional sandwiches, is as presented in Demonstration 3.  If sandwiches are priced at \$8, you buy one and receive consumer surplus of $4.  You are quite hungry and would enjoy another, but the first sandwich has taken the edge off your hunger and you only value the second sandwich at \$7 which is less than the $8 purchase price.  For this reason, you will only buy one sandwich if they are priced at \$8.  Notice from Demonstration 3 that as prices fall, you purchase additional sandwiches (again giving rise to a downward sloping demand schedule).  In addition to buying more sandwiches at lower prices, you obtain more surplus from each sandwich you purchase. 
@@ -331,7 +334,7 @@ An important point here is that consumers are only in the market when they can g
 
 ***
 
-####Demonstration 3: Surplus with diminishing marginal utility.
+#### Demonstration 3: Surplus with diminishing marginal utility.
 ```{r, echo=FALSE}
 shinyApp(ui =fluidPage(
   sidebarPanel(
@@ -375,12 +378,12 @@ options = list(height = 400))
 
 ***
 
-###Consumer Surplus in the Context of Different Valuations Across Consumers
+### Consumer Surplus in the Context of Different Valuations Across Consumers
 Another reason for the law of demand is that different consumers place different valuations on the same product. This means more consumers will participate in the market at lower prices and fewer consumers will participate at higher prices. Suppose that potential consumers of the latest electronic gadget can be divided into five segments, as shown by the points in Demonstration 4 below.  Consumers in segment 1 are very enthusiastic about the gadget and value it at \$800.  Consumers in segment 5 are least enthusiastic and value it at \$200.  Segments 2, 3, and 4 fall somewhere in-between in terms of their willingness to pay for the new gadget.  If the price of the device is set at \$550 dollars, then only segments 1 and 2 are willing to participate in the market.  These are the only two segments that could derive positive consumer surplus from buying the device.  Positive surplus is denoted in the table of the demonstration as well as by the height of the green bars in the chart.  If the price was lowered to below $500, consumers in segment 3 would enter the market and there would be more demanded. If the price increased to above $700, consumers in segment 2 would exit the market and fewer units would be demanded.  Notice that consumers in all five segments value the gadget, but only those who can derive positive surplus participate in the market.  Adjust the price-control slider in Demonstration 4.  Make sure you understand the surplus calculation for consumers in each segment and are predict the price points at which different segments enter or exit the market.
 
 ***
 
-####Demonstration 4: Valuations by consumer segment.
+#### Demonstration 4: Valuations by consumer segment.
 ```{r, echo=FALSE}
 shinyApp(ui =fluidPage(
   sidebarPanel(
@@ -422,7 +425,7 @@ options = list(height = 400))
 
 ***
 
-###Calculating Total Consumer Surplus Using the Demand Schedule
+### Calculating Total Consumer Surplus Using the Demand Schedule
 It should be clear from Demonstrations 3 and 4 that there is a link between consumer surplus and the demand schedule.  Graphically, the consumer surplus in a market can be computed as the area below the demand schedule but above the prevailing price.  In Figure 2, the consumer surplus is the triangular area that is shaded in blue.  If the demand schedule is linear (as in the demand schedule presented in Figure 2), you can use the formula for the area of a triangle to compute consumer surplus.  You may recall that the area of a triangle is given by $\frac{1}{2}\times\frac{base}{height}$. With this in mind, when given a value of $P$, say $\bar{P}$, you can compute consumer surplus from a linear demand schedule:
 
 $$CS = \frac{1}{2}\times Q(\bar{P})\times(Intercept\ of \ Inverse\ Demand\ Schedule - \bar{P})$$
@@ -462,11 +465,11 @@ par(bg="beige")
     
 ```
 
-####Figure 2: Calculating consumer surplus (shaded in light blue) from a demand schedule.
+#### Figure 2: Calculating consumer surplus (shaded in light blue) from a demand schedule.
 
 ***
 
-#<span style="color:SaddleBrown">Concluding Comments</span>
+# <span style="color:SaddleBrown">Concluding Comments</span>
 
 To recap, this chapter has introduced concepts essential to understanding the demand side of the market.  First, you learned about different demand states.  As you move forward through the course, the focus will be primarily on products in an effective demand state.  You will, however, examine models appropriate for understanding products in other demand states in chapter 5.  In chapter 3, you will revisit the demand shift variables as you learn elasticities.  These shift variables will play a central role in chapter 4, as you model market equilibrium.  Consumer surplus will central to measuring welfare in chapters 7 and 8 and will help motivate the ideas behind pricing schemes commonly used be sellers to extract consumer surplus and turn it into higher profit margins.  
 
@@ -484,7 +487,7 @@ In many cases, market-determined prices provide the information needed for the e
 
 ***
 
-#<span style="color:SaddleBrown">References</span>
+# <span style="color:SaddleBrown">References</span>
 Besanko, D., D. Dranove, M. Shanley, and M. Schafer. 2010. *Economics of Strategy, 5th ed.* John Wiley & Sons. 
 
 Kohls, R. L. and J. N. Uhl. 1998. *Marketing of Agricultural Products, 8th Ed.* Pearson.
@@ -492,8 +495,9 @@ Kohls, R. L. and J. N. Uhl. 1998. *Marketing of Agricultural Products, 8th Ed.* 
 
 ***
 
-#<span style="color:SaddleBrown">Problem Sets</span>
-####Problem Set 1: Short Answer.
+# <span style="color:SaddleBrown">Problem Sets</span>
+
+#### Problem Set 1: Short Answer.
 ```{r, echo=FALSE}
 shinyApp(
   ui = fluidPage(
@@ -624,7 +628,7 @@ shinyApp(
 )
 ```
 
-####Problem Set 2: Multiple Choice.
+#### Problem Set 2: Multiple Choice.
 ```{r, echo=FALSE}
 ###############################################################################
 # ResponseMC(correct)
