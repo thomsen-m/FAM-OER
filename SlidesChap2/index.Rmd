@@ -55,7 +55,7 @@ $$Profit = Total\ Revenue - Total\ Cost$$
       axis(2, at=c(0,14,35,55), labels=c("","",expression("P"[1]*" = 35"),""),lwd.ticks=1)
 ```
 
-####Figure 1. The supply schedule shows the relationship between own-price and own-quantity supplied to the market.
+#### Figure 1. The supply schedule shows the relationship between own-price and own-quantity supplied to the market.
 
 
 ## <span style="color:SaddleBrown">Assumption of a Price-Taking Firm</span>
@@ -160,7 +160,7 @@ __Panel B: Average cost.__
       axis(2, at=c(17,20,25), labels=c("",expression("AC = 20"),""),lwd.ticks=1)
 ```
 
-####Figure 2. Illustration of total cost and average cost with ranges of output showing economies and diseconomies of scale.
+#### Figure 2. Illustration of total cost and average cost with ranges of output showing economies and diseconomies of scale.
 
 
 ## <span style="color:SaddleBrown">The Producer's Decision to Enter, Remain, or Exit the Market</span>
@@ -237,7 +237,7 @@ shinyApp(
       points(input$avc,input$pp,pch=21,col=dynCol(),bg=dynCol())
       axis(1, at=c(570,input$avc,1900), labels=c("",input$avc,""),lwd.ticks=1,cex=1.5)
       axis(2, at=c(570,input$avc,input$pp,bEven(),2000), labels=c("",input$avc,input$pp,bEven(),""),lwd.ticks=1,cex=1.5)
-      legend(590,2000,c("Breakeven","Shutdown"),lty=c(1,1), lwd=c(2.5,2.5),col=c("blue","red")) 
+      legend(590,2000,c("Break-even","Shutdown"),lty=c(1,1), lwd=c(2.5,2.5),col=c("blue","red")) 
       text(875,1800,"New firms enter.",col="blue")
       text(900,1200,"No entry. Existing firms 
       remain in the short run.",col=rgb(1,0,1))
@@ -406,7 +406,7 @@ shinyApp(
 
 ![](ProductionFunction.png)
 
-####Figure 3. Three-dimensional rendering of a production function.  The production function is shown in yellow/orange tones.  The green, horizontal plane intersects the production function at a fixed level of output. The origin is at the bottom left of the diagram.
+#### Figure 3. Three-dimensional rendering of a production function.  The production function is shown in yellow/orange tones.  The green, horizontal plane intersects the production function at a fixed level of output. The origin is at the bottom left of the diagram.
 
 
 ## <span style="color:SaddleBrown">Demand for Inputs : Production Function in Two Dimensions</span>
@@ -446,7 +446,7 @@ axis(2, at=c(0,18.96,60), labels=c("",expression("x*"[2]),""),lwd.ticks=1)
         legend(15,55,c("Isoquants","Profit max output level","Isocost lines"),lty=c(1,1,1), lwd=c(2.5,2.5,2.5),col=c("grey","blue","red"),cex=0.8) 
 ```
 
-####Figure 4: Two dimensional rendering of the production function with the profit maximizing production plan depicted by point B. Superscripts are used to indicate different levels of output and are not exponents.
+#### Figure 4: Two dimensional rendering of the production function with the profit maximizing production plan depicted by point B. Superscripts are used to indicate different levels of output and are not exponents.
 
 * Production cost in terms of inputs is $$ c = W_1 x_1 + W_2 x_2. $$
     + $W_1$ is the price of input 1
@@ -549,7 +549,7 @@ shinyApp(
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Bhutan_-_Flickr_-_babasteve_%2863%29.jpg/256px-Bhutan_-_Flickr_-_babasteve_%2863%29.jpg) ![](NRCSCA02107_-_California_(911)(NRCS_Photo_Gallery).jpg)
 
-####Figure 5.  Labor and capital intensive methods of harvesting rice.  Photo on the left by Steve Evans from Citizen of the World (Bhutan) [CC BY 2.0](http://creativecommons.org/licenses/by/2.0), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File%3ABhutan_-_Flickr_-_babasteve_(63).jpg). Photo on the right by Gary Kramer courtesy of USDA Natural Resources Conservation Service., via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File%3ANRCSCA02107_-_California_(911)(NRCS_Photo_Gallery).tif).
+#### Figure 5.  Labor and capital intensive methods of harvesting rice.  Photo on the left by Steve Evans from Citizen of the World (Bhutan) [CC BY 2.0](http://creativecommons.org/licenses/by/2.0), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File%3ABhutan_-_Flickr_-_babasteve_(63).jpg). Photo on the right by Gary Kramer courtesy of USDA Natural Resources Conservation Service., via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File%3ANRCSCA02107_-_California_(911)(NRCS_Photo_Gallery).tif).
 
 ```{r, echo=FALSE}
 par(bg="beige")
@@ -576,7 +576,7 @@ axis(2, at=c(0,7.24,49.64,60), labels=c("",expression("x"[K]^B),expression("x"[K
         legend(15,55,c("Isoquants","Isocost lines"),lty=c(1,1), lwd=c(2.5,2.5),col=c("black","red"),cex=0.8) 
 ```
 
-####Figure 6. Capital and labor intensive production plans at points A and B, respectively.
+#### Figure 6. Capital and labor intensive production plans at points A and B, respectively.
 
 ## <span style="color:SaddleBrown">Producer Surplus</span>
 
@@ -604,4 +604,4 @@ axis(2, at=c(0,14,35,55), labels=c("",14,35,""),lwd.ticks=1)
 
 ```
 
-####Figure 7: Calculating producer surplus (shaded in light blue) from a supply schedule.
+#### Figure 7: Calculating producer surplus (shaded in light blue) from a supply schedule.
