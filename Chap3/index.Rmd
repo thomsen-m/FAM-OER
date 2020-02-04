@@ -8,13 +8,15 @@ runtime: shiny
 
 ***
 
-![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
+__*An Interactive Text for Food and Agricultural Marketing*__ by <a href="https://agribusiness.uark.edu/directory/index/uid/mthomsen/name/Michael+R.+Thomsen/" target="_blank">Michael R. Thomsen</a>
 
-__*An Interactive Text for Food and Agricultural Marketing*__ by [Michael R. Thomsen](https://agribusiness.uark.edu/directory/index/uid/mthomsen/name/Michael+R.+Thomsen/) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).  Source files are available on [GitHub](https://github.com/thomsen-m/FAM-OER).
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+Source files are available on  <a href="https://github.com/thomsen-m/FAM-OER" target="_blank">GitHub</a>.
 
 ***
 
-#<span style="color:SaddleBrown">Overview and Objectives</span>
+# <span style="color:SaddleBrown">Overview and Objectives</span>
 
 Imagine yourself in an internship this summer. It is your first day on the job and your supervisor asks you to develop answers for the following questions:
 
@@ -48,7 +50,7 @@ The learning objectives for this chapter are as follows:
 
 ***
 
-#<span style="color:SaddleBrown">Demand Elasticities</span>
+# <span style="color:SaddleBrown">Demand Elasticities</span>
 
 Elasticities will be important for much of what follows in this course.  More importantly, an understanding of elasticities will help you think through decision problems you will encounter in your career.  You were introduced to elasticities in your introductory microeconomics course, but let us take a moment to review them now.  
 
@@ -96,7 +98,8 @@ Because elasticities measure responsiveness, their magnitudes are of importance.
 
 ***
 
-####Table 1. Classifications based on magnitude of demand elasticities.
+#### Table 1. Classifications based on magnitude of demand elasticities.
+
 Type         | Range                      | Implication
 -------------|----------------------------|---------------
 Own-price    | $\epsilon_{ii} < -1$       | Demand for good $i$ is elastic
@@ -118,7 +121,7 @@ It is not likely that a market demand schedule will ever be infinitely elastic, 
 
 ****
 
-####Demonstration 1.  Own-price elasticities show the responsiveness of quantity to changes to price.
+#### Demonstration 1.  Own-price elasticities show the responsiveness of quantity to changes to price.
 ```{r, echo=FALSE}
 shinyApp(
   ui = fluidPage(
@@ -162,7 +165,7 @@ As indicated above in Table 1, cross-price elasticities of demand are used to de
 
 Finally, income elasticities can be used to classify goods as normal or inferior based on a positive or negative sign, respectively.  As indicated in Table 1, normal goods can be further classified as a normal necessity or normal luxury goods.  A normal necessity has an income elasticity that is between zero and one.  For normal necessity goods, the change in quantity is less than proportionate to the change in income.  Many, if not most, food items have income elasticities in the range of normal necessities.  With a normal luxury, the change in quantity is more than proportionate to the change in income.  
 
-###Revenue Implications of Own-Price Elasticities
+### Revenue Implications of Own-Price Elasticities
 If you know the range of the own-price elasticity -- whether demand is elastic, unitary elastic, or inelastic -- you can predict what will happen to revenue if there is a change the product's own-price.  Higher prices are not always good for revenue.  When there is a price increase, two things happen: First, fewer units of the good or service are sold. This is a quantity effect. Second, a higher price is received for each of the remaining units that continue to be sold. This is a price effect.  If the price effect is larger than the quantity effect, revenue will increase as price increases.  If, on the other hand, the quantity effect is larger than the price effect, revenue will decrease as price increases.  Fortunately, you can easily tell from the own price elasticity of demand which of these effects is largest.
 
 __In the elastic range, an increase (decrease) in price causes a decrease (increase) in revenue.__ Because demand is elastic, the quantity effect dominates the price effect.  The revenue lost from selling fewer units more than offsets the revenue gained from selling the remaining units at a higher price.  Thus, raising price causes revenue to fall.  On the other hand, when demand is elastic and price is lowered, the revenue gain from selling additional units more than offsets the revenue lost from selling each unit at a lower price. Lowering price when demand is elastic will cause revenue to rise.
@@ -175,7 +178,7 @@ Use Demonstration 2 below to get some intuition about the revenue implications o
 
 ***
 
-####Demonstration 2.  The relationship between price changes, own-price elasticity, and revenue.
+#### Demonstration 2.  The relationship between price changes, own-price elasticity, and revenue.
 ```{r, echo=FALSE}
 require(shiny)
 
@@ -241,11 +244,11 @@ Based on what you have learned up to this point in the course, you should be abl
 In sum, a small price increase in this situation either increases or does not affect revenue but unambiguously decreases cost.  This means that profit must unambiguously increase with a price increase. Thus, a firm facing demand in the inelastic or unitary elastic range cannot have possibly maximized its profit because it can raise its profit simply by raising its price.
 
 
-#<span style="color:SaddleBrown">Computing Demand Elasticities</span>
+# <span style="color:SaddleBrown">Computing Demand Elasticities</span>
 
 There are occasions in this course where you will need to compute elasticities.  There are two formulas used to do this. One is the point formula.  The point formula will be most important for this course and is also most commonly in published studies on food demand.  The other formula is called the arc or average formula.  Let us spend some time on each.
 
-###The Point Formula for Demand Elasticities
+### The Point Formula for Demand Elasticities
 
 The general formula for an elasticity can be rearranged algebraically to arrive at the point formula. To illustrate, rewrite the own-price elasticity formula shown above as follows:
 
@@ -260,7 +263,7 @@ Point formulas for different kinds of demand elasticities are reported in Table 
 
 ***
 
-####Table 2.  Point formulas for demand elasticities.
+#### Table 2.  Point formulas for demand elasticities.
 
 Type                   | Formula 
 -----------------------|-----------------------------
@@ -285,7 +288,8 @@ Elasticities for this new data point are also reported in Table 3.  Notice that 
 
 ***
 
-####Table 3. Computing elasticities with the point formula.
+#### Table 3. Computing elasticities with the point formula.
+
 Type                   | Data Point 0 | Data Point 1
 --------------------|-----------------------------------------------|--------
 Own-price elasticity   | $\epsilon_{11}=-4\times\frac{60}{160}=-1.5$ |$\epsilon_{11}=-4\times\frac{50}{200}=-1.0$
@@ -303,7 +307,7 @@ Panel B of Demonstration 3, shows an alternative demand specification that provi
 
 ***
 
-####Demonstration 3.  Own-price elasticity will vary along a linear demand curve
+#### Demonstration 3.  Own-price elasticity will vary along a linear demand curve
 
 ```{r, echo=FALSE}
 shinyApp(
@@ -386,12 +390,12 @@ shinyApp(
 
 ***
 
-###The Arc Formula for Elasticities
+### The Arc Formula for Elasticities
 An alternative formula to compute elasticities is the the arc formula.  The arc formula returns the elasticity at the average of two points on the demand equation. Table 4 provides arc elasticity formulas for different demand elasticities.
 
 ***
 
-####Table 4.  Arc formulas for demand elasticities.
+#### Table 4.  Arc formulas for demand elasticities.
 
 Type                   | Formula 
 -----------------------------|-----------------------------
@@ -415,17 +419,17 @@ A compelling feature of the arc formula is that you only need to know two points
 
 As an exercise, use the arc formula to replicate the elasticity ranges reported above in Demonstration 2 after you increase or decrease the price. In this case you know that all else has remained constant because you are comparing two points on the same demand schedule.  There may be a small bit of rounding error in the demonstration, but the arc formula should give you something very close to the same number when you compute it from a price increase or decrease.
 
-#<span style="color:SaddleBrown">Factors that Affect the Magnitude of Own Price Elasticities</span>
+# <span style="color:SaddleBrown">Factors that Affect the Magnitude of Own Price Elasticities</span>
 Several factors affect the magnitude of the own price elasticity.  Knowing these factors can help you make a determination about the likely range of an elasticity in cases where you lack the data needed to estimate it precisely.  
 
-###Share of Income Devoted to the Product
+### Share of Income Devoted to the Product
 As a general rule, demand will be more elastic the larger the share of the consumer's budget required to purchase the item.  The rationale here is that the consumer will be more likely to shop around, wait for discounts, or delay making making large purchases until necessary.  Demand tends to be more elastic because the consumer stands to capture a large dollar value of additional surplus if he or she can find a better price.  
 
-###Availability of Substitutes
+### Availability of Substitutes
 When substitute products are readily available, demand will be more elastic.  Remember from Chapter 1 that two phenomena underpin the law of demand.  First, when the price increases, consumers who continue to purchase the product will purchase less.  This is a result of the law of diminishing marginal utility.  Second, some consumers drop out of the market altogether because participation in this market will no longer provide them with an opportunity for positive consumer surplus at the higher price.  When substitute products are readily available, the defection of consumers to lower priced alternatives becomes the driving factor and makes demand very responsive to price changes.  
 
 
-###Length of Run
+### Length of Run
 Demand will be more elastic in the long run.  The rationale here is that as time passes, consumers have more opportunities to adjust their consumption behavior. One way to model demand over time is to specify quantity demanded in the current time period (period t) as a function of quantity demanded the period before (period t-1).  In this case, demand in the short run can be expressed as
 
 $$Q_1^t = \alpha + \beta P_1 + \gamma Q_1^{t-1},$$
@@ -433,7 +437,7 @@ where $\alpha > 0$, $\beta < 0$, and $0 \le \gamma \lt 1$.  In this equation, $\
 
 ***
 
-####Demonstration 4.  The habit parameter affects the time to converge to a new point on the long-run demand schedule.
+#### Demonstration 4.  The habit parameter affects the time to converge to a new point on the long-run demand schedule.
 ```{r, echo=FALSE}
 require(shiny)
 
@@ -481,7 +485,7 @@ Demonstration 5, shows the convergence process as time passes.  Note that as tim
 
 ***
 
-####Demonstration 5.  Convergence to long-run demand over time.
+#### Demonstration 5.  Convergence to long-run demand over time.
 
 ```{r, echo=FALSE}
 shinyApp(
@@ -540,7 +544,7 @@ shinyApp(
 ***
 
 
-###Demand at Different Stages of the Market
+### Demand at Different Stages of the Market
 Many retail food products require fixed proportions of farm products.  For example, a pint of blueberries at the retail level requires a pint of blueberries from the farm.  A few pints will be damaged in transit from the farm to retail and so offering a certain quantity of blueberries on the retail market may be some fixed proportion $\tau$ of the number of pints from the farm, and $\tau$ may not be equal to one.  Nevertheless, there is a clear relationship between the quantity of the farm and retail product. If the assumption of fixed proportions applies, one can express the farm and retail product on the same quantity axis as is done below in Figure 1.  
 
 Figure 1 shows demand at the farm level and the retail level.  The vertical difference between these two demand schedules represents the cost of getting the product from farm to retail.  In the case of blueberries, these costs would include things like shipping and stocking.  If these costs are independent of the quantity of the farm product being offered for sale at retail, the farm-to-retail markup will be constant.  This means that the farm demand will be parallel to the retail demand.  This is also shown below in Figure 1.  
@@ -567,24 +571,25 @@ axis(2, at=c(0,50,90,130), labels=c("",expression("P"[1]^Farm),expression("P"[1]
 legend(80,130,c("Farm demand","Retail demand"),lty=c(1,1), lwd=3, col=c(rgb(0,0,1),rgb(1,0,0,))) 
 ```
 
-####Figure 1.  Elasticity at different points in the supply chain.
+#### Figure 1.  Elasticity at different points in the supply chain.
 
 ***
 
-#<span style="color:SaddleBrown">Elasticities of Supply</span>
+# <span style="color:SaddleBrown">Elasticities of Supply</span>
 Once you have learned about elasticities on the demand side of the market, it is easy to translate the same concepts over to the supply side.  In this course the convention will be to use the symbol $\phi$ (the Greek letter phi) to refer to supply elasticities. Again, subscripts will be used in exactly the same fashion as above for demand elasticities.  Moreover, the interpretation of supply elasticities is no different than demand elasticities.  For example, the own-price elasticity of supply is defined as 
 
 $$\phi_{ii}=\frac{\%\Delta Q_i}{\%\Delta P_i}. $$
 The difference is that $Q_i$ is the quantity supplied, making this a supply elasticity as opposed to a demand elasticity.  
 
 
-###Ranges for Supply Elasticities
+### Ranges for Supply Elasticities
 
 Table 5 presents some magnitude-based classifications for supply elasticities.  Fortunately, there is less to remember about ranges for supply elasticities.  The own-price elasticity of supply is always non-negative.  This reflects the law of supply.  Again, the magnitude of the elasticity shows the responsiveness of quantity supplied to changes in the own-price, and it sometimes makes sense to talk about supply being elastic, unitary elastic, or inelastic.  However, the non-negative own-price effect means that revenue to the producing industry always increases as price increases along the supply schedule, regardless of whether supply is responsive (elastic) or unresponsive (inelastic).  The sign of the cross-price elasticities will depend on whether the related product in question is a competing product or whether it is a joint product.  Finally, economic theory dictates that input price elasticities will be non-positive.  If the price of an input used in production increases, the marginal cost of production increases.  As explained in Chapter 2, this causes the market supply curve to shift inwards.  
 
 ***
 
-####Table 5. Classifications based on magnitude of elasticity of supply
+#### Table 5. Classifications based on magnitude of elasticity of supply
+
 Type | Range | Implication
 -------------|-------------|---------------
 Own-price    | $\phi_{ii} > 1$| Supply for good $i$ is elastic
@@ -596,13 +601,13 @@ Input price  | $\phi_{iW} \le 0$| Input price elasticities are non-positive
 
 ***
 
-###Calculating Supply Elasticities
+### Calculating Supply Elasticities
 
 The point and arc formulas presented in Table 6 are nearly identical to those learned for above for the case of demand.  The only difference is that quantities supplied are being used in the computations instead of quantities demanded. Again, it is important to emphasize the "all else held constant" provision when using an arc formula.  For example, if you are computing an own-price elasticity of supply using the arc formula, you must be confident that the values of any other variables that could shift supply have not changed.  
 
 ***
 
-####Table 6.  Point and arc formulas for supply elasticities
+#### Table 6.  Point and arc formulas for supply elasticities
 
 Type                      | Point Formula      | Arc Formula
 --------------------------|--------------------|--------------
@@ -613,7 +618,7 @@ Elasticity for other supply shift variable $Z$ | $\phi_{iZ}=\frac{\Delta Q_i}{\D
 
 ***
 
-###Special Cases for Supply Elasticities
+### Special Cases for Supply Elasticities
 
 It will sometimes be useful to assume that supply is perfectly elastic or that supply is perfectly inelastic.  An inverse supply curve with a slope of zero (a horizontal line) corresponds to perfectly elastic supply.  What this means is that any quantity can be purchased at the prevailing market price.  At first look, this makes absolutely no sense.  However, this assumption is appropriate in certain contexts, usually in the case of a buyer who faces a perfectly elastic supply for a product or service.  For example, trucking is an important service provided to blackberry marketers.  The popularity of blackberries has grown in recent years, so more blackberries are being grown and shipped.  The assumption that the blackberry industry faces a perfectly elastic supply for trucking is probably reasonable.  Although blackberries shipments have grown, blackberries account for a tiny portion of trucking volume.  The fact that more blackberries now need to be shipped has probably not materially affected freight rates.  In other words, blackberry marketers can ship all they want at the going rates.  As a matter of fact, this assumptions was reflected earlier in Figure 1.  By drawing the farm and retail demand schedules parallel to each other, the implicit assumption was that firms in this industry faced a perfectly elastic supply of marketing inputs, the inputs needed to get products from the farm to the consumer.  
 
@@ -621,7 +626,7 @@ An inverse supply curve with an infinite slope (a vertical line) corresponds to 
 
 ***
 
-#<span style="color:SaddleBrown">Concluding Comments</span>
+# <span style="color:SaddleBrown">Concluding Comments</span>
 
 To this point in the course, you have learned important concepts related to the demand and supply side of the market.  The elasticities covered in this chapter reinforce these concepts.  Moreover, they allow questions such as those posed in the introductory section to the chapter to be answered with much more precision.  Problem sets 2 and 3 represent plausible business decisions that can be answered with elasticities.  In problem set 2, you are asked whether you should increase price by a given amount.  In problem set 3, you will need to use an advertising elasticity to determine whether to increase advertising expenditures.  Later, you will learn that provided you have a precise estimates of demand elasticities, you can answer these types of question much more accurately.  In fact, if you have a good estimate of the elasticity of demand facing the firm, you can calculate the actual price that maximizes profits.  This will be addressed further in Chapter 7.  
 
@@ -629,9 +634,10 @@ In the next chapter, you will put elasticities to work in earnest.  Elasticities
 
 ***
 
-#<span style="color:SaddleBrown">Problem Sets</span>
+# <span style="color:SaddleBrown">Problem Sets</span>
 
-####Problem Set 1: Use the Point Formula for Demand Elasticities.
+#### Problem Set 1: Use the Point Formula for Demand Elasticities.
+
 ```{r, echo=FALSE}
 library(shiny)
 shinyApp(
@@ -730,7 +736,8 @@ shinyApp(
 
 ***
 
-####Problem Set 2: Use Elasticities to Determine Whether to Increase Price.
+#### Problem Set 2: Use Elasticities to Determine Whether to Increase Price.
+
 ```{r, echo=FALSE}
 shinyApp(
   ui = fluidPage(
@@ -793,7 +800,7 @@ shinyApp(
     })
     output$Answer3<-renderUI({
       if(!input$show) return()
-      paste("Profit above variable cost will go",probDat[input$prob,"Direct"],"to",probDat[input$prob,"NewProf"],"dollars.")
+      paste("If you raise price, the profit above variable cost will be",probDat[input$prob,"NewProf"],"dollars.")
     })
   }
 )
@@ -801,7 +808,8 @@ shinyApp(
 
 ***
 
-####Problem Set 3: Use Elasticities to Determine Whether to Increase Advertising.
+#### Problem Set 3: Use Elasticities to Determine Whether to Increase Advertising.
+
 ```{r, echo=FALSE}
 shinyApp(
   ui = fluidPage(
@@ -870,7 +878,7 @@ shinyApp(
 )
 ```
 
-####Problem Set 4: Short-Run and Long-Run Elasticities.
+#### Problem Set 4: Short-Run and Long-Run Elasticities.
 ```{r, echo=FALSE}
 shinyApp(
   ui = fluidPage(
@@ -954,7 +962,8 @@ shinyApp(
 ```
 
 
-####Problem Set 5: Multiple Choice.
+#### Problem Set 5: Multiple Choice. 
+
 ```{r, echo=FALSE}
 ###############################################################################
 # ResponseMC(correct,nchoices=4)
@@ -1118,8 +1127,10 @@ ResponseMC("a")
 
 ***
 
-![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
+__*An Interactive Text for Food and Agricultural Marketing*__ by <a href="https://agribusiness.uark.edu/directory/index/uid/mthomsen/name/Michael+R.+Thomsen/" target="_blank">Michael R. Thomsen</a>
 
-__*An Interactive Text for Food and Agricultural Marketing*__ by [Michael R. Thomsen](https://agribusiness.uark.edu/directory/index/uid/mthomsen/name/Michael+R.+Thomsen/) is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).  Source files are available on [GitHub](https://github.com/thomsen-m/FAM-OER).
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+Source files are available on  <a href="https://github.com/thomsen-m/FAM-OER" target="_blank">GitHub</a>.
 
 ***

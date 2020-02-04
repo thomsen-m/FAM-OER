@@ -1,12 +1,13 @@
 ---
 title: "Slides for Chapter 3: Elasticities of Demand and Supply"
-author: "Based on *An Interactive Text for Food and Agricultural Marketing* by [Michael R. Thomsen](https://agribusiness.uark.edu/directory/index/uid/mthomsen/name/Michael+R.+Thomsen/) which is licensed und
-er a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/). ![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)  Source files are available on [GitHub](https://github.com/thomsen-m/FAM-OER)."
+author: "Based on *An Interactive Text for Food and Agricultural Marketing* by [Michael R. Thomsen](https://agribusiness.uark.edu/directory/index/uid/mthomsen/name/Michael+R.+Thomsen/) which is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/). ![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)  Source files are available on [GitHub](https://github.com/thomsen-m/FAM-OER)."
 
 date: "Today's date is `r format(Sys.time(), '%d %B %Y')`"
-output:
-  slidy_presentation: default
-  beamer_presentation: default
+output: 
+  ioslides_presentation:
+    widescreen: true
+    smaller: true
+  
 runtime: shiny
 ---
 
@@ -23,18 +24,18 @@ runtime: shiny
 * Use supply elasticities to identify competing products and joint products in production.
 
 
-##<span style="color:SaddleBrown">Some Questions</span>
+## <span style="color:SaddleBrown">Some Questions</span>
 
 * Imagine yourself in an internship this summer. It is your first day on the job and your supervisor asks you to develop answers for the following questions:
 
-1. How does the demand for beef respond to changes in the price of beef?
-2. How does the demand for beef respond to changes in the prices of related goods such as pork, poultry, lamb, or fish?
-3. How does the demand for beef respond to a change in consumer income levels?
-4. How does the demand for beef respond to changes in advertising expenditures by the National Cattlemen's Beef Association (NCBA)?
+    1. How does the demand for beef respond to changes in the price of beef?
+    1. How does the demand for beef respond to changes in the prices of related goods such as pork, poultry, lamb, or fish?
+    1. How does the demand for beef respond to a change in consumer income levels?
+    1. How does the demand for beef respond to changes in advertising expenditures by the National Cattlemen's Beef Association (NCBA)?
 
 * Based on what you have learned to this point in the semester, you could develop some simple answers to these questions, but they may not be exact enough for what you need.
 
-##<span style="color:SaddleBrown">Demand Elasticities</span>
+## <span style="color:SaddleBrown">Demand Elasticities</span>
 
 * The term "elastic" implies flexibility.  
 
@@ -46,7 +47,7 @@ runtime: shiny
 
 * $\epsilon_{iX}$ refers to the elasticity of good i with respect to some non-price demand shift variable $X$. 
 
-##<span style="color:SaddleBrown">Types of Demand Elasticities</span>
+## <span style="color:SaddleBrown">Types of Demand Elasticities</span>
 
 * Own-price elasticities (subscripts match)
 
@@ -62,11 +63,11 @@ $$\epsilon_{1M}=\frac{\%\Delta Q_1}{\%\Delta M}, $$
 
 * A demand elasticity with respect to some other demand shift variable, $X$
 
-$$\epsilon_{1M}=\frac{\%\Delta Q_X}{\%\Delta X}, $$
+$$\epsilon_{1X}=\frac{\%\Delta Q_X}{\%\Delta X}, $$
 
 * What do all of these formulas have in common?
 
-##<span style="color:SaddleBrown">Interpretation of Elasticity Numbers</span>
+## <span style="color:SaddleBrown">Interpretation of Elasticity Numbers</span>
 
 * If $\epsilon_{iX}=0.5$, quantity demanded increases (decreases) by half a percent as $X$ increases (decreases) by one percent.  
 
@@ -77,7 +78,7 @@ $$\epsilon_{iX}=\frac{\%\Delta Q_i}{\%\Delta X} \implies \%\Delta Q = \epsilon_{
 * Elasticities are independent of physical units of measurement. They are in percentage terms.
 
 
-##<span style="color:SaddleBrown">Predicting the Effect of a Price Change</span>
+## <span style="color:SaddleBrown">Predicting the Effect of a Price Change</span>
 
 * Question: Given that $\epsilon_{11} = -2.5$, what is the effect of a three percent price increase? 
 
@@ -89,23 +90,25 @@ $$\%\Delta Q_1=-2.5\times3 = -7.5\%$$
 
 $$1000\ units\ \times (1 - 0.075) = 925\ units.$$
 
-##<span style="color:SaddleBrown">Classifications Based on Magnitude of Demand Elasticities (See Table 1 of *An Interactive Text*)</span>
+## <span style="color:SaddleBrown">Classifications Based on Demand Elasticities</span>
 
 Type                  | Range                           | Implication
 ----------------------|---------------------------------|----------------------------------------
 Own-price             | $\epsilon_{ii} < -1$            | Demand for good $i$ is elastic
 Own-price             | $\epsilon_{ii}= -1$             | Demand for good $i$ is unitary elastic
 Own-price             | $-1<\epsilon_{ii} \le 0$        | Demand for good $i$ is inelastic
-----------------------|---------------------------------|----------------------------------------
 Cross-price           | $\epsilon_{ij}> 0,\ i\ne j$     | Good $j$ is a substitute for $i$
 Cross-price           | $\epsilon_{ij}< 0, i\ne j$      | Good $j$ is a complement to $i$
-----------------------|---------------------------------|----------------------------------------
 Income                | $\epsilon_{iM} < 0$             | Good $i$ is an inferior good
 Income                | $0 \le \epsilon_{iM} \le 1$     | Good $i$ is a normal necessity
 Income                | $\epsilon_{iM} > 1$             | Good $i$ is a normal luxury
 
+ Table 1 of *An Interactive Text*
 
-##<span style="color:SaddleBrown">Own-price Elasticities Show the Responsiveness of Quantity to Changes to Price (Demonstration 1 from *An Interactive Text*)</span>
+## <span style="color:SaddleBrown">Own-price Elasticities Show the Responsiveness of Quantity to a Change in Price </span>
+
+Demonstration 1 from *An Interactive Text*
+
 ```{r, echo=FALSE}
 shinyApp(
   ui = fluidPage(
@@ -140,11 +143,11 @@ shinyApp(
      text(50,15,paste("Demand is",range()),pos=4,cex=1.5)
      },height=400,width=500)
     },
-  options = list(height = 475, width=900)
+  options = list(width=900)
   )
 ```
 
-##<span style="color:SaddleBrown">Revenue Implications of Own-Price Elasticities</span>
+## <span style="color:SaddleBrown">Revenue Implications of Own-Price Elasticities</span>
 
 * In the elastic range, an increase (decrease) in price causes a decrease (increase) in revenue.
 
@@ -155,7 +158,10 @@ shinyApp(
 
 * A firm that can control its price (not a price-taking firm), will set price so demand is elastic.  Can you explain why?
 
-##<span style="color:SaddleBrown">The Relationship Between Price Changes, Own-Price Elasticity, and Revenue (Demonstration 2 from *An Interactive Text*)</span>
+## <span style="color:SaddleBrown">The Relationship Between Price Changes, Own-Price Elasticity, and Revenue</span>
+
+Demonstration 2 from *An Interactive Text*
+
 ```{r, echo=FALSE}
 require(shiny)
 
@@ -205,26 +211,25 @@ shinyApp(
       legend(100,80,c("Revenue lost","Revenue gained"),pch=c(15,15), col=c(rgb(1,0,0,.5),rgb(0,0,1,.5))) 
     },height=400,width=500)
     },
-  options = list(height = 475, width=900)
+  options = list(width=900)
   )
 ```
 
-
-##<span style="color:SaddleBrown">The Point Formula for Demand Elasticities</span>
+## <span style="color:SaddleBrown">The Point Formula for Demand Elasticities</span>
 
 * Derivation of the point formula for own-price elasticity
 $$\epsilon_{11}=\frac{\%\Delta Q_1}{\%\Delta P_1} =\frac{(\Delta Q_1/Q_1)\times100}{(\Delta P_1/P_1)\times100}=\frac{\Delta Q_1}{\Delta P_1} \times \frac{P_1}{Q_1}. $$
 
 * As a practical matter, you need three terms (numbers) to compute an elasticity using the point formula.  
 
-1. The first number is $\frac{\Delta Q_i}{\Delta P_i}$. This number is the slope term from the direct demand relationship.  
+    1. The first number is $\frac{\Delta Q_i}{\Delta P_i}$. This number is the slope term from the direct demand relationship.  
 
-2. The second number you need is the value of the demand variable in question.  In this case, $P_1$.  
+    1. The second number you need is the value of the demand variable in question.  In this case, $P_1$.  
 
-3. The third and final number you need is the value of $Q_1$.
+    1. The third and final number you need is the value of $Q_1$.
 
 
-##<span style="color:SaddleBrown">Point Formulas for Other Elasticities are Computed Similarly (Table 2 of *An Interactive Text*)</span>
+## <span style="color:SaddleBrown">Point Formulas for Different Elasticities</span>
 
 Type                               | Formula 
 -----------------------------------|-----------------------------
@@ -233,7 +238,9 @@ Cross-price elasticity | $\epsilon_{ij}=\frac{\Delta Q_i}{\Delta P_j} \times \fr
 Income elasticity      | $\epsilon_{iM}=\frac{\Delta Q_i}{\Delta M} \times \frac{M}{Q_i}$
 Elasticity for other demand shift variable $X$ | $\epsilon_{iX}=\frac{\Delta Q_i}{\Delta X} \times \frac{X}{Q_i}$
 
-##<span style="color:SaddleBrown">Implementing the Point Formula
+Table 2 of *An Interactive Text*
+
+## <span style="color:SaddleBrown">Implementing the Point Formula
 
 * Consider the following direct demand equation for good 1:
 
@@ -249,7 +256,7 @@ $$Q_1^0 = 1.5\times 40 + 0.01\times30000 +2\times20 - 4\times 60 = 160\ thousand
 * At this new data point, we get a new quantity demanded of 
 $$Q_1^1 = 1.5\times 40 + 0.01\times30000 +2\times20 - 4\times 50 = 200\ thousand\ units.$$
 
-##<span style="color:SaddleBrown">Point Elasticities at These Two Data Points (Table 3 of *An Interactive Text*)</span>
+## <span style="color:SaddleBrown">Point Elasticities at These Two Data Points</span>
 
 * Data Point 0:  ($A^0=40$, $M^0=30000$, $P_2^0=20$, $P_1^0=60$, and $Q_1^0=160$). 
 
@@ -264,21 +271,22 @@ Cross-price elasticity | $\epsilon_{12}=2\times\frac{20}{160}=0.25$ |$\epsilon_{
 Income elasticity | $\epsilon_{1M}=0.01\times\frac{30000}{160}=1.875$ |$\epsilon_{1M}=0.01\times\frac{30000}{200}=1.5$
 Advertising elasticity | $\epsilon_{1A}=1.5\times\frac{40}{160}=0.375$|$\epsilon_{1A}=1.5\times\frac{40}{200}=0.30$
 
+Table 3 of *An Interactive Text*
 
-##<span style="color:SaddleBrown">Some Comments</span>
+## <span style="color:SaddleBrown">Some Comments</span>
 
 * The above exercises makes it clear that elasticity can depend on the magnitude of the demand variables
 
 * If we have a linear demand equation:
 
-1. Demand will be more elastic at higher prices
-2. There is a point where demand will be unitary elastic
-3. Demand will be less elastic at lower prices
+    1. Demand will be more elastic at higher prices
+    1. There is a point where demand will be unitary elastic
+    1. Demand will be less elastic at lower prices
 
 * However this is not true for all demand equations.  Some specifications of demand provide constant elasticities. 
 
-##Demonstration 3.  Own-Price Elasticity Will Vary Along a Linear Demand Curve (Demonstration 3 of *An Interactive Text*)</span>
-
+## 
+Demonstration 3 of *An Interactive Text*
 ```{r, echo=FALSE}
 shinyApp(
   ui = fluidPage(
@@ -358,7 +366,7 @@ shinyApp(
   )
 ```
 
-##<span style="color:SaddleBrown">The Arc Formula for Elasticities (Table 4 of *An Interactive Text*)</span>
+## <span style="color:SaddleBrown">The Arc Formula for Elasticities</span>
 
 
 Type                   | Formula 
@@ -368,8 +376,9 @@ Cross-price elasticity | $\epsilon_{ij}=\frac{Q_i^1-Q_i^0}{P_j^1-P_j^0} \times \
 Income elasticity      | $\epsilon_{iM}=\frac{Q_i^1-Q_i^0}{M^1-M^0} \times \frac{M^1+M^0}{Q_i^1+Q_i^0}$
 Elasticity for other demand shift variable $X$ | $\epsilon_{iX}=\frac{Q_i^1-Q_i^0}{X^1-X^0} \times \frac{X^1+X^0}{Q_i^1+Q_i^0}$
 
+Table 4 of *An Interactive Text*
 
-##<span style="color:SaddleBrown">Implementing the Arc Formula</span>
+## <span style="color:SaddleBrown">Implementing the Arc Formula</span>
 
 *  The two own-price own-quantity pairs we used above are (60,160) and (50,200), respectively.  
 
@@ -383,7 +392,7 @@ $$\epsilon_{11}=\frac{160-200}{60-50} \times \frac{60+50}{160+200} = -1.22.$$
 
 * The average of our two data points is ($P_1 = 55$, $Q_1 = 180$).  When use the point formula to measure elasticity at this average point we get $\epsilon_{11} = -1.22$, which is what we get from the arc formula.  
 
-##<span style="color:SaddleBrown">Limitations of the Arc Formula</span>
+## <span style="color:SaddleBrown">Limitations of the Arc Formula</span>
 
 * The implicit assumption with the arc formula is that only the demand variable for which you are computing the elasticity has changed and nothing else.
 
@@ -391,7 +400,7 @@ $$\epsilon_{11}=\frac{160-200}{60-50} \times \frac{60+50}{160+200} = -1.22.$$
 
 * Application of the arc formula requires you to assume that the entire change from $Q_1^0$ to $Q_1^1$ is attributable only to an observed change in $P_1$. In the real world, it may be hard to defend this assumption. 
 
-##<span style="color:SaddleBrown">What Affects Magnitude of Own-Price Elasticity?</span>
+## <span style="color:SaddleBrown">What Affects Magnitude of Own-Price Elasticity?</span>
 
 * Share of Income Devoted to the Product
 
@@ -401,7 +410,7 @@ $$\epsilon_{11}=\frac{160-200}{60-50} \times \frac{60+50}{160+200} = -1.22.$$
 
 * Stage of the Market
 
-##<span style="color:SaddleBrown">Modelling Demand in the Short and Long Run</span>
+## <span style="color:SaddleBrown">Modelling Demand in the Short and Long Run</span>
 
 * Short-run demand
 $$Q_1^t = \alpha + \beta P_1 + \gamma Q_1^{t-1},$$
@@ -416,7 +425,8 @@ $$Q_1^t = \alpha + \beta P_1 + \gamma Q_1^{t-1},$$
 $$Q_1^{LR} = \frac{\alpha}{1-\gamma} + \frac{\beta}{1-\gamma} P_1.$$
 
 
-##<span style="color:SaddleBrown">The Habit Parameter Affects the Time to Converge to a New Long-Run Demand Schedule (Demonstration 4 from *An Interactive Text*)</span>
+## <span style="color:SaddleBrown">The Habit Parameter Affects the Time to Converge to a New Long-Run Demand Schedule</span>
+Demonstration 4 from *An Interactive Text*
 ```{r, echo=FALSE}
 require(shiny)
 
@@ -456,8 +466,8 @@ shinyApp(
 )
 ```
 
-##<span style="color:SaddleBrown">Convergence to Long-Run Demand Over Time (Demonstration 5 from *An Interactive Text*)</span>
-
+## <span style="color:SaddleBrown">Convergence to Long-Run Demand Over Time</span>
+Demonstration 5 from *An Interactive Text*
 ```{r, echo=FALSE}
 shinyApp(
   ui = fluidPage(
@@ -513,15 +523,11 @@ shinyApp(
 )
 ```
 
-##<span style="color:SaddleBrown">Demand at Different Stages of the Market (Figure 1 of *An Interactive Text*)</span>
-
+## <span style="color:SaddleBrown">Demand at Different Stages of the Market</span>
 * Assumption 1: Fixed Proportions $(Q_{1}^{Farm}=\tau Q_{1}^{Retail})$.
-
 * Assumption 2: Cost of marketing inputs is independent of industry output.
-
 * Farm demand will be less elastic than retail demand.
-
-```{r, echo=FALSE}
+```{r, echo=FALSE, fig1, fig.width=5,fig.height=4}
 par(bg="beige")
 plot(1:200, 100-.5*(1:200),type="l",col="blue", lwd=3,
      xlim=c(0,200),ylim=c(0,130),
@@ -536,8 +542,9 @@ axis(2, at=c(0,50,90,130), labels=c("",expression("P"[1]^Farm),expression("P"[1]
 legend(80,130,c("Farm demand","Retail demand"),lty=c(1,1), lwd=3, col=c(rgb(0,0,1),rgb(1,0,0,))) 
 ```
 
+Figure 1 of *An Interactive Text*
 
-##<span style="color:SaddleBrown">Supply Elasticities are Computed Similarly to Demand Elasticities (Table 6 of *An Interactive Text*)</span>
+## <span style="color:SaddleBrown">Supply Elasticities</span>
 
 Type                      | Point Formula      | Arc Formula
 --------------------------|--------------------|--------------
@@ -546,34 +553,28 @@ Cross-price elasticity | $\phi_{ij}=\frac{\Delta Q_i}{\Delta P_j} \times \frac{P
 Input-price elasticity      | $\phi_{iW}=\frac{\Delta Q_i}{\Delta W} \times \frac{W}{Q_i}$| $\phi_{iW}=\frac{Q_i^1-Q_i^0}{W^1-W^0} \times \frac{W^1+W^0}{Q_i^1+Q_i^0}$
 Elasticity for other supply shift variable $Z$ | $\phi_{iZ}=\frac{\Delta Q_i}{\Delta Z} \times \frac{Z}{Q_i}$| $\epsilon_{iZ}=\frac{Q_i^1-Q_i^0}{Z^1-Z^0} \times \frac{Z^1+Z^0}{Q_i^1+Q_i^0}$
 
-* The difference is that $Q_i$ is the quantity supplied, making this a supply elasticity as opposed to a demand elasticity.  
+Table 6 of *An Interactive Text*
 
-##<span style="color:SaddleBrown">Classifications Based on Magnitude of Elasticity of Supply (Table 5 of *An Interactive Text*)</span>
+* The difference from demand is that $Q_i$ is the quantity supplied, making these supply elasticities as opposed to demand elasticities.  
+
+## <span style="color:SaddleBrown">Classifications Based on Elasticities of Supply</span>
 
 Type                  | Range                           | Implication
 ----------------------|---------------------------------|----------------------------------------
 Own-price    | $\phi_{ii} > 1$| Supply for good $i$ is elastic
 Own-price    | $\phi_{ii}= 1$| Supply for good $i$ is unitary elastic
 Own-price    | $0 \le \phi_{ii} \lt 1$| Supply for good $i$ is inelastic
-----------------------|---------------------------------|----------------------------------------
 Cross-price  | $\phi_{ij}> 0,\ i\ne j$| Good $j$ is a joint product for good $i$
 Cross-price  | $\phi_{ij}< 0, i\ne j$| Good $j$ is a competing product for good $i$
-----------------------|---------------------------------|----------------------------------------
 Input price  | $\phi_{iW} \le 0$| Input price elasticities are non-positive
 
+Table 5 of *An Interactive Text*
 
-
-
-##<span style="color:SaddleBrown">Some Special Cases for Supply Elasticities</span>
+## <span style="color:SaddleBrown">Some Special Cases for Supply Elasticities</span>
 
 * Perfectly elastic supply.  
-
-1. An inverse supply curve with a slope of zero (a horizontal line) corresponds to perfectly elastic supply.  
-
-2. This means is that any quantity can be purchased at the prevailing market price.
-
+    1. An inverse supply curve with a slope of zero (a horizontal line) corresponds to perfectly elastic supply.  
+    2. This means is that any quantity can be purchased at the prevailing market price.
 * Perfectly inelastic supply.
-
-1. An inverse supply curve with an infinite slope (a vertical line) corresponds to perfectly inelastic supply.  
-
-2. A fixed stock of a product does not imply a perfectly elastic supply.  
+    1. An inverse supply curve with an infinite slope (a vertical line) corresponds to perfectly inelastic supply.  
+    2. A fixed stock of a product does not imply a perfectly elastic supply.  
