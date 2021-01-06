@@ -3,12 +3,14 @@ title: "Slides for Chapter 1: Market Demand"
 author: "Based on *An Interactive Text for Food and Agricultural Marketing* by [Michael R. Thomsen](https://agribusiness.uark.edu/directory/index/uid/mthomsen/name/Michael+R.+Thomsen/) which is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/). ![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)  Source files are available on [GitHub](https://github.com/thomsen-m/FAM-OER)."
 
 date: "Today's date is `r format(Sys.time(), '%d %B %Y')`"
-output:
-  slidy_presentation: default
-  beamer_presentation: default
+output: 
+  ioslides_presentation:
+    widescreen: true
+    smaller: true
+  
 runtime: shiny
 ---
-  
+
 ## <span style="color:SaddleBrown">Objectives</span>
 * Distinguish between different states of demand and explain contexts wherein each state may be relevant.
 
@@ -22,7 +24,7 @@ runtime: shiny
 
 * Graph the inverse demand schedule given a demand equation and values of shift variables.
 
-* Describe the concept of consumer surplus.  Compute consumer surplus.
+* Describe the concept of consumer surplus.  Compute consumer surplus from the demand schedule.
 
 
 ## <span style="color:SaddleBrown">Demand States</span>
@@ -47,7 +49,7 @@ runtime: shiny
 1. Each consumer buys less (more) of the product due to diminishing marginal utility.
 2. The total number of consumers decreases (increases) as consumers with valuations close to the prevailing price exit (enter) the marketplace.
 
-## <span style="color:SaddleBrown">An Inverse Demand Schedule (Demonstration 1 from *An Interactive Text*)</span>
+## <span style="color:SaddleBrown">An Inverse Demand Schedule</span>
 ```{r, echo=FALSE}
 shinyApp(
 ui = fluidPage(sidebarPanel(sliderInput("pprice",
@@ -101,6 +103,8 @@ options = list(height = 425, width=900)
 )
 ```
 
+Demonstration 1 of *An Interactive Text*
+
 ## <span style="color:SaddleBrown">Demand Shifters</span>
 
 * Prices of related goods (substitutes or complements)
@@ -114,7 +118,7 @@ options = list(height = 425, width=900)
 2. Unfavorable changes
 * Population
 
-## <span style="color:SaddleBrown">Shift Variables Change the Demand Schedule (Demonstration 2 from *An Interactive Text*)</span>
+## <span style="color:SaddleBrown">Shift Variables Change the Demand Schedule</span>
 ```{r, echo=FALSE}
 shinyApp(
 ui = fluidPage(
@@ -169,7 +173,9 @@ options = list(height = 475, width=900)
 )
 ```
 
-## <span style="color:SaddleBrown">Demand Equation to Demand Schedule</span>
+Demonstration 2 of *An Interactive Text*
+
+## <span style="color:SaddleBrown">Demand Equation</span>
 * Consider the following demand equation for good A: 
 $$Q_A = 20Pop + 0.01M +2P_B - 4P_A$$
 
@@ -241,9 +247,10 @@ lines(c(0,2),c(8,8),col="darkgreen")
 lines(c(0,2),c(12,12),col="lightgreen")
 ```
 
-#### Figure 1. Value from a market transaction is comprised of consumer surplus and profits.
+Figure 1 of *An Interactive Text*
 
-## <span style="color:SaddleBrown">Consumer Surplus and the Law of Demand: Diminishing Marginal Utility (Demonstration 3 from *An Interactive Text*)</span>
+
+## <span style="color:SaddleBrown">Consumer Surplus: Diminishing Marginal Utility</span>
 ```{r, echo=FALSE}
 shinyApp(ui =fluidPage(
   sidebarPanel(
@@ -285,7 +292,9 @@ server = function(input,output) {
 options = list(height = 400, width=900))
 ```
 
-## <span style="color:SaddleBrown">Consumer Surplus and the law of Demand: Differences in Valuation over Consumers or Consumer Segments (Demonstration 4 from *An Interactive Text*)</span>
+Demonstration 3 of *An Interactive Text*
+
+## <span style="color:SaddleBrown">Consumer Surplus: Differences in Consumers</span>
 ```{r, echo=FALSE}
 shinyApp(ui =fluidPage(
   sidebarPanel(
@@ -325,7 +334,9 @@ server = function(input,output) {
 options = list(height = 400, width=900))
 ```
 
-## <span style="color:SaddleBrown">Computing Consumer Surplus from a Linear Inverse Demand Curve</span>
+Demonstration 4 of *An Interactive Text*
+
+## <span style="color:SaddleBrown">Consumer Surplus from Inverse Demand</span>
 
 $$CS = \frac{1}{2}\times Q(\bar{P})\times(Intercept\ of \ Inverse\ Demand\ Schedule - \bar{P})$$
 
@@ -353,4 +364,4 @@ par(bg="beige")
     
 ```
 
-#### Figure 2: Calculating consumer surplus (shaded in light blue) from a demand schedule.
+Figure 2 of *An Interactive Text*

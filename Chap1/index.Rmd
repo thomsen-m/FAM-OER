@@ -35,7 +35,7 @@ The learning objectives for this chapter are as follows.
 
 * Graph the inverse demand schedule given a demand equation and values of shift variables.
 
-* Describe the concept of consumer surplus.  Compute consumer surplus.
+* Describe the concept of consumer surplus.  Compute consumer surplus from the demand schedule.
 
 ***
 
@@ -75,7 +75,7 @@ Negative demand refers to cases where there is a potential product that could me
 
 Food irradiation is a process that many thought could potentially address latent demands for safer food.  For example, irradiation could destroy Trichina parasites allowing pork to be cooked and served rare.  In the late 1990's, irradiation was approved by US regulatory agencies for use on raw meat and poultry.  There were some predictions that this would become a standard process, akin to pasteurization.  This turned out not to be the case.  One reason is that irradiated foods also faced a negative demand problem.  Consumers have been hesitant to embrace irradiated foods.  Review the fact sheet and short video clip from the links below. Both are from reputable organizations: a land-grant university and the United Nations.    
 
-* Fact sheet from the University of Wisconsin on food irradiation (<a href="https://uw-food-irradiation.engr.wisc.edu/Facts.html" target="_blank">visit wisc.edu</a>).
+* Fact sheet from NC State on food irradiation (<a href="https://fbns.ncsu.edu//extension_program/documents/foodsafety_irradiation.pdf" target="_blank">visit ncsu.edu</a>).
 
 * Short video from International Atomic Energy Agency and FAO (<a href="https://www.youtube.com/watch?v=pe6AKh_tLys&t=1s" target="_blank">visit youtube.com</a>).
 
