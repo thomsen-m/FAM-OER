@@ -1,7 +1,7 @@
 ---
 title: "An Interactive Text for Food and Agricultural Marketing"
 author: Michael R. Thomsen
-date: "`r as.Date(file.info('interactText.Rmd')$mtime)`"
+date: "`r as.Date(file.info('index.Rmd')$mtime)`"
 output: html_document
 theme: journal
 runtime: shiny
@@ -27,7 +27,7 @@ I am grateful to the University of Arkansas Libraries’ Open Educational Resour
 
 *An Interactive Text for Food and Agricultural Marketing* is written in [R Markdown](http://rmarkdown.rstudio.com/) and was developed in [R](https://cran.r-project.org/) with [RStudio](https://www.rstudio.com/).   The demonstrations and problem sets are [R Shiny](https://shiny.rstudio.com/) applications, the code for which is embedded within the markdown files.  I am grateful to RStudio for providing a teaching license to their [Shiny Server](https://www.rstudio.com/products/shiny/shiny-server/) software to use with my University of Arkansas class.
 
-In addition to the source files for the text itself, the [GitHub](https://github.com/thomsen-m/FAM-OER) repository provides R Markdown files that render to html slide sets.  These can be used or modified to support lectures based on this text.
+Should you wish to adopt this text in your class, please download the source files from the [GitHub](https://github.com/thomsen-m/FAM-OER) repository and deploy them on a server. The version you are seeing now is for demonstration purposes, and the hosting platform is not likely to meet the demands of your class. Alternatively your students can access *An Interactive Text* locally on their own machines through an R installation with the "shiny" and "rmarkdown" packages installed. In addition to the source files for the text itself, the [GitHub](https://github.com/thomsen-m/FAM-OER) repository provides R Markdown files that render to html slide sets.  These can be used or modified to support lectures based on this text.
 
 Sincerely,
 
